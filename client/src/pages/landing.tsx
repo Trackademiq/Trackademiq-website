@@ -101,12 +101,12 @@ function Header() {
       <nav className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-16 md:h-20">
           <a href="/" className="flex items-center gap-2" data-testid="link-logo">
-            <div className="w-10 h-10 rounded-lg bg-gradient-to-br from-violet-600 to-indigo-600 flex items-center justify-center">
+            <div className="w-10 h-10 rounded-lg bg-gradient-to-br from-teal-600 to-cyan-600 flex items-center justify-center">
               <GraduationCap className="w-6 h-6 text-white" />
             </div>
             <span className={`text-xl font-bold transition-colors ${
               isScrolled 
-                ? "bg-gradient-to-r from-violet-600 to-indigo-600 bg-clip-text text-transparent"
+                ? "bg-gradient-to-r from-teal-600 to-cyan-600 bg-clip-text text-transparent"
                 : "text-white"
             }`}>
               Edufy
@@ -140,7 +140,7 @@ function Header() {
               Request Demo
             </Button>
             <Button
-              className="bg-gradient-to-r from-violet-600 to-indigo-600 text-white border-0"
+              className="bg-gradient-to-r from-teal-600 to-cyan-600 text-white border-0"
               data-testid="button-download-app-header"
             >
               <Download className="w-4 h-4 mr-2" />
@@ -185,7 +185,7 @@ function Header() {
                   Request Demo
                 </Button>
                 <Button
-                  className="w-full bg-gradient-to-r from-violet-600 to-indigo-600 text-white border-0"
+                  className="w-full bg-gradient-to-r from-teal-600 to-cyan-600 text-white border-0"
                   data-testid="button-download-app-mobile"
                 >
                   <Download className="w-4 h-4 mr-2" />
@@ -210,12 +210,12 @@ function HeroSection() {
 
   return (
     <section
-      className="relative min-h-screen flex items-center overflow-hidden bg-gradient-to-br from-slate-900 via-violet-950 to-indigo-950"
+      className="relative min-h-screen flex items-center overflow-hidden bg-gradient-to-br from-slate-900 via-teal-950 to-cyan-950"
       data-testid="section-hero"
     >
       <div className="absolute inset-0 opacity-20">
-        <div className="absolute inset-0 bg-[radial-gradient(circle_at_30%_20%,rgba(120,119,198,0.3),transparent_50%)]" />
-        <div className="absolute inset-0 bg-[radial-gradient(circle_at_70%_80%,rgba(99,102,241,0.2),transparent_50%)]" />
+        <div className="absolute inset-0 bg-[radial-gradient(circle_at_30%_20%,rgba(20,184,166,0.3),transparent_50%)]" />
+        <div className="absolute inset-0 bg-[radial-gradient(circle_at_70%_80%,rgba(6,182,212,0.2),transparent_50%)]" />
       </div>
 
       <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-32 md:py-40 w-full">
@@ -239,7 +239,7 @@ function HeroSection() {
             data-testid="text-hero-headline"
           >
             Smart School Management,{" "}
-            <span className="bg-gradient-to-r from-violet-400 to-indigo-400 bg-clip-text text-transparent">
+            <span className="bg-gradient-to-r from-teal-400 to-cyan-400 bg-clip-text text-transparent">
               Simplified
             </span>
           </motion.h1>
@@ -257,7 +257,7 @@ function HeroSection() {
             <Button
               size="lg"
               onClick={scrollToContact}
-              className="bg-gradient-to-r from-violet-600 to-indigo-600 text-white border-0 text-base px-8"
+              className="bg-gradient-to-r from-teal-600 to-cyan-600 text-white border-0 text-base px-8"
               data-testid="button-request-demo-hero"
             >
               Request Demo
@@ -299,13 +299,13 @@ function HeroSection() {
             transition={{ duration: 0.8, delay: 0.3 }}
             className="hidden lg:block relative"
           >
-            <div className="relative rounded-2xl overflow-hidden shadow-2xl shadow-violet-500/20 border border-white/10">
+            <div className="relative rounded-2xl overflow-hidden shadow-2xl shadow-teal-500/20 border border-white/10">
               <img
                 src={heroImage}
                 alt="Diverse Indian students learning in a modern classroom with tablets and laptops"
                 className="w-full h-auto object-cover"
               />
-              <div className="absolute inset-0 bg-gradient-to-t from-violet-950/50 to-transparent" />
+              <div className="absolute inset-0 bg-gradient-to-t from-teal-950/50 to-transparent" />
             </div>
             <div className="absolute -bottom-6 -left-6 bg-white/10 backdrop-blur-md rounded-xl p-4 border border-white/20">
               <div className="flex items-center gap-3">
@@ -320,7 +320,7 @@ function HeroSection() {
             </div>
             <div className="absolute -top-4 -right-4 bg-white/10 backdrop-blur-md rounded-xl p-4 border border-white/20">
               <div className="flex items-center gap-3">
-                <div className="w-12 h-12 rounded-full bg-gradient-to-br from-violet-500 to-indigo-600 flex items-center justify-center">
+                <div className="w-12 h-12 rounded-full bg-gradient-to-br from-teal-500 to-cyan-600 flex items-center justify-center">
                   <Users className="w-6 h-6 text-white" />
                 </div>
                 <div>
@@ -416,11 +416,11 @@ function FeaturesSection() {
           {features.map((feature, index) => (
             <motion.div key={feature.title} variants={fadeInUp}>
               <Card
-                className="p-6 h-full border-t-4 border-t-transparent hover:border-t-violet-500 transition-all duration-300 hover-elevate"
+                className="p-6 h-full border-t-4 border-t-transparent hover:border-t-teal-500 transition-all duration-300 hover-elevate"
                 data-testid={`card-feature-${index}`}
               >
-                <div className="w-12 h-12 rounded-lg bg-gradient-to-br from-violet-100 to-indigo-100 dark:from-violet-900/30 dark:to-indigo-900/30 flex items-center justify-center mb-4">
-                  <feature.icon className="w-6 h-6 text-violet-600 dark:text-violet-400" />
+                <div className="w-12 h-12 rounded-lg bg-gradient-to-br from-teal-100 to-cyan-100 dark:from-teal-900/30 dark:to-cyan-900/30 flex items-center justify-center mb-4">
+                  <feature.icon className="w-6 h-6 text-teal-600 dark:text-teal-400" />
                 </div>
                 <h3 className="text-xl font-semibold text-foreground mb-2">{feature.title}</h3>
                 <p className="text-muted-foreground leading-relaxed">{feature.description}</p>
@@ -496,11 +496,11 @@ function HowItWorksSection() {
               className="relative"
             >
               <div className="text-center">
-                <div className="inline-flex items-center justify-center w-16 h-16 rounded-full bg-gradient-to-br from-violet-600 to-indigo-600 text-white text-2xl font-bold mb-6">
+                <div className="inline-flex items-center justify-center w-16 h-16 rounded-full bg-gradient-to-br from-teal-600 to-cyan-600 text-white text-2xl font-bold mb-6">
                   {step.number}
                 </div>
                 {index < steps.length - 1 && (
-                  <div className="hidden md:block absolute top-8 left-[calc(50%+40px)] w-[calc(100%-80px)] h-0.5 bg-gradient-to-r from-violet-300 to-indigo-300 dark:from-violet-800 dark:to-indigo-800" />
+                  <div className="hidden md:block absolute top-8 left-[calc(50%+40px)] w-[calc(100%-80px)] h-0.5 bg-gradient-to-r from-teal-300 to-cyan-300 dark:from-teal-800 dark:to-cyan-800" />
                 )}
                 <h3 className="text-xl font-semibold text-foreground mb-3">{step.title}</h3>
                 <p className="text-muted-foreground leading-relaxed">{step.description}</p>
@@ -736,14 +736,14 @@ function PricingSection() {
               <Card
                 className={`p-6 h-full flex flex-col relative ${
                   plan.popular
-                    ? "border-2 border-violet-500 dark:border-violet-400"
+                    ? "border-2 border-teal-500 dark:border-teal-400"
                     : ""
                 }`}
                 data-testid={`card-pricing-${index}`}
               >
                 {plan.popular && (
                   <div className="absolute -top-3 left-1/2 -translate-x-1/2">
-                    <Badge className="bg-gradient-to-r from-violet-600 to-indigo-600 text-white border-0">
+                    <Badge className="bg-gradient-to-r from-teal-600 to-cyan-600 text-white border-0">
                       <Star className="w-3 h-3 mr-1" />
                       Most Popular
                     </Badge>
@@ -772,7 +772,7 @@ function PricingSection() {
                   onClick={scrollToContact}
                   className={
                     plan.popular
-                      ? "w-full bg-gradient-to-r from-violet-600 to-indigo-600 text-white border-0"
+                      ? "w-full bg-gradient-to-r from-teal-600 to-cyan-600 text-white border-0"
                       : "w-full"
                   }
                   variant={plan.popular ? "default" : "outline"}
@@ -867,8 +867,8 @@ function TestimonialsSection() {
                   "{testimonial.quote}"
                 </blockquote>
                 <div className="flex items-center gap-3 pt-4 border-t border-border">
-                  <div className="w-12 h-12 rounded-full bg-gradient-to-br from-violet-100 to-indigo-100 dark:from-violet-900/30 dark:to-indigo-900/30 flex items-center justify-center">
-                    <span className="text-lg font-semibold text-violet-600 dark:text-violet-400">
+                  <div className="w-12 h-12 rounded-full bg-gradient-to-br from-teal-100 to-cyan-100 dark:from-teal-900/30 dark:to-cyan-900/30 flex items-center justify-center">
+                    <span className="text-lg font-semibold text-teal-600 dark:text-teal-400">
                       {testimonial.author.split(" ").map(n => n[0]).join("")}
                     </span>
                   </div>
@@ -1040,7 +1040,7 @@ function ContactSection() {
                     <Button
                       type="submit"
                       size="lg"
-                      className="w-full bg-gradient-to-r from-violet-600 to-indigo-600 text-white border-0"
+                      className="w-full bg-gradient-to-r from-teal-600 to-cyan-600 text-white border-0"
                       disabled={mutation.isPending}
                       data-testid="button-submit-demo-request"
                     >
@@ -1074,8 +1074,8 @@ function ContactSection() {
                 <h3 className="text-xl font-semibold text-foreground mb-6">Contact Information</h3>
                 <div className="space-y-4">
                   <div className="flex items-start gap-4">
-                    <div className="w-10 h-10 rounded-lg bg-violet-100 dark:bg-violet-900/30 flex items-center justify-center flex-shrink-0">
-                      <MapPin className="w-5 h-5 text-violet-600 dark:text-violet-400" />
+                    <div className="w-10 h-10 rounded-lg bg-teal-100 dark:bg-teal-900/30 flex items-center justify-center flex-shrink-0">
+                      <MapPin className="w-5 h-5 text-teal-600 dark:text-teal-400" />
                     </div>
                     <div>
                       <div className="font-medium text-foreground">Address</div>
@@ -1088,14 +1088,14 @@ function ContactSection() {
                   </div>
 
                   <div className="flex items-start gap-4">
-                    <div className="w-10 h-10 rounded-lg bg-violet-100 dark:bg-violet-900/30 flex items-center justify-center flex-shrink-0">
-                      <Phone className="w-5 h-5 text-violet-600 dark:text-violet-400" />
+                    <div className="w-10 h-10 rounded-lg bg-teal-100 dark:bg-teal-900/30 flex items-center justify-center flex-shrink-0">
+                      <Phone className="w-5 h-5 text-teal-600 dark:text-teal-400" />
                     </div>
                     <div>
                       <div className="font-medium text-foreground">Phone</div>
                       <a
                         href="tel:+919894836016"
-                        className="text-muted-foreground hover:text-violet-600 transition-colors"
+                        className="text-muted-foreground hover:text-teal-600 transition-colors"
                         data-testid="link-phone"
                       >
                         +91 9894836016
@@ -1104,14 +1104,14 @@ function ContactSection() {
                   </div>
 
                   <div className="flex items-start gap-4">
-                    <div className="w-10 h-10 rounded-lg bg-violet-100 dark:bg-violet-900/30 flex items-center justify-center flex-shrink-0">
-                      <Mail className="w-5 h-5 text-violet-600 dark:text-violet-400" />
+                    <div className="w-10 h-10 rounded-lg bg-teal-100 dark:bg-teal-900/30 flex items-center justify-center flex-shrink-0">
+                      <Mail className="w-5 h-5 text-teal-600 dark:text-teal-400" />
                     </div>
                     <div>
                       <div className="font-medium text-foreground">Email</div>
                       <a
                         href="mailto:contact@edufy.in"
-                        className="text-muted-foreground hover:text-violet-600 transition-colors"
+                        className="text-muted-foreground hover:text-teal-600 transition-colors"
                         data-testid="link-email"
                       >
                         contact@edufy.in
@@ -1121,7 +1121,7 @@ function ContactSection() {
                 </div>
               </div>
 
-              <Card className="p-6 bg-gradient-to-br from-violet-600 to-indigo-600">
+              <Card className="p-6 bg-gradient-to-br from-teal-600 to-cyan-600">
                 <h4 className="text-lg font-semibold text-white mb-3">Why Choose Edufy?</h4>
                 <ul className="space-y-2">
                   {[
@@ -1190,7 +1190,7 @@ function Footer() {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-12 mb-12">
           <div className="lg:col-span-2">
             <div className="flex items-center gap-2 mb-6">
-              <div className="w-10 h-10 rounded-lg bg-gradient-to-br from-violet-600 to-indigo-600 flex items-center justify-center">
+              <div className="w-10 h-10 rounded-lg bg-gradient-to-br from-teal-600 to-cyan-600 flex items-center justify-center">
                 <GraduationCap className="w-6 h-6 text-white" />
               </div>
               <span className="text-xl font-bold text-background">Edufy</span>
@@ -1202,7 +1202,7 @@ function Footer() {
             <div className="flex items-center gap-4">
               <div className="text-sm text-background/60">
                 <div className="font-medium text-background mb-1">Chennai, India</div>
-                <a href="tel:+919894836016" className="hover:text-violet-400 transition-colors">
+                <a href="tel:+919894836016" className="hover:text-teal-400 transition-colors">
                   +91 9894836016
                 </a>
               </div>
@@ -1217,7 +1217,7 @@ function Footer() {
                   {link.href.startsWith("#") ? (
                     <button
                       onClick={() => scrollToSection(link.href)}
-                      className="text-background/70 hover:text-violet-400 transition-colors text-left"
+                      className="text-background/70 hover:text-teal-400 transition-colors text-left"
                       data-testid={`link-footer-${link.label.toLowerCase().replace(" ", "-")}`}
                     >
                       {link.label}
@@ -1225,7 +1225,7 @@ function Footer() {
                   ) : (
                     <Link
                       href={link.href}
-                      className="text-background/70 hover:text-violet-400 transition-colors"
+                      className="text-background/70 hover:text-teal-400 transition-colors"
                       data-testid={`link-footer-${link.label.toLowerCase().replace(" ", "-")}`}
                     >
                       {link.label}
@@ -1244,7 +1244,7 @@ function Footer() {
                   {link.href.startsWith("#") ? (
                     <button
                       onClick={() => scrollToSection(link.href)}
-                      className="text-background/70 hover:text-violet-400 transition-colors text-left"
+                      className="text-background/70 hover:text-teal-400 transition-colors text-left"
                       data-testid={`link-footer-${link.label.toLowerCase().replace(" ", "-")}`}
                     >
                       {link.label}
@@ -1252,7 +1252,7 @@ function Footer() {
                   ) : (
                     <Link
                       href={link.href}
-                      className="text-background/70 hover:text-violet-400 transition-colors"
+                      className="text-background/70 hover:text-teal-400 transition-colors"
                       data-testid={`link-footer-${link.label.toLowerCase().replace(" ", "-")}`}
                     >
                       {link.label}
@@ -1270,7 +1270,7 @@ function Footer() {
                 <li key={link.label}>
                   <button
                     onClick={() => scrollToSection(link.href)}
-                    className="text-background/70 hover:text-violet-400 transition-colors text-left"
+                    className="text-background/70 hover:text-teal-400 transition-colors text-left"
                     data-testid={`link-footer-${link.label.toLowerCase().replace(" ", "-")}`}
                   >
                     {link.label}
@@ -1290,7 +1290,7 @@ function Footer() {
               <a
                 key={social.label}
                 href={social.href}
-                className="w-10 h-10 rounded-lg bg-background/10 flex items-center justify-center hover:bg-violet-600 transition-colors"
+                className="w-10 h-10 rounded-lg bg-background/10 flex items-center justify-center hover:bg-teal-600 transition-colors"
                 aria-label={social.label}
                 data-testid={`link-social-${social.label.toLowerCase()}`}
               >

@@ -60,7 +60,7 @@ Modern, SEO-optimized landing page for Edufy, an EdTech company based in Chennai
 - **UI Components**: Shadcn/ui
 
 ## Design System
-- **Colors**: Blue/purple gradient theme (Violet-600 to Indigo-600)
+- **Colors**: Teal/Cyan gradient theme (teal-600 to cyan-600 with amber accents)
 - **Typography**: Inter and Plus Jakarta Sans
 - **Spacing**: Consistent 4px base unit
 - **Border Radius**: Rounded-md (6px) for most elements

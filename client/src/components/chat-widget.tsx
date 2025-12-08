@@ -31,7 +31,7 @@ const initialMessages: Message[] = [
 const botResponses: { [key: string]: string } = {
   pricing: "Our pricing starts at ₹4,999/month for the Starter plan. We also offer Professional (₹9,999/month) and Enterprise (custom pricing) tiers. Would you like to schedule a demo to discuss your school's needs?",
   demo: "Great! You can request a demo by filling out the contact form on our homepage, or I can help you get started. Just scroll down to the 'Request a Demo' section.",
-  features: "Edu-Trakup offers AI Analytics, Attendance Tracking, Fee Management, Homework Management, Instant Messaging, and Multi-School Support. Would you like to learn more about any specific feature?",
+  features: "Edufy offers AI Analytics, Attendance Tracking, Fee Management, Homework Management, Instant Messaging, and Multi-School Support. Would you like to learn more about any specific feature?",
   attendance: "Our attendance system supports both biometric and app-based check-ins. Parents receive instant notifications when their child is marked absent. It's incredibly fast and accurate!",
   contact: "You can reach us at +91 9894836016 or email contact@edufy.in. Our office is located at 123 Tech Park, OMR, Chennai 600096.",
   default: "Thank you for your question! For detailed information, I recommend scheduling a demo with our team. They can provide personalized answers based on your school's specific needs. Would you like me to help you request a demo?"
@@ -106,7 +106,7 @@ export function ChatWidget() {
             className="fixed bottom-24 right-4 z-50 w-[360px] max-w-[calc(100vw-2rem)]"
           >
             <Card className="overflow-hidden shadow-xl">
-              <div className="bg-gradient-to-r from-violet-600 to-indigo-600 p-4 flex items-center justify-between">
+              <div className="bg-gradient-to-r from-teal-600 to-cyan-600 p-4 flex items-center justify-between">
                 <div className="flex items-center gap-3">
                   <div className="w-10 h-10 rounded-full bg-white/20 flex items-center justify-center">
                     <Bot className="w-5 h-5 text-white" />
@@ -137,12 +137,12 @@ export function ChatWidget() {
                       <div
                         className={`w-8 h-8 rounded-full flex items-center justify-center flex-shrink-0 ${
                           message.isBot
-                            ? "bg-gradient-to-br from-violet-100 to-indigo-100 dark:from-violet-900/30 dark:to-indigo-900/30"
+                            ? "bg-gradient-to-br from-teal-100 to-cyan-100 dark:from-teal-900/30 dark:to-cyan-900/30"
                             : "bg-muted"
                         }`}
                       >
                         {message.isBot ? (
-                          <Bot className="w-4 h-4 text-violet-600 dark:text-violet-400" />
+                          <Bot className="w-4 h-4 text-teal-600 dark:text-teal-400" />
                         ) : (
                           <User className="w-4 h-4 text-muted-foreground" />
                         )}
@@ -151,7 +151,7 @@ export function ChatWidget() {
                         className={`rounded-lg px-3 py-2 max-w-[80%] text-sm ${
                           message.isBot
                             ? "bg-muted text-foreground"
-                            : "bg-gradient-to-r from-violet-600 to-indigo-600 text-white"
+                            : "bg-gradient-to-r from-teal-600 to-cyan-600 text-white"
                         }`}
                       >
                         {message.text}
@@ -174,7 +174,7 @@ export function ChatWidget() {
                   <Button
                     size="icon"
                     onClick={handleSend}
-                    className="bg-gradient-to-r from-violet-600 to-indigo-600 text-white border-0"
+                    className="bg-gradient-to-r from-teal-600 to-cyan-600 text-white border-0"
                     data-testid="button-send-chat"
                   >
                     <Send className="w-4 h-4" />
@@ -192,7 +192,7 @@ export function ChatWidget() {
         whileHover={{ scale: 1.1 }}
         whileTap={{ scale: 0.95 }}
         onClick={() => setIsOpen(!isOpen)}
-        className="fixed bottom-4 right-4 z-50 w-14 h-14 rounded-full bg-gradient-to-r from-violet-600 to-indigo-600 text-white shadow-lg flex items-center justify-center"
+        className="fixed bottom-4 right-4 z-50 w-14 h-14 rounded-full bg-gradient-to-r from-teal-600 to-cyan-600 text-white shadow-lg flex items-center justify-center"
         data-testid="button-open-chat"
       >
         <AnimatePresence mode="wait">

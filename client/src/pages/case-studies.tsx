@@ -42,14 +42,14 @@ const caseStudies = [
     students: "2,500+",
     image: schoolsImage,
     challenge: "Managing attendance for 2,500+ students across multiple buildings was time-consuming and error-prone. Parents had no real-time visibility into their child's attendance.",
-    solution: "Implemented Edu-Trakup's biometric and app-based attendance system with instant parent notifications.",
+    solution: "Implemented Edufy's biometric and app-based attendance system with instant parent notifications.",
     results: [
       { metric: "95%", label: "Attendance Accuracy" },
       { metric: "40%", label: "Time Saved Daily" },
       { metric: "85%", label: "Parent Satisfaction" }
     ],
     testimonial: {
-      quote: "Edu-Trakup transformed our attendance process. What used to take 30 minutes now takes 2 minutes, and parents love the instant notifications.",
+      quote: "Edufy transformed our attendance process. What used to take 30 minutes now takes 2 minutes, and parents love the instant notifications.",
       author: "Dr. Lakshmi Venkatesh",
       role: "Principal"
     }
@@ -62,7 +62,7 @@ const caseStudies = [
     students: "1,800+",
     image: teachersImage,
     challenge: "Fee collection was a major headache with manual tracking, late payments, and parent complaints about lack of transparency.",
-    solution: "Deployed Edu-Trakup's automated fee management with multiple payment options and smart reminders.",
+    solution: "Deployed Edufy's automated fee management with multiple payment options and smart reminders.",
     results: [
       { metric: "30%", label: "Faster Collections" },
       { metric: "60%", label: "Fewer Late Payments" },
@@ -82,7 +82,7 @@ const caseStudies = [
     students: "3,200+",
     image: parentsImage,
     challenge: "Communication between teachers and parents was fragmented. Important messages were often missed, leading to confusion and complaints.",
-    solution: "Implemented Edu-Trakup's unified messaging platform with broadcast announcements and direct teacher-parent chat.",
+    solution: "Implemented Edufy's unified messaging platform with broadcast announcements and direct teacher-parent chat.",
     results: [
       { metric: "90%", label: "Message Read Rate" },
       { metric: "75%", label: "Parent Engagement" },
@@ -98,7 +98,7 @@ const caseStudies = [
 
 function CaseStudiesHeader() {
   return (
-    <section className="pt-32 pb-16 bg-gradient-to-br from-violet-600 to-indigo-600">
+    <section className="pt-32 pb-16 bg-gradient-to-br from-teal-600 to-cyan-600">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <motion.div
           initial="hidden"
@@ -130,7 +130,7 @@ function CaseStudiesHeader() {
             variants={fadeInUp}
             className="text-lg text-white/80 max-w-2xl mx-auto"
           >
-            See how schools across Chennai are transforming their operations with Edu-Trakup
+            See how schools across Chennai are transforming their operations with Edufy
           </motion.p>
         </motion.div>
       </div>
@@ -158,8 +158,8 @@ function StatsSection() {
         >
           {stats.map((stat, index) => (
             <motion.div key={index} variants={fadeInUp} className="text-center">
-              <div className="w-12 h-12 rounded-lg bg-gradient-to-br from-violet-100 to-indigo-100 dark:from-violet-900/30 dark:to-indigo-900/30 flex items-center justify-center mx-auto mb-4">
-                <stat.icon className="w-6 h-6 text-violet-600 dark:text-violet-400" />
+              <div className="w-12 h-12 rounded-lg bg-gradient-to-br from-teal-100 to-cyan-100 dark:from-teal-900/30 dark:to-cyan-900/30 flex items-center justify-center mx-auto mb-4">
+                <stat.icon className="w-6 h-6 text-teal-600 dark:text-teal-400" />
               </div>
               <div className="text-3xl font-bold text-foreground mb-1">{stat.value}</div>
               <div className="text-sm text-muted-foreground">{stat.label}</div>
@@ -228,8 +228,8 @@ function CaseStudyCard({ study, index }: { study: typeof caseStudies[0]; index: 
 
         <div className="grid grid-cols-3 gap-4 mb-6">
           {study.results.map((result, i) => (
-            <div key={i} className="text-center p-3 rounded-lg bg-violet-50 dark:bg-violet-900/20">
-              <div className="text-xl font-bold text-violet-600 dark:text-violet-400">{result.metric}</div>
+            <div key={i} className="text-center p-3 rounded-lg bg-teal-50 dark:bg-teal-900/20">
+              <div className="text-xl font-bold text-teal-600 dark:text-teal-400">{result.metric}</div>
               <div className="text-xs text-muted-foreground">{result.label}</div>
             </div>
           ))}
@@ -264,7 +264,7 @@ function CaseStudiesList() {
 
 function CTASection() {
   return (
-    <section className="py-20 bg-gradient-to-br from-violet-600 to-indigo-600">
+    <section className="py-20 bg-gradient-to-br from-teal-600 to-cyan-600">
       <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
         <motion.div
           initial="hidden"
@@ -276,11 +276,11 @@ function CTASection() {
             Ready to Write Your Success Story?
           </motion.h2>
           <motion.p variants={fadeInUp} className="text-lg text-white/80 mb-8 max-w-2xl mx-auto">
-            Join 500+ schools across Chennai that have transformed their operations with Edu-Trakup. Start your 14-day free trial today.
+            Join 500+ schools across Chennai that have transformed their operations with Edufy. Start your 14-day free trial today.
           </motion.p>
           <motion.div variants={fadeInUp} className="flex flex-col sm:flex-row gap-4 justify-center">
             <Link href="/#contact">
-              <Button size="lg" className="bg-white text-violet-600 hover:bg-white/90">
+              <Button size="lg" className="bg-white text-teal-600 hover:bg-white/90">
                 Request a Demo
                 <ArrowRight className="w-4 h-4 ml-2" />
               </Button>
@@ -302,7 +302,7 @@ function CaseStudiesFooter() {
     <section className="py-12 bg-foreground">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
         <div className="flex items-center justify-center gap-2 mb-4">
-          <div className="w-10 h-10 rounded-lg bg-gradient-to-br from-violet-600 to-indigo-600 flex items-center justify-center">
+          <div className="w-10 h-10 rounded-lg bg-gradient-to-br from-teal-600 to-cyan-600 flex items-center justify-center">
             <GraduationCap className="w-6 h-6 text-white" />
           </div>
           <span className="text-xl font-bold text-background">Edufy</span>

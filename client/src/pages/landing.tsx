@@ -249,7 +249,7 @@ function HeroSection() {
             className="text-lg md:text-xl text-white/80 mb-8 max-w-2xl leading-relaxed"
             data-testid="text-hero-subtext"
           >
-            Edu-Trakup connects students, teachers, parents, and administrators through one powerful platform. 
+            Edufy connects students, teachers, parents, and administrators through one powerful platform. 
             Get AI-powered insights, real-time updates, and seamless communication for your school.
           </motion.p>
 
@@ -793,7 +793,7 @@ function PricingSection() {
 function TestimonialsSection() {
   const testimonials = [
     {
-      quote: "Edu-Trakup has transformed how we manage our school. The AI analytics helped us identify at-risk students early and improve our overall results by 25%.",
+      quote: "Edufy has transformed how we manage our school. The AI analytics helped us identify at-risk students early and improve our overall results by 25%.",
       author: "Dr. Lakshmi Venkatesh",
       role: "Principal",
       school: "Chennai Public School",
@@ -841,7 +841,7 @@ function TestimonialsSection() {
             variants={fadeInUp}
             className="text-lg text-muted-foreground max-w-2xl mx-auto"
           >
-            Hear from schools across Chennai who have transformed their operations with Edu-Trakup
+            Hear from schools across Chennai who have transformed their operations with Edufy
           </motion.p>
         </motion.div>
 

@@ -51,7 +51,7 @@ export default function BlogPostPage() {
 
   return (
     <div className="min-h-screen bg-background">
-      <section className="pt-32 pb-16 bg-gradient-to-br from-violet-600 to-indigo-600">
+      <section className="pt-32 pb-16 bg-gradient-to-br from-teal-600 to-cyan-600">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
           <motion.div
             initial="hidden"
@@ -114,15 +114,15 @@ export default function BlogPostPage() {
 
       <section className="py-16 bg-card">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-          <Card className="p-8 bg-gradient-to-br from-violet-600 to-indigo-600 text-center">
+          <Card className="p-8 bg-gradient-to-br from-teal-600 to-cyan-600 text-center">
             <h2 className="text-2xl font-bold text-white mb-4">
               Ready to Transform Your School?
             </h2>
             <p className="text-white/80 mb-6 max-w-xl mx-auto">
-              Join hundreds of schools across Chennai using Edu-Trakup to streamline operations and enhance learning outcomes.
+              Join hundreds of schools across Chennai using Edufy to streamline operations and enhance learning outcomes.
             </p>
             <Link href="/#contact">
-              <Button size="lg" className="bg-white text-violet-600 hover:bg-white/90">
+              <Button size="lg" className="bg-white text-teal-600 hover:bg-white/90">
                 Request a Free Demo
                 <ArrowRight className="w-4 h-4 ml-2" />
               </Button>
@@ -159,10 +159,10 @@ export default function BlogPostPage() {
       <section className="py-12 bg-card border-t">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <div className="flex items-center justify-center gap-2 mb-4">
-            <div className="w-10 h-10 rounded-lg bg-gradient-to-br from-violet-600 to-indigo-600 flex items-center justify-center">
+            <div className="w-10 h-10 rounded-lg bg-gradient-to-br from-teal-600 to-cyan-600 flex items-center justify-center">
               <GraduationCap className="w-6 h-6 text-white" />
             </div>
-            <span className="text-xl font-bold bg-gradient-to-r from-violet-600 to-indigo-600 bg-clip-text text-transparent">
+            <span className="text-xl font-bold bg-gradient-to-r from-teal-600 to-cyan-600 bg-clip-text text-transparent">
               Edufy
             </span>
           </div>

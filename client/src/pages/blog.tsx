@@ -42,7 +42,7 @@ export const blogPosts = [
       <p>Artificial Intelligence is no longer a futuristic concept in Indian education—it's a present reality transforming how schools operate across Chennai and beyond. From personalized learning paths to automated administrative tasks, AI is helping educators focus on what matters most: teaching.</p>
       
       <h2>The Rise of AI-Powered Learning</h2>
-      <p>Indian schools are increasingly adopting AI tools to identify learning gaps, predict student performance, and provide tailored educational experiences. Tools like Edu-Trakup are at the forefront of this revolution, offering schools powerful analytics that were previously only available to large institutions.</p>
+      <p>Indian schools are increasingly adopting AI tools to identify learning gaps, predict student performance, and provide tailored educational experiences. Tools like Edufy are at the forefront of this revolution, offering schools powerful analytics that were previously only available to large institutions.</p>
       
       <h2>Key Benefits for Indian Schools</h2>
       <ul>
@@ -83,7 +83,7 @@ export const blogPosts = [
       </ul>
       
       <h2>Implementation Success Stories</h2>
-      <p>Schools in Chennai that have adopted Edu-Trakup's digital attendance system report 40% reduction in time spent on attendance-related tasks and near-perfect accuracy in their records. Parents particularly appreciate the instant notifications feature.</p>
+      <p>Schools in Chennai that have adopted Edufy's digital attendance system report 40% reduction in time spent on attendance-related tasks and near-perfect accuracy in their records. Parents particularly appreciate the instant notifications feature.</p>
       
       <h2>Getting Started</h2>
       <p>Transitioning to digital attendance doesn't have to be complex. With the right partner, schools can be up and running within days, with full training and support provided throughout the process.</p>
@@ -116,7 +116,7 @@ export const blogPosts = [
       <p>While digital tools enable constant connectivity, it's important to establish healthy boundaries. Most schools find success with designated communication hours and emergency protocols for urgent situations.</p>
       
       <h2>Measuring Success</h2>
-      <p>Schools using comprehensive communication platforms like Edu-Trakup report higher parent satisfaction scores, increased attendance at school events, and improved student performance—all indicators of successful home-school partnerships.</p>
+      <p>Schools using comprehensive communication platforms like Edufy report higher parent satisfaction scores, increased attendance at school events, and improved student performance—all indicators of successful home-school partnerships.</p>
     `
   },
   {
@@ -141,7 +141,7 @@ export const blogPosts = [
       </ul>
       
       <h2>The Digital Solution</h2>
-      <p>Modern fee management systems automate the entire process, from generating invoices to sending reminders and reconciling payments. Schools using Edu-Trakup's fee management module report 30% improvement in collection rates within the first semester.</p>
+      <p>Modern fee management systems automate the entire process, from generating invoices to sending reminders and reconciling payments. Schools using Edufy's fee management module report 30% improvement in collection rates within the first semester.</p>
       
       <h2>Key Features to Look For</h2>
       <ul>
@@ -159,7 +159,7 @@ export const blogPosts = [
 
 function BlogHeader() {
   return (
-    <section className="pt-32 pb-16 bg-gradient-to-br from-violet-600 to-indigo-600">
+    <section className="pt-32 pb-16 bg-gradient-to-br from-teal-600 to-cyan-600">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <motion.div
           initial="hidden"
@@ -212,8 +212,8 @@ function BlogGrid() {
                   data-testid={`card-blog-post-${index}`}
                 >
                   <div className="flex items-start gap-4">
-                    <div className="w-12 h-12 rounded-lg bg-gradient-to-br from-violet-100 to-indigo-100 dark:from-violet-900/30 dark:to-indigo-900/30 flex items-center justify-center flex-shrink-0">
-                      <post.icon className="w-6 h-6 text-violet-600 dark:text-violet-400" />
+                    <div className="w-12 h-12 rounded-lg bg-gradient-to-br from-teal-100 to-cyan-100 dark:from-teal-900/30 dark:to-cyan-900/30 flex items-center justify-center flex-shrink-0">
+                      <post.icon className="w-6 h-6 text-teal-600 dark:text-teal-400" />
                     </div>
                     <div className="flex-1">
                       <Badge variant="secondary" size="sm" className="mb-3">
@@ -258,10 +258,10 @@ function BlogFooter() {
           variants={staggerContainer}
         >
           <motion.div variants={fadeInUp} className="flex items-center justify-center gap-2 mb-4">
-            <div className="w-10 h-10 rounded-lg bg-gradient-to-br from-violet-600 to-indigo-600 flex items-center justify-center">
+            <div className="w-10 h-10 rounded-lg bg-gradient-to-br from-teal-600 to-cyan-600 flex items-center justify-center">
               <GraduationCap className="w-6 h-6 text-white" />
             </div>
-            <span className="text-xl font-bold bg-gradient-to-r from-violet-600 to-indigo-600 bg-clip-text text-transparent">
+            <span className="text-xl font-bold bg-gradient-to-r from-teal-600 to-cyan-600 bg-clip-text text-transparent">
               Edufy
             </span>
           </motion.div>
@@ -270,7 +270,7 @@ function BlogFooter() {
           </motion.p>
           <motion.div variants={fadeInUp}>
             <Link href="/#contact">
-              <Button className="bg-gradient-to-r from-violet-600 to-indigo-600 text-white border-0">
+              <Button className="bg-gradient-to-r from-teal-600 to-cyan-600 text-white border-0">
                 Request a Demo
                 <ArrowRight className="w-4 h-4 ml-2" />
               </Button>

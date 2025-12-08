@@ -1,4 +1,4 @@
-# Edufy Edu-Trakup Landing Page Design Guidelines
+# Edufy Landing Page Design Guidelines
 
 ## Design Approach
 Reference-based approach drawing from successful EdTech platforms (Coursera, Udemy) and modern SaaS products (Linear, Notion) with Indian educational context. Clean, trustworthy aesthetic emphasizing AI capabilities and ease of use.
@@ -18,8 +18,8 @@ Reference-based approach drawing from successful EdTech platforms (Coursera, Ude
 - **Grid system**: 12-column responsive grid
 
 ### Visual Treatment
-- **Blue/Purple gradient**: Primary brand gradient (e.g., from #4F46E5 to #7C3AED)
-- **Accent gradient**: Lighter variants for cards and CTAs
+- **Teal/Cyan gradient**: Primary brand gradient (from teal-600 #0D9488 to cyan-600 #0891B2)
+- **Accent gradient**: Lighter teal variants for cards and CTAs
 - **Cards**: Soft shadows, subtle borders, rounded corners (12-16px radius)
 - **Glassmorphism**: Subtle backdrop blur for buttons over hero images
 

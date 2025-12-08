@@ -1,7 +1,7 @@
-# Edufy - Edu-Trakup Landing Page
+# Edufy Landing Page
 
 ## Overview
-Modern, SEO-optimized landing page for Edufy, an EdTech company based in Chennai, India. The site promotes Edu-Trakup, an AI-powered mobile app connecting students, teachers, parents, and administrators.
+Modern, SEO-optimized landing page for Edufy, an EdTech company based in Chennai, India. The site promotes Edufy's AI-powered mobile app connecting students, teachers, parents, and administrators.
 
 ## Project Structure
 ```

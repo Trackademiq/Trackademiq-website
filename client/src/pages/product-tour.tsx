@@ -46,7 +46,7 @@ const tourSteps = [
       "Customizable dashboards for each role",
       "Automated report generation"
     ],
-    color: "from-violet-500 to-purple-600"
+    color: "from-teal-500 to-cyan-600"
   },
   {
     id: 2,
@@ -111,13 +111,13 @@ const tourSteps = [
       "Unified fee and attendance",
       "Cross-campus communication"
     ],
-    color: "from-indigo-500 to-violet-600"
+    color: "from-cyan-500 to-teal-600"
   }
 ];
 
 function ProductTourHeader() {
   return (
-    <section className="pt-32 pb-16 bg-gradient-to-br from-violet-600 to-indigo-600">
+    <section className="pt-32 pb-16 bg-gradient-to-br from-teal-600 to-cyan-600">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <motion.div
           initial="hidden"
@@ -143,13 +143,13 @@ function ProductTourHeader() {
             variants={fadeInUp}
             className="text-4xl md:text-5xl font-bold text-white mb-4"
           >
-            Explore Edu-Trakup Features
+            Explore Edufy Features
           </motion.h1>
           <motion.p
             variants={fadeInUp}
             className="text-lg text-white/80 max-w-2xl mx-auto"
           >
-            Take an interactive walkthrough of all the powerful features that make Edu-Trakup the preferred choice for schools across Chennai
+            Take an interactive walkthrough of all the powerful features that make Edufy the preferred choice for schools across Chennai
           </motion.p>
         </motion.div>
       </div>
@@ -184,7 +184,7 @@ function InteractiveTour() {
               onClick={() => setActiveStep(index)}
               className={`flex items-center gap-2 px-4 py-2 rounded-full text-sm font-medium transition-all ${
                 activeStep === index
-                  ? "bg-gradient-to-r from-violet-600 to-indigo-600 text-white"
+                  ? "bg-gradient-to-r from-teal-600 to-cyan-600 text-white"
                   : "bg-muted text-muted-foreground hover:bg-muted/80"
               }`}
               data-testid={`button-tour-step-${index}`}
@@ -246,7 +246,7 @@ function InteractiveTour() {
                 <Button
                   onClick={goToNext}
                   disabled={activeStep === tourSteps.length - 1}
-                  className="bg-gradient-to-r from-violet-600 to-indigo-600 text-white border-0"
+                  className="bg-gradient-to-r from-teal-600 to-cyan-600 text-white border-0"
                   data-testid="button-tour-next"
                 >
                   Next
@@ -263,7 +263,7 @@ function InteractiveTour() {
                   <p className="text-white/80">Interactive demo coming soon</p>
                 </div>
               </Card>
-              <div className="absolute -bottom-4 -right-4 w-20 h-20 bg-gradient-to-br from-violet-200 to-indigo-200 dark:from-violet-900/30 dark:to-indigo-900/30 rounded-full blur-xl" />
+              <div className="absolute -bottom-4 -right-4 w-20 h-20 bg-gradient-to-br from-teal-200 to-cyan-200 dark:from-teal-900/30 dark:to-cyan-900/30 rounded-full blur-xl" />
               <div className="absolute -top-4 -left-4 w-16 h-16 bg-gradient-to-br from-pink-200 to-rose-200 dark:from-pink-900/30 dark:to-rose-900/30 rounded-full blur-xl" />
             </div>
           </motion.div>
@@ -277,7 +277,7 @@ function InteractiveTour() {
                 onClick={() => setActiveStep(index)}
                 className={`w-2 h-2 rounded-full transition-all ${
                   activeStep === index
-                    ? "w-6 bg-violet-600"
+                    ? "w-6 bg-teal-600"
                     : "bg-muted-foreground/30"
                 }`}
               />
@@ -310,7 +310,7 @@ function AllFeaturesGrid() {
             Everything You Need in One Platform
           </motion.h2>
           <motion.p variants={fadeInUp} className="text-muted-foreground max-w-2xl mx-auto">
-            Edu-Trakup brings together all the tools your school needs for seamless management
+            Edufy brings together all the tools your school needs for seamless management
           </motion.p>
         </motion.div>
 
@@ -340,7 +340,7 @@ function AllFeaturesGrid() {
 
 function CTASection() {
   return (
-    <section className="py-20 bg-gradient-to-br from-violet-600 to-indigo-600">
+    <section className="py-20 bg-gradient-to-br from-teal-600 to-cyan-600">
       <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
         <motion.div
           initial="hidden"
@@ -352,11 +352,11 @@ function CTASection() {
             Ready to Get Started?
           </motion.h2>
           <motion.p variants={fadeInUp} className="text-lg text-white/80 mb-8 max-w-2xl mx-auto">
-            Experience the power of Edu-Trakup with a personalized demo. Our team will show you exactly how it can transform your school.
+            Experience the power of Edufy with a personalized demo. Our team will show you exactly how it can transform your school.
           </motion.p>
           <motion.div variants={fadeInUp} className="flex flex-col sm:flex-row gap-4 justify-center">
             <Link href="/#contact">
-              <Button size="lg" className="bg-white text-violet-600 hover:bg-white/90">
+              <Button size="lg" className="bg-white text-teal-600 hover:bg-white/90">
                 Request a Demo
                 <ArrowRight className="w-4 h-4 ml-2" />
               </Button>
@@ -378,7 +378,7 @@ function ProductTourFooter() {
     <section className="py-12 bg-foreground">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
         <div className="flex items-center justify-center gap-2 mb-4">
-          <div className="w-10 h-10 rounded-lg bg-gradient-to-br from-violet-600 to-indigo-600 flex items-center justify-center">
+          <div className="w-10 h-10 rounded-lg bg-gradient-to-br from-teal-600 to-cyan-600 flex items-center justify-center">
             <GraduationCap className="w-6 h-6 text-white" />
           </div>
           <span className="text-xl font-bold text-background">Edufy</span>

@@ -42,7 +42,7 @@ import {
 } from "lucide-react";
 import { SiLinkedin, SiFacebook, SiInstagram, SiX, SiYoutube } from "react-icons/si";
 
-import heroImage from "@assets/generated_images/modern_indian_classroom_students.png";
+import heroVideo from "@assets/generated_videos/edufy_school_management_promo.mp4";
 import schoolsImage from "@assets/generated_images/indian_school_principal_administrator.png";
 import teachersImage from "@assets/generated_images/indian_teacher_with_tablet_students.png";
 import parentsImage from "@assets/generated_images/indian_parent_helping_child_homework.png";
@@ -300,12 +300,16 @@ function HeroSection() {
             className="hidden lg:block relative"
           >
             <div className="relative rounded-2xl overflow-hidden shadow-2xl shadow-teal-500/20 border border-white/10">
-              <img
-                src={heroImage}
-                alt="Diverse Indian students learning in a modern classroom with tablets and laptops"
+              <video
+                src={heroVideo}
+                autoPlay
+                loop
+                muted
+                playsInline
                 className="w-full h-auto object-cover"
+                data-testid="video-hero"
               />
-              <div className="absolute inset-0 bg-gradient-to-t from-teal-950/50 to-transparent" />
+              <div className="absolute inset-0 bg-gradient-to-t from-teal-950/50 to-transparent pointer-events-none" />
             </div>
             <div className="absolute -bottom-6 -left-6 bg-white/10 backdrop-blur-md rounded-xl p-4 border border-white/20">
               <div className="flex items-center gap-3">

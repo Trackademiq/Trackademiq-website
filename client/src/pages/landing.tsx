@@ -104,7 +104,11 @@ function Header() {
             <div className="w-10 h-10 rounded-lg bg-gradient-to-br from-violet-600 to-indigo-600 flex items-center justify-center">
               <GraduationCap className="w-6 h-6 text-white" />
             </div>
-            <span className="text-xl font-bold bg-gradient-to-r from-violet-600 to-indigo-600 bg-clip-text text-transparent">
+            <span className={`text-xl font-bold transition-colors ${
+              isScrolled 
+                ? "bg-gradient-to-r from-violet-600 to-indigo-600 bg-clip-text text-transparent"
+                : "text-white"
+            }`}>
               Edufy
             </span>
           </a>
@@ -114,7 +118,11 @@ function Header() {
               <button
                 key={link.href}
                 onClick={() => scrollToSection(link.href)}
-                className="px-4 py-2 text-sm font-medium text-muted-foreground hover:text-foreground transition-colors rounded-md"
+                className={`px-4 py-2 text-sm font-medium transition-colors rounded-md ${
+                  isScrolled
+                    ? "text-muted-foreground hover:text-foreground"
+                    : "text-white/80 hover:text-white"
+                }`}
                 data-testid={`link-nav-${link.label.toLowerCase().replace(" ", "-")}`}
               >
                 {link.label}
@@ -126,6 +134,7 @@ function Header() {
             <Button
               variant="ghost"
               onClick={() => scrollToSection("#contact")}
+              className={isScrolled ? "" : "text-white hover:text-white hover:bg-white/10"}
               data-testid="button-request-demo-header"
             >
               Request Demo
@@ -140,7 +149,7 @@ function Header() {
           </div>
 
           <button
-            className="lg:hidden p-2 rounded-md"
+            className={`lg:hidden p-2 rounded-md ${isScrolled ? "text-foreground" : "text-white"}`}
             onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
             data-testid="button-mobile-menu-toggle"
           >

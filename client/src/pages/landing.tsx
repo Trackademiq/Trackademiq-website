@@ -235,7 +235,7 @@ function HeroSection() {
 
           <motion.h1
             variants={fadeInUp}
-            className="text-4xl md:text-5xl lg:text-6xl font-bold text-white leading-tight mb-6"
+            className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-white leading-[1.2] sm:leading-tight mb-4 sm:mb-6"
             data-testid="text-hero-headline"
           >
             Smart School Management,{" "}
@@ -246,7 +246,7 @@ function HeroSection() {
 
           <motion.p
             variants={fadeInUp}
-            className="text-lg md:text-xl text-white/80 mb-8 max-w-2xl leading-relaxed"
+            className="text-base sm:text-lg md:text-xl text-white/80 mb-6 sm:mb-8 max-w-2xl leading-relaxed"
             data-testid="text-hero-subtext"
           >
             Edufy connects students, teachers, parents, and administrators through one powerful platform. 
@@ -276,18 +276,18 @@ function HeroSection() {
 
           <motion.div
             variants={fadeInUp}
-            className="flex flex-wrap items-center gap-6 mt-12 text-white/70 text-sm"
+            className="flex flex-wrap items-center gap-4 sm:gap-6 mt-8 sm:mt-12 text-white/70 text-xs sm:text-sm"
           >
             <div className="flex items-center gap-2">
-              <CheckCircle2 className="w-5 h-5 text-green-400" />
+              <CheckCircle2 className="w-4 h-4 sm:w-5 sm:h-5 text-green-400" />
               <span>500+ Schools Trust Us</span>
             </div>
             <div className="flex items-center gap-2">
-              <CheckCircle2 className="w-5 h-5 text-green-400" />
+              <CheckCircle2 className="w-4 h-4 sm:w-5 sm:h-5 text-green-400" />
               <span>2 Lakh+ Students</span>
             </div>
             <div className="flex items-center gap-2">
-              <CheckCircle2 className="w-5 h-5 text-green-400" />
+              <CheckCircle2 className="w-4 h-4 sm:w-5 sm:h-5 text-green-400" />
               <span>4.8 Star Rating</span>
             </div>
           </motion.div>
@@ -381,14 +381,14 @@ function FeaturesSection() {
   ];
 
   return (
-    <section id="features" className="py-20 md:py-28 bg-background" data-testid="section-features">
+    <section id="features" className="py-16 sm:py-20 md:py-28 bg-background" data-testid="section-features">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <motion.div
           initial="hidden"
           whileInView="visible"
           viewport={{ once: true, margin: "-100px" }}
           variants={staggerContainer}
-          className="text-center mb-16"
+          className="text-center mb-10 sm:mb-16"
         >
           <motion.div variants={fadeInUp}>
             <Badge className="mb-4" variant="secondary" size="sm">
@@ -398,13 +398,13 @@ function FeaturesSection() {
           </motion.div>
           <motion.h2
             variants={fadeInUp}
-            className="text-3xl md:text-4xl font-bold text-foreground mb-4"
+            className="text-2xl sm:text-3xl md:text-4xl font-bold text-foreground mb-3 sm:mb-4"
           >
             Everything Your School Needs
           </motion.h2>
           <motion.p
             variants={fadeInUp}
-            className="text-lg text-muted-foreground max-w-2xl mx-auto"
+            className="text-base sm:text-lg text-muted-foreground max-w-2xl mx-auto px-2"
           >
             Comprehensive tools designed to streamline school operations and enhance the learning experience
           </motion.p>
@@ -420,14 +420,14 @@ function FeaturesSection() {
           {features.map((feature, index) => (
             <motion.div key={feature.title} variants={fadeInUp}>
               <Card
-                className="p-6 h-full border-t-4 border-t-transparent hover:border-t-teal-500 transition-all duration-300 hover-elevate"
+                className="p-4 sm:p-6 h-full border-t-4 border-t-transparent hover:border-t-teal-500 transition-all duration-300 hover-elevate"
                 data-testid={`card-feature-${index}`}
               >
-                <div className="w-12 h-12 rounded-lg bg-gradient-to-br from-teal-100 to-cyan-100 dark:from-teal-900/30 dark:to-cyan-900/30 flex items-center justify-center mb-4">
-                  <feature.icon className="w-6 h-6 text-teal-600 dark:text-teal-400" />
+                <div className="w-10 h-10 sm:w-12 sm:h-12 rounded-lg bg-gradient-to-br from-teal-100 to-cyan-100 dark:from-teal-900/30 dark:to-cyan-900/30 flex items-center justify-center mb-3 sm:mb-4">
+                  <feature.icon className="w-5 h-5 sm:w-6 sm:h-6 text-teal-600 dark:text-teal-400" />
                 </div>
-                <h3 className="text-xl font-semibold text-foreground mb-2">{feature.title}</h3>
-                <p className="text-muted-foreground leading-relaxed">{feature.description}</p>
+                <h3 className="text-lg sm:text-xl font-semibold text-foreground mb-2">{feature.title}</h3>
+                <p className="text-sm sm:text-base text-muted-foreground leading-relaxed">{feature.description}</p>
               </Card>
             </motion.div>
           ))}
@@ -457,14 +457,14 @@ function HowItWorksSection() {
   ];
 
   return (
-    <section id="how-it-works" className="py-20 md:py-28 bg-card" data-testid="section-how-it-works">
+    <section id="how-it-works" className="py-16 sm:py-20 md:py-28 bg-card" data-testid="section-how-it-works">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <motion.div
           initial="hidden"
           whileInView="visible"
           viewport={{ once: true, margin: "-100px" }}
           variants={staggerContainer}
-          className="text-center mb-16"
+          className="text-center mb-10 sm:mb-16"
         >
           <motion.div variants={fadeInUp}>
             <Badge className="mb-4" variant="secondary" size="sm">
@@ -474,13 +474,13 @@ function HowItWorksSection() {
           </motion.div>
           <motion.h2
             variants={fadeInUp}
-            className="text-3xl md:text-4xl font-bold text-foreground mb-4"
+            className="text-2xl sm:text-3xl md:text-4xl font-bold text-foreground mb-3 sm:mb-4"
           >
             Get Started in 3 Easy Steps
           </motion.h2>
           <motion.p
             variants={fadeInUp}
-            className="text-lg text-muted-foreground max-w-2xl mx-auto"
+            className="text-base sm:text-lg text-muted-foreground max-w-2xl mx-auto px-2"
           >
             We've made onboarding simple so you can focus on what matters most - education
           </motion.p>
@@ -561,14 +561,14 @@ function BenefitsSection() {
   ];
 
   return (
-    <section id="benefits" className="py-20 md:py-28 bg-background" data-testid="section-benefits">
+    <section id="benefits" className="py-16 sm:py-20 md:py-28 bg-background" data-testid="section-benefits">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <motion.div
           initial="hidden"
           whileInView="visible"
           viewport={{ once: true, margin: "-100px" }}
           variants={staggerContainer}
-          className="text-center mb-16"
+          className="text-center mb-10 sm:mb-16"
         >
           <motion.div variants={fadeInUp}>
             <Badge className="mb-4" variant="secondary" size="sm">
@@ -578,13 +578,13 @@ function BenefitsSection() {
           </motion.div>
           <motion.h2
             variants={fadeInUp}
-            className="text-3xl md:text-4xl font-bold text-foreground mb-4"
+            className="text-2xl sm:text-3xl md:text-4xl font-bold text-foreground mb-3 sm:mb-4"
           >
             Designed for All Stakeholders
           </motion.h2>
           <motion.p
             variants={fadeInUp}
-            className="text-lg text-muted-foreground max-w-2xl mx-auto"
+            className="text-base sm:text-lg text-muted-foreground max-w-2xl mx-auto px-2"
           >
             Every user gets tools tailored to their unique needs and responsibilities
           </motion.p>
@@ -617,12 +617,12 @@ function BenefitsSection() {
                     <h3 className="text-xl font-semibold text-white">{benefit.title}</h3>
                   </div>
                 </div>
-                <div className="p-6">
-                  <ul className="space-y-3">
+                <div className="p-4 sm:p-6">
+                  <ul className="space-y-2 sm:space-y-3">
                     {benefit.points.map((point, pointIndex) => (
-                      <li key={pointIndex} className="flex items-start gap-3">
-                        <CheckCircle2 className="w-5 h-5 text-green-500 flex-shrink-0 mt-0.5" />
-                        <span className="text-muted-foreground">{point}</span>
+                      <li key={pointIndex} className="flex items-start gap-2 sm:gap-3">
+                        <CheckCircle2 className="w-4 h-4 sm:w-5 sm:h-5 text-green-500 flex-shrink-0 mt-0.5" />
+                        <span className="text-sm sm:text-base text-muted-foreground">{point}</span>
                       </li>
                     ))}
                   </ul>
@@ -699,14 +699,14 @@ function PricingSection() {
   };
 
   return (
-    <section id="pricing" className="py-20 md:py-28 bg-card" data-testid="section-pricing">
+    <section id="pricing" className="py-16 sm:py-20 md:py-28 bg-card" data-testid="section-pricing">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <motion.div
           initial="hidden"
           whileInView="visible"
           viewport={{ once: true, margin: "-100px" }}
           variants={staggerContainer}
-          className="text-center mb-16"
+          className="text-center mb-10 sm:mb-16"
         >
           <motion.div variants={fadeInUp}>
             <Badge className="mb-4" variant="secondary" size="sm">
@@ -716,13 +716,13 @@ function PricingSection() {
           </motion.div>
           <motion.h2
             variants={fadeInUp}
-            className="text-3xl md:text-4xl font-bold text-foreground mb-4"
+            className="text-2xl sm:text-3xl md:text-4xl font-bold text-foreground mb-3 sm:mb-4"
           >
             Plans That Grow With You
           </motion.h2>
           <motion.p
             variants={fadeInUp}
-            className="text-lg text-muted-foreground max-w-2xl mx-auto"
+            className="text-base sm:text-lg text-muted-foreground max-w-2xl mx-auto px-2"
           >
             Choose the perfect plan for your school. All plans include a 14-day free trial.
           </motion.p>
@@ -738,7 +738,7 @@ function PricingSection() {
           {plans.map((plan, index) => (
             <motion.div key={plan.name} variants={fadeInUp}>
               <Card
-                className={`p-6 h-full flex flex-col relative ${
+                className={`p-4 sm:p-6 h-full flex flex-col relative ${
                   plan.popular
                     ? "border-2 border-teal-500 dark:border-teal-400"
                     : ""
@@ -753,21 +753,21 @@ function PricingSection() {
                     </Badge>
                   </div>
                 )}
-                <div className="mb-6">
-                  <h3 className="text-xl font-semibold text-foreground mb-2">{plan.name}</h3>
+                <div className="mb-4 sm:mb-6">
+                  <h3 className="text-lg sm:text-xl font-semibold text-foreground mb-2">{plan.name}</h3>
                   <div className="flex items-baseline gap-1">
-                    {plan.price !== "Custom" && <span className="text-2xl font-medium text-muted-foreground">₹</span>}
-                    <span className="text-4xl font-bold text-foreground">{plan.price}</span>
-                    <span className="text-muted-foreground">{plan.period}</span>
+                    {plan.price !== "Custom" && <span className="text-xl sm:text-2xl font-medium text-muted-foreground">₹</span>}
+                    <span className="text-3xl sm:text-4xl font-bold text-foreground">{plan.price}</span>
+                    <span className="text-sm sm:text-base text-muted-foreground">{plan.period}</span>
                   </div>
-                  <p className="text-sm text-muted-foreground mt-2">{plan.description}</p>
+                  <p className="text-xs sm:text-sm text-muted-foreground mt-2">{plan.description}</p>
                 </div>
 
-                <ul className="space-y-3 mb-8 flex-grow">
+                <ul className="space-y-2 sm:space-y-3 mb-6 sm:mb-8 flex-grow">
                   {plan.features.map((feature, featureIndex) => (
-                    <li key={featureIndex} className="flex items-start gap-3">
-                      <CheckCircle2 className="w-5 h-5 text-green-500 flex-shrink-0 mt-0.5" />
-                      <span className="text-muted-foreground text-sm">{feature}</span>
+                    <li key={featureIndex} className="flex items-start gap-2 sm:gap-3">
+                      <CheckCircle2 className="w-4 h-4 sm:w-5 sm:h-5 text-green-500 flex-shrink-0 mt-0.5" />
+                      <span className="text-muted-foreground text-xs sm:text-sm">{feature}</span>
                     </li>
                   ))}
                 </ul>
@@ -820,14 +820,14 @@ function TestimonialsSection() {
   ];
 
   return (
-    <section id="testimonials" className="py-20 md:py-28 bg-background" data-testid="section-testimonials">
+    <section id="testimonials" className="py-16 sm:py-20 md:py-28 bg-background" data-testid="section-testimonials">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <motion.div
           initial="hidden"
           whileInView="visible"
           viewport={{ once: true, margin: "-100px" }}
           variants={staggerContainer}
-          className="text-center mb-16"
+          className="text-center mb-10 sm:mb-16"
         >
           <motion.div variants={fadeInUp}>
             <Badge className="mb-4" variant="secondary" size="sm">
@@ -837,13 +837,13 @@ function TestimonialsSection() {
           </motion.div>
           <motion.h2
             variants={fadeInUp}
-            className="text-3xl md:text-4xl font-bold text-foreground mb-4"
+            className="text-2xl sm:text-3xl md:text-4xl font-bold text-foreground mb-3 sm:mb-4"
           >
             What Our Users Say
           </motion.h2>
           <motion.p
             variants={fadeInUp}
-            className="text-lg text-muted-foreground max-w-2xl mx-auto"
+            className="text-base sm:text-lg text-muted-foreground max-w-2xl mx-auto px-2"
           >
             Hear from schools across Chennai who have transformed their operations with Edufy
           </motion.p>
@@ -859,15 +859,15 @@ function TestimonialsSection() {
           {testimonials.map((testimonial, index) => (
             <motion.div key={index} variants={fadeInUp}>
               <Card
-                className="p-6 h-full flex flex-col"
+                className="p-4 sm:p-6 h-full flex flex-col"
                 data-testid={`card-testimonial-${index}`}
               >
-                <div className="flex gap-1 mb-4">
+                <div className="flex gap-1 mb-3 sm:mb-4">
                   {[...Array(testimonial.rating)].map((_, i) => (
-                    <Star key={i} className="w-5 h-5 fill-yellow-400 text-yellow-400" />
+                    <Star key={i} className="w-4 h-4 sm:w-5 sm:h-5 fill-yellow-400 text-yellow-400" />
                   ))}
                 </div>
-                <blockquote className="text-muted-foreground leading-relaxed flex-grow mb-6">
+                <blockquote className="text-sm sm:text-base text-muted-foreground leading-relaxed flex-grow mb-4 sm:mb-6">
                   "{testimonial.quote}"
                 </blockquote>
                 <div className="flex items-center gap-3 pt-4 border-t border-border">
@@ -930,9 +930,9 @@ function ContactSection() {
   };
 
   return (
-    <section id="contact" className="py-20 md:py-28 bg-card" data-testid="section-contact">
+    <section id="contact" className="py-16 sm:py-20 md:py-28 bg-card" data-testid="section-contact">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="grid grid-cols-1 lg:grid-cols-5 gap-12">
+        <div className="grid grid-cols-1 lg:grid-cols-5 gap-8 sm:gap-12">
           <motion.div
             initial="hidden"
             whileInView="visible"
@@ -948,19 +948,19 @@ function ContactSection() {
             </motion.div>
             <motion.h2
               variants={fadeInUp}
-              className="text-3xl md:text-4xl font-bold text-foreground mb-4"
+              className="text-2xl sm:text-3xl md:text-4xl font-bold text-foreground mb-3 sm:mb-4"
             >
               Request a Free Demo
             </motion.h2>
             <motion.p
               variants={fadeInUp}
-              className="text-lg text-muted-foreground mb-8"
+              className="text-base sm:text-lg text-muted-foreground mb-6 sm:mb-8"
             >
               Fill out the form and our team will schedule a personalized demo for your school.
             </motion.p>
 
             <motion.div variants={fadeInUp}>
-              <Card className="p-6 md:p-8">
+              <Card className="p-4 sm:p-6 md:p-8">
                 <Form {...form}>
                   <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-6">
                     <FormField

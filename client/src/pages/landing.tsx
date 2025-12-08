@@ -12,6 +12,8 @@ import { insertDemoRequestSchema, type InsertDemoRequest } from "@shared/schema"
 import { useMutation } from "@tanstack/react-query";
 import { apiRequest } from "@/lib/queryClient";
 import { useToast } from "@/hooks/use-toast";
+import { Link } from "wouter";
+import { ChatWidget } from "@/components/chat-widget";
 import { 
   Menu, 
   X, 
@@ -1105,13 +1107,13 @@ function Footer() {
       { label: "Features", href: "#features" },
       { label: "Pricing", href: "#pricing" },
       { label: "How It Works", href: "#how-it-works" },
-      { label: "Download App", href: "#" },
+      { label: "Product Tour", href: "/product-tour" },
     ],
     company: [
-      { label: "About Us", href: "#" },
-      { label: "Careers", href: "#" },
-      { label: "Blog", href: "#" },
+      { label: "Case Studies", href: "/case-studies" },
+      { label: "Blog", href: "/blog" },
       { label: "Contact", href: "#contact" },
+      { label: "About Us", href: "#" },
     ],
     legal: [
       { label: "Privacy Policy", href: "#" },
@@ -1168,13 +1170,23 @@ function Footer() {
             <ul className="space-y-3">
               {footerLinks.product.map((link) => (
                 <li key={link.label}>
-                  <button
-                    onClick={() => scrollToSection(link.href)}
-                    className="text-background/70 hover:text-violet-400 transition-colors text-left"
-                    data-testid={`link-footer-${link.label.toLowerCase().replace(" ", "-")}`}
-                  >
-                    {link.label}
-                  </button>
+                  {link.href.startsWith("#") ? (
+                    <button
+                      onClick={() => scrollToSection(link.href)}
+                      className="text-background/70 hover:text-violet-400 transition-colors text-left"
+                      data-testid={`link-footer-${link.label.toLowerCase().replace(" ", "-")}`}
+                    >
+                      {link.label}
+                    </button>
+                  ) : (
+                    <Link
+                      href={link.href}
+                      className="text-background/70 hover:text-violet-400 transition-colors"
+                      data-testid={`link-footer-${link.label.toLowerCase().replace(" ", "-")}`}
+                    >
+                      {link.label}
+                    </Link>
+                  )}
                 </li>
               ))}
             </ul>
@@ -1185,13 +1197,23 @@ function Footer() {
             <ul className="space-y-3">
               {footerLinks.company.map((link) => (
                 <li key={link.label}>
-                  <button
-                    onClick={() => scrollToSection(link.href)}
-                    className="text-background/70 hover:text-violet-400 transition-colors text-left"
-                    data-testid={`link-footer-${link.label.toLowerCase().replace(" ", "-")}`}
-                  >
-                    {link.label}
-                  </button>
+                  {link.href.startsWith("#") ? (
+                    <button
+                      onClick={() => scrollToSection(link.href)}
+                      className="text-background/70 hover:text-violet-400 transition-colors text-left"
+                      data-testid={`link-footer-${link.label.toLowerCase().replace(" ", "-")}`}
+                    >
+                      {link.label}
+                    </button>
+                  ) : (
+                    <Link
+                      href={link.href}
+                      className="text-background/70 hover:text-violet-400 transition-colors"
+                      data-testid={`link-footer-${link.label.toLowerCase().replace(" ", "-")}`}
+                    >
+                      {link.label}
+                    </Link>
+                  )}
                 </li>
               ))}
             </ul>
@@ -1252,6 +1274,7 @@ export default function LandingPage() {
         <ContactSection />
       </main>
       <Footer />
+      <ChatWidget />
     </div>
   );
 }

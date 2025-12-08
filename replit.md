@@ -28,15 +28,29 @@ Modern, SEO-optimized landing page for Edufy, an EdTech company based in Chennai
 ```
 
 ## Key Features
+
+### Landing Page ("/")
 - Hero section with "Smart School Management, Simplified" headline
 - 6 feature cards (AI Analytics, Attendance, Fees, Homework, Messaging, Multi-School)
-- 3-step onboarding process
+- 3-step onboarding process (How It Works)
 - Benefits for Schools, Teachers, and Parents
 - 3-tier pricing (Starter, Professional, Enterprise)
 - Testimonials from Chennai schools
 - Contact form with validation
-- Responsive design with smooth animations
+- Responsive design with smooth Framer Motion animations
 - SEO optimized with Schema.org structured data
+- Live Chat Widget (bottom-right corner)
+
+### Extended Pages
+- **Blog** ("/blog") - EdTech articles and insights
+- **Blog Post** ("/blog/:id") - Individual article pages
+- **Case Studies** ("/case-studies") - Chennai school success stories
+- **Product Tour** ("/product-tour") - Interactive feature walkthrough
+
+### Technical Features
+- Google Analytics integration (requires GA_MEASUREMENT_ID configuration)
+- In-memory storage for contact form demo requests
+- Backend API at POST /api/demo-requests
 
 ## Tech Stack
 - **Frontend**: React, TypeScript, Tailwind CSS, Framer Motion
@@ -65,3 +79,7 @@ The application runs with `npm run dev` which starts both the Express backend an
   - Built all 8 landing page sections
   - Implemented contact form with backend validation
   - Added SEO meta tags, Schema.org data, robots.txt, sitemap.xml
+  - Added Blog, Case Studies, and Product Tour pages
+  - Implemented Live Chat Widget component
+  - Added Google Analytics integration (placeholder ID)
+  - Updated footer with links to extended pages

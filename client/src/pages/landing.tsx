@@ -201,26 +201,22 @@ function HeroSection() {
 
   return (
     <section
-      className="relative min-h-screen flex items-center justify-center overflow-hidden"
+      className="relative min-h-screen flex items-center overflow-hidden bg-gradient-to-br from-slate-900 via-violet-950 to-indigo-950"
       data-testid="section-hero"
     >
-      <div className="absolute inset-0">
-        <img
-          src={heroImage}
-          alt="Diverse Indian students learning in a modern classroom with tablets and laptops"
-          className="w-full h-full object-cover"
-        />
-        <div className="absolute inset-0 bg-gradient-to-r from-black/80 via-black/60 to-black/40" />
-        <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-black/30" />
+      <div className="absolute inset-0 opacity-20">
+        <div className="absolute inset-0 bg-[radial-gradient(circle_at_30%_20%,rgba(120,119,198,0.3),transparent_50%)]" />
+        <div className="absolute inset-0 bg-[radial-gradient(circle_at_70%_80%,rgba(99,102,241,0.2),transparent_50%)]" />
       </div>
 
-      <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-32 md:py-40">
-        <motion.div
-          initial="hidden"
-          animate="visible"
-          variants={staggerContainer}
-          className="max-w-3xl"
-        >
+      <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-32 md:py-40 w-full">
+        <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center">
+          <motion.div
+            initial="hidden"
+            animate="visible"
+            variants={staggerContainer}
+            className="max-w-xl"
+          >
           <motion.div variants={fadeInUp}>
             <Badge className="mb-6 bg-white/10 text-white border-white/20 backdrop-blur-sm" size="sm">
               <Sparkles className="w-3 h-3 mr-1" />
@@ -286,7 +282,46 @@ function HeroSection() {
               <span>4.8 Star Rating</span>
             </div>
           </motion.div>
-        </motion.div>
+          </motion.div>
+
+          <motion.div
+            initial={{ opacity: 0, scale: 0.9, x: 50 }}
+            animate={{ opacity: 1, scale: 1, x: 0 }}
+            transition={{ duration: 0.8, delay: 0.3 }}
+            className="hidden lg:block relative"
+          >
+            <div className="relative rounded-2xl overflow-hidden shadow-2xl shadow-violet-500/20 border border-white/10">
+              <img
+                src={heroImage}
+                alt="Diverse Indian students learning in a modern classroom with tablets and laptops"
+                className="w-full h-auto object-cover"
+              />
+              <div className="absolute inset-0 bg-gradient-to-t from-violet-950/50 to-transparent" />
+            </div>
+            <div className="absolute -bottom-6 -left-6 bg-white/10 backdrop-blur-md rounded-xl p-4 border border-white/20">
+              <div className="flex items-center gap-3">
+                <div className="w-12 h-12 rounded-full bg-gradient-to-br from-green-400 to-emerald-500 flex items-center justify-center">
+                  <TrendingUp className="w-6 h-6 text-white" />
+                </div>
+                <div>
+                  <div className="text-white font-semibold">98% Satisfaction</div>
+                  <div className="text-white/60 text-sm">From our schools</div>
+                </div>
+              </div>
+            </div>
+            <div className="absolute -top-4 -right-4 bg-white/10 backdrop-blur-md rounded-xl p-4 border border-white/20">
+              <div className="flex items-center gap-3">
+                <div className="w-12 h-12 rounded-full bg-gradient-to-br from-violet-500 to-indigo-600 flex items-center justify-center">
+                  <Users className="w-6 h-6 text-white" />
+                </div>
+                <div>
+                  <div className="text-white font-semibold">2 Lakh+</div>
+                  <div className="text-white/60 text-sm">Active Students</div>
+                </div>
+              </div>
+            </div>
+          </motion.div>
+        </div>
       </div>
 
       <div className="absolute bottom-8 left-1/2 -translate-x-1/2 animate-bounce">

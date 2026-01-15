@@ -1,113 +1,125 @@
-# Edufy Landing Page Design Guidelines
+# EDUFY Landing Page Design Guidelines
 
 ## Design Approach
-Reference-based approach drawing from successful EdTech platforms (Coursera, Udemy) and modern SaaS products (Linear, Notion) with Indian educational context. Clean, trustworthy aesthetic emphasizing AI capabilities and ease of use.
+Modern, clean, and professional aesthetic inspired by successful EdTech platforms. AI-themed graphics emphasize intelligent insights and analytics capabilities. Glass-morphism effects for premium feel with role-based color coding.
 
 ## Core Visual Language
 
+### Color Palette
+
+**Primary Colors (Indigo)**
+- Light Mode: #6366F1 (Indigo-500)
+- Dark Mode: #818CF8 (Indigo-400)
+- Usage: Main actions, links, student badges, primary CTAs
+
+**Secondary Colors (Emerald)**  
+- Light Mode: #10B981 (Emerald-500)
+- Dark Mode: #34D399 (Emerald-400)
+- Usage: Success states, teacher badges, positive indicators
+
+**Tertiary Colors (Amber)**
+- Light Mode: #F59E0B (Amber-500)
+- Dark Mode: #FBBF24 (Amber-400)
+- Usage: Warnings, admin badges, attention highlights
+
+**Accent Colors (Pink)**
+- Light Mode: #EC4899 (Pink-500)
+- Dark Mode: #F472B6 (Pink-400)
+- Usage: Special highlights, promotional elements
+
+**Background Colors**
+- Root Background: #FAFAFA (Light) / #0D0D14 (Dark)
+- Card Background: #FFFFFF (Light) / #1A1A28 (Dark)
+- Secondary Background: #F0F0FF (Light) / #252538 (Dark) - Soft indigo tints
+
+**Text Colors**
+- Primary Text: #1A1A2E (Light) / #F5F5F7 (Dark)
+- Secondary Text: #4A4A68 (Light) / #B8B8C8 (Dark)
+- Muted Text: #8E8EA9 (Light) / #6B6B80 (Dark)
+
+**Border Colors**
+- Default Border: #E2E2EC (Light) / #3A3A50 (Dark)
+
+### Role-Based Badge Colors
+- **Student Badge**: Indigo (#6366F1 / #818CF8)
+- **Teacher Badge**: Emerald (#10B981 / #34D399)
+- **Admin Badge**: Amber (#F59E0B / #FBBF24)
+
 ### Typography
-- **Headings**: Inter or Plus Jakarta Sans (600-700 weight)
-- **Body**: Inter or System fonts (400-500 weight)  
-- **Hierarchy**: h1 (48-60px), h2 (36-42px), h3 (24-30px), body (16-18px)
-- **Mobile scaling**: Reduce by 25-30%
+- **Headings**: System fonts (-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto)
+- **Weights**: Bold headings (600-700), Regular body (400)
+- **Hierarchy**: 
+  - H1: 48-60px (desktop), 32-40px (mobile)
+  - H2: 36-42px (desktop), 24-30px (mobile)
+  - H3: 24-30px (desktop), 18-22px (mobile)
+  - Body: 16-18px
+  - Caption: 12-14px
 
 ### Layout System
-- **Container**: max-w-7xl for content sections, max-w-6xl for text-heavy areas
-- **Spacing primitives**: Tailwind units of 4, 6, 8, 12, 16, 20 for consistent rhythm
-- **Section padding**: py-16 to py-24 (desktop), py-12 to py-16 (mobile)
-- **Grid system**: 12-column responsive grid
+- **Container**: max-w-7xl for content sections
+- **Spacing**: Tailwind units of 4, 6, 8, 12, 16, 20
+- **Section padding**: py-16 to py-28 (responsive pattern)
+- **Border radius**: 12-20px (rounded-xl to rounded-2xl)
 
 ### Visual Treatment
-- **Teal/Cyan gradient**: Primary brand gradient (from teal-600 #0D9488 to cyan-600 #0891B2)
-- **Accent gradient**: Lighter teal variants for cards and CTAs
-- **Cards**: Soft shadows, subtle borders, rounded corners (12-16px radius)
-- **Glassmorphism**: Subtle backdrop blur for buttons over hero images
+- **Primary gradient**: from-indigo-500 to-indigo-600
+- **Accent gradient**: from-indigo-400 to-violet-400
+- **Cards**: Soft borders, subtle hover lift effects
+- **Glassmorphism**: backdrop-blur for overlay elements
 
 ## Section-Specific Designs
 
-### Hero Section (100vh)
-- **Layout**: Full-viewport with large hero image background (Indian students in modern classroom)
-- **Content**: Left-aligned or centered text overlay with blurred-background CTAs
-- **CTAs**: Two prominent buttons - "Request Demo" (primary gradient) and "Download App" (secondary outline/white)
-- **Background treatment**: Gradient overlay (60% opacity) over hero image for text legibility
+### Hero Section
+- **Layout**: Full-viewport with video background or hero image
+- **Background**: Dark gradient (from-slate-900 via-indigo-950 to-violet-950)
+- **CTAs**: "Request Demo" (primary gradient) + "Download App" (outline)
+- **Tagline options**: "Smart Schools, Smarter Future" or "Connect. Track. Succeed."
 
 ### Features Grid (6 items)
-- **Layout**: 3-column grid (desktop), 2-column (tablet), 1-column (mobile)
-- **Cards**: Icon + title + description, hover lift effect
-- **Icons**: Use Heroicons via CDN - outline style for consistency
-- **Visual**: Each card with subtle gradient border-top accent
+- **Layout**: 3-column (desktop), 2-column (tablet), 1-column (mobile)
+- **Cards**: Icon + title + description with indigo accent border on hover
+- **Icons**: Lucide icons in indigo-600 color
 
 ### How It Works (3 steps)
-- **Layout**: Horizontal timeline/stepped progression with connecting lines
-- **Content**: Icon/number + heading + description for each step
-- **Visual**: Progressive gradient intensity for step numbers
+- **Layout**: Horizontal stepped progression with connecting lines
+- **Visual**: Numbered circles with indigo gradient background
 
 ### Benefits Section (3 stakeholder cards)
-- **Layout**: 3-column grid with image + content for Schools, Teachers, Parents
-- **Images**: Indian context - classroom/principal, teacher, parent-child studying
-- **Cards**: Equal height, icon at top, bullet points for key benefits
+- **Layout**: 3-column grid for Schools, Teachers, Parents
+- **Images**: Indian context imagery with gradient overlays
+- **Role colors**: Match to respective badge colors
 
 ### Pricing (3 tiers)
-- **Layout**: 3-column comparison table with featured tier highlighted
-- **Visual**: Middle tier (Professional) with gradient border and "Most Popular" badge
-- **Content**: Tier name, price (₹), feature checklist, CTA button per tier
+- **Layout**: 3-column comparison with highlighted featured tier
+- **Popular tier**: Indigo border with "Most Popular" badge
+- **CTA**: Primary gradient for featured, outline for others
 
 ### Testimonials
-- **Layout**: 2-3 column grid or carousel
-- **Cards**: Quote + school logo placeholder + name + role + Chennai school name
-- **Visual**: Soft background cards with quotation mark accent
+- **Layout**: 3-column grid with star ratings
+- **Cards**: Quote + author info with initials avatar
 
 ### Contact Form
-- **Layout**: 2-column split - form (60%) + info/image (40%)
-- **Form fields**: School Name, Email, Phone (+91 prefix), Message
-- **Right column**: Contact details (Chennai address, phone, email) + trust indicators
+- **Layout**: Form (60%) + Contact info (40%)
+- **Form**: School Name, Email, Phone (+91), Message
+- **Info**: Chennai address, phone, email with indigo icon boxes
 
 ### Footer
-- **Layout**: 4-column structure - Logo/about, Quick Links, Contact, Social
-- **Content**: Chennai address, phone +91 9894836016, social icons, copyright
-- **Visual**: Dark background with lighter text, minimal divider lines
+- **Background**: Dark (from-slate-900 to-indigo-950)
+- **Layout**: 4-column structure with social icons
+- **Links**: Hover state in indigo-400
 
-## Images Strategy
+## Animations
+- **Scroll reveals**: Fade-up on section entry (300-400ms via Framer Motion)
+- **Hover states**: Card lift, button scale (1.02-1.05)
+- **Spring animations**: Subtle bounce on interactive elements
 
-### Required Images (Indian Context)
-1. **Hero**: Wide-angle modern Indian classroom with diverse students (uniforms), natural lighting
-2. **Benefits - Schools**: Principal/administrator with students in school setting
-3. **Benefits - Teachers**: Indian teacher using tablet/technology with students
-4. **Benefits - Parents**: Indian parent helping child with homework/app on phone
-5. **Features section**: Indian students collaborating, using devices (optional supporting images)
-6. **Testimonials**: School logo placeholders or stock building photos
-
-All images should showcase: Modern Indian schools, diverse students in uniforms, authentic educational settings from Chennai/South India region, contemporary learning environments.
-
-## Component Library
-
-### Buttons
-- **Primary**: Gradient background, white text, medium roundedness (8px)
-- **Secondary**: White/outlined, gradient text/border
-- **Sizes**: Large (hero CTAs), medium (forms), small (cards)
-
-### Cards
-- **Elevation**: shadow-lg on hover, shadow-md default
-- **Padding**: p-6 to p-8
-- **Border radius**: rounded-xl (12px)
-
-### Forms
-- **Inputs**: Clean borders, focus states with gradient outline
-- **Labels**: Above inputs, small caps or medium weight
-- **Validation**: Inline error states
-
-### Navigation
-- **Header**: Sticky top navigation with logo left, links center/right, CTA button
-- **Mobile**: Hamburger menu with slide-in panel
-
-## Animations (Minimal)
-- **Scroll reveals**: Fade-up on section entry (subtle, 300-400ms)
-- **Hover states**: Card lifts, button scale (1.02-1.05)
-- **No**: Complex parallax, excessive motion, distracting autoplay
-
-## SEO Implementation Notes
-- Semantic HTML5 structure throughout
-- H1 only in hero ("Smart School Management, Simplified")
+## SEO Implementation
+- Semantic HTML5 structure
+- Schema.org: Organization + SoftwareApplication
+- Meta descriptions with Chennai/India keywords
 - Alt text for all images describing Indian educational context
-- Schema.org: Organization + SoftwareApplication with Chennai location data
-- Meta descriptions under 160 characters, include "Chennai" and "India" keywords
+
+## Company Details
+- **Location**: Chennai, India (123 Tech Park, OMR, Chennai 600096)
+- **Phone**: +91 9894836016
+- **Email**: contact@edufy.in

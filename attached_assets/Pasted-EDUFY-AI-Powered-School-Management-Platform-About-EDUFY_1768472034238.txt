@@ -1,0 +1,115 @@
+EDUFY - AI-Powered School Management Platform
+About EDUFY
+EDUFY is an enterprise-grade, multi-tenant AI-powered school management SaaS platform that provides a comprehensive three-way communication system connecting students (and parents), teachers, and administrators. The platform delivers intelligent insights into academics, attendance, and performance through role-specific interfaces.
+
+Core Features
+For Students & Parents:
+
+View class timetables and exam schedules
+Track attendance records with detailed history
+Access published report cards and grades
+View homework assignments with due dates
+Receive real-time notifications for attendance, marks, announcements
+Message teachers directly
+AI-powered performance insights and risk indicators
+Fee payment tracking and history
+School announcements and news feed
+For Teachers:
+
+Mark and manage student attendance
+Upload marks with duplicate detection and absent tracking
+Create and assign homework with deadlines
+View class leaderboards with performance analytics
+Manage class and exam timetables (class teachers)
+Send announcements to students/parents
+Direct messaging with students and parents
+AI insights for at-risk students identification
+Report card workflow with publish/review system
+Request class access (subject teachers)
+For Administrators:
+
+Complete user management (bulk import via Excel)
+Manage classes, sections, and subjects
+Fee management and configuration
+School-wide exam and timetable scheduling
+Access request approval workflow
+Comprehensive reporting with Excel export
+AI-powered school analytics dashboard
+Audit history and revision tracking
+Multi-tenant school configuration
+Real-time notifications and announcements
+Color Palette
+Primary Colors:
+
+Color Name	Light Mode	Dark Mode	Usage
+Primary (Indigo)	#6366F1	#818CF8	Main actions, links, student badges
+Primary Dark	#4F46E5	#6366F1	Hover states, emphasis
+Secondary Colors:
+
+Color Name	Light Mode	Dark Mode	Usage
+Secondary (Emerald)	#10B981	#34D399	Success states, teacher badges
+Tertiary (Amber)	#F59E0B	#FBBF24	Warnings, admin badges
+Accent (Pink)	#EC4899	#F472B6	Highlights, special elements
+Semantic Colors:
+
+Color Name	Light Mode	Dark Mode	Usage
+Success	#10B981	#34D399	Confirmations, positive indicators
+Warning	#F59E0B	#FBBF24	Alerts, pending states
+Error	#EF4444	#F87171	Errors, deletions, at-risk
+Info	#3B82F6	#60A5FA	Information, tips
+Background Colors:
+
+Color Name	Light Mode	Dark Mode	Usage
+Root Background	#FAFAFA	#0D0D14	Page background
+Default Background	#FFFFFF	#1A1A28	Cards, containers
+Secondary Background	#F0F0FF	#252538	Hover states, highlights
+Tertiary Background	#E8E8F0	#2E2E42	Nested elements
+Text Colors:
+
+Color Name	Light Mode	Dark Mode	Usage
+Primary Text	#1A1A2E	#F5F5F7	Headings, main content
+Secondary Text	#4A4A68	#B8B8C8	Subtitles, descriptions
+Muted Text	#8E8EA9	#6B6B80	Captions, placeholders
+Border Colors:
+
+Color Name	Light Mode	Dark Mode	Usage
+Border	#E2E2EC	#3A3A50	Card borders, dividers
+Role-Specific Badge Colors:
+
+Student Badge: Indigo (#6366F1 / #818CF8)
+Teacher Badge: Emerald (#10B981 / #34D399)
+Admin Badge: Amber (#F59E0B / #FBBF24)
+Website Design Recommendations
+Suggested Color Scheme for Website:
+
+Hero/Primary CTA: Indigo #6366F1 - Conveys trust, education, technology
+Secondary CTA: Emerald #10B981 - Fresh, growth, success
+Accent Highlights: Amber #F59E0B - Energy, attention, warmth
+Background: Clean whites #FAFAFA with soft indigo tints #F0F0FF
+Dark Mode: Deep navy #0D0D14 with purple undertones
+Design Style:
+
+Modern, clean, and professional aesthetic
+Rounded corners (12-20px border radius)
+Subtle shadows for depth and card elevation
+Smooth spring-based animations
+Glass-morphism effects for premium feel
+Role-based color coding (Student=Indigo, Teacher=Green, Admin=Amber)
+Typography:
+
+System fonts for performance (SF Pro, Segoe UI, Roboto)
+Bold headings (600-700 weight)
+Regular body text (400 weight)
+Clear hierarchy: H1 (28px), H2 (22px), H3 (18px), Body (16px), Caption (12px)
+Key Visual Elements:
+
+AI-themed graphics (neural networks, insights, analytics)
+Education icons (graduation cap, books, calendar)
+Three-way connection visual (students, teachers, admins)
+Dashboard mockups showing the app interface
+Mobile-first responsive design
+Tagline Suggestions
+"Smart Schools, Smarter Future"
+"AI-Powered School Management for Everyone"
+"Connect. Track. Succeed."
+"The Complete School Management Ecosystem"

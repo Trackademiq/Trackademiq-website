@@ -238,9 +238,9 @@ function HeroSection() {
             className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-white leading-[1.2] sm:leading-tight mb-4 sm:mb-6"
             data-testid="text-hero-headline"
           >
-            Smart School Management,{" "}
+            Smart Schools,{" "}
             <span className="bg-gradient-to-r from-indigo-400 to-violet-400 bg-clip-text text-transparent">
-              Simplified
+              Smarter Future
             </span>
           </motion.h1>
 

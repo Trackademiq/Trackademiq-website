@@ -30,7 +30,7 @@ Modern, SEO-optimized landing page for Edufy, an EdTech company based in Chennai
 ## Key Features
 
 ### Landing Page ("/")
-- Hero section with "Smart School Management, Simplified" headline
+- Hero section with "Smart Schools, Smarter Future" headline
 - 6 feature cards (AI Analytics, Attendance, Fees, Homework, Messaging, Multi-School)
 - 3-step onboarding process (How It Works)
 - Benefits for Schools, Teachers, and Parents
@@ -60,10 +60,14 @@ Modern, SEO-optimized landing page for Edufy, an EdTech company based in Chennai
 - **UI Components**: Shadcn/ui
 
 ## Design System
-- **Colors**: Teal/Cyan gradient theme (teal-600 to cyan-600 with amber accents)
-- **Typography**: Inter and Plus Jakarta Sans
+- **Colors**: Indigo/Violet gradient theme with Emerald (success) and Amber (warnings) accents
+  - Primary: Indigo (#6366F1 light / #818CF8 dark)
+  - Secondary: Emerald (#10B981 light / #34D399 dark)
+  - Tertiary: Amber (#F59E0B light / #FBBF24 dark)
+- **Typography**: System fonts (-apple-system, 'Segoe UI', Roboto)
 - **Spacing**: Consistent 4px base unit
-- **Border Radius**: Rounded-md (6px) for most elements
+- **Border Radius**: Rounded-xl (12-20px) for premium feel
+- **Role Colors**: Student=Indigo, Teacher=Emerald, Admin=Amber
 
 ## Company Details
 - **Location**: Chennai, India (123 Tech Park, OMR, Chennai 600096)
@@ -74,6 +78,13 @@ Modern, SEO-optimized landing page for Edufy, an EdTech company based in Chennai
 The application runs with `npm run dev` which starts both the Express backend and Vite frontend on port 5000.
 
 ## Recent Changes
+- January 2026: Major design refresh
+  - Migrated from teal/coral to indigo/emerald/amber color palette
+  - Updated hero tagline to "Smart Schools, Smarter Future"
+  - Implemented role-based color coding (Students=Indigo, Teachers=Emerald, Admin=Amber)
+  - Enhanced glassmorphism effects and premium visual feel
+  - Updated all gradients, cards, and CTAs with new color scheme
+  - Updated Chat Widget with new indigo theme
 - December 2024: Initial landing page implementation
   - Generated AI images of Indian students, teachers, and parents
   - Built all 8 landing page sections

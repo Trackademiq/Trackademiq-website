@@ -106,7 +106,7 @@ export function ChatWidget() {
             className="fixed bottom-24 right-4 z-50 w-[360px] max-w-[calc(100vw-2rem)]"
           >
             <Card className="overflow-hidden shadow-xl">
-              <div className="bg-gradient-to-r from-teal-600 to-cyan-600 p-4 flex items-center justify-between">
+              <div className="bg-gradient-to-r from-indigo-500 to-indigo-600 p-4 flex items-center justify-between">
                 <div className="flex items-center gap-3">
                   <div className="w-10 h-10 rounded-full bg-white/20 flex items-center justify-center">
                     <Bot className="w-5 h-5 text-white" />
@@ -137,12 +137,12 @@ export function ChatWidget() {
                       <div
                         className={`w-8 h-8 rounded-full flex items-center justify-center flex-shrink-0 ${
                           message.isBot
-                            ? "bg-gradient-to-br from-teal-100 to-cyan-100 dark:from-teal-900/30 dark:to-cyan-900/30"
+                            ? "bg-gradient-to-br from-indigo-100 to-violet-100 dark:from-indigo-900/30 dark:to-violet-900/30"
                             : "bg-muted"
                         }`}
                       >
                         {message.isBot ? (
-                          <Bot className="w-4 h-4 text-teal-600 dark:text-teal-400" />
+                          <Bot className="w-4 h-4 text-indigo-600 dark:text-indigo-400" />
                         ) : (
                           <User className="w-4 h-4 text-muted-foreground" />
                         )}
@@ -151,7 +151,7 @@ export function ChatWidget() {
                         className={`rounded-lg px-3 py-2 max-w-[80%] text-sm ${
                           message.isBot
                             ? "bg-muted text-foreground"
-                            : "bg-gradient-to-r from-teal-600 to-cyan-600 text-white"
+                            : "bg-gradient-to-r from-indigo-500 to-indigo-600 text-white"
                         }`}
                       >
                         {message.text}
@@ -174,7 +174,7 @@ export function ChatWidget() {
                   <Button
                     size="icon"
                     onClick={handleSend}
-                    className="bg-gradient-to-r from-teal-600 to-cyan-600 text-white border-0"
+                    className="bg-gradient-to-r from-indigo-500 to-indigo-600 text-white border-0"
                     data-testid="button-send-chat"
                   >
                     <Send className="w-4 h-4" />
@@ -192,7 +192,7 @@ export function ChatWidget() {
         whileHover={{ scale: 1.1 }}
         whileTap={{ scale: 0.95 }}
         onClick={() => setIsOpen(!isOpen)}
-        className="fixed bottom-4 right-4 z-50 w-14 h-14 rounded-full bg-gradient-to-r from-teal-600 to-cyan-600 text-white shadow-lg flex items-center justify-center"
+        className="fixed bottom-4 right-4 z-50 w-14 h-14 rounded-full bg-gradient-to-r from-indigo-500 to-indigo-600 text-white shadow-lg flex items-center justify-center"
         data-testid="button-open-chat"
       >
         <AnimatePresence mode="wait">

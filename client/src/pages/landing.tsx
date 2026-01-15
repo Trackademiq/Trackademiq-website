@@ -962,7 +962,7 @@ function ContactSection() {
             <motion.div variants={fadeInUp}>
               <Card className="p-4 sm:p-6 md:p-8">
                 <Form {...form}>
-                  <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-6">
+                  <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-6" data-testid="form-contact">
                     <FormField
                       control={form.control}
                       name="schoolName"

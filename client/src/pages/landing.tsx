@@ -376,7 +376,7 @@ function FeaturesSection() {
   ];
 
   return (
-    <section id="features" className="py-10 sm:py-20 md:py-28 bg-background" data-testid="section-features">
+    <section id="features" className="py-8 sm:py-12 md:py-16 bg-background" data-testid="section-features">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <motion.div
           initial="hidden"
@@ -466,7 +466,7 @@ function AnalyticsPreviewSection() {
   ];
 
   return (
-    <section id="analytics-preview" className="py-10 sm:py-20 md:py-28 bg-background" data-testid="section-analytics-preview">
+    <section id="analytics-preview" className="py-8 sm:py-12 md:py-16 bg-background" data-testid="section-analytics-preview">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <motion.div
           initial="hidden"
@@ -698,7 +698,7 @@ function GetStartedSection() {
   ];
 
   return (
-    <section id="get-started" className="py-10 sm:py-20 md:py-28 bg-card" data-testid="section-get-started">
+    <section id="get-started" className="py-8 sm:py-12 md:py-16 bg-card" data-testid="section-get-started">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* 3 Easy Steps */}
         <motion.div
@@ -892,7 +892,7 @@ function DemoRequestSection() {
   ];
 
   return (
-    <section id="demo-request" className="py-10 sm:py-20 md:py-28 bg-gradient-to-br from-indigo-600 via-indigo-700 to-violet-800" data-testid="section-demo-request">
+    <section id="demo-request" className="py-8 sm:py-12 md:py-16 bg-gradient-to-br from-indigo-600 via-indigo-700 to-violet-800" data-testid="section-demo-request">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <motion.div
           initial="hidden"
@@ -1004,7 +1004,7 @@ function TestimonialsSection() {
   ];
 
   return (
-    <section id="testimonials" className="py-10 sm:py-20 md:py-28 bg-background" data-testid="section-testimonials">
+    <section id="testimonials" className="py-8 sm:py-12 md:py-16 bg-background" data-testid="section-testimonials">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <motion.div
           initial="hidden"
@@ -1148,7 +1148,7 @@ function ContactSection() {
   };
 
   return (
-    <section id="contact" className="py-10 sm:py-20 md:py-28 bg-card" data-testid="section-contact">
+    <section id="contact" className="py-8 sm:py-12 md:py-16 bg-card" data-testid="section-contact">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="grid grid-cols-1 lg:grid-cols-5 gap-8 sm:gap-12">
           <motion.div

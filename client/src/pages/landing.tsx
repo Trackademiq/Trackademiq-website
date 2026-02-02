@@ -75,8 +75,7 @@ function Header() {
 
   const navLinks = [
     { href: "#features", label: "Features" },
-    { href: "#how-it-works", label: "How It Works" },
-    { href: "#benefits", label: "Benefits" },
+    { href: "#get-started", label: "Get Started" },
     { href: "#testimonials", label: "Testimonials" },
     { href: "#contact", label: "Contact" },
   ];
@@ -631,7 +630,7 @@ function AnalyticsPreviewSection() {
   );
 }
 
-function HowItWorksSection() {
+function GetStartedSection() {
   const steps = [
     {
       number: "01",
@@ -650,68 +649,6 @@ function HowItWorksSection() {
     }
   ];
 
-  return (
-    <section id="how-it-works" className="py-10 sm:py-20 md:py-28 bg-card" data-testid="section-how-it-works">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <motion.div
-          initial="hidden"
-          whileInView="visible"
-          viewport={{ once: true, margin: "-100px" }}
-          variants={staggerContainer}
-          className="text-center mb-10 sm:mb-16"
-        >
-          <motion.div variants={fadeInUp}>
-            <Badge className="mb-4" variant="secondary" size="sm">
-              <Clock className="w-3 h-3 mr-1" />
-              Simple Process
-            </Badge>
-          </motion.div>
-          <motion.h2
-            variants={fadeInUp}
-            className="text-2xl sm:text-3xl md:text-4xl font-bold text-foreground mb-3 sm:mb-4"
-          >
-            Get Started in 3 Easy Steps
-          </motion.h2>
-          <motion.p
-            variants={fadeInUp}
-            className="text-base sm:text-lg text-muted-foreground max-w-2xl mx-auto px-2"
-          >
-            We've made onboarding simple so you can focus on what matters most - education
-          </motion.p>
-        </motion.div>
-
-        <motion.div
-          initial="hidden"
-          whileInView="visible"
-          viewport={{ once: true, margin: "-50px" }}
-          variants={staggerContainer}
-          className="grid grid-cols-1 md:grid-cols-3 gap-8"
-        >
-          {steps.map((step, index) => (
-            <motion.div
-              key={step.number}
-              variants={fadeInUp}
-              className="relative"
-            >
-              <div className="text-center">
-                <div className="inline-flex items-center justify-center w-16 h-16 rounded-full bg-gradient-to-br from-indigo-500 to-indigo-600 text-white text-2xl font-bold mb-6">
-                  {step.number}
-                </div>
-                {index < steps.length - 1 && (
-                  <div className="hidden md:block absolute top-8 left-[calc(50%+40px)] w-[calc(100%-80px)] h-0.5 bg-gradient-to-r from-indigo-300 to-violet-300 dark:from-indigo-800 dark:to-violet-800" />
-                )}
-                <h3 className="text-xl font-semibold text-foreground mb-3">{step.title}</h3>
-                <p className="text-muted-foreground leading-relaxed">{step.description}</p>
-              </div>
-            </motion.div>
-          ))}
-        </motion.div>
-      </div>
-    </section>
-  );
-}
-
-function BenefitsSection() {
   const benefits = [
     {
       title: "For Schools",
@@ -755,8 +692,9 @@ function BenefitsSection() {
   ];
 
   return (
-    <section id="benefits" className="py-10 sm:py-20 md:py-28 bg-background" data-testid="section-benefits">
+    <section id="get-started" className="py-10 sm:py-20 md:py-28 bg-card" data-testid="section-get-started">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        {/* 3 Easy Steps */}
         <motion.div
           initial="hidden"
           whileInView="visible"
@@ -766,10 +704,71 @@ function BenefitsSection() {
         >
           <motion.div variants={fadeInUp}>
             <Badge className="mb-4" variant="secondary" size="sm">
+              <Clock className="w-3 h-3 mr-1" />
+              Simple Process
+            </Badge>
+          </motion.div>
+          <motion.h2
+            variants={fadeInUp}
+            className="text-2xl sm:text-3xl md:text-4xl font-bold text-foreground mb-3 sm:mb-4"
+          >
+            Get Started in 3 Easy Steps
+          </motion.h2>
+          <motion.p
+            variants={fadeInUp}
+            className="text-base sm:text-lg text-muted-foreground max-w-2xl mx-auto px-2"
+          >
+            We've made onboarding simple so you can focus on what matters most - education
+          </motion.p>
+        </motion.div>
+
+        <motion.div
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true, margin: "-50px" }}
+          variants={staggerContainer}
+          className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-16 sm:mb-24"
+        >
+          {steps.map((step, index) => (
+            <motion.div
+              key={step.number}
+              variants={fadeInUp}
+              className="relative"
+            >
+              <div className="text-center">
+                <div className="inline-flex items-center justify-center w-16 h-16 rounded-full bg-gradient-to-br from-indigo-500 to-indigo-600 text-white text-2xl font-bold mb-6">
+                  {step.number}
+                </div>
+                {index < steps.length - 1 && (
+                  <div className="hidden md:block absolute top-8 left-[calc(50%+40px)] w-[calc(100%-80px)] h-0.5 bg-gradient-to-r from-indigo-300 to-violet-300 dark:from-indigo-800 dark:to-violet-800" />
+                )}
+                <h3 className="text-xl font-semibold text-foreground mb-3">{step.title}</h3>
+                <p className="text-muted-foreground leading-relaxed">{step.description}</p>
+              </div>
+            </motion.div>
+          ))}
+        </motion.div>
+
+        {/* Divider */}
+        <div className="flex items-center justify-center mb-16 sm:mb-24">
+          <div className="h-px w-16 bg-gradient-to-r from-transparent to-indigo-300 dark:to-indigo-700" />
+          <div className="mx-4">
+            <Badge variant="outline" size="sm">
               <TrendingUp className="w-3 h-3 mr-1" />
               Benefits for Everyone
             </Badge>
-          </motion.div>
+          </div>
+          <div className="h-px w-16 bg-gradient-to-l from-transparent to-indigo-300 dark:to-indigo-700" />
+        </div>
+
+        {/* Benefits Header */}
+        <motion.div
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true, margin: "-100px" }}
+          variants={staggerContainer}
+          className="text-center mb-10 sm:mb-16"
+        >
           <motion.h2
             variants={fadeInUp}
             className="text-2xl sm:text-3xl md:text-4xl font-bold text-foreground mb-3 sm:mb-4"
@@ -784,6 +783,7 @@ function BenefitsSection() {
           </motion.p>
         </motion.div>
 
+        {/* Benefits Mobile Carousel */}
         <div className="md:hidden overflow-x-auto pb-4 -mx-4 px-4 scrollbar-hide">
           <div className="flex gap-4" style={{ width: 'max-content' }}>
             {benefits.map((benefit, index) => (
@@ -821,6 +821,7 @@ function BenefitsSection() {
           </div>
         </div>
 
+        {/* Benefits Desktop Grid */}
         <motion.div
           initial="hidden"
           whileInView="visible"
@@ -1364,8 +1365,7 @@ function Footer() {
   const footerLinks = {
     product: [
       { label: "Features", href: "#features" },
-      { label: "How It Works", href: "#how-it-works" },
-      { label: "Benefits", href: "#benefits" },
+      { label: "Get Started", href: "#get-started" },
       { label: "Product Tour", href: "/product-tour" },
     ],
     company: [
@@ -1524,10 +1524,9 @@ export default function LandingPage() {
       <Header />
       <main>
         <HeroSection />
-        <FeaturesSection />
         <AnalyticsPreviewSection />
-        <HowItWorksSection />
-        <BenefitsSection />
+        <FeaturesSection />
+        <GetStartedSection />
         <DemoRequestSection />
         <TestimonialsSection />
         <ContactSection />

@@ -966,7 +966,7 @@ function DemoRequestSection() {
             className="mt-10 pt-8 border-t border-white/20"
           >
             <p className="text-lg sm:text-xl md:text-2xl lg:text-3xl font-bold text-white mb-2">
-              Try our free demo — <span className="text-emerald-300">you'll never say no!</span>
+              Try our free demo — <span className="bg-gradient-to-r from-emerald-300 to-cyan-300 bg-clip-text text-transparent">you'll never say no!</span>
             </p>
             <p className="text-white/60 text-sm">
               Custom pricing and contract terms available for all institution sizes

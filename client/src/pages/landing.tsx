@@ -376,7 +376,7 @@ function FeaturesSection() {
   ];
 
   return (
-    <section id="features" className="py-10 sm:py-20 md:py-28 bg-background" data-testid="section-features">
+    <section id="features" className="py-10 sm:py-20 md:py-28 bg-gradient-to-br from-indigo-600 via-indigo-700 to-violet-800" data-testid="section-features">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <motion.div
           initial="hidden"
@@ -386,20 +386,20 @@ function FeaturesSection() {
           className="text-center mb-10 sm:mb-16"
         >
           <motion.div variants={fadeInUp}>
-            <Badge className="mb-4" variant="secondary" size="sm">
+            <Badge className="mb-4 bg-white/10 text-white border-white/20 backdrop-blur-sm" size="sm">
               <Zap className="w-3 h-3 mr-1" />
               Powerful Features
             </Badge>
           </motion.div>
           <motion.h2
             variants={fadeInUp}
-            className="text-2xl sm:text-3xl md:text-4xl font-bold text-foreground mb-3 sm:mb-4"
+            className="text-2xl sm:text-3xl md:text-4xl font-bold text-white mb-3 sm:mb-4"
           >
             Comprehensive Education Intelligence
           </motion.h2>
           <motion.p
             variants={fadeInUp}
-            className="text-base sm:text-lg text-muted-foreground max-w-2xl mx-auto px-2"
+            className="text-base sm:text-lg text-white/70 max-w-2xl mx-auto px-2"
           >
             Everything your school needs to run smoothly - from attendance to fees to parent communication
           </motion.p>
@@ -460,7 +460,7 @@ function AnalyticsPreviewSection() {
   ];
 
   return (
-    <section id="analytics-preview" className="py-10 sm:py-20 md:py-28 bg-gradient-to-b from-violet-800 via-indigo-700 to-violet-800" data-testid="section-analytics-preview">
+    <section id="analytics-preview" className="py-10 sm:py-20 md:py-28 bg-background" data-testid="section-analytics-preview">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <motion.div
           initial="hidden"
@@ -470,23 +470,23 @@ function AnalyticsPreviewSection() {
           className="text-center mb-12 sm:mb-16"
         >
           <motion.div variants={fadeInUp}>
-            <Badge className="mb-6 bg-white/10 text-white border-white/20 backdrop-blur-sm" size="sm">
+            <Badge className="mb-6" variant="secondary" size="sm">
               <Brain className="w-3 h-3 mr-1" />
               AI Analytics
             </Badge>
           </motion.div>
           <motion.h2
             variants={fadeInUp}
-            className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-white mb-4 sm:mb-6"
+            className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-foreground mb-4 sm:mb-6"
           >
             Transform Education with{" "}
-            <span className="bg-gradient-to-r from-emerald-300 to-cyan-300 bg-clip-text text-transparent">
+            <span className="bg-gradient-to-r from-indigo-600 to-violet-600 bg-clip-text text-transparent">
               AI
             </span>
           </motion.h2>
           <motion.p
             variants={fadeInUp}
-            className="text-base sm:text-lg md:text-xl text-white/70 max-w-2xl mx-auto"
+            className="text-base sm:text-lg md:text-xl text-muted-foreground max-w-2xl mx-auto"
           >
             Analyze performance trends, identify at-risk students, and automate academic insights.
           </motion.p>

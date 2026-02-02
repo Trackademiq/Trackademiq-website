@@ -46,6 +46,7 @@ import schoolsImage from "@assets/generated_images/indian_school_principal_admin
 import teachersImage from "@assets/generated_images/indian_teacher_with_tablet_students.png";
 import parentsImage from "@assets/generated_images/indian_parent_helping_child_homework.png";
 import trackademiqLogo from "@/assets/trackademiq-logo.png";
+import heroIllustration from "@/assets/hero-illustration.png";
 
 const fadeInUp = {
   hidden: { opacity: 0, y: 20 },
@@ -301,49 +302,11 @@ function HeroSection() {
             className="hidden lg:block relative"
           >
             <div className="relative" data-testid="hero-visual">
-              <div className="grid grid-cols-2 gap-4">
-                <div className="space-y-4">
-                  <div className="bg-white/10 backdrop-blur-md rounded-2xl p-6 border border-white/20">
-                    <div className="flex items-center gap-3 mb-4">
-                      <div className="w-10 h-10 rounded-full bg-gradient-to-br from-emerald-400 to-emerald-600 flex items-center justify-center">
-                        <GraduationCap className="w-5 h-5 text-white" />
-                      </div>
-                      <div className="text-white font-medium">Teachers</div>
-                    </div>
-                    <div className="text-white/70 text-sm">Share assignments, track attendance, and communicate with parents instantly</div>
-                  </div>
-                  
-                  <div className="bg-white/10 backdrop-blur-md rounded-2xl p-6 border border-white/20">
-                    <div className="flex items-center gap-3 mb-4">
-                      <div className="w-10 h-10 rounded-full bg-gradient-to-br from-indigo-400 to-indigo-600 flex items-center justify-center">
-                        <Users className="w-5 h-5 text-white" />
-                      </div>
-                      <div className="text-white font-medium">Parents</div>
-                    </div>
-                    <div className="text-white/70 text-sm">Get AI-powered progress reports and real-time notifications about your child</div>
-                  </div>
-                </div>
-                
-                <div className="space-y-4 mt-8">
-                  <div className="bg-white/10 backdrop-blur-md rounded-2xl p-6 border border-white/20">
-                    <div className="flex items-center gap-3 mb-4">
-                      <div className="w-10 h-10 rounded-full bg-gradient-to-br from-amber-400 to-amber-600 flex items-center justify-center">
-                        <Building2 className="w-5 h-5 text-white" />
-                      </div>
-                      <div className="text-white font-medium">Schools</div>
-                    </div>
-                    <div className="text-white/70 text-sm">Manage operations, analyze performance data, and make informed decisions</div>
-                  </div>
-                  
-                  <div className="bg-gradient-to-br from-indigo-500/30 to-violet-500/30 backdrop-blur-md rounded-2xl p-6 border border-indigo-400/30">
-                    <div className="flex items-center gap-3 mb-3">
-                      <Brain className="w-6 h-6 text-indigo-300" />
-                      <div className="text-white font-semibold">AI Intelligence</div>
-                    </div>
-                    <div className="text-white/80 text-sm">Connecting everyone with smart analytics and automated insights</div>
-                  </div>
-                </div>
-              </div>
+              <img 
+                src={heroIllustration} 
+                alt="Students, teachers and school staff collaborating with AI analytics" 
+                className="w-full max-w-lg mx-auto rounded-2xl shadow-2xl"
+              />
               
               <div className="absolute -bottom-4 left-1/2 -translate-x-1/2 bg-white/10 backdrop-blur-md rounded-full px-6 py-3 border border-white/20 flex items-center gap-4">
                 <div className="flex items-center gap-2">
@@ -1051,8 +1014,8 @@ function ContactSection() {
                     <div>
                       <div className="font-medium text-foreground">Address</div>
                       <div className="text-muted-foreground">
-                        123 Tech Park, OMR<br />
-                        Chennai, Tamil Nadu 600096<br />
+                        CC, Mithilla Karnan Nagar<br />
+                        Polichalur, Chennai 600074<br />
                         India
                       </div>
                     </div>

@@ -233,40 +233,40 @@ function HeroContent({ scrollToContact }: { scrollToContact: () => void }) {
       initial="hidden"
       animate="visible"
       variants={staggerContainer}
-      className="max-w-xl w-full lg:w-1/2"
+      className="max-w-xl w-full lg:w-1/2 text-center lg:text-left"
     >
-      <motion.div variants={fadeInUp}>
-        <Badge className="mb-6 bg-indigo-50 text-indigo-700 border-indigo-200 dark:bg-indigo-950/50 dark:text-indigo-300 dark:border-indigo-800" size="sm">
-          <Sparkles className="w-3 h-3 mr-1" />
+      <motion.div variants={fadeInUp} className="flex justify-center lg:justify-start">
+        <Badge className="mb-4 sm:mb-6 bg-gradient-to-r from-indigo-100 to-violet-100 text-indigo-700 border-0 dark:from-indigo-900/50 dark:to-violet-900/50 dark:text-indigo-300 shadow-sm" size="sm">
+          <Sparkles className="w-3 h-3 mr-1.5" />
           AI-Powered Education Intelligence
         </Badge>
       </motion.div>
 
       <motion.h1
         variants={fadeInUp}
-        className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-slate-900 dark:text-white leading-[1.2] sm:leading-tight mb-4 sm:mb-6"
+        className="text-4xl sm:text-5xl md:text-5xl lg:text-6xl font-bold text-slate-900 dark:text-white leading-[1.15] mb-4 sm:mb-6"
         data-testid="text-hero-headline"
       >
         Next-Generation
         <br />
-        <span className="bg-gradient-to-r from-indigo-600 to-violet-600 bg-clip-text text-transparent">
+        <span className="bg-gradient-to-r from-indigo-600 via-violet-600 to-purple-600 bg-clip-text text-transparent">
           Education Systems
         </span>
       </motion.h1>
 
       <motion.p
         variants={fadeInUp}
-        className="text-base sm:text-lg md:text-xl text-slate-600 dark:text-slate-300 mb-6 sm:mb-8 max-w-2xl leading-relaxed"
+        className="text-base sm:text-lg md:text-xl text-slate-600 dark:text-slate-300 mb-6 sm:mb-8 max-w-lg mx-auto lg:mx-0 leading-relaxed"
         data-testid="text-hero-subtext"
       >
-        Education intelligence combining ERP workflows and analytics — connecting students, teachers, parents, and administrators.
+        Connecting students, teachers, parents, and administrators with powerful AI-driven insights.
       </motion.p>
 
-      <motion.div variants={fadeInUp} className="flex flex-col sm:flex-row gap-4">
+      <motion.div variants={fadeInUp} className="flex flex-col sm:flex-row gap-3 sm:gap-4 justify-center lg:justify-start">
         <Button
           size="lg"
           onClick={scrollToContact}
-          className="bg-gradient-to-r from-indigo-600 to-violet-600 hover:from-indigo-700 hover:to-violet-700 text-white border-0 text-base px-8 font-semibold shadow-lg shadow-indigo-500/25"
+          className="bg-gradient-to-r from-indigo-600 to-violet-600 hover:from-indigo-700 hover:to-violet-700 text-white border-0 text-base px-6 sm:px-8 font-semibold shadow-lg shadow-indigo-500/25"
           data-testid="button-request-demo-hero"
         >
           Request Demo
@@ -275,7 +275,7 @@ function HeroContent({ scrollToContact }: { scrollToContact: () => void }) {
         <Button
           size="lg"
           variant="outline"
-          className="border-2 border-slate-300 dark:border-slate-600 text-slate-700 dark:text-slate-200 hover:bg-slate-100 dark:hover:bg-slate-800 font-semibold"
+          className="border-2 border-slate-200 dark:border-slate-600 text-slate-700 dark:text-slate-200 hover:bg-slate-50 dark:hover:bg-slate-800 font-semibold"
           data-testid="button-download-app-hero"
         >
           <Download className="w-5 h-5 mr-2" />
@@ -285,19 +285,19 @@ function HeroContent({ scrollToContact }: { scrollToContact: () => void }) {
 
       <motion.div
         variants={fadeInUp}
-        className="flex flex-wrap items-center gap-4 sm:gap-6 mt-8 sm:mt-12 text-slate-500 dark:text-slate-400 text-xs sm:text-sm"
+        className="flex flex-wrap items-center justify-center lg:justify-start gap-3 sm:gap-5 mt-6 sm:mt-10 text-slate-500 dark:text-slate-400 text-xs sm:text-sm"
       >
-        <div className="flex items-center gap-2">
-          <CheckCircle2 className="w-4 h-4 sm:w-5 sm:h-5 text-emerald-500" />
-          <span>50+ Schools Trust Us</span>
+        <div className="flex items-center gap-1.5">
+          <CheckCircle2 className="w-4 h-4 text-emerald-500" />
+          <span>50+ Schools</span>
         </div>
-        <div className="flex items-center gap-2">
-          <CheckCircle2 className="w-4 h-4 sm:w-5 sm:h-5 text-emerald-500" />
-          <span>25,000+ Students</span>
+        <div className="flex items-center gap-1.5">
+          <CheckCircle2 className="w-4 h-4 text-emerald-500" />
+          <span>25K+ Students</span>
         </div>
-        <div className="flex items-center gap-2">
-          <CheckCircle2 className="w-4 h-4 sm:w-5 sm:h-5 text-emerald-500" />
-          <span>4.8 Star Rating</span>
+        <div className="flex items-center gap-1.5">
+          <Star className="w-4 h-4 text-amber-500 fill-amber-500" />
+          <span>4.8 Rating</span>
         </div>
       </motion.div>
     </motion.div>

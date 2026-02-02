@@ -344,6 +344,7 @@ function HeroSection() {
 }
 
 function FeaturesSection() {
+  const [showAllFeatures, setShowAllFeatures] = useState(false);
   const features = [
     {
       icon: Brain,
@@ -418,7 +419,7 @@ function FeaturesSection() {
         </motion.div>
 
         <div className="sm:hidden flex flex-col gap-4">
-          {features.map((feature, index) => (
+          {(showAllFeatures ? features : features.slice(0, 3)).map((feature, index) => (
             <motion.div
               key={feature.title}
               initial={{ opacity: 0, y: 20 }}
@@ -437,6 +438,22 @@ function FeaturesSection() {
               </div>
             </motion.div>
           ))}
+          
+          <AnimatePresence>
+            {!showAllFeatures && (
+              <motion.button
+                initial={{ opacity: 0 }}
+                animate={{ opacity: 1 }}
+                exit={{ opacity: 0 }}
+                onClick={() => setShowAllFeatures(true)}
+                className="flex items-center justify-center gap-2 py-3 px-6 mx-auto mt-2 rounded-full bg-gradient-to-r from-indigo-500 to-violet-600 text-white font-semibold text-sm shadow-lg shadow-indigo-500/25 active:scale-95 transition-transform"
+                data-testid="button-show-more-features"
+              >
+                <span>View All {features.length} Features</span>
+                <ChevronRight className="w-4 h-4" />
+              </motion.button>
+            )}
+          </AnimatePresence>
         </div>
 
         <motion.div

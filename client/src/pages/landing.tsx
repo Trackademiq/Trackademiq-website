@@ -338,6 +338,79 @@ function HeroSection() {
   );
 }
 
+function AllFeaturesSection() {
+  const allFeatures = [
+    { icon: Brain, title: "AI Analytics", desc: "Predictive insights and student risk detection", color: "from-indigo-500 to-violet-500" },
+    { icon: UserCheck, title: "Attendance", desc: "Biometric & app-based real-time tracking", color: "from-emerald-500 to-teal-500" },
+    { icon: TrendingUp, title: "Marks & Reports", desc: "Automated grading and report generation", color: "from-blue-500 to-cyan-500" },
+    { icon: CreditCard, title: "Fee Management", desc: "Online payments and collection tracking", color: "from-amber-500 to-orange-500" },
+    { icon: BookOpen, title: "Homework", desc: "Assignment tracking and submissions", color: "from-rose-500 to-pink-500" },
+    { icon: MessageSquare, title: "Messaging", desc: "Parent-teacher communication hub", color: "from-purple-500 to-fuchsia-500" },
+    { icon: Clock, title: "Leave Management", desc: "Staff and student leave workflows", color: "from-cyan-500 to-sky-500" },
+    { icon: Building2, title: "Multi-Tenant", desc: "Manage multiple schools in one place", color: "from-slate-500 to-gray-600" }
+  ];
+
+  return (
+    <section id="all-features" className="py-6 sm:py-10 md:py-12 bg-background" data-testid="section-all-features">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <motion.div
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true }}
+          variants={staggerContainer}
+          className="text-center mb-6 sm:mb-8"
+        >
+          <motion.div variants={fadeInUp}>
+            <Badge className="mb-3 sm:mb-4 bg-gradient-to-r from-indigo-100 to-violet-100 text-indigo-700 dark:from-indigo-900/50 dark:to-violet-900/50 dark:text-indigo-300 border-0">
+              <Sparkles className="w-3 h-3 mr-1" />
+              Complete Platform
+            </Badge>
+          </motion.div>
+          <motion.h2
+            variants={fadeInUp}
+            className="text-2xl sm:text-3xl md:text-4xl font-bold text-foreground mb-3 sm:mb-4"
+          >
+            Everything You Need in One Platform
+          </motion.h2>
+          <motion.p
+            variants={fadeInUp}
+            className="text-base sm:text-lg text-muted-foreground max-w-2xl mx-auto"
+          >
+            8 powerful modules to digitize and automate your entire school operations
+          </motion.p>
+        </motion.div>
+
+        <motion.div
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true }}
+          variants={staggerContainer}
+          className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-3 sm:gap-4"
+        >
+          {allFeatures.map((feature, idx) => {
+            const Icon = feature.icon;
+            return (
+              <motion.div
+                key={feature.title}
+                variants={fadeInUp}
+                whileHover={{ y: -4, transition: { duration: 0.2 } }}
+                className="group p-4 sm:p-5 rounded-xl bg-card border border-border hover:border-indigo-200 dark:hover:border-indigo-800 hover:shadow-lg transition-all duration-300 cursor-default"
+                data-testid={`feature-all-${idx}`}
+              >
+                <div className={`w-10 h-10 sm:w-12 sm:h-12 rounded-xl bg-gradient-to-br ${feature.color} flex items-center justify-center mb-3 shadow-md group-hover:shadow-lg transition-shadow`}>
+                  <Icon className="w-5 h-5 sm:w-6 sm:h-6 text-white" />
+                </div>
+                <h3 className="font-semibold text-sm sm:text-base text-foreground mb-1">{feature.title}</h3>
+                <p className="text-xs sm:text-sm text-muted-foreground line-clamp-2">{feature.desc}</p>
+              </motion.div>
+            );
+          })}
+        </motion.div>
+      </div>
+    </section>
+  );
+}
+
 function FeaturesSection() {
   const [activeTab, setActiveTab] = useState(0);
   
@@ -413,7 +486,7 @@ function FeaturesSection() {
   ];
 
   return (
-    <section id="features" className="py-8 sm:py-12 md:py-16 bg-gradient-to-b from-white to-slate-50 dark:from-slate-900 dark:to-slate-950" data-testid="section-features">
+    <section id="personalized" className="py-6 sm:py-10 md:py-12 bg-gradient-to-b from-white to-slate-50 dark:from-slate-900 dark:to-slate-950" data-testid="section-personalized">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <motion.div
           initial="hidden"
@@ -1577,6 +1650,7 @@ export default function LandingPage() {
       <Header />
       <main>
         <HeroSection />
+        <AllFeaturesSection />
         <FeaturesSection />
         <AnalyticsPreviewSection />
         <GetStartedSection />

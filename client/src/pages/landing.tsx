@@ -434,22 +434,12 @@ function FeaturesSection() {
 }
 
 function AnalyticsPreviewSection() {
-  const aiFeatures = [
-    {
-      icon: TrendingUp,
-      title: "Analyze Performance Trends",
-      description: "Track academic progress over time with intelligent trend analysis and pattern recognition."
-    },
-    {
-      icon: Users,
-      title: "Identify At-Risk Students",
-      description: "AI-powered early warning system detects students who may need additional support."
-    },
-    {
-      icon: Zap,
-      title: "Automate Academic Insights",
-      description: "Generate actionable insights automatically without manual data crunching."
-    }
+  const students = [
+    { name: "Priya Sharma", class: "10-A", attendance: 96, score: 92, status: "Excellent", trend: "up" },
+    { name: "Arjun Kumar", class: "10-B", attendance: 78, score: 65, status: "At Risk", trend: "down" },
+    { name: "Meera Patel", class: "10-A", attendance: 94, score: 88, status: "Good", trend: "up" },
+    { name: "Rahul Singh", class: "10-C", attendance: 91, score: 79, status: "Good", trend: "stable" },
+    { name: "Ananya Reddy", class: "10-B", attendance: 72, score: 58, status: "At Risk", trend: "down" },
   ];
 
   return (
@@ -481,7 +471,7 @@ function AnalyticsPreviewSection() {
             variants={fadeInUp}
             className="text-base sm:text-lg md:text-xl text-white/70 max-w-2xl mx-auto"
           >
-            Harness the power of artificial intelligence to make data-driven decisions for your institution.
+            Analyze performance trends, identify at-risk students, and automate academic insights.
           </motion.p>
         </motion.div>
 
@@ -489,20 +479,121 @@ function AnalyticsPreviewSection() {
           initial="hidden"
           whileInView="visible"
           viewport={{ once: true, margin: "-100px" }}
-          variants={staggerContainer}
-          className="grid grid-cols-1 md:grid-cols-3 gap-6 sm:gap-8 mb-12 sm:mb-16"
+          variants={fadeInUp}
         >
-          {aiFeatures.map((feature, index) => (
-            <motion.div key={index} variants={fadeInUp}>
-              <Card className="p-6 sm:p-8 bg-white/5 backdrop-blur-sm border-white/10 hover:bg-white/10 transition-all duration-300 h-full">
-                <div className="w-12 h-12 sm:w-14 sm:h-14 rounded-xl bg-gradient-to-br from-indigo-500 to-violet-600 flex items-center justify-center mb-4 sm:mb-6">
-                  <feature.icon className="w-6 h-6 sm:w-7 sm:h-7 text-white" />
+          <div className="bg-slate-900/80 backdrop-blur-xl rounded-2xl border border-white/10 p-4 sm:p-6 lg:p-8 shadow-2xl">
+            <div className="flex items-center justify-between mb-6">
+              <div className="flex items-center gap-3">
+                <div className="w-3 h-3 rounded-full bg-red-500" />
+                <div className="w-3 h-3 rounded-full bg-yellow-500" />
+                <div className="w-3 h-3 rounded-full bg-green-500" />
+              </div>
+              <span className="text-white/50 text-sm font-medium">Trackademiq Dashboard</span>
+            </div>
+
+            <div className="grid grid-cols-2 lg:grid-cols-4 gap-3 sm:gap-4 mb-6">
+              <div className="bg-gradient-to-br from-indigo-500/20 to-indigo-600/10 rounded-xl p-4 border border-indigo-500/20">
+                <div className="flex items-center gap-2 mb-2">
+                  <Users className="w-4 h-4 text-indigo-400" />
+                  <span className="text-white/60 text-xs sm:text-sm">Total Students</span>
                 </div>
-                <h3 className="text-lg sm:text-xl font-semibold text-white mb-2 sm:mb-3">{feature.title}</h3>
-                <p className="text-sm sm:text-base text-white/70 leading-relaxed">{feature.description}</p>
-              </Card>
-            </motion.div>
-          ))}
+                <div className="text-2xl sm:text-3xl font-bold text-white">2,847</div>
+                <div className="text-emerald-400 text-xs mt-1 flex items-center gap-1">
+                  <TrendingUp className="w-3 h-3" /> +12% this month
+                </div>
+              </div>
+              <div className="bg-gradient-to-br from-emerald-500/20 to-emerald-600/10 rounded-xl p-4 border border-emerald-500/20">
+                <div className="flex items-center gap-2 mb-2">
+                  <CheckCircle2 className="w-4 h-4 text-emerald-400" />
+                  <span className="text-white/60 text-xs sm:text-sm">Attendance Rate</span>
+                </div>
+                <div className="text-2xl sm:text-3xl font-bold text-white">94.2%</div>
+                <div className="text-emerald-400 text-xs mt-1 flex items-center gap-1">
+                  <TrendingUp className="w-3 h-3" /> +2.1% vs last week
+                </div>
+              </div>
+              <div className="bg-gradient-to-br from-amber-500/20 to-amber-600/10 rounded-xl p-4 border border-amber-500/20">
+                <div className="flex items-center gap-2 mb-2">
+                  <Shield className="w-4 h-4 text-amber-400" />
+                  <span className="text-white/60 text-xs sm:text-sm">At-Risk Students</span>
+                </div>
+                <div className="text-2xl sm:text-3xl font-bold text-white">23</div>
+                <div className="text-amber-400 text-xs mt-1">Needs attention</div>
+              </div>
+              <div className="bg-gradient-to-br from-violet-500/20 to-violet-600/10 rounded-xl p-4 border border-violet-500/20">
+                <div className="flex items-center gap-2 mb-2">
+                  <Star className="w-4 h-4 text-violet-400" />
+                  <span className="text-white/60 text-xs sm:text-sm">Avg. Score</span>
+                </div>
+                <div className="text-2xl sm:text-3xl font-bold text-white">78.5%</div>
+                <div className="text-emerald-400 text-xs mt-1 flex items-center gap-1">
+                  <TrendingUp className="w-3 h-3" /> +5.3% improvement
+                </div>
+              </div>
+            </div>
+
+            <div className="bg-slate-800/50 rounded-xl border border-white/5 overflow-hidden">
+              <div className="px-4 py-3 border-b border-white/10 flex items-center justify-between">
+                <h3 className="text-white font-semibold text-sm sm:text-base">Student Performance Overview</h3>
+                <Badge className="bg-indigo-500/20 text-indigo-300 border-indigo-500/30" size="sm">Live Data</Badge>
+              </div>
+              <div className="overflow-x-auto">
+                <table className="w-full text-sm">
+                  <thead>
+                    <tr className="border-b border-white/10">
+                      <th className="text-left text-white/50 font-medium px-4 py-3">Student Name</th>
+                      <th className="text-left text-white/50 font-medium px-4 py-3 hidden sm:table-cell">Class</th>
+                      <th className="text-left text-white/50 font-medium px-4 py-3">Attendance</th>
+                      <th className="text-left text-white/50 font-medium px-4 py-3">Avg. Score</th>
+                      <th className="text-left text-white/50 font-medium px-4 py-3">Status</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    {students.map((student, index) => (
+                      <tr key={index} className="border-b border-white/5 hover:bg-white/5 transition-colors">
+                        <td className="px-4 py-3">
+                          <div className="flex items-center gap-3">
+                            <div className="w-8 h-8 rounded-full bg-gradient-to-br from-indigo-500 to-violet-500 flex items-center justify-center text-white text-xs font-medium">
+                              {student.name.split(' ').map(n => n[0]).join('')}
+                            </div>
+                            <span className="text-white font-medium">{student.name}</span>
+                          </div>
+                        </td>
+                        <td className="px-4 py-3 text-white/70 hidden sm:table-cell">{student.class}</td>
+                        <td className="px-4 py-3">
+                          <div className="flex items-center gap-2">
+                            <div className="w-16 sm:w-24 h-2 bg-slate-700 rounded-full overflow-hidden">
+                              <div 
+                                className={`h-full rounded-full ${student.attendance >= 90 ? 'bg-emerald-500' : student.attendance >= 80 ? 'bg-amber-500' : 'bg-red-500'}`}
+                                style={{ width: `${student.attendance}%` }}
+                              />
+                            </div>
+                            <span className="text-white/70 text-xs">{student.attendance}%</span>
+                          </div>
+                        </td>
+                        <td className="px-4 py-3">
+                          <div className="flex items-center gap-2">
+                            <span className="text-white font-medium">{student.score}%</span>
+                            {student.trend === 'up' && <TrendingUp className="w-3 h-3 text-emerald-400" />}
+                            {student.trend === 'down' && <TrendingUp className="w-3 h-3 text-red-400 rotate-180" />}
+                          </div>
+                        </td>
+                        <td className="px-4 py-3">
+                          <span className={`px-2 py-1 rounded-full text-xs font-medium ${
+                            student.status === 'Excellent' ? 'bg-emerald-500/20 text-emerald-400' :
+                            student.status === 'Good' ? 'bg-blue-500/20 text-blue-400' :
+                            'bg-red-500/20 text-red-400'
+                          }`}>
+                            {student.status}
+                          </span>
+                        </td>
+                      </tr>
+                    ))}
+                  </tbody>
+                </table>
+              </div>
+            </div>
+          </div>
         </motion.div>
 
         <motion.div
@@ -510,7 +601,7 @@ function AnalyticsPreviewSection() {
           whileInView="visible"
           viewport={{ once: true, margin: "-100px" }}
           variants={fadeInUp}
-          className="text-center"
+          className="text-center mt-10"
         >
           <div className="inline-flex items-center gap-3 px-6 py-3 rounded-full bg-white/10 backdrop-blur-sm border border-white/20">
             <Sparkles className="w-5 h-5 text-emerald-400" />

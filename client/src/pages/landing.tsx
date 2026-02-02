@@ -337,44 +337,70 @@ function HeroSection() {
   );
 }
 
-function ConnectedIntelligenceSection() {
+function FeaturesSection() {
+  const [activeTab, setActiveTab] = useState(0);
+  
   const userTypes = [
     {
       icon: GraduationCap,
       title: "Students",
-      description: "Track grades, view assignments, and get personalized learning insights",
       color: "from-indigo-500 to-indigo-600",
       bgColor: "bg-indigo-50 dark:bg-indigo-950/30",
-      borderColor: "border-indigo-200 dark:border-indigo-800"
+      borderColor: "border-indigo-300 dark:border-indigo-700",
+      activeColor: "bg-indigo-500",
+      features: [
+        { icon: TrendingUp, title: "View Grades & Reports", desc: "Access marks, report cards, and performance analytics" },
+        { icon: BookOpen, title: "Homework & Assignments", desc: "Track assignments, submissions, and deadlines" },
+        { icon: Clock, title: "Timetables & Exams", desc: "View class schedules and exam dates" },
+        { icon: UserCheck, title: "Attendance History", desc: "Check attendance records and leave status" }
+      ]
     },
     {
-      icon: BookOpen,
+      icon: Users,
       title: "Teachers",
-      description: "Manage classes, automate attendance, and monitor student progress",
       color: "from-emerald-500 to-emerald-600",
       bgColor: "bg-emerald-50 dark:bg-emerald-950/30",
-      borderColor: "border-emerald-200 dark:border-emerald-800"
+      borderColor: "border-emerald-300 dark:border-emerald-700",
+      activeColor: "bg-emerald-500",
+      features: [
+        { icon: UserCheck, title: "Smart Attendance", desc: "Biometric and app-based check-ins with one tap" },
+        { icon: TrendingUp, title: "Marks Entry & Reports", desc: "Enter grades and generate report cards automatically" },
+        { icon: MessageSquare, title: "Parent Communication", desc: "Send updates and announcements to parents" },
+        { icon: BookOpen, title: "Homework Management", desc: "Create, assign, and track homework submissions" }
+      ]
     },
     {
       icon: Heart,
       title: "Parents",
-      description: "Real-time updates on attendance, grades, and school communications",
       color: "from-rose-500 to-rose-600",
       bgColor: "bg-rose-50 dark:bg-rose-950/30",
-      borderColor: "border-rose-200 dark:border-rose-800"
+      borderColor: "border-rose-300 dark:border-rose-700",
+      activeColor: "bg-rose-500",
+      features: [
+        { icon: UserCheck, title: "Real-Time Attendance", desc: "Instant notifications when child is marked absent" },
+        { icon: TrendingUp, title: "Academic Progress", desc: "View grades, rankings, and performance trends" },
+        { icon: CreditCard, title: "Fee Payments", desc: "Pay fees online and track payment history" },
+        { icon: MessageSquare, title: "School Updates", desc: "Receive announcements and communicate with teachers" }
+      ]
     },
     {
       icon: Shield,
       title: "Administrators",
-      description: "Complete school oversight with analytics, reports, and management tools",
       color: "from-amber-500 to-amber-600",
       bgColor: "bg-amber-50 dark:bg-amber-950/30",
-      borderColor: "border-amber-200 dark:border-amber-800"
+      borderColor: "border-amber-300 dark:border-amber-700",
+      activeColor: "bg-amber-500",
+      features: [
+        { icon: Brain, title: "AI Analytics Dashboard", desc: "School-wide insights, trends, and at-risk identification" },
+        { icon: CreditCard, title: "Fee & Finance Management", desc: "Track collections, generate reports, manage dues" },
+        { icon: Building2, title: "Multi-School Management", desc: "Manage multiple branches from one dashboard" },
+        { icon: Clock, title: "Staff & Leave Management", desc: "Approve leaves, track attendance, manage staff" }
+      ]
     }
   ];
 
   return (
-    <section className="py-12 sm:py-20 md:py-28 bg-gradient-to-b from-white to-slate-50 dark:from-slate-900 dark:to-slate-950" data-testid="section-connected-intelligence">
+    <section id="features" className="py-12 sm:py-20 md:py-28 bg-gradient-to-b from-white to-slate-50 dark:from-slate-900 dark:to-slate-950" data-testid="section-features">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <motion.div
           initial="hidden"
@@ -386,24 +412,23 @@ function ConnectedIntelligenceSection() {
           <motion.div variants={fadeInUp}>
             <Badge className="mb-4 bg-gradient-to-r from-indigo-100 to-violet-100 text-indigo-700 dark:from-indigo-900/50 dark:to-violet-900/50 dark:text-indigo-300 border-0">
               <Sparkles className="w-3 h-3 mr-1" />
-              Unified Platform
+              Personalized Experience
             </Badge>
           </motion.div>
           <motion.h2
             variants={fadeInUp}
             className="text-2xl sm:text-3xl md:text-4xl font-bold text-slate-900 dark:text-white mb-4"
           >
-            Every User Gets Tools Tailored to
-            <br />
+            Tools Tailored to{" "}
             <span className="bg-gradient-to-r from-indigo-600 to-violet-600 bg-clip-text text-transparent">
-              Their Unique Needs
+              Every User
             </span>
           </motion.h2>
           <motion.p
             variants={fadeInUp}
             className="text-base sm:text-lg text-slate-600 dark:text-slate-400 max-w-2xl mx-auto"
           >
-            All connected through powerful AI analytics that continuously improve educational outcomes
+            Students, Teachers, Parents, and Administrators - everyone gets exactly what they need, connected through powerful AI analytics
           </motion.p>
         </motion.div>
 
@@ -412,226 +437,95 @@ function ConnectedIntelligenceSection() {
           whileInView="visible"
           viewport={{ once: true }}
           variants={staggerContainer}
-          className="relative"
         >
-          {/* Central AI Hub - Desktop */}
-          <motion.div
-            variants={fadeInUp}
-            className="hidden lg:flex absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 z-10"
-          >
-            <div className="relative">
-              <div className="w-32 h-32 rounded-full bg-gradient-to-br from-indigo-500 via-violet-500 to-purple-600 flex items-center justify-center shadow-2xl shadow-indigo-500/30">
-                <Brain className="w-14 h-14 text-white" />
-              </div>
-              <div className="absolute inset-0 rounded-full bg-gradient-to-br from-indigo-500 via-violet-500 to-purple-600 animate-ping opacity-20" />
-              <p className="absolute -bottom-8 left-1/2 -translate-x-1/2 whitespace-nowrap text-sm font-semibold text-slate-700 dark:text-slate-300">
-                AI Analytics Hub
-              </p>
-            </div>
-          </motion.div>
-
-          {/* Connection Lines - Desktop */}
-          <div className="hidden lg:block absolute inset-0 pointer-events-none">
-            <svg className="w-full h-full" viewBox="0 0 100 100" preserveAspectRatio="none">
-              {/* Lines from center to corners */}
-              <line x1="50" y1="50" x2="12" y2="25" stroke="url(#gradient1)" strokeWidth="0.3" strokeDasharray="2,2" className="opacity-40" />
-              <line x1="50" y1="50" x2="88" y2="25" stroke="url(#gradient2)" strokeWidth="0.3" strokeDasharray="2,2" className="opacity-40" />
-              <line x1="50" y1="50" x2="12" y2="75" stroke="url(#gradient3)" strokeWidth="0.3" strokeDasharray="2,2" className="opacity-40" />
-              <line x1="50" y1="50" x2="88" y2="75" stroke="url(#gradient4)" strokeWidth="0.3" strokeDasharray="2,2" className="opacity-40" />
-              <defs>
-                <linearGradient id="gradient1"><stop offset="0%" stopColor="#6366f1" /><stop offset="100%" stopColor="#818cf8" /></linearGradient>
-                <linearGradient id="gradient2"><stop offset="0%" stopColor="#10b981" /><stop offset="100%" stopColor="#34d399" /></linearGradient>
-                <linearGradient id="gradient3"><stop offset="0%" stopColor="#f43f5e" /><stop offset="100%" stopColor="#fb7185" /></linearGradient>
-                <linearGradient id="gradient4"><stop offset="0%" stopColor="#f59e0b" /><stop offset="100%" stopColor="#fbbf24" /></linearGradient>
-              </defs>
-            </svg>
-          </div>
-
-          {/* User Type Cards */}
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-2 gap-6 lg:gap-x-64 lg:gap-y-8">
+          <div className="flex flex-wrap justify-center gap-2 sm:gap-3 mb-8 sm:mb-12">
             {userTypes.map((user, index) => (
-              <motion.div
+              <motion.button
                 key={user.title}
                 variants={fadeInUp}
-                className={`relative ${index >= 2 ? 'lg:mt-8' : ''}`}
+                onClick={() => setActiveTab(index)}
+                className={`flex items-center gap-2 px-4 sm:px-6 py-2.5 sm:py-3 rounded-full font-medium text-sm sm:text-base transition-all duration-300 ${
+                  activeTab === index
+                    ? `bg-gradient-to-r ${user.color} text-white shadow-lg`
+                    : "bg-white dark:bg-slate-800 text-slate-600 dark:text-slate-300 border border-slate-200 dark:border-slate-700"
+                }`}
+                data-testid={`tab-${user.title.toLowerCase()}`}
               >
-                <Card className={`p-6 border-2 ${user.borderColor} ${user.bgColor} hover:shadow-lg transition-all duration-300`}>
-                  <div className="flex items-start gap-4">
-                    <div className={`w-12 h-12 rounded-xl bg-gradient-to-br ${user.color} flex items-center justify-center flex-shrink-0 shadow-lg`}>
-                      <user.icon className="w-6 h-6 text-white" />
-                    </div>
-                    <div>
-                      <h3 className="font-semibold text-lg text-slate-900 dark:text-white mb-1">
-                        {user.title}
-                      </h3>
-                      <p className="text-sm text-slate-600 dark:text-slate-400">
-                        {user.description}
-                      </p>
-                    </div>
-                  </div>
-                </Card>
-              </motion.div>
+                <user.icon className="w-4 h-4 sm:w-5 sm:h-5" />
+                <span>{user.title}</span>
+              </motion.button>
             ))}
           </div>
 
-          {/* Central AI Hub - Mobile */}
-          <motion.div
-            variants={fadeInUp}
-            className="lg:hidden flex justify-center mt-8"
-          >
-            <div className="relative">
-              <div className="w-24 h-24 rounded-full bg-gradient-to-br from-indigo-500 via-violet-500 to-purple-600 flex items-center justify-center shadow-xl shadow-indigo-500/30">
-                <Brain className="w-10 h-10 text-white" />
-              </div>
-              <div className="absolute inset-0 rounded-full bg-gradient-to-br from-indigo-500 via-violet-500 to-purple-600 animate-ping opacity-20" />
-            </div>
-          </motion.div>
-          <p className="lg:hidden text-center mt-4 text-sm font-semibold text-slate-700 dark:text-slate-300">
-            All Connected Through AI Analytics
-          </p>
-        </motion.div>
-      </div>
-    </section>
-  );
-}
-
-function FeaturesSection() {
-  const [showAllFeatures, setShowAllFeatures] = useState(false);
-  const features = [
-    {
-      icon: Brain,
-      title: "AI-Powered Analytics",
-      description: "Real-time dashboards with performance insights, at-risk student identification, and predictive trends analysis."
-    },
-    {
-      icon: UserCheck,
-      title: "Smart Attendance",
-      description: "Biometric and app-based check-ins with instant parent notifications and automated reporting."
-    },
-    {
-      icon: TrendingUp,
-      title: "Marks & Report Cards",
-      description: "Comprehensive grade management, automated report card generation, and performance leaderboards."
-    },
-    {
-      icon: CreditCard,
-      title: "Fee Management",
-      description: "Automated fee collection, payment history tracking, and detailed financial analytics."
-    },
-    {
-      icon: BookOpen,
-      title: "Homework & Timetables",
-      description: "Digital assignments, exam schedules, and timetable management with deadline reminders."
-    },
-    {
-      icon: MessageSquare,
-      title: "Announcements & Messaging",
-      description: "Secure communication between teachers, parents, and admins with push notifications."
-    },
-    {
-      icon: Clock,
-      title: "Leave Management",
-      description: "Student and staff leave requests with approval workflows and attendance integration."
-    },
-    {
-      icon: Building2,
-      title: "Multi-Tenant Platform",
-      description: "Manage multiple schools and institutions from one centralized dashboard with role-based access."
-    }
-  ];
-
-  return (
-    <section id="features" className="py-8 sm:py-12 md:py-16 bg-background" data-testid="section-features">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <motion.div
-          initial="hidden"
-          whileInView="visible"
-          viewport={{ once: true, margin: "-100px" }}
-          variants={staggerContainer}
-          className="text-center mb-10 sm:mb-16"
-        >
-          <motion.div variants={fadeInUp}>
-            <Badge className="mb-4" variant="secondary" size="sm">
-              <Zap className="w-3 h-3 mr-1" />
-              Powerful Features
-            </Badge>
-          </motion.div>
-          <motion.h2
-            variants={fadeInUp}
-            className="text-2xl sm:text-3xl md:text-4xl font-bold text-foreground mb-3 sm:mb-4"
-          >
-            Comprehensive Education Intelligence
-          </motion.h2>
-          <motion.p
-            variants={fadeInUp}
-            className="text-base sm:text-lg text-muted-foreground max-w-2xl mx-auto px-2"
-          >
-            Everything your school needs to run smoothly - from attendance to fees to parent communication
-          </motion.p>
-        </motion.div>
-
-        <div className="sm:hidden flex flex-col gap-4">
-          {(showAllFeatures ? features : features.slice(0, 3)).map((feature, index) => (
-            <motion.div
-              key={feature.title}
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.4, delay: index * 0.05 }}
-              className="flex items-start gap-4 p-4 rounded-xl bg-gradient-to-br from-white to-indigo-50/50 dark:from-slate-800 dark:to-indigo-950/30 border border-indigo-100/80 dark:border-indigo-800/40 shadow-sm"
-              data-testid={`card-feature-mobile-${index}`}
-            >
-              <div className="flex-shrink-0 w-12 h-12 rounded-xl bg-gradient-to-br from-indigo-500 to-violet-600 flex items-center justify-center shadow-lg shadow-indigo-500/25">
-                <feature.icon className="w-6 h-6 text-white" />
-              </div>
-              <div className="flex-1 min-w-0">
-                <h3 className="text-base font-bold text-foreground mb-1">{feature.title}</h3>
-                <p className="text-sm text-muted-foreground leading-relaxed">{feature.description}</p>
-              </div>
-            </motion.div>
-          ))}
-          
-          <AnimatePresence>
-            {!showAllFeatures && (
-              <motion.button
+          {(() => {
+            const userType = userTypes[activeTab];
+            const ActiveIcon = userType.icon;
+            
+            return (
+              <motion.div
+                key={activeTab}
                 initial={{ opacity: 0 }}
                 animate={{ opacity: 1 }}
-                exit={{ opacity: 0 }}
-                onClick={() => setShowAllFeatures(true)}
-                className="flex items-center justify-center gap-2 py-3 px-6 mx-auto mt-2 rounded-full bg-gradient-to-r from-indigo-500 to-violet-600 text-white font-semibold text-sm shadow-lg shadow-indigo-500/25 active:scale-95 transition-transform"
-                data-testid="button-show-more-features"
+                transition={{ duration: 0.2 }}
+                className="relative"
+                data-testid={`panel-${userType.title.toLowerCase()}`}
               >
-                <span>View All {features.length} Features</span>
-                <ChevronRight className="w-4 h-4" />
-              </motion.button>
-            )}
-          </AnimatePresence>
-        </div>
+                <div className={`rounded-2xl sm:rounded-3xl p-6 sm:p-8 lg:p-10 border-2 ${userType.borderColor} ${userType.bgColor}`}>
+                  <div className="flex flex-col lg:flex-row gap-8 lg:gap-12 items-center">
+                    <div className="flex-shrink-0 flex flex-col items-center text-center lg:w-1/3">
+                      <div className={`w-20 h-20 sm:w-24 sm:h-24 rounded-2xl bg-gradient-to-br ${userType.color} flex items-center justify-center shadow-xl mb-4`}>
+                        <ActiveIcon className="w-10 h-10 sm:w-12 sm:h-12 text-white" />
+                      </div>
+                      <h3 className="text-xl sm:text-2xl font-bold text-slate-900 dark:text-white mb-2">
+                        For {userType.title}
+                      </h3>
+                      <p className="text-sm sm:text-base text-slate-600 dark:text-slate-400 max-w-xs">
+                        Everything {userType.title.toLowerCase()} need in one place
+                      </p>
+                    </div>
 
-        <motion.div
-          initial="hidden"
-          whileInView="visible"
-          viewport={{ once: true, margin: "-50px" }}
-          variants={staggerContainer}
-          className="hidden sm:grid sm:grid-cols-2 lg:grid-cols-4 gap-x-8 gap-y-12"
-        >
-          {features.map((feature, index) => (
-            <motion.div 
-              key={feature.title} 
-              variants={fadeInUp}
-              className="text-center group cursor-default"
-              data-testid={`card-feature-${index}`}
-            >
-              <div className="relative mx-auto w-16 h-16 mb-5">
-                <div className="absolute inset-0 bg-gradient-to-br from-indigo-500 to-violet-600 rounded-2xl opacity-0 group-hover:opacity-20 blur-xl transition-all duration-500" />
-                <div className="relative w-full h-full rounded-2xl bg-gradient-to-br from-indigo-50 to-violet-50 dark:from-indigo-950/50 dark:to-violet-950/50 flex items-center justify-center border border-indigo-100 dark:border-indigo-800/50 group-hover:border-indigo-300 dark:group-hover:border-indigo-600 transition-all duration-300 group-hover:shadow-xl group-hover:shadow-indigo-500/20 group-hover:-translate-y-1">
-                  <feature.icon className="w-7 h-7 text-indigo-600 dark:text-indigo-400 group-hover:scale-110 transition-transform duration-300" />
+                    <div className="flex-1 grid grid-cols-1 sm:grid-cols-2 gap-4 sm:gap-6 w-full">
+                      {userType.features.map((feature, idx) => {
+                        const FeatureIcon = feature.icon;
+                        return (
+                          <div
+                            key={`${activeTab}-${feature.title}`}
+                            className="flex items-start gap-4 p-4 rounded-xl bg-white/80 dark:bg-slate-800/80 backdrop-blur-sm border border-slate-100 dark:border-slate-700"
+                            data-testid={`feature-${userType.title.toLowerCase()}-${idx}`}
+                          >
+                            <div className={`w-10 h-10 rounded-lg bg-gradient-to-br ${userType.color} flex items-center justify-center flex-shrink-0`}>
+                              <FeatureIcon className="w-5 h-5 text-white" />
+                            </div>
+                            <div>
+                              <h4 className="font-semibold text-slate-900 dark:text-white mb-1">{feature.title}</h4>
+                              <p className="text-sm text-slate-600 dark:text-slate-400">{feature.desc}</p>
+                            </div>
+                          </div>
+                        );
+                      })}
+                    </div>
+                  </div>
+
+                  <div className="mt-8 pt-6 border-t border-slate-200/50 dark:border-slate-700/50">
+                    <div className="flex flex-wrap items-center justify-center gap-4 text-sm text-slate-500 dark:text-slate-400">
+                      <div className="flex items-center gap-2">
+                        <Brain className="w-4 h-4 text-indigo-500" />
+                        <span>AI-Powered Insights</span>
+                      </div>
+                      <div className="flex items-center gap-2">
+                        <Zap className="w-4 h-4 text-amber-500" />
+                        <span>Real-Time Updates</span>
+                      </div>
+                      <div className="flex items-center gap-2">
+                        <Shield className="w-4 h-4 text-emerald-500" />
+                        <span>Secure & Private</span>
+                      </div>
+                    </div>
+                  </div>
                 </div>
-              </div>
-              <h3 className="text-lg font-semibold text-foreground mb-2 group-hover:text-indigo-600 dark:group-hover:text-indigo-400 transition-colors duration-300">{feature.title}</h3>
-              <p className="text-sm text-muted-foreground leading-relaxed max-w-[220px] mx-auto">{feature.description}</p>
-            </motion.div>
-          ))}
+              </motion.div>
+            );
+          })()}
         </motion.div>
       </div>
     </section>
@@ -1840,9 +1734,8 @@ export default function LandingPage() {
       <Header />
       <main>
         <HeroSection />
-        <ConnectedIntelligenceSection />
-        <AnalyticsPreviewSection />
         <FeaturesSection />
+        <AnalyticsPreviewSection />
         <GetStartedSection />
         <DemoRequestSection />
         <TestimonialsSection />

@@ -953,7 +953,7 @@ function DemoRequestSection() {
             <Button
               size="lg"
               variant="outline"
-              className="bg-white/10 text-white border-white/30 backdrop-blur-sm hover:bg-white/20"
+              className="bg-white text-indigo-700 border-white hover:bg-white/90"
               data-testid="button-contact-sales"
             >
               <Phone className="w-5 h-5 mr-2" />

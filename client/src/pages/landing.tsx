@@ -340,7 +340,7 @@ function HeroSection() {
 }
 
 function FeaturesSection() {
-  const [viewMode, setViewMode] = useState<'modules' | 'roles'>('modules');
+  const [viewMode, setViewMode] = useState<'modules' | 'roles'>('roles');
   const [activeTab, setActiveTab] = useState(0);
 
   const allFeatures = [
@@ -461,18 +461,6 @@ function FeaturesSection() {
           <motion.div variants={fadeInUp} className="flex justify-center">
             <div className="inline-flex items-center gap-1 p-1 rounded-full bg-slate-100 dark:bg-slate-800 border border-slate-200 dark:border-slate-700">
               <button
-                onClick={() => setViewMode('modules')}
-                className={`flex items-center gap-2 px-4 py-2 rounded-full text-sm font-medium transition-all duration-300 ${
-                  viewMode === 'modules'
-                    ? 'bg-white dark:bg-slate-700 text-indigo-600 dark:text-indigo-400 shadow-sm'
-                    : 'text-slate-500 dark:text-slate-400 hover:text-slate-700 dark:hover:text-slate-300'
-                }`}
-                data-testid="toggle-by-module"
-              >
-                <LayoutGrid className="w-4 h-4" />
-                <span>By Module</span>
-              </button>
-              <button
                 onClick={() => setViewMode('roles')}
                 className={`flex items-center gap-2 px-4 py-2 rounded-full text-sm font-medium transition-all duration-300 ${
                   viewMode === 'roles'
@@ -483,6 +471,18 @@ function FeaturesSection() {
               >
                 <Users className="w-4 h-4" />
                 <span>By Role</span>
+              </button>
+              <button
+                onClick={() => setViewMode('modules')}
+                className={`flex items-center gap-2 px-4 py-2 rounded-full text-sm font-medium transition-all duration-300 ${
+                  viewMode === 'modules'
+                    ? 'bg-white dark:bg-slate-700 text-indigo-600 dark:text-indigo-400 shadow-sm'
+                    : 'text-slate-500 dark:text-slate-400 hover:text-slate-700 dark:hover:text-slate-300'
+                }`}
+                data-testid="toggle-by-module"
+              >
+                <LayoutGrid className="w-4 h-4" />
+                <span>By Module</span>
               </button>
             </div>
           </motion.div>

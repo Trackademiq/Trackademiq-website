@@ -1458,7 +1458,7 @@ function ContactSection() {
 function Footer() {
   const footerLinks = {
     product: [
-      { label: "Features", href: "#features" },
+      { label: "Features", href: "#all-features" },
       { label: "Get Started", href: "#get-started" },
       { label: "Product Tour", href: "/product-tour" },
     ],

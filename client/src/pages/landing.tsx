@@ -902,12 +902,37 @@ function GetStartedSection() {
           </motion.p>
         </motion.div>
 
+        {/* Mobile: Horizontal timeline with arrows */}
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          className="sm:hidden flex items-center justify-center gap-2 mb-10"
+        >
+          {steps.map((step, index) => (
+            <div key={step.number} className="flex items-center gap-2">
+              <div className="flex flex-col items-center">
+                <div className="w-10 h-10 rounded-full bg-gradient-to-br from-indigo-500 to-violet-600 text-white text-sm font-bold flex items-center justify-center shadow-lg shadow-indigo-500/25">
+                  {step.number}
+                </div>
+                <span className="mt-2 text-xs font-semibold text-foreground text-center max-w-[80px] leading-tight">
+                  {step.title}
+                </span>
+              </div>
+              {index < steps.length - 1 && (
+                <ChevronRight className="w-5 h-5 text-indigo-400 flex-shrink-0 -mt-6" />
+              )}
+            </div>
+          ))}
+        </motion.div>
+
+        {/* Desktop: Full cards with descriptions */}
         <motion.div
           initial="hidden"
           whileInView="visible"
           viewport={{ once: true, margin: "-50px" }}
           variants={staggerContainer}
-          className="grid grid-cols-1 md:grid-cols-3 gap-6 sm:gap-8 mb-10 sm:mb-16 md:mb-24"
+          className="hidden sm:grid sm:grid-cols-3 gap-6 sm:gap-8 mb-10 sm:mb-16 md:mb-24"
         >
           {steps.map((step, index) => (
             <motion.div
@@ -916,7 +941,7 @@ function GetStartedSection() {
               className="relative"
             >
               <div className="text-center">
-                <div className="inline-flex items-center justify-center w-12 h-12 sm:w-14 sm:h-14 md:w-16 md:h-16 rounded-full bg-gradient-to-br from-indigo-500 to-indigo-600 text-white text-lg sm:text-xl md:text-2xl font-bold mb-4 sm:mb-6">
+                <div className="inline-flex items-center justify-center w-14 h-14 md:w-16 md:h-16 rounded-full bg-gradient-to-br from-indigo-500 to-indigo-600 text-white text-xl md:text-2xl font-bold mb-4 sm:mb-6">
                   {step.number}
                 </div>
                 {index < steps.length - 1 && (

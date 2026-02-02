@@ -245,7 +245,8 @@ function HeroContent({ scrollToContact }: { scrollToContact: () => void }) {
         className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-slate-900 dark:text-white leading-[1.2] sm:leading-tight mb-4 sm:mb-6"
         data-testid="text-hero-headline"
       >
-        Next-Generation{" "}
+        Next-Generation
+        <br />
         <span className="bg-gradient-to-r from-indigo-600 to-violet-600 bg-clip-text text-transparent">
           Education Systems
         </span>

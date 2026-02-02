@@ -16,4 +16,4 @@ Allow: /*.png
 Allow: /*.jpg
 Allow: /*.svg
 
-Sitemap: https://trackademiq.in/sitemap.xml
+Sitemap: https://trackademiq.com/sitemap.xml

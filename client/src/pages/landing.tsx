@@ -1428,7 +1428,7 @@ function ContactSection() {
                     <div>
                       <div className="font-medium text-foreground">Address</div>
                       <div className="text-muted-foreground">
-                        CC, Mithilla Karnan Nagar<br />
+                        G1 - CC Mithilla, Karnan Nagar<br />
                         Polichalur, Chennai 600074<br />
                         India
                       </div>
@@ -1458,11 +1458,11 @@ function ContactSection() {
                     <div>
                       <div className="font-medium text-foreground">Email</div>
                       <a
-                        href="mailto:info@trackademiq.in"
+                        href="mailto:info@trackademiq.com"
                         className="text-muted-foreground hover:text-indigo-600 transition-colors"
                         data-testid="link-email"
                       >
-                        info@trackademiq.in
+                        info@trackademiq.com
                       </a>
                     </div>
                   </div>
@@ -1541,7 +1541,7 @@ function Footer() {
             />
             <span className="text-base font-bold text-white">Trackademiq</span>
           </div>
-          <p className="text-white/60 text-xs mb-4">Chennai, India • +91 9894836016</p>
+          <p className="text-white/60 text-xs mb-4">Polichalur, Chennai • +91 9894836016</p>
           <div className="flex items-center justify-center gap-2 mb-4">
             {socialLinks.map((social) => (
               <a
@@ -1578,7 +1578,7 @@ function Footer() {
               </p>
               <div className="flex items-center gap-4">
                 <div className="text-xs sm:text-sm text-white/60">
-                  <div className="font-medium text-white mb-1">Chennai, India</div>
+                  <div className="font-medium text-white mb-1">Polichalur, Chennai</div>
                   <a href="tel:+919894836016" className="hover:text-indigo-400 transition-colors">
                     +91 9894836016
                   </a>

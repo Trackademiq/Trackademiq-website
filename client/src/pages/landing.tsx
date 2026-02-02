@@ -282,7 +282,7 @@ function HeroContent({ scrollToContact }: { scrollToContact: () => void }) {
         className="text-base sm:text-lg md:text-xl text-slate-600 dark:text-slate-300 mb-6 sm:mb-8 max-w-lg mx-auto lg:mx-0 leading-relaxed"
         data-testid="text-hero-subtext"
       >
-        AI-powered education management for academics, attendance, fees, analytics & administration—all in one platform.
+        AI-powered Education ERP — an all-in-one platform for smarter school management.
       </motion.p>
 
       <motion.div variants={fadeInUp} className="flex flex-col sm:flex-row gap-3 sm:gap-4 justify-center lg:justify-start">

@@ -42,7 +42,6 @@ import {
 } from "lucide-react";
 import { SiLinkedin, SiFacebook, SiInstagram, SiX, SiYoutube } from "react-icons/si";
 
-import heroVideo from "@assets/generated_videos/trackademiq_ai_education_promo.mp4";
 import schoolsImage from "@assets/generated_images/indian_school_principal_administrator.png";
 import teachersImage from "@assets/generated_images/indian_teacher_with_tablet_students.png";
 import parentsImage from "@assets/generated_images/indian_parent_helping_child_homework.png";
@@ -251,8 +250,8 @@ function HeroSection() {
             className="text-base sm:text-lg md:text-xl text-white/80 mb-6 sm:mb-8 max-w-2xl leading-relaxed"
             data-testid="text-hero-subtext"
           >
-            AI-powered education intelligence platform connecting Students, Teachers, Parents, and Administrators. 
-            Transform your institution with real-time analytics, automation, and data-driven insights.
+            We help schools streamline operations while keeping parents connected to their child's progress. 
+            Our cloud platform brings teachers, students, and families together with simple, secure tools.
           </motion.p>
 
           <motion.div variants={fadeInUp} className="flex flex-col sm:flex-row gap-4">
@@ -282,11 +281,11 @@ function HeroSection() {
           >
             <div className="flex items-center gap-2">
               <CheckCircle2 className="w-4 h-4 sm:w-5 sm:h-5 text-green-400" />
-              <span>500+ Schools Trust Us</span>
+              <span>50+ Schools Trust Us</span>
             </div>
             <div className="flex items-center gap-2">
               <CheckCircle2 className="w-4 h-4 sm:w-5 sm:h-5 text-green-400" />
-              <span>2 Lakh+ Students</span>
+              <span>25,000+ Students</span>
             </div>
             <div className="flex items-center gap-2">
               <CheckCircle2 className="w-4 h-4 sm:w-5 sm:h-5 text-green-400" />
@@ -301,37 +300,60 @@ function HeroSection() {
             transition={{ duration: 0.8, delay: 0.3 }}
             className="hidden lg:block relative"
           >
-            <div className="relative rounded-2xl overflow-hidden shadow-2xl shadow-indigo-500/20 border border-white/10">
-              <video
-                src={heroVideo}
-                autoPlay
-                loop
-                muted
-                playsInline
-                className="w-full h-auto object-cover"
-                data-testid="video-hero"
-              />
-              <div className="absolute inset-0 bg-gradient-to-t from-indigo-950/50 to-transparent pointer-events-none" />
-            </div>
-            <div className="absolute -bottom-6 -left-6 bg-white/10 backdrop-blur-md rounded-xl p-4 border border-white/20">
-              <div className="flex items-center gap-3">
-                <div className="w-12 h-12 rounded-full bg-gradient-to-br from-green-400 to-emerald-500 flex items-center justify-center">
-                  <TrendingUp className="w-6 h-6 text-white" />
+            <div className="relative" data-testid="hero-visual">
+              <div className="grid grid-cols-2 gap-4">
+                <div className="space-y-4">
+                  <div className="bg-white/10 backdrop-blur-md rounded-2xl p-6 border border-white/20">
+                    <div className="flex items-center gap-3 mb-4">
+                      <div className="w-10 h-10 rounded-full bg-gradient-to-br from-emerald-400 to-emerald-600 flex items-center justify-center">
+                        <GraduationCap className="w-5 h-5 text-white" />
+                      </div>
+                      <div className="text-white font-medium">Teachers</div>
+                    </div>
+                    <div className="text-white/70 text-sm">Share assignments, track attendance, and communicate with parents instantly</div>
+                  </div>
+                  
+                  <div className="bg-white/10 backdrop-blur-md rounded-2xl p-6 border border-white/20">
+                    <div className="flex items-center gap-3 mb-4">
+                      <div className="w-10 h-10 rounded-full bg-gradient-to-br from-indigo-400 to-indigo-600 flex items-center justify-center">
+                        <Users className="w-5 h-5 text-white" />
+                      </div>
+                      <div className="text-white font-medium">Parents</div>
+                    </div>
+                    <div className="text-white/70 text-sm">Get AI-powered progress reports and real-time notifications about your child</div>
+                  </div>
                 </div>
-                <div>
-                  <div className="text-white font-semibold">98% Satisfaction</div>
-                  <div className="text-white/60 text-sm">From our schools</div>
+                
+                <div className="space-y-4 mt-8">
+                  <div className="bg-white/10 backdrop-blur-md rounded-2xl p-6 border border-white/20">
+                    <div className="flex items-center gap-3 mb-4">
+                      <div className="w-10 h-10 rounded-full bg-gradient-to-br from-amber-400 to-amber-600 flex items-center justify-center">
+                        <Building2 className="w-5 h-5 text-white" />
+                      </div>
+                      <div className="text-white font-medium">Schools</div>
+                    </div>
+                    <div className="text-white/70 text-sm">Manage operations, analyze performance data, and make informed decisions</div>
+                  </div>
+                  
+                  <div className="bg-gradient-to-br from-indigo-500/30 to-violet-500/30 backdrop-blur-md rounded-2xl p-6 border border-indigo-400/30">
+                    <div className="flex items-center gap-3 mb-3">
+                      <Brain className="w-6 h-6 text-indigo-300" />
+                      <div className="text-white font-semibold">AI Intelligence</div>
+                    </div>
+                    <div className="text-white/80 text-sm">Connecting everyone with smart analytics and automated insights</div>
+                  </div>
                 </div>
               </div>
-            </div>
-            <div className="absolute -top-4 -right-4 bg-white/10 backdrop-blur-md rounded-xl p-4 border border-white/20">
-              <div className="flex items-center gap-3">
-                <div className="w-12 h-12 rounded-full bg-gradient-to-br from-indigo-500 to-indigo-600 flex items-center justify-center">
-                  <Users className="w-6 h-6 text-white" />
+              
+              <div className="absolute -bottom-4 left-1/2 -translate-x-1/2 bg-white/10 backdrop-blur-md rounded-full px-6 py-3 border border-white/20 flex items-center gap-4">
+                <div className="flex items-center gap-2">
+                  <Shield className="w-5 h-5 text-emerald-400" />
+                  <span className="text-white/90 text-sm font-medium">Cloud Secured</span>
                 </div>
-                <div>
-                  <div className="text-white font-semibold">2 Lakh+</div>
-                  <div className="text-white/60 text-sm">Active Students</div>
+                <div className="w-px h-4 bg-white/20" />
+                <div className="flex items-center gap-2">
+                  <CheckCircle2 className="w-5 h-5 text-emerald-400" />
+                  <span className="text-white/90 text-sm font-medium">ISO Compliant</span>
                 </div>
               </div>
             </div>
@@ -418,7 +440,7 @@ function FeaturesSection() {
             variants={fadeInUp}
             className="text-base sm:text-lg text-muted-foreground max-w-2xl mx-auto px-2"
           >
-            AI-powered modules for Students, Teachers, Parents, and Administrators to transform education management
+            Everything your school needs to run smoothly - from attendance to fees to parent communication
           </motion.p>
         </motion.div>
 
@@ -742,24 +764,24 @@ function DemoRequestSection() {
 function TestimonialsSection() {
   const testimonials = [
     {
-      quote: "Trackademiq has transformed how we manage our school. The AI analytics helped us identify at-risk students early and improve our overall results by 25%.",
-      author: "Dr. Lakshmi Venkatesh",
+      quote: "Since we started using Trackademiq, our administrative work reduced significantly. The real-time analytics help us track student progress and take action before issues escalate.",
+      author: "Dr. Meena Krishnan",
       role: "Principal",
-      school: "Chennai Public School",
+      school: "CBSE School, Chennai",
       rating: 5
     },
     {
-      quote: "As a parent, I love getting real-time updates about my child's attendance and performance. The fee payment feature has made my life so much easier!",
-      author: "Rajesh Kumar",
+      quote: "Getting instant notifications about attendance and homework really helps me stay connected with my child's education. The fee payment through the app saves so much time.",
+      author: "Anitha Rajan",
       role: "Parent",
-      school: "St. Mary's Matriculation School",
+      school: "Matriculation School",
       rating: 5
     },
     {
-      quote: "The homework management and direct messaging features have saved me hours every week. I can now focus more on teaching and less on paperwork.",
-      author: "Priya Sundaram",
-      role: "Science Teacher",
-      school: "DAV School, Chennai",
+      quote: "Managing homework assignments and communicating with parents used to take hours. Now I can focus on what I do best - teaching my students.",
+      author: "Karthik Sundaram",
+      role: "Mathematics Teacher",
+      school: "ICSE School, Chennai",
       rating: 5
     }
   ];
@@ -790,7 +812,7 @@ function TestimonialsSection() {
             variants={fadeInUp}
             className="text-base sm:text-lg text-muted-foreground max-w-2xl mx-auto px-2"
           >
-            Hear from schools across Chennai who have transformed their operations with Trackademiq
+            Schools like yours are already saving time and staying better connected with families
           </motion.p>
         </motion.div>
 
@@ -1059,11 +1081,11 @@ function ContactSection() {
                     <div>
                       <div className="font-medium text-foreground">Email</div>
                       <a
-                        href="mailto:contact@trackademiq.in"
+                        href="mailto:info@trackademiq.in"
                         className="text-muted-foreground hover:text-indigo-600 transition-colors"
                         data-testid="link-email"
                       >
-                        contact@trackademiq.in
+                        info@trackademiq.in
                       </a>
                     </div>
                   </div>
@@ -1103,7 +1125,6 @@ function Footer() {
       { label: "Product Tour", href: "/product-tour" },
     ],
     company: [
-      { label: "Case Studies", href: "/case-studies" },
       { label: "Blog", href: "/blog" },
       { label: "Contact", href: "#contact" },
       { label: "About Us", href: "#" },
@@ -1111,8 +1132,6 @@ function Footer() {
     legal: [
       { label: "Privacy Policy", href: "#" },
       { label: "Terms of Service", href: "#" },
-      { label: "Data Security", href: "#" },
-      { label: "GDPR Compliance", href: "#" },
     ],
   };
 
@@ -1147,8 +1166,8 @@ function Footer() {
               <span className="text-lg font-bold text-background">Trackademiq</span>
             </div>
             <p className="text-background/70 mb-6 max-w-sm">
-              Next-generation AI-powered education intelligence platform. 
-              Connecting students, teachers, parents, and administrators with data-driven insights.
+              A simple, secure cloud platform that helps schools run better while keeping parents 
+              informed about their child's education journey.
             </p>
             <div className="flex items-center gap-4">
               <div className="text-sm text-background/60">

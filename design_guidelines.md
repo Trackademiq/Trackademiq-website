@@ -80,7 +80,7 @@ Futuristic, enterprise-grade AI analytics look with:
 
 ### Contact Form
 - **Layout**: Form (60%) + Contact info (40%)
-- **Email**: contact@trackademiq.in
+- **Email**: info@trackademiq.in
 - **Phone**: +91 9894836016
 
 ## Key Modules
@@ -121,4 +121,4 @@ Futuristic, enterprise-grade AI analytics look with:
 ## Company Details
 - **Location**: Chennai, India (123 Tech Park, OMR, Chennai 600096)
 - **Phone**: +91 9894836016
-- **Email**: contact@trackademiq.in
+- **Email**: info@trackademiq.in

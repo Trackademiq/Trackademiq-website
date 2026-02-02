@@ -33,7 +33,7 @@ const botResponses: { [key: string]: string } = {
   demo: "Great! You can request a demo by filling out the contact form on our homepage, or I can help you get started. Just scroll down to the 'Request a Demo' section.",
   features: "Trackademiq offers 8 comprehensive modules: AI Analytics, Smart Attendance, Marks & Report Cards, Fee Management, Homework & Timetables, Messaging, Leave Management, and Multi-Tenant Platform. Would you like to learn more about any specific feature?",
   attendance: "Our attendance system supports both biometric and app-based check-ins. Parents receive instant notifications when their child is marked absent. It's incredibly fast and accurate!",
-  contact: "You can reach us at +91 9894836016 or email contact@trackademiq.in. Our office is located at 123 Tech Park, OMR, Chennai 600096.",
+  contact: "You can reach us at +91 9894836016 or email info@trackademiq.in. Our office is located at 123 Tech Park, OMR, Chennai 600096.",
   default: "Thank you for your question! For detailed information, I recommend scheduling a demo with our team. They can provide personalized answers based on your school's specific needs. Would you like me to help you request a demo?"
 };
 

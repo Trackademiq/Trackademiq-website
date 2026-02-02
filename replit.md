@@ -74,7 +74,7 @@ Modern, SEO-optimized landing page for Trackademiq, an AI-powered education inte
 ## Company Details
 - **Location**: Chennai, India (123 Tech Park, OMR, Chennai 600096)
 - **Phone**: +91 9894836016
-- **Email**: contact@trackademiq.in
+- **Email**: info@trackademiq.in
 
 ## Running the Project
 The application runs with `npm run dev` which starts both the Express backend and Vite frontend on port 5000.

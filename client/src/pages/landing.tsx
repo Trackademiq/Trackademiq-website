@@ -460,7 +460,7 @@ function AnalyticsPreviewSection() {
   ];
 
   return (
-    <section id="analytics-preview" className="py-10 sm:py-20 md:py-28 bg-gradient-to-br from-slate-900 via-indigo-950 to-violet-950" data-testid="section-analytics-preview">
+    <section id="analytics-preview" className="py-10 sm:py-20 md:py-28 bg-gradient-to-b from-violet-800 via-indigo-700 to-violet-800" data-testid="section-analytics-preview">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <motion.div
           initial="hidden"

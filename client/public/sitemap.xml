@@ -84,6 +84,30 @@
     <priority>0.9</priority>
   </url>
   
+  <!-- Privacy Policy -->
+  <url>
+    <loc>https://trackademiq.com/privacy-policy</loc>
+    <lastmod>2026-02-02</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <!-- Terms of Service -->
+  <url>
+    <loc>https://trackademiq.com/terms</loc>
+    <lastmod>2026-02-02</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <!-- Refund Policy -->
+  <url>
+    <loc>https://trackademiq.com/refund-policy</loc>
+    <lastmod>2026-02-02</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
   <!-- Blog -->
   <url>
     <loc>https://trackademiq.com/blog</loc>

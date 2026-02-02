@@ -38,7 +38,8 @@ import {
   Shield,
   Clock,
   TrendingUp,
-  Zap
+  Zap,
+  LayoutGrid
 } from "lucide-react";
 import { SiLinkedin, SiFacebook, SiInstagram, SiX, SiYoutube } from "react-icons/si";
 
@@ -338,7 +339,10 @@ function HeroSection() {
   );
 }
 
-function AllFeaturesSection() {
+function FeaturesSection() {
+  const [viewMode, setViewMode] = useState<'modules' | 'roles'>('modules');
+  const [activeTab, setActiveTab] = useState(0);
+
   const allFeatures = [
     { icon: Brain, title: "AI Analytics", desc: "Predictive insights and student risk detection", color: "from-indigo-500 to-violet-500" },
     { icon: UserCheck, title: "Attendance", desc: "Biometric & app-based real-time tracking", color: "from-emerald-500 to-teal-500" },
@@ -349,70 +353,6 @@ function AllFeaturesSection() {
     { icon: Clock, title: "Leave Management", desc: "Staff and student leave workflows", color: "from-cyan-500 to-sky-500" },
     { icon: Building2, title: "Multi-Tenant", desc: "Manage multiple schools in one place", color: "from-slate-500 to-gray-600" }
   ];
-
-  return (
-    <section id="all-features" className="py-6 sm:py-10 md:py-12 bg-background" data-testid="section-all-features">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <motion.div
-          initial="hidden"
-          whileInView="visible"
-          viewport={{ once: true }}
-          variants={staggerContainer}
-          className="text-center mb-6 sm:mb-8"
-        >
-          <motion.div variants={fadeInUp}>
-            <Badge className="mb-3 sm:mb-4 bg-gradient-to-r from-indigo-100 to-violet-100 text-indigo-700 dark:from-indigo-900/50 dark:to-violet-900/50 dark:text-indigo-300 border-0">
-              <Sparkles className="w-3 h-3 mr-1" />
-              Complete Platform
-            </Badge>
-          </motion.div>
-          <motion.h2
-            variants={fadeInUp}
-            className="text-2xl sm:text-3xl md:text-4xl font-bold text-foreground mb-3 sm:mb-4"
-          >
-            Everything You Need in One Platform
-          </motion.h2>
-          <motion.p
-            variants={fadeInUp}
-            className="text-base sm:text-lg text-muted-foreground max-w-2xl mx-auto"
-          >
-            8 powerful modules to digitize and automate your entire school operations
-          </motion.p>
-        </motion.div>
-
-        <motion.div
-          initial="hidden"
-          whileInView="visible"
-          viewport={{ once: true }}
-          variants={staggerContainer}
-          className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-3 sm:gap-4"
-        >
-          {allFeatures.map((feature, idx) => {
-            const Icon = feature.icon;
-            return (
-              <motion.div
-                key={feature.title}
-                variants={fadeInUp}
-                whileHover={{ y: -4, transition: { duration: 0.2 } }}
-                className="group p-4 sm:p-5 rounded-xl bg-card border border-border hover:border-indigo-200 dark:hover:border-indigo-800 hover:shadow-lg transition-all duration-300 cursor-default"
-                data-testid={`feature-all-${idx}`}
-              >
-                <div className={`w-10 h-10 sm:w-12 sm:h-12 rounded-xl bg-gradient-to-br ${feature.color} flex items-center justify-center mb-3 shadow-md group-hover:shadow-lg transition-shadow`}>
-                  <Icon className="w-5 h-5 sm:w-6 sm:h-6 text-white" />
-                </div>
-                <h3 className="font-semibold text-sm sm:text-base text-foreground mb-1">{feature.title}</h3>
-                <p className="text-xs sm:text-sm text-muted-foreground line-clamp-2">{feature.desc}</p>
-              </motion.div>
-            );
-          })}
-        </motion.div>
-      </div>
-    </section>
-  );
-}
-
-function FeaturesSection() {
-  const [activeTab, setActiveTab] = useState(0);
   
   const userTypes = [
     {
@@ -486,64 +426,128 @@ function FeaturesSection() {
   ];
 
   return (
-    <section id="personalized" className="py-6 sm:py-10 md:py-12 bg-gradient-to-b from-white to-slate-50 dark:from-slate-900 dark:to-slate-950" data-testid="section-personalized">
+    <section id="features" className="py-6 sm:py-10 md:py-12 bg-gradient-to-b from-white to-slate-50 dark:from-slate-900 dark:to-slate-950" data-testid="section-features">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <motion.div
           initial="hidden"
           whileInView="visible"
           viewport={{ once: true }}
           variants={staggerContainer}
-          className="text-center mb-8 sm:mb-10"
+          className="text-center mb-6 sm:mb-8"
         >
           <motion.div variants={fadeInUp}>
-            <Badge className="mb-4 bg-gradient-to-r from-indigo-100 to-violet-100 text-indigo-700 dark:from-indigo-900/50 dark:to-violet-900/50 dark:text-indigo-300 border-0">
+            <Badge className="mb-3 sm:mb-4 bg-gradient-to-r from-indigo-100 to-violet-100 text-indigo-700 dark:from-indigo-900/50 dark:to-violet-900/50 dark:text-indigo-300 border-0">
               <Sparkles className="w-3 h-3 mr-1" />
-              Personalized Experience
+              Complete Platform
             </Badge>
           </motion.div>
           <motion.h2
             variants={fadeInUp}
-            className="text-2xl sm:text-3xl md:text-4xl font-bold text-slate-900 dark:text-white mb-4"
+            className="text-2xl sm:text-3xl md:text-4xl font-bold text-slate-900 dark:text-white mb-3 sm:mb-4"
           >
-            Tools Tailored to{" "}
+            Everything You Need in{" "}
             <span className="bg-gradient-to-r from-indigo-600 to-violet-600 bg-clip-text text-transparent">
-              Every User
+              One Platform
             </span>
           </motion.h2>
           <motion.p
             variants={fadeInUp}
-            className="text-base sm:text-lg text-slate-600 dark:text-slate-400 max-w-2xl mx-auto"
+            className="text-base sm:text-lg text-slate-600 dark:text-slate-400 max-w-2xl mx-auto mb-5 sm:mb-6"
           >
-            Students, Teachers, Parents, and Administrators - everyone gets exactly what they need, connected through powerful AI analytics
+            8 powerful modules to digitize and automate your entire school operations
           </motion.p>
+
+          {/* View Mode Toggle */}
+          <motion.div variants={fadeInUp} className="flex justify-center">
+            <div className="inline-flex items-center gap-1 p-1 rounded-full bg-slate-100 dark:bg-slate-800 border border-slate-200 dark:border-slate-700">
+              <button
+                onClick={() => setViewMode('modules')}
+                className={`flex items-center gap-2 px-4 py-2 rounded-full text-sm font-medium transition-all duration-300 ${
+                  viewMode === 'modules'
+                    ? 'bg-white dark:bg-slate-700 text-indigo-600 dark:text-indigo-400 shadow-sm'
+                    : 'text-slate-500 dark:text-slate-400 hover:text-slate-700 dark:hover:text-slate-300'
+                }`}
+                data-testid="toggle-by-module"
+              >
+                <LayoutGrid className="w-4 h-4" />
+                <span>By Module</span>
+              </button>
+              <button
+                onClick={() => setViewMode('roles')}
+                className={`flex items-center gap-2 px-4 py-2 rounded-full text-sm font-medium transition-all duration-300 ${
+                  viewMode === 'roles'
+                    ? 'bg-white dark:bg-slate-700 text-indigo-600 dark:text-indigo-400 shadow-sm'
+                    : 'text-slate-500 dark:text-slate-400 hover:text-slate-700 dark:hover:text-slate-300'
+                }`}
+                data-testid="toggle-by-role"
+              >
+                <Users className="w-4 h-4" />
+                <span>By Role</span>
+              </button>
+            </div>
+          </motion.div>
         </motion.div>
 
-        <motion.div
-          initial="hidden"
-          whileInView="visible"
-          viewport={{ once: true }}
-          variants={staggerContainer}
-        >
-          <div className="flex flex-wrap justify-center gap-2 sm:gap-3 mb-6 sm:mb-8">
-            {userTypes.map((user, index) => (
-              <motion.button
-                key={user.title}
-                variants={fadeInUp}
-                onClick={() => setActiveTab(index)}
-                whileHover={{ scale: 1.02 }}
-                whileTap={{ scale: 0.98 }}
-                className={`flex items-center gap-2 px-4 sm:px-6 py-2.5 sm:py-3 rounded-full font-medium text-sm sm:text-base transition-all duration-300 ${
-                  activeTab === index
-                    ? `bg-gradient-to-r ${user.color} text-white shadow-lg shadow-${user.activeColor}/30`
-                    : "bg-white/80 dark:bg-slate-800/80 backdrop-blur-sm text-slate-600 dark:text-slate-300 border border-slate-200/60 dark:border-slate-700/60 hover:border-slate-300 dark:hover:border-slate-600"
-                }`}
-                data-testid={`tab-${user.title.toLowerCase()}`}
-              >
-                <user.icon className="w-4 h-4 sm:w-5 sm:h-5" />
-                <span>{user.title}</span>
-              </motion.button>
-            ))}
-          </div>
+        {/* By Module View */}
+        {viewMode === 'modules' && (
+          <motion.div
+            initial={{ opacity: 0, y: 10 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.3 }}
+            className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-3 sm:gap-4"
+          >
+            {allFeatures.map((feature, idx) => {
+              const Icon = feature.icon;
+              return (
+                <motion.div
+                  key={feature.title}
+                  initial={{ opacity: 0, y: 20 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 0.3, delay: idx * 0.05 }}
+                  whileHover={{ y: -4, transition: { duration: 0.2 } }}
+                  className="group p-4 sm:p-5 rounded-xl bg-card border border-border hover:border-indigo-200 dark:hover:border-indigo-800 hover:shadow-lg transition-all duration-300 cursor-default"
+                  data-testid={`feature-module-${idx}`}
+                >
+                  <div className={`w-10 h-10 sm:w-12 sm:h-12 rounded-xl bg-gradient-to-br ${feature.color} flex items-center justify-center mb-3 shadow-md group-hover:shadow-lg transition-shadow`}>
+                    <Icon className="w-5 h-5 sm:w-6 sm:h-6 text-white" />
+                  </div>
+                  <h3 className="font-semibold text-sm sm:text-base text-foreground mb-1">{feature.title}</h3>
+                  <p className="text-xs sm:text-sm text-muted-foreground line-clamp-2">{feature.desc}</p>
+                </motion.div>
+              );
+            })}
+          </motion.div>
+        )}
+
+        {/* By Role View */}
+        {viewMode === 'roles' && (
+          <motion.div
+            initial={{ opacity: 0, y: 10 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.3 }}
+          >
+            <div className="flex flex-wrap justify-center gap-2 sm:gap-3 mb-6 sm:mb-8">
+              {userTypes.map((user, index) => (
+                <motion.button
+                  key={user.title}
+                  initial={{ opacity: 0, y: 10 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 0.3, delay: index * 0.05 }}
+                  onClick={() => setActiveTab(index)}
+                  whileHover={{ scale: 1.02 }}
+                  whileTap={{ scale: 0.98 }}
+                  className={`flex items-center gap-2 px-4 sm:px-6 py-2.5 sm:py-3 rounded-full font-medium text-sm sm:text-base transition-all duration-300 ${
+                    activeTab === index
+                      ? `bg-gradient-to-r ${user.color} text-white shadow-lg`
+                      : "bg-white/80 dark:bg-slate-800/80 backdrop-blur-sm text-slate-600 dark:text-slate-300 border border-slate-200/60 dark:border-slate-700/60 hover:border-slate-300 dark:hover:border-slate-600"
+                  }`}
+                  data-testid={`tab-${user.title.toLowerCase()}`}
+                >
+                  <user.icon className="w-4 h-4 sm:w-5 sm:h-5" />
+                  <span>{user.title}</span>
+                </motion.button>
+              ))}
+            </div>
 
           {(() => {
             const userType = userTypes[activeTab];
@@ -665,7 +669,8 @@ function FeaturesSection() {
               </motion.div>
             );
           })()}
-        </motion.div>
+          </motion.div>
+        )}
       </div>
     </section>
   );
@@ -1458,7 +1463,7 @@ function ContactSection() {
 function Footer() {
   const footerLinks = {
     product: [
-      { label: "Features", href: "#all-features" },
+      { label: "Features", href: "#features" },
       { label: "Get Started", href: "#get-started" },
       { label: "Product Tour", href: "/product-tour" },
     ],
@@ -1650,7 +1655,6 @@ export default function LandingPage() {
       <Header />
       <main>
         <HeroSection />
-        <AllFeaturesSection />
         <FeaturesSection />
         <AnalyticsPreviewSection />
         <GetStartedSection />

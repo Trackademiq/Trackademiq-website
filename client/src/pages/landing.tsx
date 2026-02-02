@@ -337,6 +337,164 @@ function HeroSection() {
   );
 }
 
+function ConnectedIntelligenceSection() {
+  const userTypes = [
+    {
+      icon: GraduationCap,
+      title: "Students",
+      description: "Track grades, view assignments, and get personalized learning insights",
+      color: "from-indigo-500 to-indigo-600",
+      bgColor: "bg-indigo-50 dark:bg-indigo-950/30",
+      borderColor: "border-indigo-200 dark:border-indigo-800"
+    },
+    {
+      icon: BookOpen,
+      title: "Teachers",
+      description: "Manage classes, automate attendance, and monitor student progress",
+      color: "from-emerald-500 to-emerald-600",
+      bgColor: "bg-emerald-50 dark:bg-emerald-950/30",
+      borderColor: "border-emerald-200 dark:border-emerald-800"
+    },
+    {
+      icon: Heart,
+      title: "Parents",
+      description: "Real-time updates on attendance, grades, and school communications",
+      color: "from-rose-500 to-rose-600",
+      bgColor: "bg-rose-50 dark:bg-rose-950/30",
+      borderColor: "border-rose-200 dark:border-rose-800"
+    },
+    {
+      icon: Shield,
+      title: "Administrators",
+      description: "Complete school oversight with analytics, reports, and management tools",
+      color: "from-amber-500 to-amber-600",
+      bgColor: "bg-amber-50 dark:bg-amber-950/30",
+      borderColor: "border-amber-200 dark:border-amber-800"
+    }
+  ];
+
+  return (
+    <section className="py-12 sm:py-20 md:py-28 bg-gradient-to-b from-white to-slate-50 dark:from-slate-900 dark:to-slate-950" data-testid="section-connected-intelligence">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <motion.div
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true }}
+          variants={staggerContainer}
+          className="text-center mb-12 sm:mb-16"
+        >
+          <motion.div variants={fadeInUp}>
+            <Badge className="mb-4 bg-gradient-to-r from-indigo-100 to-violet-100 text-indigo-700 dark:from-indigo-900/50 dark:to-violet-900/50 dark:text-indigo-300 border-0">
+              <Sparkles className="w-3 h-3 mr-1" />
+              Unified Platform
+            </Badge>
+          </motion.div>
+          <motion.h2
+            variants={fadeInUp}
+            className="text-2xl sm:text-3xl md:text-4xl font-bold text-slate-900 dark:text-white mb-4"
+          >
+            Every User Gets Tools Tailored to
+            <br />
+            <span className="bg-gradient-to-r from-indigo-600 to-violet-600 bg-clip-text text-transparent">
+              Their Unique Needs
+            </span>
+          </motion.h2>
+          <motion.p
+            variants={fadeInUp}
+            className="text-base sm:text-lg text-slate-600 dark:text-slate-400 max-w-2xl mx-auto"
+          >
+            All connected through powerful AI analytics that continuously improve educational outcomes
+          </motion.p>
+        </motion.div>
+
+        <motion.div
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true }}
+          variants={staggerContainer}
+          className="relative"
+        >
+          {/* Central AI Hub - Desktop */}
+          <motion.div
+            variants={fadeInUp}
+            className="hidden lg:flex absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 z-10"
+          >
+            <div className="relative">
+              <div className="w-32 h-32 rounded-full bg-gradient-to-br from-indigo-500 via-violet-500 to-purple-600 flex items-center justify-center shadow-2xl shadow-indigo-500/30">
+                <Brain className="w-14 h-14 text-white" />
+              </div>
+              <div className="absolute inset-0 rounded-full bg-gradient-to-br from-indigo-500 via-violet-500 to-purple-600 animate-ping opacity-20" />
+              <p className="absolute -bottom-8 left-1/2 -translate-x-1/2 whitespace-nowrap text-sm font-semibold text-slate-700 dark:text-slate-300">
+                AI Analytics Hub
+              </p>
+            </div>
+          </motion.div>
+
+          {/* Connection Lines - Desktop */}
+          <div className="hidden lg:block absolute inset-0 pointer-events-none">
+            <svg className="w-full h-full" viewBox="0 0 100 100" preserveAspectRatio="none">
+              {/* Lines from center to corners */}
+              <line x1="50" y1="50" x2="12" y2="25" stroke="url(#gradient1)" strokeWidth="0.3" strokeDasharray="2,2" className="opacity-40" />
+              <line x1="50" y1="50" x2="88" y2="25" stroke="url(#gradient2)" strokeWidth="0.3" strokeDasharray="2,2" className="opacity-40" />
+              <line x1="50" y1="50" x2="12" y2="75" stroke="url(#gradient3)" strokeWidth="0.3" strokeDasharray="2,2" className="opacity-40" />
+              <line x1="50" y1="50" x2="88" y2="75" stroke="url(#gradient4)" strokeWidth="0.3" strokeDasharray="2,2" className="opacity-40" />
+              <defs>
+                <linearGradient id="gradient1"><stop offset="0%" stopColor="#6366f1" /><stop offset="100%" stopColor="#818cf8" /></linearGradient>
+                <linearGradient id="gradient2"><stop offset="0%" stopColor="#10b981" /><stop offset="100%" stopColor="#34d399" /></linearGradient>
+                <linearGradient id="gradient3"><stop offset="0%" stopColor="#f43f5e" /><stop offset="100%" stopColor="#fb7185" /></linearGradient>
+                <linearGradient id="gradient4"><stop offset="0%" stopColor="#f59e0b" /><stop offset="100%" stopColor="#fbbf24" /></linearGradient>
+              </defs>
+            </svg>
+          </div>
+
+          {/* User Type Cards */}
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-2 gap-6 lg:gap-x-64 lg:gap-y-8">
+            {userTypes.map((user, index) => (
+              <motion.div
+                key={user.title}
+                variants={fadeInUp}
+                className={`relative ${index >= 2 ? 'lg:mt-8' : ''}`}
+              >
+                <Card className={`p-6 border-2 ${user.borderColor} ${user.bgColor} hover:shadow-lg transition-all duration-300`}>
+                  <div className="flex items-start gap-4">
+                    <div className={`w-12 h-12 rounded-xl bg-gradient-to-br ${user.color} flex items-center justify-center flex-shrink-0 shadow-lg`}>
+                      <user.icon className="w-6 h-6 text-white" />
+                    </div>
+                    <div>
+                      <h3 className="font-semibold text-lg text-slate-900 dark:text-white mb-1">
+                        {user.title}
+                      </h3>
+                      <p className="text-sm text-slate-600 dark:text-slate-400">
+                        {user.description}
+                      </p>
+                    </div>
+                  </div>
+                </Card>
+              </motion.div>
+            ))}
+          </div>
+
+          {/* Central AI Hub - Mobile */}
+          <motion.div
+            variants={fadeInUp}
+            className="lg:hidden flex justify-center mt-8"
+          >
+            <div className="relative">
+              <div className="w-24 h-24 rounded-full bg-gradient-to-br from-indigo-500 via-violet-500 to-purple-600 flex items-center justify-center shadow-xl shadow-indigo-500/30">
+                <Brain className="w-10 h-10 text-white" />
+              </div>
+              <div className="absolute inset-0 rounded-full bg-gradient-to-br from-indigo-500 via-violet-500 to-purple-600 animate-ping opacity-20" />
+            </div>
+          </motion.div>
+          <p className="lg:hidden text-center mt-4 text-sm font-semibold text-slate-700 dark:text-slate-300">
+            All Connected Through AI Analytics
+          </p>
+        </motion.div>
+      </div>
+    </section>
+  );
+}
+
 function FeaturesSection() {
   const [showAllFeatures, setShowAllFeatures] = useState(false);
   const features = [
@@ -1682,6 +1840,7 @@ export default function LandingPage() {
       <Header />
       <main>
         <HeroSection />
+        <ConnectedIntelligenceSection />
         <AnalyticsPreviewSection />
         <FeaturesSection />
         <GetStartedSection />

@@ -19,6 +19,7 @@ export type User = typeof users.$inferSelect;
 
 export const demoRequests = pgTable("demo_requests", {
   id: varchar("id").primaryKey().default(sql`gen_random_uuid()`),
+  name: text("name"),
   schoolName: text("school_name").notNull(),
   email: text("email").notNull(),
   phone: text("phone").notNull(),
@@ -30,6 +31,7 @@ export const insertDemoRequestSchema = createInsertSchema(demoRequests).omit({
   id: true,
   createdAt: true,
 }).extend({
+  name: z.string().optional(),
   email: z.string().email("Please enter a valid email address"),
   phone: z.string().min(10, "Please enter a valid phone number"),
   schoolName: z.string().min(2, "School name is required"),

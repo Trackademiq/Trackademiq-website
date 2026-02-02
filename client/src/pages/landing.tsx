@@ -42,6 +42,7 @@ import {
 } from "lucide-react";
 import { SiLinkedin, SiFacebook, SiInstagram, SiX, SiYoutube } from "react-icons/si";
 
+import studentsImage from "@assets/generated_images/modern_indian_classroom_students.png";
 import schoolsImage from "@assets/generated_images/indian_school_principal_administrator.png";
 import teachersImage from "@assets/generated_images/indian_teacher_with_tablet_students.png";
 import parentsImage from "@assets/generated_images/indian_parent_helping_child_homework.png";
@@ -344,57 +345,69 @@ function FeaturesSection() {
     {
       icon: GraduationCap,
       title: "Students",
+      image: studentsImage,
+      imageAlt: "Indian students in modern classroom",
       color: "from-indigo-500 to-indigo-600",
-      bgColor: "bg-indigo-50 dark:bg-indigo-950/30",
-      borderColor: "border-indigo-300 dark:border-indigo-700",
+      glowColor: "group-hover:shadow-indigo-500/40",
+      bgColor: "bg-gradient-to-br from-indigo-50/80 to-white/60 dark:from-indigo-950/40 dark:to-slate-900/60",
+      borderColor: "border-indigo-200/60 dark:border-indigo-700/50",
       activeColor: "bg-indigo-500",
       features: [
-        { icon: TrendingUp, title: "View Grades & Reports", desc: "Access marks, report cards, and performance analytics" },
-        { icon: BookOpen, title: "Homework & Assignments", desc: "Track assignments, submissions, and deadlines" },
-        { icon: Clock, title: "Timetables & Exams", desc: "View class schedules and exam dates" },
-        { icon: UserCheck, title: "Attendance History", desc: "Check attendance records and leave status" }
+        { icon: TrendingUp, title: "View Grades & Reports", desc: "Access marks, report cards, and performance analytics", aiLine: "AI predicts which topics need more attention" },
+        { icon: BookOpen, title: "Homework & Assignments", desc: "Track assignments, submissions, and deadlines", aiLine: "Smart reminders before deadlines approach" },
+        { icon: Clock, title: "Timetables & Exams", desc: "View class schedules and exam dates", aiLine: "Personalized study plans for each exam" },
+        { icon: UserCheck, title: "Attendance History", desc: "Check attendance records and leave status", aiLine: "Attendance patterns linked to performance" }
       ]
     },
     {
       icon: Users,
       title: "Teachers",
+      image: teachersImage,
+      imageAlt: "Indian teacher using tablet with students",
       color: "from-emerald-500 to-emerald-600",
-      bgColor: "bg-emerald-50 dark:bg-emerald-950/30",
-      borderColor: "border-emerald-300 dark:border-emerald-700",
+      glowColor: "group-hover:shadow-emerald-500/40",
+      bgColor: "bg-gradient-to-br from-emerald-50/80 to-white/60 dark:from-emerald-950/40 dark:to-slate-900/60",
+      borderColor: "border-emerald-200/60 dark:border-emerald-700/50",
       activeColor: "bg-emerald-500",
       features: [
-        { icon: UserCheck, title: "Smart Attendance", desc: "Biometric and app-based check-ins with one tap" },
-        { icon: TrendingUp, title: "Marks Entry & Reports", desc: "Enter grades and generate report cards automatically" },
-        { icon: MessageSquare, title: "Parent Communication", desc: "Send updates and announcements to parents" },
-        { icon: BookOpen, title: "Homework Management", desc: "Create, assign, and track homework submissions" }
+        { icon: UserCheck, title: "Smart Attendance", desc: "Biometric and app-based check-ins with one tap", aiLine: "Auto-detect attendance anomalies instantly" },
+        { icon: TrendingUp, title: "Marks Entry & Reports", desc: "Enter grades and generate report cards automatically", aiLine: "AI suggests grade curves and insights" },
+        { icon: MessageSquare, title: "Parent Communication", desc: "Send updates and announcements to parents", aiLine: "Auto-draft personalized parent messages" },
+        { icon: BookOpen, title: "Homework Management", desc: "Create, assign, and track homework submissions", aiLine: "Predict submission delays before they happen" }
       ]
     },
     {
       icon: Heart,
       title: "Parents",
+      image: parentsImage,
+      imageAlt: "Indian mother helping child with homework",
       color: "from-rose-500 to-rose-600",
-      bgColor: "bg-rose-50 dark:bg-rose-950/30",
-      borderColor: "border-rose-300 dark:border-rose-700",
+      glowColor: "group-hover:shadow-rose-500/40",
+      bgColor: "bg-gradient-to-br from-rose-50/80 to-white/60 dark:from-rose-950/40 dark:to-slate-900/60",
+      borderColor: "border-rose-200/60 dark:border-rose-700/50",
       activeColor: "bg-rose-500",
       features: [
-        { icon: UserCheck, title: "Real-Time Attendance", desc: "Instant notifications when child is marked absent" },
-        { icon: TrendingUp, title: "Academic Progress", desc: "View grades, rankings, and performance trends" },
-        { icon: CreditCard, title: "Fee Payments", desc: "Pay fees online and track payment history" },
-        { icon: MessageSquare, title: "School Updates", desc: "Receive announcements and communicate with teachers" }
+        { icon: UserCheck, title: "Real-Time Attendance", desc: "Instant notifications when child is marked absent", aiLine: "Early warning for attendance drops" },
+        { icon: TrendingUp, title: "Academic Progress", desc: "View grades, rankings, and performance trends", aiLine: "Predict end-of-term grades accurately" },
+        { icon: CreditCard, title: "Fee Payments", desc: "Pay fees online and track payment history", aiLine: "Smart payment reminders before due dates" },
+        { icon: MessageSquare, title: "School Updates", desc: "Receive announcements and communicate with teachers", aiLine: "Priority alerts for critical updates" }
       ]
     },
     {
       icon: Shield,
       title: "Administrators",
+      image: schoolsImage,
+      imageAlt: "Indian school principal in modern office",
       color: "from-amber-500 to-amber-600",
-      bgColor: "bg-amber-50 dark:bg-amber-950/30",
-      borderColor: "border-amber-300 dark:border-amber-700",
+      glowColor: "group-hover:shadow-amber-500/40",
+      bgColor: "bg-gradient-to-br from-amber-50/80 to-white/60 dark:from-amber-950/40 dark:to-slate-900/60",
+      borderColor: "border-amber-200/60 dark:border-amber-700/50",
       activeColor: "bg-amber-500",
       features: [
-        { icon: Brain, title: "AI Analytics Dashboard", desc: "School-wide insights, trends, and at-risk identification" },
-        { icon: CreditCard, title: "Fee & Finance Management", desc: "Track collections, generate reports, manage dues" },
-        { icon: Building2, title: "Multi-School Management", desc: "Manage multiple branches from one dashboard" },
-        { icon: Clock, title: "Staff & Leave Management", desc: "Approve leaves, track attendance, manage staff" }
+        { icon: Brain, title: "AI Analytics Dashboard", desc: "School-wide insights, trends, and at-risk identification", aiLine: "Predict student dropouts before they happen" },
+        { icon: CreditCard, title: "Fee & Finance Management", desc: "Track collections, generate reports, manage dues", aiLine: "Forecast revenue and pending collections" },
+        { icon: Building2, title: "Multi-School Management", desc: "Manage multiple branches from one dashboard", aiLine: "Compare branch performance automatically" },
+        { icon: Clock, title: "Staff & Leave Management", desc: "Approve leaves, track attendance, manage staff", aiLine: "Predict staff shortages before they occur" }
       ]
     }
   ];
@@ -444,10 +457,12 @@ function FeaturesSection() {
                 key={user.title}
                 variants={fadeInUp}
                 onClick={() => setActiveTab(index)}
+                whileHover={{ scale: 1.02 }}
+                whileTap={{ scale: 0.98 }}
                 className={`flex items-center gap-2 px-4 sm:px-6 py-2.5 sm:py-3 rounded-full font-medium text-sm sm:text-base transition-all duration-300 ${
                   activeTab === index
-                    ? `bg-gradient-to-r ${user.color} text-white shadow-lg`
-                    : "bg-white dark:bg-slate-800 text-slate-600 dark:text-slate-300 border border-slate-200 dark:border-slate-700"
+                    ? `bg-gradient-to-r ${user.color} text-white shadow-lg shadow-${user.activeColor}/30`
+                    : "bg-white/80 dark:bg-slate-800/80 backdrop-blur-sm text-slate-600 dark:text-slate-300 border border-slate-200/60 dark:border-slate-700/60 hover:border-slate-300 dark:hover:border-slate-600"
                 }`}
                 data-testid={`tab-${user.title.toLowerCase()}`}
               >
@@ -464,61 +479,89 @@ function FeaturesSection() {
             return (
               <motion.div
                 key={activeTab}
-                initial={{ opacity: 0 }}
-                animate={{ opacity: 1 }}
-                transition={{ duration: 0.2 }}
+                initial={{ opacity: 0, y: 10 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.3, ease: "easeOut" }}
                 className="relative"
                 data-testid={`panel-${userType.title.toLowerCase()}`}
               >
-                <div className={`rounded-2xl sm:rounded-3xl p-6 sm:p-8 lg:p-10 border-2 ${userType.borderColor} ${userType.bgColor}`}>
-                  <div className="flex flex-col lg:flex-row gap-8 lg:gap-12 items-center">
-                    <div className="flex-shrink-0 flex flex-col items-center text-center lg:w-1/3">
-                      <div className={`w-20 h-20 sm:w-24 sm:h-24 rounded-2xl bg-gradient-to-br ${userType.color} flex items-center justify-center shadow-xl mb-4`}>
-                        <ActiveIcon className="w-10 h-10 sm:w-12 sm:h-12 text-white" />
-                      </div>
-                      <h3 className="text-xl sm:text-2xl font-bold text-slate-900 dark:text-white mb-2">
-                        For {userType.title}
-                      </h3>
-                      <p className="text-sm sm:text-base text-slate-600 dark:text-slate-400 max-w-xs">
-                        Everything {userType.title.toLowerCase()} need in one place
-                      </p>
-                    </div>
-
-                    <div className="flex-1 grid grid-cols-1 sm:grid-cols-2 gap-4 sm:gap-6 w-full">
-                      {userType.features.map((feature, idx) => {
-                        const FeatureIcon = feature.icon;
-                        return (
-                          <div
-                            key={`${activeTab}-${feature.title}`}
-                            className="flex items-start gap-4 p-4 rounded-xl bg-white/80 dark:bg-slate-800/80 backdrop-blur-sm border border-slate-100 dark:border-slate-700"
-                            data-testid={`feature-${userType.title.toLowerCase()}-${idx}`}
-                          >
-                            <div className={`w-10 h-10 rounded-lg bg-gradient-to-br ${userType.color} flex items-center justify-center flex-shrink-0`}>
-                              <FeatureIcon className="w-5 h-5 text-white" />
-                            </div>
-                            <div>
-                              <h4 className="font-semibold text-slate-900 dark:text-white mb-1">{feature.title}</h4>
-                              <p className="text-sm text-slate-600 dark:text-slate-400">{feature.desc}</p>
-                            </div>
+                {/* Glassmorphism container with soft shadow */}
+                <div className={`rounded-2xl sm:rounded-3xl overflow-hidden border ${userType.borderColor} ${userType.bgColor} backdrop-blur-xl shadow-xl shadow-slate-200/50 dark:shadow-slate-900/50`}>
+                  <div className="grid grid-cols-1 lg:grid-cols-5 gap-0">
+                    {/* Image Section - Left side */}
+                    <div className="lg:col-span-2 relative h-48 sm:h-64 lg:h-auto min-h-[280px]">
+                      <img
+                        src={userType.image}
+                        alt={userType.imageAlt}
+                        className="absolute inset-0 w-full h-full object-cover"
+                      />
+                      <div className="absolute inset-0 bg-gradient-to-r from-black/50 via-black/30 to-transparent lg:bg-gradient-to-t lg:from-black/60 lg:via-black/30 lg:to-transparent" />
+                      <div className="absolute bottom-4 left-4 sm:bottom-6 sm:left-6">
+                        <div className={`inline-flex items-center gap-3 px-4 py-3 rounded-xl bg-white/10 backdrop-blur-md border border-white/20`}>
+                          <div className={`w-12 h-12 rounded-xl bg-gradient-to-br ${userType.color} flex items-center justify-center shadow-lg`}>
+                            <ActiveIcon className="w-6 h-6 text-white" />
                           </div>
-                        );
-                      })}
+                          <div>
+                            <h3 className="text-lg font-bold text-white">
+                              For {userType.title}
+                            </h3>
+                            <p className="text-sm text-white/80">
+                              AI-powered tools
+                            </p>
+                          </div>
+                        </div>
+                      </div>
                     </div>
-                  </div>
 
-                  <div className="mt-8 pt-6 border-t border-slate-200/50 dark:border-slate-700/50">
-                    <div className="flex flex-wrap items-center justify-center gap-4 text-sm text-slate-500 dark:text-slate-400">
-                      <div className="flex items-center gap-2">
-                        <Brain className="w-4 h-4 text-indigo-500" />
-                        <span>AI-Powered Insights</span>
+                    {/* Features Section - Right side */}
+                    <div className="lg:col-span-3 p-6 sm:p-8 lg:p-10">
+                      <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 sm:gap-5">
+                        {userType.features.map((feature, idx) => {
+                          const FeatureIcon = feature.icon;
+                          return (
+                            <motion.div
+                              key={`${activeTab}-${feature.title}`}
+                              initial={{ opacity: 0, y: 10 }}
+                              animate={{ opacity: 1, y: 0 }}
+                              transition={{ duration: 0.3, delay: idx * 0.05 }}
+                              whileHover={{ y: -4, transition: { duration: 0.2 } }}
+                              className="group relative flex flex-col gap-3 p-4 sm:p-5 rounded-xl bg-white/70 dark:bg-slate-800/70 backdrop-blur-sm border border-slate-200/50 dark:border-slate-700/50 hover:shadow-lg hover:border-slate-300/80 dark:hover:border-slate-600/80 transition-all duration-300 cursor-default"
+                              data-testid={`feature-${userType.title.toLowerCase()}-${idx}`}
+                            >
+                              {/* Icon with glow effect */}
+                              <div className={`w-11 h-11 rounded-xl bg-gradient-to-br ${userType.color} flex items-center justify-center flex-shrink-0 shadow-md group-hover:shadow-lg ${userType.glowColor} transition-shadow duration-300`}>
+                                <FeatureIcon className="w-5 h-5 text-white" />
+                              </div>
+                              <div className="flex-1">
+                                <h4 className="font-semibold text-slate-900 dark:text-white mb-1">{feature.title}</h4>
+                                <p className="text-sm text-slate-600 dark:text-slate-400 mb-2">{feature.desc}</p>
+                                {/* AI-driven tagline */}
+                                <div className="flex items-center gap-1.5 text-xs">
+                                  <Brain className="w-3 h-3 text-indigo-500 dark:text-indigo-400" />
+                                  <span className="text-indigo-600 dark:text-indigo-400 font-medium">{feature.aiLine}</span>
+                                </div>
+                              </div>
+                            </motion.div>
+                          );
+                        })}
                       </div>
-                      <div className="flex items-center gap-2">
-                        <Zap className="w-4 h-4 text-amber-500" />
-                        <span>Real-Time Updates</span>
-                      </div>
-                      <div className="flex items-center gap-2">
-                        <Shield className="w-4 h-4 text-emerald-500" />
-                        <span>Secure & Private</span>
+
+                      {/* Footer badges */}
+                      <div className="mt-6 pt-5 border-t border-slate-200/50 dark:border-slate-700/50">
+                        <div className="flex flex-wrap items-center justify-center gap-3 sm:gap-4 text-xs sm:text-sm text-slate-500 dark:text-slate-400">
+                          <div className="flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-indigo-50 dark:bg-indigo-900/30 text-indigo-600 dark:text-indigo-400">
+                            <Brain className="w-3.5 h-3.5" />
+                            <span className="font-medium">AI-Powered</span>
+                          </div>
+                          <div className="flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-amber-50 dark:bg-amber-900/30 text-amber-600 dark:text-amber-400">
+                            <Zap className="w-3.5 h-3.5" />
+                            <span className="font-medium">Real-Time</span>
+                          </div>
+                          <div className="flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-emerald-50 dark:bg-emerald-900/30 text-emerald-600 dark:text-emerald-400">
+                            <Shield className="w-3.5 h-3.5" />
+                            <span className="font-medium">Secure</span>
+                          </div>
+                        </div>
                       </div>
                     </div>
                   </div>
@@ -712,150 +755,6 @@ function AnalyticsPreviewSection() {
   );
 }
 
-interface BenefitItem {
-  title: string;
-  image: string;
-  imageAlt: string;
-  icon: React.ComponentType<{ className?: string }>;
-  points: string[];
-}
-
-function BenefitsTabs({ benefits }: { benefits: BenefitItem[] }) {
-  const [activeTab, setActiveTab] = useState(0);
-
-  const tabColors = [
-    { bg: "from-indigo-500 to-indigo-600", light: "indigo" },
-    { bg: "from-emerald-500 to-emerald-600", light: "emerald" },
-    { bg: "from-violet-500 to-violet-600", light: "violet" }
-  ];
-
-  return (
-    <motion.div
-      initial="hidden"
-      whileInView="visible"
-      viewport={{ once: true, margin: "-50px" }}
-      variants={staggerContainer}
-    >
-      {/* Tab Navigation */}
-      <motion.div 
-        variants={fadeInUp}
-        className="flex justify-center mb-6 sm:mb-8"
-      >
-        <div className="inline-flex p-1 bg-muted/50 rounded-full border border-border/50">
-          {benefits.map((benefit, index) => {
-            const Icon = benefit.icon;
-            const isActive = activeTab === index;
-            return (
-              <button
-                key={benefit.title}
-                onClick={() => setActiveTab(index)}
-                className={`
-                  relative flex items-center gap-2 px-4 sm:px-6 py-2.5 sm:py-3 rounded-full font-medium text-sm sm:text-base
-                  transition-all duration-300 ease-out
-                  ${isActive 
-                    ? "text-white shadow-lg" 
-                    : "text-muted-foreground hover:text-foreground"
-                  }
-                `}
-                data-testid={`tab-benefit-${index}`}
-              >
-                {isActive && (
-                  <motion.div
-                    layoutId="activeTab"
-                    className={`absolute inset-0 bg-gradient-to-r ${tabColors[index].bg} rounded-full`}
-                    transition={{ type: "spring", bounce: 0.2, duration: 0.6 }}
-                  />
-                )}
-                <span className="relative z-10 flex items-center gap-2">
-                  <Icon className="w-4 h-4" />
-                  <span className="hidden sm:inline">{benefit.title}</span>
-                </span>
-              </button>
-            );
-          })}
-        </div>
-      </motion.div>
-
-      {/* Content Panel */}
-      <motion.div variants={fadeInUp}>
-        <div className="relative overflow-hidden rounded-2xl bg-gradient-to-br from-background to-muted/30 border border-border/50 shadow-xl">
-          <AnimatePresence mode="wait">
-            <motion.div
-              key={activeTab}
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              exit={{ opacity: 0, y: -20 }}
-              transition={{ duration: 0.3 }}
-              className="grid grid-cols-1 lg:grid-cols-2 gap-0"
-            >
-              {/* Image Section */}
-              <div className="relative h-48 sm:h-64 lg:h-80 overflow-hidden">
-                <img
-                  src={benefits[activeTab].image}
-                  alt={benefits[activeTab].imageAlt}
-                  className="w-full h-full object-cover"
-                />
-                <div className="absolute inset-0 bg-gradient-to-r from-black/40 via-black/20 to-transparent lg:bg-gradient-to-t lg:from-black/40 lg:via-transparent lg:to-transparent" />
-                <div className="absolute bottom-4 left-4 sm:bottom-6 sm:left-6">
-                  <div className={`inline-flex items-center gap-2 px-4 py-2 rounded-full bg-gradient-to-r ${tabColors[activeTab].bg} text-white shadow-lg`}>
-                    {(() => {
-                      const Icon = benefits[activeTab].icon;
-                      return <Icon className="w-5 h-5" />;
-                    })()}
-                    <span className="font-semibold text-sm sm:text-base">{benefits[activeTab].title}</span>
-                  </div>
-                </div>
-              </div>
-
-              {/* Benefits List */}
-              <div className="p-6 sm:p-8 lg:p-10 flex flex-col justify-center">
-                <ul className="space-y-3 sm:space-y-4">
-                  {benefits[activeTab].points.map((point, pointIndex) => (
-                    <motion.li
-                      key={pointIndex}
-                      initial={{ opacity: 0, x: -10 }}
-                      animate={{ opacity: 1, x: 0 }}
-                      transition={{ delay: pointIndex * 0.1 }}
-                      className="flex items-start gap-3"
-                    >
-                      <div className={`flex-shrink-0 w-6 h-6 rounded-full bg-gradient-to-r ${tabColors[activeTab].bg} flex items-center justify-center mt-0.5`}>
-                        <CheckCircle2 className="w-4 h-4 text-white" />
-                      </div>
-                      <span className="text-sm sm:text-base text-foreground leading-relaxed">{point}</span>
-                    </motion.li>
-                  ))}
-                </ul>
-              </div>
-            </motion.div>
-          </AnimatePresence>
-        </div>
-      </motion.div>
-
-      {/* Navigation Dots */}
-      <motion.div 
-        variants={fadeInUp}
-        className="flex justify-center gap-2 mt-6"
-      >
-        {benefits.map((_, index) => (
-          <button
-            key={index}
-            onClick={() => setActiveTab(index)}
-            className={`
-              w-2.5 h-2.5 rounded-full transition-all duration-300
-              ${activeTab === index 
-                ? `w-8 bg-gradient-to-r ${tabColors[index].bg}` 
-                : "bg-muted-foreground/30 hover:bg-muted-foreground/50"
-              }
-            `}
-            aria-label={`Go to ${benefits[index].title}`}
-            data-testid={`dot-benefit-${index}`}
-          />
-        ))}
-      </motion.div>
-    </motion.div>
-  );
-}
-
 function GetStartedSection() {
   const steps = [
     {
@@ -872,48 +771,6 @@ function GetStartedSection() {
       number: "03",
       title: "Start Managing",
       description: "Access all features immediately. Our support team helps you every step of the way."
-    }
-  ];
-
-  const benefits = [
-    {
-      title: "For Schools",
-      image: schoolsImage,
-      imageAlt: "Indian school principal in modern school office",
-      icon: Building2,
-      points: [
-        "Centralized administration dashboard",
-        "Real-time data and analytics",
-        "Reduced paperwork by 80%",
-        "Better parent engagement",
-        "Automated compliance reports"
-      ]
-    },
-    {
-      title: "For Teachers",
-      image: teachersImage,
-      imageAlt: "Indian teacher using tablet with students",
-      icon: Users,
-      points: [
-        "Easy attendance in seconds",
-        "Digital gradebook and reports",
-        "Direct parent communication",
-        "Homework management tools",
-        "Performance tracking insights"
-      ]
-    },
-    {
-      title: "For Parents",
-      image: parentsImage,
-      imageAlt: "Indian mother helping child with homework using smartphone app",
-      icon: Heart,
-      points: [
-        "Real-time child updates",
-        "Instant fee payment options",
-        "Direct teacher messaging",
-        "Homework and exam alerts",
-        "Academic progress tracking"
-      ]
     }
   ];
 
@@ -978,7 +835,7 @@ function GetStartedSection() {
           whileInView="visible"
           viewport={{ once: true, margin: "-50px" }}
           variants={staggerContainer}
-          className="hidden sm:grid sm:grid-cols-3 gap-6 sm:gap-8 mb-10 sm:mb-16 md:mb-24"
+          className="hidden sm:grid sm:grid-cols-3 gap-6 sm:gap-8"
         >
           {steps.map((step, index) => (
             <motion.div
@@ -999,43 +856,6 @@ function GetStartedSection() {
             </motion.div>
           ))}
         </motion.div>
-
-        {/* Divider */}
-        <div className="flex items-center justify-center mb-10 sm:mb-16 md:mb-24">
-          <div className="h-px w-16 bg-gradient-to-r from-transparent to-indigo-300 dark:to-indigo-700" />
-          <div className="mx-4">
-            <Badge variant="outline" size="sm">
-              <TrendingUp className="w-3 h-3 mr-1" />
-              Benefits for Everyone
-            </Badge>
-          </div>
-          <div className="h-px w-16 bg-gradient-to-l from-transparent to-indigo-300 dark:to-indigo-700" />
-        </div>
-
-        {/* Benefits Header */}
-        <motion.div
-          initial="hidden"
-          whileInView="visible"
-          viewport={{ once: true, margin: "-100px" }}
-          variants={staggerContainer}
-          className="text-center mb-10 sm:mb-16"
-        >
-          <motion.h2
-            variants={fadeInUp}
-            className="text-2xl sm:text-3xl md:text-4xl font-bold text-foreground mb-3 sm:mb-4"
-          >
-            Designed for All Stakeholders
-          </motion.h2>
-          <motion.p
-            variants={fadeInUp}
-            className="text-base sm:text-lg text-muted-foreground max-w-2xl mx-auto px-2"
-          >
-            Every user gets tools tailored to their unique needs and responsibilities
-          </motion.p>
-        </motion.div>
-
-        {/* Interactive Tabs for Benefits */}
-        <BenefitsTabs benefits={benefits} />
       </div>
     </section>
   );

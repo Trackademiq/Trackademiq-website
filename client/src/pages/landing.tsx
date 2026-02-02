@@ -489,23 +489,23 @@ function FeaturesSection() {
                 <div className={`rounded-2xl sm:rounded-3xl overflow-hidden border ${userType.borderColor} ${userType.bgColor} backdrop-blur-xl shadow-xl shadow-slate-200/50 dark:shadow-slate-900/50`}>
                   <div className="grid grid-cols-1 lg:grid-cols-5 gap-0">
                     {/* Image Section - Left side */}
-                    <div className="lg:col-span-2 relative h-48 sm:h-64 lg:h-auto min-h-[280px]">
+                    <div className="lg:col-span-2 relative h-36 sm:h-64 lg:h-auto lg:min-h-[280px]">
                       <img
                         src={userType.image}
                         alt={userType.imageAlt}
                         className="absolute inset-0 w-full h-full object-cover"
                       />
                       <div className="absolute inset-0 bg-gradient-to-r from-black/50 via-black/30 to-transparent lg:bg-gradient-to-t lg:from-black/60 lg:via-black/30 lg:to-transparent" />
-                      <div className="absolute bottom-4 left-4 sm:bottom-6 sm:left-6">
-                        <div className={`inline-flex items-center gap-3 px-4 py-3 rounded-xl bg-white/10 backdrop-blur-md border border-white/20`}>
-                          <div className={`w-12 h-12 rounded-xl bg-gradient-to-br ${userType.color} flex items-center justify-center shadow-lg`}>
-                            <ActiveIcon className="w-6 h-6 text-white" />
+                      <div className="absolute bottom-3 left-3 sm:bottom-6 sm:left-6">
+                        <div className={`inline-flex items-center gap-2 sm:gap-3 px-3 py-2 sm:px-4 sm:py-3 rounded-lg sm:rounded-xl bg-white/10 backdrop-blur-md border border-white/20`}>
+                          <div className={`w-9 h-9 sm:w-12 sm:h-12 rounded-lg sm:rounded-xl bg-gradient-to-br ${userType.color} flex items-center justify-center shadow-lg`}>
+                            <ActiveIcon className="w-4 h-4 sm:w-6 sm:h-6 text-white" />
                           </div>
                           <div>
-                            <h3 className="text-lg font-bold text-white">
+                            <h3 className="text-sm sm:text-lg font-bold text-white">
                               For {userType.title}
                             </h3>
-                            <p className="text-sm text-white/80">
+                            <p className="hidden sm:block text-sm text-white/80">
                               AI-powered tools
                             </p>
                           </div>
@@ -514,8 +514,33 @@ function FeaturesSection() {
                     </div>
 
                     {/* Features Section - Right side */}
-                    <div className="lg:col-span-3 p-6 sm:p-8 lg:p-10">
-                      <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 sm:gap-5">
+                    <div className="lg:col-span-3 p-4 sm:p-8 lg:p-10">
+                      {/* Mobile: Horizontal scrollable carousel */}
+                      <div className="sm:hidden -mx-4 px-4 overflow-x-auto scrollbar-hide">
+                        <div className="flex gap-3 pb-4" style={{ width: 'max-content' }}>
+                          {userType.features.map((feature, idx) => {
+                            const FeatureIcon = feature.icon;
+                            return (
+                              <div
+                                key={`${activeTab}-${feature.title}-mobile`}
+                                className="group relative flex flex-col gap-2 p-3 rounded-xl bg-white/80 dark:bg-slate-800/80 backdrop-blur-sm border border-slate-200/50 dark:border-slate-700/50 w-[160px] flex-shrink-0"
+                                data-testid={`feature-${userType.title.toLowerCase()}-${idx}-mobile`}
+                              >
+                                <div className={`w-9 h-9 rounded-lg bg-gradient-to-br ${userType.color} flex items-center justify-center flex-shrink-0 shadow-md`}>
+                                  <FeatureIcon className="w-4 h-4 text-white" />
+                                </div>
+                                <div className="flex-1">
+                                  <h4 className="font-semibold text-sm text-slate-900 dark:text-white leading-tight">{feature.title}</h4>
+                                  <p className="text-xs text-slate-500 dark:text-slate-400 mt-1 line-clamp-2">{feature.desc}</p>
+                                </div>
+                              </div>
+                            );
+                          })}
+                        </div>
+                      </div>
+
+                      {/* Tablet/Desktop: Grid layout */}
+                      <div className="hidden sm:grid sm:grid-cols-2 gap-4 sm:gap-5">
                         {userType.features.map((feature, idx) => {
                           const FeatureIcon = feature.icon;
                           return (
@@ -528,14 +553,12 @@ function FeaturesSection() {
                               className="group relative flex flex-col gap-3 p-4 sm:p-5 rounded-xl bg-white/70 dark:bg-slate-800/70 backdrop-blur-sm border border-slate-200/50 dark:border-slate-700/50 hover:shadow-lg hover:border-slate-300/80 dark:hover:border-slate-600/80 transition-all duration-300 cursor-default"
                               data-testid={`feature-${userType.title.toLowerCase()}-${idx}`}
                             >
-                              {/* Icon with glow effect */}
                               <div className={`w-11 h-11 rounded-xl bg-gradient-to-br ${userType.color} flex items-center justify-center flex-shrink-0 shadow-md group-hover:shadow-lg ${userType.glowColor} transition-shadow duration-300`}>
                                 <FeatureIcon className="w-5 h-5 text-white" />
                               </div>
                               <div className="flex-1">
                                 <h4 className="font-semibold text-slate-900 dark:text-white mb-1">{feature.title}</h4>
                                 <p className="text-sm text-slate-600 dark:text-slate-400 mb-2">{feature.desc}</p>
-                                {/* AI-driven tagline */}
                                 <div className="flex items-center gap-1.5 text-xs">
                                   <Brain className="w-3 h-3 text-indigo-500 dark:text-indigo-400" />
                                   <span className="text-indigo-600 dark:text-indigo-400 font-medium">{feature.aiLine}</span>
@@ -547,18 +570,18 @@ function FeaturesSection() {
                       </div>
 
                       {/* Footer badges */}
-                      <div className="mt-6 pt-5 border-t border-slate-200/50 dark:border-slate-700/50">
-                        <div className="flex flex-wrap items-center justify-center gap-3 sm:gap-4 text-xs sm:text-sm text-slate-500 dark:text-slate-400">
-                          <div className="flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-indigo-50 dark:bg-indigo-900/30 text-indigo-600 dark:text-indigo-400">
-                            <Brain className="w-3.5 h-3.5" />
+                      <div className="mt-4 sm:mt-6 pt-4 sm:pt-5 border-t border-slate-200/50 dark:border-slate-700/50">
+                        <div className="flex flex-wrap items-center justify-center gap-2 sm:gap-4 text-xs text-slate-500 dark:text-slate-400">
+                          <div className="flex items-center gap-1 px-2 py-1 sm:px-3 sm:py-1.5 rounded-full bg-indigo-50 dark:bg-indigo-900/30 text-indigo-600 dark:text-indigo-400">
+                            <Brain className="w-3 h-3 sm:w-3.5 sm:h-3.5" />
                             <span className="font-medium">AI-Powered</span>
                           </div>
-                          <div className="flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-amber-50 dark:bg-amber-900/30 text-amber-600 dark:text-amber-400">
-                            <Zap className="w-3.5 h-3.5" />
+                          <div className="flex items-center gap-1 px-2 py-1 sm:px-3 sm:py-1.5 rounded-full bg-amber-50 dark:bg-amber-900/30 text-amber-600 dark:text-amber-400">
+                            <Zap className="w-3 h-3 sm:w-3.5 sm:h-3.5" />
                             <span className="font-medium">Real-Time</span>
                           </div>
-                          <div className="flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-emerald-50 dark:bg-emerald-900/30 text-emerald-600 dark:text-emerald-400">
-                            <Shield className="w-3.5 h-3.5" />
+                          <div className="flex items-center gap-1 px-2 py-1 sm:px-3 sm:py-1.5 rounded-full bg-emerald-50 dark:bg-emerald-900/30 text-emerald-600 dark:text-emerald-400">
+                            <Shield className="w-3 h-3 sm:w-3.5 sm:h-3.5" />
                             <span className="font-medium">Secure</span>
                           </div>
                         </div>

@@ -295,27 +295,27 @@ function HeroSection() {
           </motion.div>
 
           <motion.div
-            initial={{ opacity: 0, scale: 0.9, x: 50 }}
-            animate={{ opacity: 1, scale: 1, x: 0 }}
+            initial={{ opacity: 0, scale: 0.9, y: 30 }}
+            animate={{ opacity: 1, scale: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.3 }}
-            className="hidden lg:block relative"
+            className="relative mt-8 lg:mt-0"
           >
             <div className="relative" data-testid="hero-visual">
               <img 
                 src={heroIllustration} 
                 alt="Students, teachers and school staff collaborating with AI analytics" 
-                className="w-full max-w-lg mx-auto rounded-2xl shadow-2xl"
+                className="w-full max-w-md lg:max-w-lg mx-auto rounded-2xl shadow-2xl"
               />
               
-              <div className="absolute -bottom-4 left-1/2 -translate-x-1/2 bg-white rounded-full px-6 py-3 shadow-xl flex items-center gap-4">
-                <div className="flex items-center gap-2">
-                  <Shield className="w-5 h-5 text-emerald-600" />
-                  <span className="text-slate-800 text-sm font-semibold">Cloud Secured</span>
+              <div className="absolute -bottom-4 left-1/2 -translate-x-1/2 bg-white rounded-full px-4 sm:px-6 py-2 sm:py-3 shadow-xl flex items-center gap-2 sm:gap-4">
+                <div className="flex items-center gap-1 sm:gap-2">
+                  <Shield className="w-4 h-4 sm:w-5 sm:h-5 text-emerald-600" />
+                  <span className="text-slate-800 text-xs sm:text-sm font-semibold">Cloud Secured</span>
                 </div>
                 <div className="w-px h-4 bg-slate-300" />
-                <div className="flex items-center gap-2">
-                  <CheckCircle2 className="w-5 h-5 text-emerald-600" />
-                  <span className="text-slate-800 text-sm font-semibold">ISO Compliant</span>
+                <div className="flex items-center gap-1 sm:gap-2">
+                  <CheckCircle2 className="w-4 h-4 sm:w-5 sm:h-5 text-emerald-600" />
+                  <span className="text-slate-800 text-xs sm:text-sm font-semibold">ISO Compliant</span>
                 </div>
               </div>
             </div>

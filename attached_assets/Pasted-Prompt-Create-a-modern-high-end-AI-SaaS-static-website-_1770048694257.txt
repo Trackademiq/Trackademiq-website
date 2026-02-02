@@ -1,0 +1,137 @@
+Prompt:
+
+Create a modern, high-end AI SaaS static website for a product named Trackademiq.
+
+Tagline:
+“Next-Generation Education Systems”
+
+Purpose
+
+This is a marketing/landing website only, not an application UI and not an ERP dashboard.
+The website must visually and textually communicate that Trackademiq is an AI-powered education intelligence platform, not a simple school management system.
+
+⸻
+
+Design & Visual Style
+	•	AI SaaS look (Stripe / Notion / analytics platforms style)
+	•	Dark + light hybrid theme
+	•	Gradient backgrounds, subtle animations
+	•	Rounded cards, glassmorphism panels
+	•	Dashboard mockups only (static images / SVGs)
+	•	Charts, graphs, KPI cards (visual, not real data)
+	•	Modern typography (Inter / Poppins / Manrope)
+
+❌ Avoid:
+	•	Tables
+	•	Forms-heavy layouts
+	•	ERP-style designs
+	•	Government or school-website look
+
+⸻
+
+Homepage Structure
+
+1. Hero Section
+	•	Product name: Trackademiq
+	•	Tagline prominently displayed
+	•	Headline example:
+“AI-powered insights connecting students, teachers, parents, and administrators.”
+	•	CTA buttons:
+	•	Explore AI Platform
+	•	View Analytics Preview
+	•	Background with gradient mesh + blurred dashboard mockup
+
+⸻
+
+2. Problem Section
+Highlight:
+	•	Schools have data but no intelligence
+	•	Manual decision-making
+	•	No early performance insights
+
+⸻
+
+3. AI-Powered Solution
+Explain how Trackademiq:
+	•	Analyzes academic performance
+	•	Identifies trends & risks
+	•	Automates academic insights
+	•	Connects all stakeholders in one system
+
+Use AI-style language (analyze, predict, insights, intelligence).
+
+⸻
+
+4. Platform Capabilities (Cards)
+Show feature cards (no tables):
+
+Students & Parents
+	•	Attendance & performance visibility
+	•	AI-powered insights
+	•	Smart notifications
+
+Teachers & Admins
+	•	Analytics dashboards
+	•	At-risk student tracking
+	•	Automation & workflows
+
+Institution Level
+	•	Multi-school readiness
+	•	Scalable SaaS platform
+	•	Data-driven decisions
+
+⸻
+
+5. Analytics Preview Section
+	•	Static dashboard mockups
+	•	KPI cards:
+	•	“Students at Risk”
+	•	“Performance Trends”
+	•	“Attendance Patterns”
+	•	Charts & graphs as visuals only
+
+⸻
+
+6. Pricing Section
+Display per-student / per-month pricing:
+
+₹5 – Starter
+	•	Core visibility & communication
+
+₹10 – Growth
+	•	AI insights & analytics dashboards
+
+₹15 – Pro AI
+	•	Advanced analytics & predictive insights
+
+Add note:
+
+“Start at ₹5. Scale with AI as your institution grows.”
+
+⸻
+
+7. Future Roadmap (Phase 2)
+Display as “Coming Soon” cards:
+	•	Bus tracking
+	•	Biometric login integration
+	•	Smart API integrations
+
+⸻
+
+8. Final CTA
+Strong closing statement:
+
+“Transform education with AI-powered intelligence.”
+
+Buttons:
+	•	Request Demo
+	•	Contact Sales
+
+⸻
+
+Technical Requirements
+	•	Static HTML / CSS / JavaScript only
+	•	Responsive design (desktop, tablet, mobile)
+	•	Clean folder structure
+	•	SEO-friendly headings
+	•	Ready to deploy on Replit with HTTPS

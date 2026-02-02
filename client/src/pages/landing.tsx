@@ -670,13 +670,21 @@ function DemoRequestSection() {
             variants={fadeInUp}
             className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-white mb-4 sm:mb-6"
           >
-            Transform Your Institution with AI
+            Why Switch to Trackademiq?
           </motion.h2>
+          <motion.p
+            variants={fadeInUp}
+            className="text-base sm:text-lg md:text-xl text-white/80 max-w-3xl mx-auto mb-4 px-2"
+          >
+            Experience a <span className="text-white font-semibold">modern, intuitive interface</span> designed for simplicity. 
+            No more clunky systems - our platform is built for the way schools actually work.
+          </motion.p>
           <motion.p
             variants={fadeInUp}
             className="text-base sm:text-lg md:text-xl text-white/80 max-w-3xl mx-auto mb-8 sm:mb-12 px-2"
           >
-            Schedule a personalized demo to discover how Trackademiq can revolutionize your educational institution with AI-powered analytics and automation.
+            <span className="text-emerald-300 font-semibold">Migration? We handle everything.</span> Our team takes care of the complete data transfer - 
+            your records, student info, fee history - all migrated seamlessly with zero downtime. You focus on education, we handle the tech.
           </motion.p>
 
           <motion.div
@@ -712,12 +720,17 @@ function DemoRequestSection() {
             </Button>
           </motion.div>
 
-          <motion.p
+          <motion.div
             variants={fadeInUp}
-            className="mt-8 text-white/60 text-sm"
+            className="mt-10 pt-8 border-t border-white/20"
           >
-            Custom pricing and contract terms available for all institution sizes
-          </motion.p>
+            <p className="text-xl sm:text-2xl md:text-3xl font-bold text-white mb-2">
+              Try our free demo — <span className="text-emerald-300">you'll never say no!</span>
+            </p>
+            <p className="text-white/60 text-sm">
+              Custom pricing and contract terms available for all institution sizes
+            </p>
+          </motion.div>
         </motion.div>
       </div>
     </section>

@@ -105,11 +105,7 @@ function Header() {
               alt="Trackademiq Logo" 
               className="w-10 h-10 rounded-lg object-contain"
             />
-            <span className={`text-lg font-bold transition-colors ${
-              isScrolled 
-                ? "bg-gradient-to-r from-indigo-500 to-indigo-600 bg-clip-text text-transparent"
-                : "text-white"
-            }`}>
+            <span className="text-lg font-bold bg-gradient-to-r from-indigo-600 to-violet-600 bg-clip-text text-transparent">
               Trackademiq
             </span>
           </a>
@@ -119,11 +115,7 @@ function Header() {
               <button
                 key={link.href}
                 onClick={() => scrollToSection(link.href)}
-                className={`px-4 py-2 text-sm font-medium transition-colors rounded-md ${
-                  isScrolled
-                    ? "text-muted-foreground hover:text-foreground"
-                    : "text-white/80 hover:text-white"
-                }`}
+                className="px-4 py-2 text-sm font-medium transition-colors rounded-md text-slate-600 hover:text-slate-900 dark:text-slate-300 dark:hover:text-white"
                 data-testid={`link-nav-${link.label.toLowerCase().replace(" ", "-")}`}
               >
                 {link.label}
@@ -135,13 +127,13 @@ function Header() {
             <Button
               variant="ghost"
               onClick={() => scrollToSection("#contact")}
-              className={isScrolled ? "" : "text-white hover:text-white hover:bg-white/10"}
+              className="text-slate-600 hover:text-slate-900 dark:text-slate-300 dark:hover:text-white"
               data-testid="button-request-demo-header"
             >
               Request Demo
             </Button>
             <Button
-              className="bg-white text-indigo-700 border-0 font-semibold"
+              className="bg-gradient-to-r from-indigo-600 to-violet-600 hover:from-indigo-700 hover:to-violet-700 text-white border-0 font-semibold shadow-md shadow-indigo-500/20"
               data-testid="button-download-app-header"
             >
               <Download className="w-4 h-4 mr-2" />
@@ -150,7 +142,7 @@ function Header() {
           </div>
 
           <button
-            className={`lg:hidden p-2 rounded-md ${isScrolled ? "text-foreground" : "text-white"}`}
+            className="lg:hidden p-2 rounded-md text-slate-700 dark:text-slate-200"
             onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
             data-testid="button-mobile-menu-toggle"
           >
@@ -242,7 +234,7 @@ function HeroContent({ scrollToContact }: { scrollToContact: () => void }) {
       className="max-w-xl w-full lg:w-1/2"
     >
       <motion.div variants={fadeInUp}>
-        <Badge className="mb-6 bg-white/10 text-white border-white/20 backdrop-blur-sm" size="sm">
+        <Badge className="mb-6 bg-indigo-50 text-indigo-700 border-indigo-200 dark:bg-indigo-950/50 dark:text-indigo-300 dark:border-indigo-800" size="sm">
           <Sparkles className="w-3 h-3 mr-1" />
           AI-Powered Education Intelligence
         </Badge>
@@ -250,18 +242,18 @@ function HeroContent({ scrollToContact }: { scrollToContact: () => void }) {
 
       <motion.h1
         variants={fadeInUp}
-        className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-white leading-[1.2] sm:leading-tight mb-4 sm:mb-6"
+        className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-slate-900 dark:text-white leading-[1.2] sm:leading-tight mb-4 sm:mb-6"
         data-testid="text-hero-headline"
       >
         Next-Generation{" "}
-        <span className="bg-gradient-to-r from-emerald-300 to-cyan-300 bg-clip-text text-transparent">
+        <span className="bg-gradient-to-r from-indigo-600 to-violet-600 bg-clip-text text-transparent">
           Education Systems
         </span>
       </motion.h1>
 
       <motion.p
         variants={fadeInUp}
-        className="text-base sm:text-lg md:text-xl text-white/80 mb-6 sm:mb-8 max-w-2xl leading-relaxed"
+        className="text-base sm:text-lg md:text-xl text-slate-600 dark:text-slate-300 mb-6 sm:mb-8 max-w-2xl leading-relaxed"
         data-testid="text-hero-subtext"
       >
         Education intelligence combining ERP workflows and analytics — connecting students, teachers, parents, and administrators.
@@ -271,7 +263,7 @@ function HeroContent({ scrollToContact }: { scrollToContact: () => void }) {
         <Button
           size="lg"
           onClick={scrollToContact}
-          className="bg-white text-indigo-700 border-0 text-base px-8 font-semibold shadow-lg"
+          className="bg-gradient-to-r from-indigo-600 to-violet-600 hover:from-indigo-700 hover:to-violet-700 text-white border-0 text-base px-8 font-semibold shadow-lg shadow-indigo-500/25"
           data-testid="button-request-demo-hero"
         >
           Request Demo
@@ -280,7 +272,7 @@ function HeroContent({ scrollToContact }: { scrollToContact: () => void }) {
         <Button
           size="lg"
           variant="outline"
-          className="bg-white/20 text-white border-2 border-white/80 backdrop-blur-sm font-semibold"
+          className="border-2 border-slate-300 dark:border-slate-600 text-slate-700 dark:text-slate-200 hover:bg-slate-100 dark:hover:bg-slate-800 font-semibold"
           data-testid="button-download-app-hero"
         >
           <Download className="w-5 h-5 mr-2" />
@@ -290,18 +282,18 @@ function HeroContent({ scrollToContact }: { scrollToContact: () => void }) {
 
       <motion.div
         variants={fadeInUp}
-        className="flex flex-wrap items-center gap-4 sm:gap-6 mt-8 sm:mt-12 text-white/70 text-xs sm:text-sm"
+        className="flex flex-wrap items-center gap-4 sm:gap-6 mt-8 sm:mt-12 text-slate-500 dark:text-slate-400 text-xs sm:text-sm"
       >
         <div className="flex items-center gap-2">
-          <CheckCircle2 className="w-4 h-4 sm:w-5 sm:h-5 text-green-400" />
+          <CheckCircle2 className="w-4 h-4 sm:w-5 sm:h-5 text-emerald-500" />
           <span>50+ Schools Trust Us</span>
         </div>
         <div className="flex items-center gap-2">
-          <CheckCircle2 className="w-4 h-4 sm:w-5 sm:h-5 text-green-400" />
+          <CheckCircle2 className="w-4 h-4 sm:w-5 sm:h-5 text-emerald-500" />
           <span>25,000+ Students</span>
         </div>
         <div className="flex items-center gap-2">
-          <CheckCircle2 className="w-4 h-4 sm:w-5 sm:h-5 text-green-400" />
+          <CheckCircle2 className="w-4 h-4 sm:w-5 sm:h-5 text-emerald-500" />
           <span>4.8 Star Rating</span>
         </div>
       </motion.div>
@@ -319,12 +311,13 @@ function HeroSection() {
 
   return (
     <section
-      className="relative min-h-screen flex items-center overflow-hidden bg-gradient-to-br from-indigo-600 via-indigo-700 to-violet-800"
+      className="relative min-h-screen flex items-center overflow-hidden bg-gradient-to-b from-slate-50 via-white to-indigo-50/30 dark:from-slate-900 dark:via-slate-900 dark:to-indigo-950/20"
       data-testid="section-hero"
     >
-      <div className="absolute inset-0 opacity-20">
-        <div className="absolute inset-0 bg-[radial-gradient(circle_at_30%_20%,rgba(99,102,241,0.3),transparent_50%)]" />
-        <div className="absolute inset-0 bg-[radial-gradient(circle_at_70%_80%,rgba(129,140,248,0.2),transparent_50%)]" />
+      <div className="absolute inset-0 opacity-40">
+        <div className="absolute inset-0 bg-[radial-gradient(circle_at_30%_20%,rgba(99,102,241,0.08),transparent_50%)]" />
+        <div className="absolute inset-0 bg-[radial-gradient(circle_at_70%_80%,rgba(129,140,248,0.06),transparent_50%)]" />
+        <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-indigo-200 to-transparent dark:via-indigo-800" />
       </div>
 
       <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20 sm:py-28 md:py-32 lg:py-40 w-full">
@@ -335,8 +328,8 @@ function HeroSection() {
       </div>
 
       <div className="absolute bottom-8 left-1/2 -translate-x-1/2 animate-bounce">
-        <div className="w-6 h-10 rounded-full border-2 border-white/30 flex items-start justify-center p-2">
-          <div className="w-1.5 h-3 bg-white/50 rounded-full" />
+        <div className="w-6 h-10 rounded-full border-2 border-indigo-200 dark:border-indigo-700 flex items-start justify-center p-2">
+          <div className="w-1.5 h-3 bg-indigo-300 dark:bg-indigo-600 rounded-full" />
         </div>
       </div>
     </section>

@@ -475,12 +475,6 @@ function FeaturesSection() {
           </motion.h2>
           <motion.p
             variants={fadeInUp}
-            className="text-base sm:text-lg text-slate-600 dark:text-slate-400 max-w-2xl mx-auto mb-3"
-          >
-            Powerful AI-driven modules to digitize and automate your entire school operations — here's a glimpse
-          </motion.p>
-          <motion.p
-            variants={fadeInUp}
             className="text-sm sm:text-base text-indigo-600 dark:text-indigo-400 font-medium max-w-2xl mx-auto mb-5 sm:mb-6"
           >
             Unlike traditional ERPs, Trackademiq uses AI analytics to catch learning gaps early — delivering detailed academic metrics before problems become failures.

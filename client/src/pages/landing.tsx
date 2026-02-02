@@ -1477,6 +1477,11 @@ function Footer() {
       { label: "Testimonials", href: "#testimonials" },
       { label: "Support", href: "#contact" },
     ],
+    legal: [
+      { label: "Privacy Policy", href: "/privacy-policy" },
+      { label: "Terms of Service", href: "/terms" },
+      { label: "Refund Policy", href: "/refund-policy" },
+    ],
   };
 
   const socialLinks = [
@@ -1526,6 +1531,14 @@ function Footer() {
                 <social.icon className="w-4 h-4" />
               </a>
             ))}
+          </div>
+          
+          <div className="flex items-center justify-center gap-3 mb-4 text-xs text-white/60">
+            <Link href="/privacy-policy" className="hover:text-emerald-400 transition-colors" data-testid="link-mobile-privacy">Privacy</Link>
+            <span className="text-white/30">|</span>
+            <Link href="/terms" className="hover:text-emerald-400 transition-colors" data-testid="link-mobile-terms">Terms</Link>
+            <span className="text-white/30">|</span>
+            <Link href="/refund-policy" className="hover:text-emerald-400 transition-colors" data-testid="link-mobile-refund">Refund</Link>
           </div>
           
           <div className="text-xs text-white/40">
@@ -1625,6 +1638,23 @@ function Footer() {
                     >
                       {link.label}
                     </button>
+                  </li>
+                ))}
+              </ul>
+            </div>
+
+            <div>
+              <h4 className="font-semibold text-white mb-4 text-base">Legal</h4>
+              <ul className="space-y-1">
+                {footerLinks.legal.map((link) => (
+                  <li key={link.label}>
+                    <Link
+                      href={link.href}
+                      className="text-white/70 hover:text-emerald-400 transition-colors text-sm py-2 block"
+                      data-testid={`link-footer-${link.label.toLowerCase().replace(" ", "-")}`}
+                    >
+                      {link.label}
+                    </Link>
                   </li>
                 ))}
               </ul>

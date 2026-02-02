@@ -11,6 +11,14 @@ export default function RefundPolicyPage() {
     if (metaDescription) {
       metaDescription.setAttribute("content", "Trackademiq Refund Policy - Learn about our refund and cancellation policy for school ERP software subscriptions.");
     }
+    const ogTitle = document.querySelector('meta[property="og:title"]');
+    if (ogTitle) {
+      ogTitle.setAttribute("content", "Refund Policy | Trackademiq School ERP");
+    }
+    const ogDescription = document.querySelector('meta[property="og:description"]');
+    if (ogDescription) {
+      ogDescription.setAttribute("content", "Learn about Trackademiq refund and cancellation policy for school ERP subscriptions.");
+    }
   }, []);
 
   return (

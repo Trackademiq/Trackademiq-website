@@ -11,6 +11,14 @@ export default function PrivacyPolicyPage() {
     if (metaDescription) {
       metaDescription.setAttribute("content", "Trackademiq Privacy Policy - Learn how we collect, use, and protect student and school data. GDPR compliant school ERP software.");
     }
+    const ogTitle = document.querySelector('meta[property="og:title"]');
+    if (ogTitle) {
+      ogTitle.setAttribute("content", "Privacy Policy | Trackademiq School ERP");
+    }
+    const ogDescription = document.querySelector('meta[property="og:description"]');
+    if (ogDescription) {
+      ogDescription.setAttribute("content", "Learn how Trackademiq protects student and school data with enterprise-grade security.");
+    }
   }, []);
 
   return (

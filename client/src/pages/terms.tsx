@@ -11,6 +11,14 @@ export default function TermsPage() {
     if (metaDescription) {
       metaDescription.setAttribute("content", "Trackademiq Terms of Service - Read our terms and conditions for using our school ERP software platform.");
     }
+    const ogTitle = document.querySelector('meta[property="og:title"]');
+    if (ogTitle) {
+      ogTitle.setAttribute("content", "Terms of Service | Trackademiq School ERP");
+    }
+    const ogDescription = document.querySelector('meta[property="og:description"]');
+    if (ogDescription) {
+      ogDescription.setAttribute("content", "Read Trackademiq terms and conditions for using our school ERP software.");
+    }
   }, []);
 
   return (

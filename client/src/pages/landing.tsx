@@ -628,7 +628,7 @@ function AnalyticsPreviewSection() {
         >
           <div className="inline-flex items-center gap-3 px-6 py-3 rounded-full bg-gradient-to-r from-indigo-100 to-violet-100 dark:from-indigo-900/50 dark:to-violet-900/50 border border-indigo-200 dark:border-indigo-700">
             <Sparkles className="w-5 h-5 text-emerald-500" />
-            <span className="text-lg sm:text-xl font-semibold bg-gradient-to-r from-emerald-300 to-cyan-300 bg-clip-text text-transparent">Insightful Analytics at a Glance</span>
+            <span className="text-lg sm:text-xl font-semibold bg-gradient-to-r from-emerald-600 to-cyan-600 dark:from-emerald-400 dark:to-cyan-400 bg-clip-text text-transparent">Insightful Analytics at a Glance</span>
           </div>
         </motion.div>
       </div>

@@ -376,7 +376,7 @@ function FeaturesSection() {
   ];
 
   return (
-    <section id="features" className="py-10 sm:py-20 md:py-28 bg-gradient-to-br from-indigo-600 via-indigo-700 to-violet-800" data-testid="section-features">
+    <section id="features" className="py-10 sm:py-20 md:py-28 bg-background" data-testid="section-features">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <motion.div
           initial="hidden"
@@ -386,20 +386,20 @@ function FeaturesSection() {
           className="text-center mb-10 sm:mb-16"
         >
           <motion.div variants={fadeInUp}>
-            <Badge className="mb-4 bg-white/10 text-white border-white/20 backdrop-blur-sm" size="sm">
+            <Badge className="mb-4" variant="secondary" size="sm">
               <Zap className="w-3 h-3 mr-1" />
               Powerful Features
             </Badge>
           </motion.div>
           <motion.h2
             variants={fadeInUp}
-            className="text-2xl sm:text-3xl md:text-4xl font-bold text-white mb-3 sm:mb-4"
+            className="text-2xl sm:text-3xl md:text-4xl font-bold text-foreground mb-3 sm:mb-4"
           >
             Comprehensive Education Intelligence
           </motion.h2>
           <motion.p
             variants={fadeInUp}
-            className="text-base sm:text-lg text-white/70 max-w-2xl mx-auto px-2"
+            className="text-base sm:text-lg text-muted-foreground max-w-2xl mx-auto px-2"
           >
             Everything your school needs to run smoothly - from attendance to fees to parent communication
           </motion.p>
@@ -620,9 +620,9 @@ function AnalyticsPreviewSection() {
           variants={fadeInUp}
           className="text-center mt-10"
         >
-          <div className="inline-flex items-center gap-3 px-6 py-3 rounded-full bg-white/10 backdrop-blur-sm border border-white/20">
-            <Sparkles className="w-5 h-5 text-emerald-400" />
-            <span className="text-lg sm:text-xl font-semibold text-white">Insightful Analytics at a Glance</span>
+          <div className="inline-flex items-center gap-3 px-6 py-3 rounded-full bg-gradient-to-r from-indigo-100 to-violet-100 dark:from-indigo-900/50 dark:to-violet-900/50 border border-indigo-200 dark:border-indigo-700">
+            <Sparkles className="w-5 h-5 text-emerald-500" />
+            <span className="text-lg sm:text-xl font-semibold text-foreground">Insightful Analytics at a Glance</span>
           </div>
         </motion.div>
       </div>

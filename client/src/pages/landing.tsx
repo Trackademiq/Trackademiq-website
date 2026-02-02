@@ -377,7 +377,7 @@ function FeaturesSection() {
   ];
 
   return (
-    <section id="features" className="py-16 sm:py-20 md:py-28 bg-background" data-testid="section-features">
+    <section id="features" className="py-10 sm:py-20 md:py-28 bg-background" data-testid="section-features">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <motion.div
           initial="hidden"
@@ -406,12 +406,30 @@ function FeaturesSection() {
           </motion.p>
         </motion.div>
 
+        <div className="sm:hidden overflow-x-auto pb-4 -mx-4 px-4 scrollbar-hide">
+          <div className="flex gap-4" style={{ width: 'max-content' }}>
+            {features.map((feature, index) => (
+              <Card
+                key={feature.title}
+                className="p-4 w-64 flex-shrink-0 border-t-4 border-t-transparent hover:border-t-indigo-500 transition-all duration-300"
+                data-testid={`card-feature-mobile-${index}`}
+              >
+                <div className="w-10 h-10 rounded-lg bg-gradient-to-br from-indigo-100 to-violet-100 dark:from-indigo-900/30 dark:to-violet-900/30 flex items-center justify-center mb-3">
+                  <feature.icon className="w-5 h-5 text-indigo-600 dark:text-indigo-400" />
+                </div>
+                <h3 className="text-base font-semibold text-foreground mb-1">{feature.title}</h3>
+                <p className="text-sm text-muted-foreground leading-relaxed">{feature.description}</p>
+              </Card>
+            ))}
+          </div>
+        </div>
+
         <motion.div
           initial="hidden"
           whileInView="visible"
           viewport={{ once: true, margin: "-50px" }}
           variants={staggerContainer}
-          className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6"
+          className="hidden sm:grid sm:grid-cols-2 lg:grid-cols-4 gap-6"
         >
           {features.map((feature, index) => (
             <motion.div key={feature.title} variants={fadeInUp}>
@@ -443,7 +461,7 @@ function AnalyticsPreviewSection() {
   ];
 
   return (
-    <section id="analytics-preview" className="py-16 sm:py-20 md:py-28 bg-gradient-to-br from-slate-900 via-indigo-950 to-violet-950" data-testid="section-analytics-preview">
+    <section id="analytics-preview" className="py-10 sm:py-20 md:py-28 bg-gradient-to-br from-slate-900 via-indigo-950 to-violet-950" data-testid="section-analytics-preview">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <motion.div
           initial="hidden"
@@ -491,43 +509,43 @@ function AnalyticsPreviewSection() {
               <span className="text-white/50 text-sm font-medium">Trackademiq Dashboard</span>
             </div>
 
-            <div className="grid grid-cols-2 lg:grid-cols-4 gap-3 sm:gap-4 mb-6">
-              <div className="bg-gradient-to-br from-indigo-500/20 to-indigo-600/10 rounded-xl p-4 border border-indigo-500/20">
-                <div className="flex items-center gap-2 mb-2">
-                  <Users className="w-4 h-4 text-indigo-400" />
-                  <span className="text-white/60 text-xs sm:text-sm">Total Students</span>
+            <div className="grid grid-cols-2 lg:grid-cols-4 gap-2 sm:gap-4 mb-4 sm:mb-6">
+              <div className="bg-gradient-to-br from-indigo-500/20 to-indigo-600/10 rounded-lg sm:rounded-xl p-2.5 sm:p-4 border border-indigo-500/20">
+                <div className="flex items-center gap-1.5 sm:gap-2 mb-1 sm:mb-2">
+                  <Users className="w-3 h-3 sm:w-4 sm:h-4 text-indigo-400" />
+                  <span className="text-white/60 text-[10px] sm:text-sm"><span className="sm:hidden">Students</span><span className="hidden sm:inline">Total Students</span></span>
                 </div>
-                <div className="text-2xl sm:text-3xl font-bold text-white">2,847</div>
-                <div className="text-emerald-400 text-xs mt-1 flex items-center gap-1">
-                  <TrendingUp className="w-3 h-3" /> +12% this month
-                </div>
-              </div>
-              <div className="bg-gradient-to-br from-emerald-500/20 to-emerald-600/10 rounded-xl p-4 border border-emerald-500/20">
-                <div className="flex items-center gap-2 mb-2">
-                  <CheckCircle2 className="w-4 h-4 text-emerald-400" />
-                  <span className="text-white/60 text-xs sm:text-sm">Attendance Rate</span>
-                </div>
-                <div className="text-2xl sm:text-3xl font-bold text-white">94.2%</div>
-                <div className="text-emerald-400 text-xs mt-1 flex items-center gap-1">
-                  <TrendingUp className="w-3 h-3" /> +2.1% vs last week
+                <div className="text-lg sm:text-3xl font-bold text-white">2,847</div>
+                <div className="text-emerald-400 text-[10px] sm:text-xs mt-0.5 sm:mt-1 flex items-center gap-1">
+                  <TrendingUp className="w-2.5 h-2.5 sm:w-3 sm:h-3" /> <span className="sm:hidden">+12%</span><span className="hidden sm:inline">+12% this month</span>
                 </div>
               </div>
-              <div className="bg-gradient-to-br from-amber-500/20 to-amber-600/10 rounded-xl p-4 border border-amber-500/20">
-                <div className="flex items-center gap-2 mb-2">
-                  <Shield className="w-4 h-4 text-amber-400" />
-                  <span className="text-white/60 text-xs sm:text-sm">At-Risk Students</span>
+              <div className="bg-gradient-to-br from-emerald-500/20 to-emerald-600/10 rounded-lg sm:rounded-xl p-2.5 sm:p-4 border border-emerald-500/20">
+                <div className="flex items-center gap-1.5 sm:gap-2 mb-1 sm:mb-2">
+                  <CheckCircle2 className="w-3 h-3 sm:w-4 sm:h-4 text-emerald-400" />
+                  <span className="text-white/60 text-[10px] sm:text-sm"><span className="sm:hidden">Attendance</span><span className="hidden sm:inline">Attendance Rate</span></span>
                 </div>
-                <div className="text-2xl sm:text-3xl font-bold text-white">23</div>
-                <div className="text-amber-400 text-xs mt-1">Needs attention</div>
+                <div className="text-lg sm:text-3xl font-bold text-white">94.2%</div>
+                <div className="text-emerald-400 text-[10px] sm:text-xs mt-0.5 sm:mt-1 flex items-center gap-1">
+                  <TrendingUp className="w-2.5 h-2.5 sm:w-3 sm:h-3" /> <span className="sm:hidden">+2.1%</span><span className="hidden sm:inline">+2.1% vs last week</span>
+                </div>
               </div>
-              <div className="bg-gradient-to-br from-violet-500/20 to-violet-600/10 rounded-xl p-4 border border-violet-500/20">
-                <div className="flex items-center gap-2 mb-2">
-                  <Star className="w-4 h-4 text-violet-400" />
-                  <span className="text-white/60 text-xs sm:text-sm">Avg. Score</span>
+              <div className="bg-gradient-to-br from-amber-500/20 to-amber-600/10 rounded-lg sm:rounded-xl p-2.5 sm:p-4 border border-amber-500/20">
+                <div className="flex items-center gap-1.5 sm:gap-2 mb-1 sm:mb-2">
+                  <Shield className="w-3 h-3 sm:w-4 sm:h-4 text-amber-400" />
+                  <span className="text-white/60 text-[10px] sm:text-sm"><span className="sm:hidden">At-Risk</span><span className="hidden sm:inline">At-Risk Students</span></span>
                 </div>
-                <div className="text-2xl sm:text-3xl font-bold text-white">78.5%</div>
-                <div className="text-emerald-400 text-xs mt-1 flex items-center gap-1">
-                  <TrendingUp className="w-3 h-3" /> +5.3% improvement
+                <div className="text-lg sm:text-3xl font-bold text-white">23</div>
+                <div className="text-amber-400 text-[10px] sm:text-xs mt-0.5 sm:mt-1"><span className="sm:hidden">Attention</span><span className="hidden sm:inline">Needs attention</span></div>
+              </div>
+              <div className="bg-gradient-to-br from-violet-500/20 to-violet-600/10 rounded-lg sm:rounded-xl p-2.5 sm:p-4 border border-violet-500/20">
+                <div className="flex items-center gap-1.5 sm:gap-2 mb-1 sm:mb-2">
+                  <Star className="w-3 h-3 sm:w-4 sm:h-4 text-violet-400" />
+                  <span className="text-white/60 text-[10px] sm:text-sm"><span className="sm:hidden">Avg Score</span><span className="hidden sm:inline">Avg. Score</span></span>
+                </div>
+                <div className="text-lg sm:text-3xl font-bold text-white">78.5%</div>
+                <div className="text-emerald-400 text-[10px] sm:text-xs mt-0.5 sm:mt-1 flex items-center gap-1">
+                  <TrendingUp className="w-2.5 h-2.5 sm:w-3 sm:h-3" /> <span className="sm:hidden">+5.3%</span><span className="hidden sm:inline">+5.3% improvement</span>
                 </div>
               </div>
             </div>
@@ -550,36 +568,36 @@ function AnalyticsPreviewSection() {
                   </thead>
                   <tbody>
                     {students.map((student, index) => (
-                      <tr key={index} className="border-b border-white/5 hover:bg-white/5 transition-colors">
-                        <td className="px-4 py-3">
-                          <div className="flex items-center gap-3">
-                            <div className="w-8 h-8 rounded-full bg-gradient-to-br from-indigo-500 to-violet-500 flex items-center justify-center text-white text-xs font-medium">
+                      <tr key={index} className={`border-b border-white/5 hover:bg-white/5 transition-colors ${index >= 3 ? 'hidden sm:table-row' : ''}`}>
+                        <td className="px-4 py-2 sm:py-3">
+                          <div className="flex items-center gap-2 sm:gap-3">
+                            <div className="w-6 h-6 sm:w-8 sm:h-8 rounded-full bg-gradient-to-br from-indigo-500 to-violet-500 flex items-center justify-center text-white text-[10px] sm:text-xs font-medium">
                               {student.name.split(' ').map(n => n[0]).join('')}
                             </div>
-                            <span className="text-white font-medium">{student.name}</span>
+                            <span className="text-white font-medium text-xs sm:text-sm">{student.name}</span>
                           </div>
                         </td>
-                        <td className="px-4 py-3 text-white/70 hidden sm:table-cell">{student.class}</td>
-                        <td className="px-4 py-3">
-                          <div className="flex items-center gap-2">
-                            <div className="w-16 sm:w-24 h-2 bg-slate-700 rounded-full overflow-hidden">
+                        <td className="px-4 py-2 sm:py-3 text-white/70 hidden sm:table-cell">{student.class}</td>
+                        <td className="px-4 py-2 sm:py-3">
+                          <div className="flex items-center gap-1 sm:gap-2">
+                            <div className="w-12 sm:w-24 h-1.5 sm:h-2 bg-slate-700 rounded-full overflow-hidden">
                               <div 
                                 className={`h-full rounded-full ${student.attendance >= 90 ? 'bg-emerald-500' : student.attendance >= 80 ? 'bg-amber-500' : 'bg-red-500'}`}
                                 style={{ width: `${student.attendance}%` }}
                               />
                             </div>
-                            <span className="text-white/70 text-xs">{student.attendance}%</span>
+                            <span className="text-white/70 text-[10px] sm:text-xs">{student.attendance}%</span>
                           </div>
                         </td>
-                        <td className="px-4 py-3">
-                          <div className="flex items-center gap-2">
-                            <span className="text-white font-medium">{student.score}%</span>
-                            {student.trend === 'up' && <TrendingUp className="w-3 h-3 text-emerald-400" />}
-                            {student.trend === 'down' && <TrendingUp className="w-3 h-3 text-red-400 rotate-180" />}
+                        <td className="px-4 py-2 sm:py-3">
+                          <div className="flex items-center gap-1 sm:gap-2">
+                            <span className="text-white font-medium text-xs sm:text-sm">{student.score}%</span>
+                            {student.trend === 'up' && <TrendingUp className="w-2.5 h-2.5 sm:w-3 sm:h-3 text-emerald-400" />}
+                            {student.trend === 'down' && <TrendingUp className="w-2.5 h-2.5 sm:w-3 sm:h-3 text-red-400 rotate-180" />}
                           </div>
                         </td>
-                        <td className="px-4 py-3">
-                          <span className={`px-2 py-1 rounded-full text-xs font-medium ${
+                        <td className="px-4 py-2 sm:py-3">
+                          <span className={`px-1.5 sm:px-2 py-0.5 sm:py-1 rounded-full text-[10px] sm:text-xs font-medium ${
                             student.status === 'Excellent' ? 'bg-emerald-500/20 text-emerald-400' :
                             student.status === 'Good' ? 'bg-blue-500/20 text-blue-400' :
                             'bg-red-500/20 text-red-400'
@@ -633,7 +651,7 @@ function HowItWorksSection() {
   ];
 
   return (
-    <section id="how-it-works" className="py-16 sm:py-20 md:py-28 bg-card" data-testid="section-how-it-works">
+    <section id="how-it-works" className="py-10 sm:py-20 md:py-28 bg-card" data-testid="section-how-it-works">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <motion.div
           initial="hidden"
@@ -737,7 +755,7 @@ function BenefitsSection() {
   ];
 
   return (
-    <section id="benefits" className="py-16 sm:py-20 md:py-28 bg-background" data-testid="section-benefits">
+    <section id="benefits" className="py-10 sm:py-20 md:py-28 bg-background" data-testid="section-benefits">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <motion.div
           initial="hidden"
@@ -766,12 +784,49 @@ function BenefitsSection() {
           </motion.p>
         </motion.div>
 
+        <div className="md:hidden overflow-x-auto pb-4 -mx-4 px-4 scrollbar-hide">
+          <div className="flex gap-4" style={{ width: 'max-content' }}>
+            {benefits.map((benefit, index) => (
+              <Card
+                key={benefit.title}
+                className="overflow-hidden w-72 flex-shrink-0"
+                data-testid={`card-benefit-mobile-${index}`}
+              >
+                <div className="relative h-36 overflow-hidden">
+                  <img
+                    src={benefit.image}
+                    alt={benefit.imageAlt}
+                    className="w-full h-full object-cover"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent" />
+                  <div className="absolute bottom-3 left-3 flex items-center gap-2">
+                    <div className="w-8 h-8 rounded-lg bg-white/20 backdrop-blur-sm flex items-center justify-center">
+                      <benefit.icon className="w-4 h-4 text-white" />
+                    </div>
+                    <h3 className="text-base font-semibold text-white">{benefit.title}</h3>
+                  </div>
+                </div>
+                <div className="p-3">
+                  <ul className="space-y-1.5">
+                    {benefit.points.slice(0, 3).map((point, pointIndex) => (
+                      <li key={pointIndex} className="flex items-start gap-2">
+                        <CheckCircle2 className="w-3.5 h-3.5 text-green-500 flex-shrink-0 mt-0.5" />
+                        <span className="text-xs text-muted-foreground">{point}</span>
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+              </Card>
+            ))}
+          </div>
+        </div>
+
         <motion.div
           initial="hidden"
           whileInView="visible"
           viewport={{ once: true, margin: "-50px" }}
           variants={staggerContainer}
-          className="grid grid-cols-1 lg:grid-cols-3 gap-8"
+          className="hidden md:grid md:grid-cols-3 gap-8"
         >
           {benefits.map((benefit, index) => (
             <motion.div key={benefit.title} variants={fadeInUp}>
@@ -830,7 +885,7 @@ function DemoRequestSection() {
   ];
 
   return (
-    <section id="demo-request" className="py-16 sm:py-20 md:py-28 bg-gradient-to-br from-indigo-600 via-indigo-700 to-violet-800" data-testid="section-demo-request">
+    <section id="demo-request" className="py-10 sm:py-20 md:py-28 bg-gradient-to-br from-indigo-600 via-indigo-700 to-violet-800" data-testid="section-demo-request">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <motion.div
           initial="hidden"
@@ -942,7 +997,7 @@ function TestimonialsSection() {
   ];
 
   return (
-    <section id="testimonials" className="py-16 sm:py-20 md:py-28 bg-background" data-testid="section-testimonials">
+    <section id="testimonials" className="py-10 sm:py-20 md:py-28 bg-background" data-testid="section-testimonials">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <motion.div
           initial="hidden"
@@ -971,12 +1026,46 @@ function TestimonialsSection() {
           </motion.p>
         </motion.div>
 
+        <div className="md:hidden overflow-x-auto pb-4 -mx-4 px-4 scrollbar-hide">
+          <div className="flex gap-4" style={{ width: 'max-content' }}>
+            {testimonials.map((testimonial, index) => (
+              <Card
+                key={index}
+                className="p-4 w-72 flex-shrink-0 flex flex-col"
+                data-testid={`card-testimonial-mobile-${index}`}
+              >
+                <div className="flex gap-1 mb-3">
+                  {[...Array(testimonial.rating)].map((_, i) => (
+                    <Star key={i} className="w-4 h-4 fill-yellow-400 text-yellow-400" />
+                  ))}
+                </div>
+                <blockquote className="text-sm text-muted-foreground leading-relaxed flex-grow mb-4">
+                  "{testimonial.quote}"
+                </blockquote>
+                <div className="flex items-center gap-3 pt-3 border-t border-border">
+                  <div className="w-10 h-10 rounded-full bg-gradient-to-br from-indigo-100 to-violet-100 dark:from-indigo-900/30 dark:to-violet-900/30 flex items-center justify-center">
+                    <span className="text-sm font-semibold text-indigo-600 dark:text-indigo-400">
+                      {testimonial.author.split(" ").map(n => n[0]).join("")}
+                    </span>
+                  </div>
+                  <div>
+                    <div className="font-semibold text-foreground text-sm">{testimonial.author}</div>
+                    <div className="text-xs text-muted-foreground">
+                      {testimonial.role}
+                    </div>
+                  </div>
+                </div>
+              </Card>
+            ))}
+          </div>
+        </div>
+
         <motion.div
           initial="hidden"
           whileInView="visible"
           viewport={{ once: true, margin: "-50px" }}
           variants={staggerContainer}
-          className="grid grid-cols-1 md:grid-cols-3 gap-8"
+          className="hidden md:grid md:grid-cols-3 gap-8"
         >
           {testimonials.map((testimonial, index) => (
             <motion.div key={index} variants={fadeInUp}>
@@ -1052,7 +1141,7 @@ function ContactSection() {
   };
 
   return (
-    <section id="contact" className="py-16 sm:py-20 md:py-28 bg-card" data-testid="section-contact">
+    <section id="contact" className="py-10 sm:py-20 md:py-28 bg-card" data-testid="section-contact">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="grid grid-cols-1 lg:grid-cols-5 gap-8 sm:gap-12">
           <motion.div

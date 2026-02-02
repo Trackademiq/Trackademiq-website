@@ -80,6 +80,13 @@ Modern, SEO-optimized landing page for Trackademiq, an AI-powered education inte
 The application runs with `npm run dev` which starts both the Express backend and Vite frontend on port 5000.
 
 ## Recent Changes
+- February 2026: Mobile Optimization Update
+  - Horizontal swipeable carousels for features, testimonials, benefits on mobile
+  - Reduced section padding on mobile only (py-10 vs sm:py-20 md:py-28)
+  - Compact KPI cards on mobile with abbreviated labels
+  - Student table limited to 3 rows on mobile (5 on desktop)
+  - Added scrollbar-hide CSS utility for clean carousel scrolling
+  - Hero illustration now visible on all screen sizes
 - February 2026: Trackademiq Rebrand
   - Rebranded from Edufy to Trackademiq
   - New tagline: "Next-Generation Education Systems"

@@ -41,7 +41,8 @@ Modern, SEO-optimized landing page for Trackademiq, an AI-powered education inte
 - Contact form with validation
 - Responsive design with smooth Framer Motion animations
 - SEO optimized with Schema.org structured data
-- Live Chat Widget (bottom-right corner)
+- Live Chat Widget with conversational demo request flow (bottom-right corner)
+- Connected Intelligence section showing personalized tools for each user type
 
 ### Extended Pages
 - **Blog** ("/blog") - EdTech articles and insights
@@ -79,7 +80,16 @@ Modern, SEO-optimized landing page for Trackademiq, an AI-powered education inte
 ## Running the Project
 The application runs with `npm run dev` which starts both the Express backend and Vite frontend on port 5000.
 
+## Future Enhancements
+- **Email Integration**: To enable automatic email notifications for demo requests, set up Resend or SendGrid integration. The chatbot collects user info and stores it, but email sending requires API key configuration.
+
 ## Recent Changes
+- February 2026: Connected Intelligence Section & Enhanced Chatbot
+  - Added new "Connected Intelligence" section showing personalized tools for Students, Teachers, Parents, and Administrators connected through AI analytics hub
+  - Enhanced chat widget with conversational flow to collect demo request info (role, name, school, email, phone, interest)
+  - Chat submissions stored via /api/demo-requests API
+  - Hero headline forced to two lines consistently
+  - Hero section redesigned to Zoho/Freshworks light background style
 - February 2026: Section Reorganization
   - Moved "Transform Education with AI" (analytics preview) above "Comprehensive Education Intelligence" (features)
   - Merged "Get Started in 3 Easy Steps" and "Why Switch to Trackademiq" into single "Get Started" section

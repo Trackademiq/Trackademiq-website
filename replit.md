@@ -80,6 +80,10 @@ Modern, SEO-optimized landing page for Trackademiq, an AI-powered education inte
 The application runs with `npm run dev` which starts both the Express backend and Vite frontend on port 5000.
 
 ## Recent Changes
+- February 2026: Section Reorganization
+  - Moved "Transform Education with AI" (analytics preview) above "Comprehensive Education Intelligence" (features)
+  - Merged "Get Started in 3 Easy Steps" and "Why Switch to Trackademiq" into single "Get Started" section
+  - Updated navigation links to new #get-started anchor
 - February 2026: Mobile Optimization Update
   - Horizontal swipeable carousels for features, testimonials, benefits on mobile
   - Reduced section padding on mobile only (py-10 vs sm:py-20 md:py-28)

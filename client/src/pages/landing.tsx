@@ -1066,11 +1066,34 @@ function TestimonialsSection() {
       role: "Mathematics Teacher",
       school: "ICSE School, Chennai",
       rating: 5
+    },
+    {
+      quote: "The parent engagement features have transformed how we communicate. We've seen a 40% increase in parent involvement since adopting Trackademiq.",
+      author: "Lakshmi Venkatesh",
+      role: "Vice Principal",
+      school: "State Board School, Chennai",
+      rating: 5
+    },
+    {
+      quote: "Fee collection used to be our biggest headache. Now with automated reminders and online payments, we've reduced pending fees by 60%.",
+      author: "Rajesh Kumar",
+      role: "Administrator",
+      school: "CBSE School, Tambaram",
+      rating: 5
+    },
+    {
+      quote: "As a working parent, I appreciate getting real-time updates on my daughter's attendance and performance. It gives me peace of mind.",
+      author: "Priya Subramaniam",
+      role: "Parent",
+      school: "International School",
+      rating: 5
     }
   ];
 
+  const duplicatedTestimonials = [...testimonials, ...testimonials];
+
   return (
-    <section id="testimonials" className="py-8 sm:py-12 md:py-16 bg-background" data-testid="section-testimonials">
+    <section id="testimonials" className="py-8 sm:py-12 md:py-16 bg-background overflow-hidden" data-testid="section-testimonials">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <motion.div
           initial="hidden"
@@ -1099,78 +1122,60 @@ function TestimonialsSection() {
           </motion.p>
         </motion.div>
 
-        <div className="md:hidden overflow-x-auto pb-4 -mx-4 px-4 scrollbar-hide">
-          <div className="flex gap-4" style={{ width: 'max-content' }}>
-            {testimonials.map((testimonial, index) => (
-              <Card
-                key={index}
-                className="p-4 w-72 flex-shrink-0 flex flex-col"
-                data-testid={`card-testimonial-mobile-${index}`}
-              >
-                <div className="flex gap-1 mb-3">
-                  {[...Array(testimonial.rating)].map((_, i) => (
-                    <Star key={i} className="w-4 h-4 fill-yellow-400 text-yellow-400" />
-                  ))}
-                </div>
-                <blockquote className="text-sm text-muted-foreground leading-relaxed flex-grow mb-4">
-                  "{testimonial.quote}"
-                </blockquote>
-                <div className="flex items-center gap-3 pt-3 border-t border-border">
-                  <div className="w-10 h-10 rounded-full bg-gradient-to-br from-indigo-100 to-violet-100 dark:from-indigo-900/30 dark:to-violet-900/30 flex items-center justify-center">
-                    <span className="text-sm font-semibold text-indigo-600 dark:text-indigo-400">
-                      {testimonial.author.split(" ").map(n => n[0]).join("")}
-                    </span>
+        {/* Infinite Rolling Carousel */}
+        <div className="relative">
+          {/* Gradient fade edges */}
+          <div className="absolute left-0 top-0 bottom-0 w-16 sm:w-32 bg-gradient-to-r from-background to-transparent z-10 pointer-events-none" />
+          <div className="absolute right-0 top-0 bottom-0 w-16 sm:w-32 bg-gradient-to-l from-background to-transparent z-10 pointer-events-none" />
+          
+          {/* Scrolling container */}
+          <div className="overflow-hidden">
+            <motion.div
+              className="flex gap-4 sm:gap-6"
+              animate={{
+                x: ["0%", "-50%"]
+              }}
+              transition={{
+                x: {
+                  duration: 40,
+                  repeat: Infinity,
+                  ease: "linear"
+                }
+              }}
+              style={{ width: "fit-content" }}
+            >
+              {duplicatedTestimonials.map((testimonial, index) => (
+                <Card
+                  key={index}
+                  className="p-4 sm:p-6 w-72 sm:w-80 md:w-96 flex-shrink-0 flex flex-col"
+                  data-testid={`card-testimonial-${index}`}
+                >
+                  <div className="flex gap-1 mb-3 sm:mb-4">
+                    {[...Array(testimonial.rating)].map((_, i) => (
+                      <Star key={i} className="w-4 h-4 fill-yellow-400 text-yellow-400" />
+                    ))}
                   </div>
-                  <div>
-                    <div className="font-semibold text-foreground text-sm">{testimonial.author}</div>
-                    <div className="text-xs text-muted-foreground">
-                      {testimonial.role}
+                  <blockquote className="text-sm sm:text-base text-muted-foreground leading-relaxed flex-grow mb-4 sm:mb-6">
+                    "{testimonial.quote}"
+                  </blockquote>
+                  <div className="flex items-center gap-3 pt-4 border-t border-border">
+                    <div className="w-10 h-10 sm:w-12 sm:h-12 rounded-full bg-gradient-to-br from-indigo-100 to-violet-100 dark:from-indigo-900/30 dark:to-violet-900/30 flex items-center justify-center">
+                      <span className="text-sm sm:text-lg font-semibold text-indigo-600 dark:text-indigo-400">
+                        {testimonial.author.split(" ").map(n => n[0]).join("")}
+                      </span>
+                    </div>
+                    <div>
+                      <div className="font-semibold text-foreground text-sm sm:text-base">{testimonial.author}</div>
+                      <div className="text-xs sm:text-sm text-muted-foreground">
+                        {testimonial.role}, {testimonial.school}
+                      </div>
                     </div>
                   </div>
-                </div>
-              </Card>
-            ))}
+                </Card>
+              ))}
+            </motion.div>
           </div>
         </div>
-
-        <motion.div
-          initial="hidden"
-          whileInView="visible"
-          viewport={{ once: true, margin: "-50px" }}
-          variants={staggerContainer}
-          className="hidden md:grid md:grid-cols-3 gap-8"
-        >
-          {testimonials.map((testimonial, index) => (
-            <motion.div key={index} variants={fadeInUp}>
-              <Card
-                className="p-4 sm:p-6 h-full flex flex-col"
-                data-testid={`card-testimonial-${index}`}
-              >
-                <div className="flex gap-1 mb-3 sm:mb-4">
-                  {[...Array(testimonial.rating)].map((_, i) => (
-                    <Star key={i} className="w-4 h-4 sm:w-5 sm:h-5 fill-yellow-400 text-yellow-400" />
-                  ))}
-                </div>
-                <blockquote className="text-sm sm:text-base text-muted-foreground leading-relaxed flex-grow mb-4 sm:mb-6">
-                  "{testimonial.quote}"
-                </blockquote>
-                <div className="flex items-center gap-3 pt-4 border-t border-border">
-                  <div className="w-12 h-12 rounded-full bg-gradient-to-br from-indigo-100 to-violet-100 dark:from-indigo-900/30 dark:to-violet-900/30 flex items-center justify-center">
-                    <span className="text-lg font-semibold text-indigo-600 dark:text-indigo-400">
-                      {testimonial.author.split(" ").map(n => n[0]).join("")}
-                    </span>
-                  </div>
-                  <div>
-                    <div className="font-semibold text-foreground">{testimonial.author}</div>
-                    <div className="text-sm text-muted-foreground">
-                      {testimonial.role}, {testimonial.school}
-                    </div>
-                  </div>
-                </div>
-              </Card>
-            </motion.div>
-          ))}
-        </motion.div>
       </div>
     </section>
   );

@@ -1498,89 +1498,36 @@ function Footer() {
   return (
     <footer className="bg-gradient-to-br from-indigo-900 via-indigo-800 to-violet-900 text-white py-8 sm:py-12 md:py-16" data-testid="footer-main">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        {/* Mobile: Enhanced footer */}
-        <div className="sm:hidden">
-          {/* Logo and tagline */}
-          <div className="text-center mb-6">
-            <div className="flex items-center justify-center gap-2.5 mb-3">
-              <img 
-                src={trackademiqLogo} 
-                alt="Trackademiq Logo" 
-                className="w-10 h-10 rounded-xl object-contain shadow-lg shadow-indigo-500/30"
-              />
-              <span className="text-xl font-bold bg-gradient-to-r from-white to-indigo-200 bg-clip-text text-transparent">Trackademiq</span>
-            </div>
-            <p className="text-white/70 text-sm max-w-xs mx-auto leading-relaxed">
-              AI-powered school management for modern education
-            </p>
+        {/* Mobile: Simple footer */}
+        <div className="sm:hidden text-center">
+          <div className="flex items-center justify-center gap-2 mb-4">
+            <img 
+              src={trackademiqLogo} 
+              alt="Trackademiq Logo" 
+              className="w-9 h-9 rounded-lg object-contain"
+            />
+            <span className="text-lg font-bold text-white">Trackademiq</span>
           </div>
-
-          {/* Quick links grid */}
-          <div className="grid grid-cols-3 gap-3 mb-6">
-            <button 
-              onClick={() => scrollToSection("#features")}
-              className="py-2.5 px-3 rounded-xl bg-white/10 backdrop-blur-sm text-white/80 text-xs font-medium hover:bg-white/20 transition-colors"
-            >
-              Features
-            </button>
-            <button 
-              onClick={() => scrollToSection("#contact")}
-              className="py-2.5 px-3 rounded-xl bg-white/10 backdrop-blur-sm text-white/80 text-xs font-medium hover:bg-white/20 transition-colors"
-            >
-              Contact
-            </button>
-            <button 
-              onClick={() => scrollToSection("#testimonials")}
-              className="py-2.5 px-3 rounded-xl bg-white/10 backdrop-blur-sm text-white/80 text-xs font-medium hover:bg-white/20 transition-colors"
-            >
-              Reviews
-            </button>
-          </div>
-
-          {/* Contact info cards */}
-          <div className="flex gap-3 mb-6">
-            <a 
-              href="tel:+919894836016" 
-              className="flex-1 flex items-center justify-center gap-2 py-3 px-4 rounded-xl bg-gradient-to-r from-emerald-500/20 to-teal-500/20 border border-emerald-500/30"
-            >
-              <Phone className="w-4 h-4 text-emerald-400" />
-              <span className="text-sm text-white font-medium">Call Us</span>
-            </a>
-            <a 
-              href="mailto:info@trackademiq.com" 
-              className="flex-1 flex items-center justify-center gap-2 py-3 px-4 rounded-xl bg-gradient-to-r from-indigo-500/20 to-violet-500/20 border border-indigo-500/30"
-            >
-              <Mail className="w-4 h-4 text-indigo-400" />
-              <span className="text-sm text-white font-medium">Email</span>
-            </a>
-          </div>
-
-          {/* Location */}
-          <div className="flex items-center justify-center gap-2 text-white/60 text-xs mb-5">
-            <MapPin className="w-3.5 h-3.5" />
-            <span>Polichalur, Chennai 600074</span>
-          </div>
-
-          {/* Social links */}
-          <div className="flex items-center justify-center gap-3 mb-6">
+          
+          <p className="text-white/60 text-xs mb-4">
+            Polichalur, Chennai • info@trackademiq.com
+          </p>
+          
+          <div className="flex items-center justify-center gap-2.5 mb-5">
             {socialLinks.map((social) => (
               <a
                 key={social.label}
                 href={social.href}
-                className="w-11 h-11 rounded-xl bg-white/10 backdrop-blur-sm flex items-center justify-center hover:bg-gradient-to-br hover:from-indigo-500 hover:to-violet-500 transition-all duration-300 border border-white/10"
+                className="w-9 h-9 rounded-lg bg-white/10 flex items-center justify-center hover:bg-white/20 transition-colors"
                 aria-label={social.label}
                 data-testid={`link-social-mobile-${social.label.toLowerCase()}`}
               >
-                <social.icon className="w-4.5 h-4.5" />
+                <social.icon className="w-4 h-4" />
               </a>
             ))}
           </div>
-
-          {/* Divider */}
-          <div className="h-px bg-gradient-to-r from-transparent via-white/20 to-transparent mb-4" />
-
-          {/* Copyright */}
-          <div className="text-center text-xs text-white/50">
+          
+          <div className="text-xs text-white/40">
             © {new Date().getFullYear()} Trackademiq Technologies Pvt. Ltd.
           </div>
         </div>

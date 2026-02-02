@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-import { motion } from "framer-motion";
+import { motion, AnimatePresence } from "framer-motion";
 import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
 import { Input } from "@/components/ui/input";
@@ -636,6 +636,150 @@ function AnalyticsPreviewSection() {
   );
 }
 
+interface BenefitItem {
+  title: string;
+  image: string;
+  imageAlt: string;
+  icon: React.ComponentType<{ className?: string }>;
+  points: string[];
+}
+
+function BenefitsTabs({ benefits }: { benefits: BenefitItem[] }) {
+  const [activeTab, setActiveTab] = useState(0);
+
+  const tabColors = [
+    { bg: "from-indigo-500 to-indigo-600", light: "indigo" },
+    { bg: "from-emerald-500 to-emerald-600", light: "emerald" },
+    { bg: "from-violet-500 to-violet-600", light: "violet" }
+  ];
+
+  return (
+    <motion.div
+      initial="hidden"
+      whileInView="visible"
+      viewport={{ once: true, margin: "-50px" }}
+      variants={staggerContainer}
+    >
+      {/* Tab Navigation */}
+      <motion.div 
+        variants={fadeInUp}
+        className="flex justify-center mb-6 sm:mb-8"
+      >
+        <div className="inline-flex p-1 bg-muted/50 rounded-full border border-border/50">
+          {benefits.map((benefit, index) => {
+            const Icon = benefit.icon;
+            const isActive = activeTab === index;
+            return (
+              <button
+                key={benefit.title}
+                onClick={() => setActiveTab(index)}
+                className={`
+                  relative flex items-center gap-2 px-4 sm:px-6 py-2.5 sm:py-3 rounded-full font-medium text-sm sm:text-base
+                  transition-all duration-300 ease-out
+                  ${isActive 
+                    ? "text-white shadow-lg" 
+                    : "text-muted-foreground hover:text-foreground"
+                  }
+                `}
+                data-testid={`tab-benefit-${index}`}
+              >
+                {isActive && (
+                  <motion.div
+                    layoutId="activeTab"
+                    className={`absolute inset-0 bg-gradient-to-r ${tabColors[index].bg} rounded-full`}
+                    transition={{ type: "spring", bounce: 0.2, duration: 0.6 }}
+                  />
+                )}
+                <span className="relative z-10 flex items-center gap-2">
+                  <Icon className="w-4 h-4" />
+                  <span className="hidden sm:inline">{benefit.title}</span>
+                </span>
+              </button>
+            );
+          })}
+        </div>
+      </motion.div>
+
+      {/* Content Panel */}
+      <motion.div variants={fadeInUp}>
+        <div className="relative overflow-hidden rounded-2xl bg-gradient-to-br from-background to-muted/30 border border-border/50 shadow-xl">
+          <AnimatePresence mode="wait">
+            <motion.div
+              key={activeTab}
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              exit={{ opacity: 0, y: -20 }}
+              transition={{ duration: 0.3 }}
+              className="grid grid-cols-1 lg:grid-cols-2 gap-0"
+            >
+              {/* Image Section */}
+              <div className="relative h-48 sm:h-64 lg:h-80 overflow-hidden">
+                <img
+                  src={benefits[activeTab].image}
+                  alt={benefits[activeTab].imageAlt}
+                  className="w-full h-full object-cover"
+                />
+                <div className="absolute inset-0 bg-gradient-to-r from-black/40 via-black/20 to-transparent lg:bg-gradient-to-t lg:from-black/40 lg:via-transparent lg:to-transparent" />
+                <div className="absolute bottom-4 left-4 sm:bottom-6 sm:left-6">
+                  <div className={`inline-flex items-center gap-2 px-4 py-2 rounded-full bg-gradient-to-r ${tabColors[activeTab].bg} text-white shadow-lg`}>
+                    {(() => {
+                      const Icon = benefits[activeTab].icon;
+                      return <Icon className="w-5 h-5" />;
+                    })()}
+                    <span className="font-semibold text-sm sm:text-base">{benefits[activeTab].title}</span>
+                  </div>
+                </div>
+              </div>
+
+              {/* Benefits List */}
+              <div className="p-6 sm:p-8 lg:p-10 flex flex-col justify-center">
+                <ul className="space-y-3 sm:space-y-4">
+                  {benefits[activeTab].points.map((point, pointIndex) => (
+                    <motion.li
+                      key={pointIndex}
+                      initial={{ opacity: 0, x: -10 }}
+                      animate={{ opacity: 1, x: 0 }}
+                      transition={{ delay: pointIndex * 0.1 }}
+                      className="flex items-start gap-3"
+                    >
+                      <div className={`flex-shrink-0 w-6 h-6 rounded-full bg-gradient-to-r ${tabColors[activeTab].bg} flex items-center justify-center mt-0.5`}>
+                        <CheckCircle2 className="w-4 h-4 text-white" />
+                      </div>
+                      <span className="text-sm sm:text-base text-foreground leading-relaxed">{point}</span>
+                    </motion.li>
+                  ))}
+                </ul>
+              </div>
+            </motion.div>
+          </AnimatePresence>
+        </div>
+      </motion.div>
+
+      {/* Navigation Dots */}
+      <motion.div 
+        variants={fadeInUp}
+        className="flex justify-center gap-2 mt-6"
+      >
+        {benefits.map((_, index) => (
+          <button
+            key={index}
+            onClick={() => setActiveTab(index)}
+            className={`
+              w-2.5 h-2.5 rounded-full transition-all duration-300
+              ${activeTab === index 
+                ? `w-8 bg-gradient-to-r ${tabColors[index].bg}` 
+                : "bg-muted-foreground/30 hover:bg-muted-foreground/50"
+              }
+            `}
+            aria-label={`Go to ${benefits[index].title}`}
+            data-testid={`dot-benefit-${index}`}
+          />
+        ))}
+      </motion.div>
+    </motion.div>
+  );
+}
+
 function GetStartedSection() {
   const steps = [
     {
@@ -789,86 +933,8 @@ function GetStartedSection() {
           </motion.p>
         </motion.div>
 
-        {/* Benefits Mobile Carousel */}
-        <div className="md:hidden overflow-x-auto pb-4 -mx-4 px-4 scrollbar-hide">
-          <div className="flex gap-4" style={{ width: 'max-content' }}>
-            {benefits.map((benefit, index) => (
-              <Card
-                key={benefit.title}
-                className="overflow-hidden w-72 flex-shrink-0"
-                data-testid={`card-benefit-mobile-${index}`}
-              >
-                <div className="relative h-36 overflow-hidden">
-                  <img
-                    src={benefit.image}
-                    alt={benefit.imageAlt}
-                    className="w-full h-full object-cover"
-                  />
-                  <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent" />
-                  <div className="absolute bottom-3 left-3 flex items-center gap-2">
-                    <div className="w-8 h-8 rounded-lg bg-white/20 backdrop-blur-sm flex items-center justify-center">
-                      <benefit.icon className="w-4 h-4 text-white" />
-                    </div>
-                    <h3 className="text-base font-semibold text-white">{benefit.title}</h3>
-                  </div>
-                </div>
-                <div className="p-3">
-                  <ul className="space-y-1.5">
-                    {benefit.points.slice(0, 3).map((point, pointIndex) => (
-                      <li key={pointIndex} className="flex items-start gap-2">
-                        <CheckCircle2 className="w-3.5 h-3.5 text-green-500 flex-shrink-0 mt-0.5" />
-                        <span className="text-xs text-muted-foreground">{point}</span>
-                      </li>
-                    ))}
-                  </ul>
-                </div>
-              </Card>
-            ))}
-          </div>
-        </div>
-
-        {/* Benefits Desktop Grid */}
-        <motion.div
-          initial="hidden"
-          whileInView="visible"
-          viewport={{ once: true, margin: "-50px" }}
-          variants={staggerContainer}
-          className="hidden md:grid md:grid-cols-3 gap-8"
-        >
-          {benefits.map((benefit, index) => (
-            <motion.div key={benefit.title} variants={fadeInUp}>
-              <Card
-                className="overflow-hidden h-full"
-                data-testid={`card-benefit-${index}`}
-              >
-                <div className="relative h-48 overflow-hidden">
-                  <img
-                    src={benefit.image}
-                    alt={benefit.imageAlt}
-                    className="w-full h-full object-cover"
-                  />
-                  <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent" />
-                  <div className="absolute bottom-4 left-4 flex items-center gap-2">
-                    <div className="w-10 h-10 rounded-lg bg-white/20 backdrop-blur-sm flex items-center justify-center">
-                      <benefit.icon className="w-5 h-5 text-white" />
-                    </div>
-                    <h3 className="text-xl font-semibold text-white">{benefit.title}</h3>
-                  </div>
-                </div>
-                <div className="p-4 sm:p-6">
-                  <ul className="space-y-2 sm:space-y-3">
-                    {benefit.points.map((point, pointIndex) => (
-                      <li key={pointIndex} className="flex items-start gap-2 sm:gap-3">
-                        <CheckCircle2 className="w-4 h-4 sm:w-5 sm:h-5 text-green-500 flex-shrink-0 mt-0.5" />
-                        <span className="text-sm sm:text-base text-muted-foreground">{point}</span>
-                      </li>
-                    ))}
-                  </ul>
-                </div>
-              </Card>
-            </motion.div>
-          ))}
-        </motion.div>
+        {/* Interactive Tabs for Benefits */}
+        <BenefitsTabs benefits={benefits} />
       </div>
     </section>
   );

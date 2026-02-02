@@ -76,9 +76,10 @@ function Header() {
   }, []);
 
   const navLinks = [
+    { href: "#features", label: "Product" },
     { href: "#features", label: "Features" },
-    { href: "#get-started", label: "Get Started" },
-    { href: "#testimonials", label: "Testimonials" },
+    { href: "#get-started", label: "Pricing" },
+    { href: "#testimonials", label: "About" },
     { href: "#contact", label: "Contact" },
   ];
 

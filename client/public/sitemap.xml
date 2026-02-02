@@ -20,17 +20,17 @@
     <priority>0.9</priority>
   </url>
   
-  <!-- How It Works -->
+  <!-- Get Started / Pricing -->
   <url>
-    <loc>https://trackademiq.com/#how-it-works</loc>
+    <loc>https://trackademiq.com/#get-started</loc>
     <lastmod>2026-02-02</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   
-  <!-- Benefits -->
+  <!-- Analytics Preview -->
   <url>
-    <loc>https://trackademiq.com/#benefits</loc>
+    <loc>https://trackademiq.com/#analytics-preview</loc>
     <lastmod>2026-02-02</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>

@@ -212,7 +212,7 @@ function HeroSection() {
 
   return (
     <section
-      className="relative min-h-screen flex items-center overflow-hidden bg-gradient-to-br from-slate-900 via-indigo-950 to-violet-950"
+      className="relative min-h-screen flex items-center overflow-hidden bg-gradient-to-br from-indigo-600 via-indigo-700 to-violet-800"
       data-testid="section-hero"
     >
       <div className="absolute inset-0 opacity-20">
@@ -1083,18 +1083,13 @@ function Footer() {
   const footerLinks = {
     product: [
       { label: "Features", href: "#features" },
-      { label: "Pricing", href: "#pricing" },
       { label: "How It Works", href: "#how-it-works" },
       { label: "Product Tour", href: "/product-tour" },
+      { label: "Request Demo", href: "#contact" },
     ],
     company: [
       { label: "Blog", href: "/blog" },
       { label: "Contact", href: "#contact" },
-      { label: "About Us", href: "#" },
-    ],
-    legal: [
-      { label: "Privacy Policy", href: "#" },
-      { label: "Terms of Service", href: "#" },
     ],
   };
 
@@ -1196,22 +1191,6 @@ function Footer() {
             </ul>
           </div>
 
-          <div>
-            <h4 className="font-semibold text-background mb-4">Legal</h4>
-            <ul className="space-y-3">
-              {footerLinks.legal.map((link) => (
-                <li key={link.label}>
-                  <button
-                    onClick={() => scrollToSection(link.href)}
-                    className="text-background/70 hover:text-indigo-400 transition-colors text-left"
-                    data-testid={`link-footer-${link.label.toLowerCase().replace(" ", "-")}`}
-                  >
-                    {link.label}
-                  </button>
-                </li>
-              ))}
-            </ul>
-          </div>
         </div>
 
         <div className="border-t border-background/10 pt-8 flex flex-col md:flex-row items-center justify-between gap-4">

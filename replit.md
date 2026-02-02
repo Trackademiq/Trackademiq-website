@@ -84,9 +84,15 @@ The application runs with `npm run dev` which starts both the Express backend an
 - **Email Integration**: To enable automatic email notifications for demo requests, set up Resend or SendGrid integration. The chatbot collects user info and stores it, but email sending requires API key configuration.
 
 ## Recent Changes
-- February 2026: Enhanced Features & Chatbot
-  - Merged Connected Intelligence and Features into single tabbed section showing personalized tools for each user type (Students, Teachers, Parents, Administrators)
-  - Tabbed interface with color-coded user types: Students=indigo, Teachers=emerald, Parents=rose, Admins=amber
+- February 2026: Enhanced Features Section with Glassmorphism
+  - Merged Personalized Experience and Benefits sections into single powerful tabbed section
+  - Each user tab (Students, Teachers, Parents, Administrators) now shows relevant image + feature cards
+  - Added micro-interactions: hover lift on cards, icon glow effects, subtle scale animations on tabs
+  - Added AI-driven taglines to each feature card (e.g., "Predict student dropouts before they happen")
+  - Applied glassmorphism styling with backdrop-blur and soft shadow depth
+  - Color-coded tabs: Students=indigo, Teachers=emerald, Parents=rose, Admins=amber
+  - Removed duplicate "Benefits for Everyone" section from Get Started page
+- February 2026: Enhanced Chatbot
   - Enhanced chat widget with conversational flow to collect demo request info (role, name, school, email, phone, interest)
   - Chat submissions stored via /api/demo-requests API
   - Hero headline forced to two lines consistently

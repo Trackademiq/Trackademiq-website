@@ -251,8 +251,7 @@ function HeroSection() {
             className="text-base sm:text-lg md:text-xl text-white/80 mb-6 sm:mb-8 max-w-2xl leading-relaxed"
             data-testid="text-hero-subtext"
           >
-            We help schools streamline operations while keeping parents connected to their child's progress. 
-            Our cloud platform brings teachers, students, and families together with simple, secure tools.
+            Education intelligence combining ERP workflows and analytics — connecting students, teachers, parents, and administrators.
           </motion.p>
 
           <motion.div variants={fadeInUp} className="flex flex-col sm:flex-row gap-4">
@@ -428,6 +427,95 @@ function FeaturesSection() {
               </Card>
             </motion.div>
           ))}
+        </motion.div>
+      </div>
+    </section>
+  );
+}
+
+function AnalyticsPreviewSection() {
+  const aiFeatures = [
+    {
+      icon: TrendingUp,
+      title: "Analyze Performance Trends",
+      description: "Track academic progress over time with intelligent trend analysis and pattern recognition."
+    },
+    {
+      icon: Users,
+      title: "Identify At-Risk Students",
+      description: "AI-powered early warning system detects students who may need additional support."
+    },
+    {
+      icon: Zap,
+      title: "Automate Academic Insights",
+      description: "Generate actionable insights automatically without manual data crunching."
+    }
+  ];
+
+  return (
+    <section id="analytics-preview" className="py-16 sm:py-20 md:py-28 bg-gradient-to-br from-slate-900 via-indigo-950 to-violet-950" data-testid="section-analytics-preview">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <motion.div
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true, margin: "-100px" }}
+          variants={staggerContainer}
+          className="text-center mb-12 sm:mb-16"
+        >
+          <motion.div variants={fadeInUp}>
+            <Badge className="mb-6 bg-white/10 text-white border-white/20 backdrop-blur-sm" size="sm">
+              <Brain className="w-3 h-3 mr-1" />
+              AI Analytics
+            </Badge>
+          </motion.div>
+          <motion.h2
+            variants={fadeInUp}
+            className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-white mb-4 sm:mb-6"
+          >
+            Transform Education with{" "}
+            <span className="bg-gradient-to-r from-emerald-300 to-cyan-300 bg-clip-text text-transparent">
+              AI
+            </span>
+          </motion.h2>
+          <motion.p
+            variants={fadeInUp}
+            className="text-base sm:text-lg md:text-xl text-white/70 max-w-2xl mx-auto"
+          >
+            Harness the power of artificial intelligence to make data-driven decisions for your institution.
+          </motion.p>
+        </motion.div>
+
+        <motion.div
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true, margin: "-100px" }}
+          variants={staggerContainer}
+          className="grid grid-cols-1 md:grid-cols-3 gap-6 sm:gap-8 mb-12 sm:mb-16"
+        >
+          {aiFeatures.map((feature, index) => (
+            <motion.div key={index} variants={fadeInUp}>
+              <Card className="p-6 sm:p-8 bg-white/5 backdrop-blur-sm border-white/10 hover:bg-white/10 transition-all duration-300 h-full">
+                <div className="w-12 h-12 sm:w-14 sm:h-14 rounded-xl bg-gradient-to-br from-indigo-500 to-violet-600 flex items-center justify-center mb-4 sm:mb-6">
+                  <feature.icon className="w-6 h-6 sm:w-7 sm:h-7 text-white" />
+                </div>
+                <h3 className="text-lg sm:text-xl font-semibold text-white mb-2 sm:mb-3">{feature.title}</h3>
+                <p className="text-sm sm:text-base text-white/70 leading-relaxed">{feature.description}</p>
+              </Card>
+            </motion.div>
+          ))}
+        </motion.div>
+
+        <motion.div
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true, margin: "-100px" }}
+          variants={fadeInUp}
+          className="text-center"
+        >
+          <div className="inline-flex items-center gap-3 px-6 py-3 rounded-full bg-white/10 backdrop-blur-sm border border-white/20">
+            <Sparkles className="w-5 h-5 text-emerald-400" />
+            <span className="text-lg sm:text-xl font-semibold text-white">Insightful Analytics at a Glance</span>
+          </div>
         </motion.div>
       </div>
     </section>
@@ -1257,6 +1345,7 @@ export default function LandingPage() {
       <main>
         <HeroSection />
         <FeaturesSection />
+        <AnalyticsPreviewSection />
         <HowItWorksSection />
         <BenefitsSection />
         <DemoRequestSection />

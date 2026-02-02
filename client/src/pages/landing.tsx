@@ -201,6 +201,114 @@ function Header() {
   );
 }
 
+function HeroIllustration() {
+  return (
+    <motion.div
+      initial={{ opacity: 0, scale: 0.9, y: 30 }}
+      animate={{ opacity: 1, scale: 1, y: 0 }}
+      transition={{ duration: 0.8, delay: 0.3 }}
+      className="relative w-full lg:w-1/2"
+      data-testid="hero-illustration-module"
+    >
+      <div className="relative" data-testid="hero-visual">
+        <img 
+          src={heroIllustration} 
+          alt="Students, teachers and school staff collaborating with AI analytics" 
+          className="w-full max-w-sm sm:max-w-md lg:max-w-lg mx-auto rounded-2xl shadow-2xl"
+        />
+        
+        <div className="absolute -bottom-4 left-1/2 -translate-x-1/2 bg-white rounded-full px-4 sm:px-6 py-2 sm:py-3 shadow-xl flex items-center gap-2 sm:gap-4">
+          <div className="flex items-center gap-1 sm:gap-2">
+            <Shield className="w-4 h-4 sm:w-5 sm:h-5 text-emerald-600" />
+            <span className="text-slate-800 text-xs sm:text-sm font-semibold">Cloud Secured</span>
+          </div>
+          <div className="w-px h-4 bg-slate-300" />
+          <div className="flex items-center gap-1 sm:gap-2">
+            <CheckCircle2 className="w-4 h-4 sm:w-5 sm:h-5 text-emerald-600" />
+            <span className="text-slate-800 text-xs sm:text-sm font-semibold">ISO Compliant</span>
+          </div>
+        </div>
+      </div>
+    </motion.div>
+  );
+}
+
+function HeroContent({ scrollToContact }: { scrollToContact: () => void }) {
+  return (
+    <motion.div
+      initial="hidden"
+      animate="visible"
+      variants={staggerContainer}
+      className="max-w-xl w-full lg:w-1/2"
+    >
+      <motion.div variants={fadeInUp}>
+        <Badge className="mb-6 bg-white/10 text-white border-white/20 backdrop-blur-sm" size="sm">
+          <Sparkles className="w-3 h-3 mr-1" />
+          AI-Powered Education Intelligence
+        </Badge>
+      </motion.div>
+
+      <motion.h1
+        variants={fadeInUp}
+        className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-white leading-[1.2] sm:leading-tight mb-4 sm:mb-6"
+        data-testid="text-hero-headline"
+      >
+        Next-Generation{" "}
+        <span className="bg-gradient-to-r from-emerald-300 to-cyan-300 bg-clip-text text-transparent">
+          Education Systems
+        </span>
+      </motion.h1>
+
+      <motion.p
+        variants={fadeInUp}
+        className="text-base sm:text-lg md:text-xl text-white/80 mb-6 sm:mb-8 max-w-2xl leading-relaxed"
+        data-testid="text-hero-subtext"
+      >
+        Education intelligence combining ERP workflows and analytics — connecting students, teachers, parents, and administrators.
+      </motion.p>
+
+      <motion.div variants={fadeInUp} className="flex flex-col sm:flex-row gap-4">
+        <Button
+          size="lg"
+          onClick={scrollToContact}
+          className="bg-white text-indigo-700 border-0 text-base px-8 font-semibold shadow-lg"
+          data-testid="button-request-demo-hero"
+        >
+          Request Demo
+          <ArrowRight className="w-5 h-5 ml-2" />
+        </Button>
+        <Button
+          size="lg"
+          variant="outline"
+          className="bg-white/20 text-white border-2 border-white/80 backdrop-blur-sm font-semibold"
+          data-testid="button-download-app-hero"
+        >
+          <Download className="w-5 h-5 mr-2" />
+          Download App
+        </Button>
+      </motion.div>
+
+      <motion.div
+        variants={fadeInUp}
+        className="flex flex-wrap items-center gap-4 sm:gap-6 mt-8 sm:mt-12 text-white/70 text-xs sm:text-sm"
+      >
+        <div className="flex items-center gap-2">
+          <CheckCircle2 className="w-4 h-4 sm:w-5 sm:h-5 text-green-400" />
+          <span>50+ Schools Trust Us</span>
+        </div>
+        <div className="flex items-center gap-2">
+          <CheckCircle2 className="w-4 h-4 sm:w-5 sm:h-5 text-green-400" />
+          <span>25,000+ Students</span>
+        </div>
+        <div className="flex items-center gap-2">
+          <CheckCircle2 className="w-4 h-4 sm:w-5 sm:h-5 text-green-400" />
+          <span>4.8 Star Rating</span>
+        </div>
+      </motion.div>
+    </motion.div>
+  );
+}
+
 function HeroSection() {
   const scrollToContact = () => {
     const element = document.querySelector("#contact");
@@ -219,106 +327,10 @@ function HeroSection() {
         <div className="absolute inset-0 bg-[radial-gradient(circle_at_70%_80%,rgba(129,140,248,0.2),transparent_50%)]" />
       </div>
 
-      <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-32 md:py-40 w-full">
-        <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center">
-          <motion.div
-            initial="hidden"
-            animate="visible"
-            variants={staggerContainer}
-            className="max-w-xl"
-          >
-          <motion.div variants={fadeInUp}>
-            <Badge className="mb-6 bg-white/10 text-white border-white/20 backdrop-blur-sm" size="sm">
-              <Sparkles className="w-3 h-3 mr-1" />
-              AI-Powered Education Intelligence
-            </Badge>
-          </motion.div>
-
-          <motion.h1
-            variants={fadeInUp}
-            className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-white leading-[1.2] sm:leading-tight mb-4 sm:mb-6"
-            data-testid="text-hero-headline"
-          >
-            Next-Generation{" "}
-            <span className="bg-gradient-to-r from-emerald-300 to-cyan-300 bg-clip-text text-transparent">
-              Education Systems
-            </span>
-          </motion.h1>
-
-          <motion.p
-            variants={fadeInUp}
-            className="text-base sm:text-lg md:text-xl text-white/80 mb-6 sm:mb-8 max-w-2xl leading-relaxed"
-            data-testid="text-hero-subtext"
-          >
-            Education intelligence combining ERP workflows and analytics — connecting students, teachers, parents, and administrators.
-          </motion.p>
-
-          <motion.div variants={fadeInUp} className="flex flex-col sm:flex-row gap-4">
-            <Button
-              size="lg"
-              onClick={scrollToContact}
-              className="bg-white text-indigo-700 border-0 text-base px-8 font-semibold shadow-lg"
-              data-testid="button-request-demo-hero"
-            >
-              Request Demo
-              <ArrowRight className="w-5 h-5 ml-2" />
-            </Button>
-            <Button
-              size="lg"
-              variant="outline"
-              className="bg-white/20 text-white border-2 border-white/80 backdrop-blur-sm font-semibold"
-              data-testid="button-download-app-hero"
-            >
-              <Download className="w-5 h-5 mr-2" />
-              Download App
-            </Button>
-          </motion.div>
-
-          <motion.div
-            variants={fadeInUp}
-            className="flex flex-wrap items-center gap-4 sm:gap-6 mt-8 sm:mt-12 text-white/70 text-xs sm:text-sm"
-          >
-            <div className="flex items-center gap-2">
-              <CheckCircle2 className="w-4 h-4 sm:w-5 sm:h-5 text-green-400" />
-              <span>50+ Schools Trust Us</span>
-            </div>
-            <div className="flex items-center gap-2">
-              <CheckCircle2 className="w-4 h-4 sm:w-5 sm:h-5 text-green-400" />
-              <span>25,000+ Students</span>
-            </div>
-            <div className="flex items-center gap-2">
-              <CheckCircle2 className="w-4 h-4 sm:w-5 sm:h-5 text-green-400" />
-              <span>4.8 Star Rating</span>
-            </div>
-          </motion.div>
-          </motion.div>
-
-          <motion.div
-            initial={{ opacity: 0, scale: 0.9, y: 30 }}
-            animate={{ opacity: 1, scale: 1, y: 0 }}
-            transition={{ duration: 0.8, delay: 0.3 }}
-            className="relative mt-8 lg:mt-0"
-          >
-            <div className="relative" data-testid="hero-visual">
-              <img 
-                src={heroIllustration} 
-                alt="Students, teachers and school staff collaborating with AI analytics" 
-                className="w-full max-w-md lg:max-w-lg mx-auto rounded-2xl shadow-2xl"
-              />
-              
-              <div className="absolute -bottom-4 left-1/2 -translate-x-1/2 bg-white rounded-full px-4 sm:px-6 py-2 sm:py-3 shadow-xl flex items-center gap-2 sm:gap-4">
-                <div className="flex items-center gap-1 sm:gap-2">
-                  <Shield className="w-4 h-4 sm:w-5 sm:h-5 text-emerald-600" />
-                  <span className="text-slate-800 text-xs sm:text-sm font-semibold">Cloud Secured</span>
-                </div>
-                <div className="w-px h-4 bg-slate-300" />
-                <div className="flex items-center gap-1 sm:gap-2">
-                  <CheckCircle2 className="w-4 h-4 sm:w-5 sm:h-5 text-emerald-600" />
-                  <span className="text-slate-800 text-xs sm:text-sm font-semibold">ISO Compliant</span>
-                </div>
-              </div>
-            </div>
-          </motion.div>
+      <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20 sm:py-28 md:py-32 lg:py-40 w-full">
+        <div className="flex flex-col-reverse lg:flex-row gap-8 sm:gap-12 lg:gap-16 items-center">
+          <HeroContent scrollToContact={scrollToContact} />
+          <HeroIllustration />
         </div>
       </div>
 

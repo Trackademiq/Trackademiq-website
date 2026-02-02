@@ -4,10 +4,10 @@ import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { Link } from "wouter";
+import trackademiqLogo from "@/assets/trackademiq-logo.png";
 import { 
   ArrowLeft, 
-  ArrowRight, 
-  GraduationCap,
+  ArrowRight,
   Brain,
   UserCheck,
   CreditCard,
@@ -373,9 +373,11 @@ function ProductTourFooter() {
     <section className="py-12 bg-foreground">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
         <div className="flex items-center justify-center gap-2 mb-4">
-          <div className="w-10 h-10 rounded-lg bg-gradient-to-br from-teal-600 to-cyan-600 flex items-center justify-center">
-            <GraduationCap className="w-6 h-6 text-white" />
-          </div>
+          <img 
+            src={trackademiqLogo} 
+            alt="Trackademiq Logo" 
+            className="w-10 h-10 rounded-lg object-contain"
+          />
           <span className="text-xl font-bold text-background">Trackademiq</span>
         </div>
         <p className="text-sm text-background/60">

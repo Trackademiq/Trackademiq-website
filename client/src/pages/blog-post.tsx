@@ -8,9 +8,9 @@ import {
   ArrowRight, 
   Clock, 
   Calendar,
-  GraduationCap,
   User
 } from "lucide-react";
+import trackademiqLogo from "@/assets/trackademiq-logo.png";
 import { blogPosts } from "./blog";
 
 const fadeInUp = {
@@ -159,10 +159,12 @@ export default function BlogPostPage() {
       <section className="py-12 bg-card border-t">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <div className="flex items-center justify-center gap-2 mb-4">
-            <div className="w-10 h-10 rounded-lg bg-gradient-to-br from-teal-600 to-cyan-600 flex items-center justify-center">
-              <GraduationCap className="w-6 h-6 text-white" />
-            </div>
-            <span className="text-xl font-bold bg-gradient-to-r from-teal-600 to-cyan-600 bg-clip-text text-transparent">
+            <img 
+              src={trackademiqLogo} 
+              alt="Trackademiq Logo" 
+              className="w-10 h-10 rounded-lg object-contain"
+            />
+            <span className="text-xl font-bold bg-gradient-to-r from-indigo-600 to-violet-600 bg-clip-text text-transparent">
               Trackademiq
             </span>
           </div>

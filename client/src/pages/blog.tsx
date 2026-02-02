@@ -8,12 +8,12 @@ import {
   ArrowRight, 
   Clock, 
   Calendar,
-  GraduationCap,
   BookOpen,
   Sparkles,
   TrendingUp,
   Users
 } from "lucide-react";
+import trackademiqLogo from "@/assets/trackademiq-logo.png";
 
 const fadeInUp = {
   hidden: { opacity: 0, y: 20 },
@@ -258,10 +258,12 @@ function BlogFooter() {
           variants={staggerContainer}
         >
           <motion.div variants={fadeInUp} className="flex items-center justify-center gap-2 mb-4">
-            <div className="w-10 h-10 rounded-lg bg-gradient-to-br from-teal-600 to-cyan-600 flex items-center justify-center">
-              <GraduationCap className="w-6 h-6 text-white" />
-            </div>
-            <span className="text-xl font-bold bg-gradient-to-r from-teal-600 to-cyan-600 bg-clip-text text-transparent">
+            <img 
+              src={trackademiqLogo} 
+              alt="Trackademiq Logo" 
+              className="w-10 h-10 rounded-lg object-contain"
+            />
+            <span className="text-xl font-bold bg-gradient-to-r from-indigo-600 to-violet-600 bg-clip-text text-transparent">
               Trackademiq
             </span>
           </motion.div>

@@ -733,7 +733,7 @@ function GetStartedSection() {
           whileInView="visible"
           viewport={{ once: true, margin: "-50px" }}
           variants={staggerContainer}
-          className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-16 sm:mb-24"
+          className="grid grid-cols-1 md:grid-cols-3 gap-6 sm:gap-8 mb-10 sm:mb-16 md:mb-24"
         >
           {steps.map((step, index) => (
             <motion.div
@@ -742,21 +742,21 @@ function GetStartedSection() {
               className="relative"
             >
               <div className="text-center">
-                <div className="inline-flex items-center justify-center w-16 h-16 rounded-full bg-gradient-to-br from-indigo-500 to-indigo-600 text-white text-2xl font-bold mb-6">
+                <div className="inline-flex items-center justify-center w-12 h-12 sm:w-14 sm:h-14 md:w-16 md:h-16 rounded-full bg-gradient-to-br from-indigo-500 to-indigo-600 text-white text-lg sm:text-xl md:text-2xl font-bold mb-4 sm:mb-6">
                   {step.number}
                 </div>
                 {index < steps.length - 1 && (
                   <div className="hidden md:block absolute top-8 left-[calc(50%+40px)] w-[calc(100%-80px)] h-0.5 bg-gradient-to-r from-indigo-300 to-violet-300 dark:from-indigo-800 dark:to-violet-800" />
                 )}
-                <h3 className="text-xl font-semibold text-foreground mb-3">{step.title}</h3>
-                <p className="text-muted-foreground leading-relaxed">{step.description}</p>
+                <h3 className="text-lg sm:text-xl font-semibold text-foreground mb-2 sm:mb-3">{step.title}</h3>
+                <p className="text-sm sm:text-base text-muted-foreground leading-relaxed">{step.description}</p>
               </div>
             </motion.div>
           ))}
         </motion.div>
 
         {/* Divider */}
-        <div className="flex items-center justify-center mb-16 sm:mb-24">
+        <div className="flex items-center justify-center mb-10 sm:mb-16 md:mb-24">
           <div className="h-px w-16 bg-gradient-to-r from-transparent to-indigo-300 dark:to-indigo-700" />
           <div className="mx-4">
             <Badge variant="outline" size="sm">
@@ -965,7 +965,7 @@ function DemoRequestSection() {
             variants={fadeInUp}
             className="mt-10 pt-8 border-t border-white/20"
           >
-            <p className="text-xl sm:text-2xl md:text-3xl font-bold text-white mb-2">
+            <p className="text-lg sm:text-xl md:text-2xl lg:text-3xl font-bold text-white mb-2">
               Try our free demo — <span className="text-emerald-300">you'll never say no!</span>
             </p>
             <p className="text-white/60 text-sm">
@@ -1403,24 +1403,24 @@ function Footer() {
   };
 
   return (
-    <footer className="bg-gradient-to-br from-indigo-900 via-indigo-800 to-violet-900 text-white py-16" data-testid="footer-main">
+    <footer className="bg-gradient-to-br from-indigo-900 via-indigo-800 to-violet-900 text-white py-10 sm:py-12 md:py-16" data-testid="footer-main">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-12 mb-12">
-          <div className="lg:col-span-2">
-            <div className="flex items-center gap-2 mb-6">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-8 lg:gap-12 mb-8 sm:mb-12">
+          <div className="sm:col-span-2 lg:col-span-2">
+            <div className="flex items-center gap-2 mb-4 sm:mb-6">
               <img 
                 src={trackademiqLogo} 
                 alt="Trackademiq Logo" 
-                className="w-10 h-10 rounded-lg object-contain"
+                className="w-8 h-8 sm:w-10 sm:h-10 rounded-lg object-contain"
               />
-              <span className="text-lg font-bold text-white">Trackademiq</span>
+              <span className="text-base sm:text-lg font-bold text-white">Trackademiq</span>
             </div>
-            <p className="text-white/70 mb-6 max-w-sm">
+            <p className="text-white/70 mb-4 sm:mb-6 max-w-sm text-sm sm:text-base">
               A simple, secure cloud platform that helps schools run better while keeping parents 
               informed about their child's education journey.
             </p>
             <div className="flex items-center gap-4">
-              <div className="text-sm text-white/60">
+              <div className="text-xs sm:text-sm text-white/60">
                 <div className="font-medium text-white mb-1">Chennai, India</div>
                 <a href="tel:+919894836016" className="hover:text-indigo-400 transition-colors">
                   +91 9894836016
@@ -1430,14 +1430,14 @@ function Footer() {
           </div>
 
           <div>
-            <h4 className="font-semibold text-white mb-4">Product</h4>
-            <ul className="space-y-3">
+            <h4 className="font-semibold text-white mb-4 text-base">Product</h4>
+            <ul className="space-y-1">
               {footerLinks.product.map((link) => (
                 <li key={link.label}>
                   {link.href.startsWith("#") ? (
                     <button
                       onClick={() => scrollToSection(link.href)}
-                      className="text-white/70 hover:text-emerald-400 transition-colors text-left"
+                      className="text-white/70 hover:text-emerald-400 transition-colors text-left text-sm py-2 block w-full"
                       data-testid={`link-footer-${link.label.toLowerCase().replace(" ", "-")}`}
                     >
                       {link.label}
@@ -1445,7 +1445,7 @@ function Footer() {
                   ) : (
                     <Link
                       href={link.href}
-                      className="text-white/70 hover:text-emerald-400 transition-colors"
+                      className="text-white/70 hover:text-emerald-400 transition-colors text-sm py-2 block"
                       data-testid={`link-footer-${link.label.toLowerCase().replace(" ", "-")}`}
                     >
                       {link.label}
@@ -1457,14 +1457,14 @@ function Footer() {
           </div>
 
           <div>
-            <h4 className="font-semibold text-white mb-4">Company</h4>
-            <ul className="space-y-3">
+            <h4 className="font-semibold text-white mb-4 text-base">Company</h4>
+            <ul className="space-y-1">
               {footerLinks.company.map((link) => (
                 <li key={link.label}>
                   {link.href.startsWith("#") ? (
                     <button
                       onClick={() => scrollToSection(link.href)}
-                      className="text-white/70 hover:text-emerald-400 transition-colors text-left"
+                      className="text-white/70 hover:text-emerald-400 transition-colors text-left text-sm py-2 block w-full"
                       data-testid={`link-footer-${link.label.toLowerCase().replace(" ", "-")}`}
                     >
                       {link.label}
@@ -1472,7 +1472,7 @@ function Footer() {
                   ) : (
                     <Link
                       href={link.href}
-                      className="text-white/70 hover:text-emerald-400 transition-colors"
+                      className="text-white/70 hover:text-emerald-400 transition-colors text-sm py-2 block"
                       data-testid={`link-footer-${link.label.toLowerCase().replace(" ", "-")}`}
                     >
                       {link.label}
@@ -1484,13 +1484,13 @@ function Footer() {
           </div>
 
           <div>
-            <h4 className="font-semibold text-white mb-4">Resources</h4>
-            <ul className="space-y-3">
+            <h4 className="font-semibold text-white mb-4 text-base">Resources</h4>
+            <ul className="space-y-1">
               {footerLinks.resources.map((link) => (
                 <li key={link.label}>
                   <button
                     onClick={() => scrollToSection(link.href)}
-                    className="text-white/70 hover:text-emerald-400 transition-colors text-left"
+                    className="text-white/70 hover:text-emerald-400 transition-colors text-left text-sm py-2 block w-full"
                     data-testid={`link-footer-${link.label.toLowerCase().replace(" ", "-")}`}
                   >
                     {link.label}
@@ -1502,15 +1502,15 @@ function Footer() {
         </div>
 
         <div className="border-t border-white/10 pt-8 flex flex-col md:flex-row items-center justify-between gap-4">
-          <div className="text-sm text-white/60">
+          <div className="text-sm text-white/60 text-center md:text-left">
             © {new Date().getFullYear()} Trackademiq Technologies Pvt. Ltd. All rights reserved.
           </div>
-          <div className="flex items-center gap-4">
+          <div className="flex items-center gap-2">
             {socialLinks.map((social) => (
               <a
                 key={social.label}
                 href={social.href}
-                className="w-10 h-10 rounded-lg bg-white/10 flex items-center justify-center hover:bg-emerald-500 transition-colors"
+                className="w-11 h-11 rounded-lg bg-white/10 flex items-center justify-center hover:bg-emerald-500 transition-colors"
                 aria-label={social.label}
                 data-testid={`link-social-${social.label.toLowerCase()}`}
               >

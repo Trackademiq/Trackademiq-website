@@ -413,14 +413,14 @@ function FeaturesSection() {
   ];
 
   return (
-    <section id="features" className="py-12 sm:py-20 md:py-28 bg-gradient-to-b from-white to-slate-50 dark:from-slate-900 dark:to-slate-950" data-testid="section-features">
+    <section id="features" className="py-8 sm:py-12 md:py-16 bg-gradient-to-b from-white to-slate-50 dark:from-slate-900 dark:to-slate-950" data-testid="section-features">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <motion.div
           initial="hidden"
           whileInView="visible"
           viewport={{ once: true }}
           variants={staggerContainer}
-          className="text-center mb-12 sm:mb-16"
+          className="text-center mb-8 sm:mb-10"
         >
           <motion.div variants={fadeInUp}>
             <Badge className="mb-4 bg-gradient-to-r from-indigo-100 to-violet-100 text-indigo-700 dark:from-indigo-900/50 dark:to-violet-900/50 dark:text-indigo-300 border-0">
@@ -451,7 +451,7 @@ function FeaturesSection() {
           viewport={{ once: true }}
           variants={staggerContainer}
         >
-          <div className="flex flex-wrap justify-center gap-2 sm:gap-3 mb-8 sm:mb-12">
+          <div className="flex flex-wrap justify-center gap-2 sm:gap-3 mb-6 sm:mb-8">
             {userTypes.map((user, index) => (
               <motion.button
                 key={user.title}
@@ -608,14 +608,14 @@ function AnalyticsPreviewSection() {
   ];
 
   return (
-    <section id="analytics-preview" className="py-8 sm:py-12 md:py-16 bg-background" data-testid="section-analytics-preview">
+    <section id="analytics-preview" className="py-6 sm:py-10 md:py-12 bg-background" data-testid="section-analytics-preview">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <motion.div
           initial="hidden"
           whileInView="visible"
           viewport={{ once: true, margin: "-100px" }}
           variants={staggerContainer}
-          className="text-center mb-12 sm:mb-16"
+          className="text-center mb-8 sm:mb-10"
         >
           <motion.div variants={fadeInUp}>
             <Badge className="mb-6" variant="secondary" size="sm">
@@ -798,7 +798,7 @@ function GetStartedSection() {
   ];
 
   return (
-    <section id="get-started" className="py-8 sm:py-12 md:py-16 bg-card" data-testid="section-get-started">
+    <section id="get-started" className="py-6 sm:py-10 md:py-12 bg-card" data-testid="section-get-started">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* 3 Easy Steps */}
         <motion.div
@@ -806,7 +806,7 @@ function GetStartedSection() {
           whileInView="visible"
           viewport={{ once: true, margin: "-100px" }}
           variants={staggerContainer}
-          className="text-center mb-10 sm:mb-16"
+          className="text-center mb-6 sm:mb-10"
         >
           <motion.div variants={fadeInUp}>
             <Badge className="mb-4" variant="secondary" size="sm">
@@ -902,7 +902,7 @@ function DemoRequestSection() {
   ];
 
   return (
-    <section id="demo-request" className="py-8 sm:py-12 md:py-16 bg-gradient-to-br from-indigo-600 via-indigo-700 to-violet-800" data-testid="section-demo-request">
+    <section id="demo-request" className="py-6 sm:py-10 md:py-12 bg-gradient-to-br from-indigo-600 via-indigo-700 to-violet-800" data-testid="section-demo-request">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <motion.div
           initial="hidden"
@@ -1037,14 +1037,14 @@ function TestimonialsSection() {
   const duplicatedTestimonials = [...testimonials, ...testimonials];
 
   return (
-    <section id="testimonials" className="py-8 sm:py-12 md:py-16 bg-background overflow-hidden" data-testid="section-testimonials">
+    <section id="testimonials" className="py-6 sm:py-10 md:py-12 bg-background overflow-hidden" data-testid="section-testimonials">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <motion.div
           initial="hidden"
           whileInView="visible"
           viewport={{ once: true, margin: "-100px" }}
           variants={staggerContainer}
-          className="text-center mb-10 sm:mb-16"
+          className="text-center mb-6 sm:mb-10"
         >
           <motion.div variants={fadeInUp}>
             <Badge className="mb-4" variant="secondary" size="sm">
@@ -1163,7 +1163,7 @@ function ContactSection() {
   };
 
   return (
-    <section id="contact" className="py-8 sm:py-12 md:py-16 bg-card" data-testid="section-contact">
+    <section id="contact" className="py-6 sm:py-10 md:py-12 bg-card" data-testid="section-contact">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="grid grid-cols-1 lg:grid-cols-5 gap-8 sm:gap-12">
           <motion.div

@@ -8,11 +8,19 @@ import LandingPage from "@/pages/landing";
 import BlogPage from "@/pages/blog";
 import BlogPostPage from "@/pages/blog-post";
 import ProductTourPage from "@/pages/product-tour";
+import FeaturesPage from "@/pages/features";
+import ErpPage from "@/pages/erp";
+import PricingPage from "@/pages/pricing";
+import ContactPage from "@/pages/contact";
 
 function Router() {
   return (
     <Switch>
       <Route path="/" component={LandingPage} />
+      <Route path="/features" component={FeaturesPage} />
+      <Route path="/erp" component={ErpPage} />
+      <Route path="/pricing" component={PricingPage} />
+      <Route path="/contact" component={ContactPage} />
       <Route path="/blog" component={BlogPage} />
       <Route path="/blog/:id" component={BlogPostPage} />
       <Route path="/product-tour" component={ProductTourPage} />

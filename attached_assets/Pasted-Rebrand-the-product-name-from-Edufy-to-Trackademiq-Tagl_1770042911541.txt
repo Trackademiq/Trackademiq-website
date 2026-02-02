@@ -1,0 +1,106 @@
+Rebrand the product name from Edufy to Trackademiq.
+Tagline: “Next-Generation Education Systems.”
+
+Design a powerful, modern, AI-driven education analytics platform website — not a simple school website and not a traditional ERP-looking system.
+The product must visually and functionally communicate that it is an intelligent, data-driven platform connecting Students, Teachers, Parents, and Administrators through real-time analytics and automation.
+
+Brand & Visual Style
+
+Futuristic, enterprise-grade AI analytics look
+
+Dark/light hybrid theme with gradients, glassmorphism, charts, graphs, and dashboards
+
+Feels like a SaaS analytics platform, not a basic school portal
+
+Strong emphasis on data, insights, performance tracking, and automation
+
+Core Positioning
+
+Trackademiq is an AI-powered education intelligence system that:
+
+Connects students, parents, teachers, and admins on one unified platform
+
+Uses AI analytics to improve academic performance, engagement, and outcomes
+
+Supports multi-tenant schools and institutions
+
+Key Modules & Features
+Students / Parents Portal
+
+Attendance tracking
+
+Marks & report cards with grades
+
+Timetable & exam schedules
+
+Homework & assignments
+
+Fee payments & history
+
+Leave requests
+
+Announcements & notices
+
+Leaderboards & rankings
+
+AI-powered performance insights (strengths, weaknesses, trends)
+
+Real-time push notifications
+
+Teachers / Admin Panel
+
+Mark and manage attendance
+
+Upload & publish marks
+
+Create and manage report cards
+
+Homework & announcements creation
+
+Approve/reject leave requests
+
+Timetable & exam management
+
+Bulk user import (students, teachers)
+
+Class & subject management
+
+Access & approval workflows
+
+AI analytics dashboards
+
+At-risk student identification & tracking
+
+Multi-tenant school/institution configuration
+
+Library Organizer
+
+Separate login system
+
+Book inventory management
+
+Issue/return tracking
+
+Student library usage monitoring
+
+Phase 2 (Upcoming Features)
+
+Bus tracking with live location
+
+Biometric login integration
+
+Smart API integrations for hardware & third-party systems
+
+Website Structure
+
+Hero section with strong AI + education messaging
+
+Dashboard previews with analytics visuals
+
+Clear separation of Student, Teacher, Admin experiences
+
+Feature highlights with icons and data visuals
+
+Emphasis on AI insights, automation, and scalability
+
+CTA focused on “Transform Education with AI”

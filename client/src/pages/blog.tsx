@@ -42,7 +42,7 @@ export const blogPosts = [
       <p>Artificial Intelligence is no longer a futuristic concept in Indian education—it's a present reality transforming how schools operate across Chennai and beyond. From personalized learning paths to automated administrative tasks, AI is helping educators focus on what matters most: teaching.</p>
       
       <h2>The Rise of AI-Powered Learning</h2>
-      <p>Indian schools are increasingly adopting AI tools to identify learning gaps, predict student performance, and provide tailored educational experiences. Tools like Edufy are at the forefront of this revolution, offering schools powerful analytics that were previously only available to large institutions.</p>
+      <p>Indian schools are increasingly adopting AI tools to identify learning gaps, predict student performance, and provide tailored educational experiences. Tools like Trackademiq are at the forefront of this revolution, offering schools powerful analytics that were previously only available to large institutions.</p>
       
       <h2>Key Benefits for Indian Schools</h2>
       <ul>
@@ -53,7 +53,7 @@ export const blogPosts = [
       </ul>
       
       <h2>The Chennai EdTech Revolution</h2>
-      <p>Chennai has emerged as a hub for educational technology innovation. With companies like Edufy leading the charge, local schools are gaining access to world-class tools that enhance learning outcomes while respecting the unique cultural and educational context of India.</p>
+      <p>Chennai has emerged as a hub for educational technology innovation. With companies like Trackademiq leading the charge, local schools are gaining access to world-class tools that enhance learning outcomes while respecting the unique cultural and educational context of India.</p>
       
       <h2>Looking Ahead</h2>
       <p>As AI continues to evolve, we can expect even more sophisticated tools that will further personalize education, make assessments more meaningful, and help every student reach their full potential. The future of Indian education is bright, and it's powered by AI.</p>
@@ -83,7 +83,7 @@ export const blogPosts = [
       </ul>
       
       <h2>Implementation Success Stories</h2>
-      <p>Schools in Chennai that have adopted Edufy's digital attendance system report 40% reduction in time spent on attendance-related tasks and near-perfect accuracy in their records. Parents particularly appreciate the instant notifications feature.</p>
+      <p>Schools in Chennai that have adopted Trackademiq's digital attendance system report 40% reduction in time spent on attendance-related tasks and near-perfect accuracy in their records. Parents particularly appreciate the instant notifications feature.</p>
       
       <h2>Getting Started</h2>
       <p>Transitioning to digital attendance doesn't have to be complex. With the right partner, schools can be up and running within days, with full training and support provided throughout the process.</p>
@@ -116,7 +116,7 @@ export const blogPosts = [
       <p>While digital tools enable constant connectivity, it's important to establish healthy boundaries. Most schools find success with designated communication hours and emergency protocols for urgent situations.</p>
       
       <h2>Measuring Success</h2>
-      <p>Schools using comprehensive communication platforms like Edufy report higher parent satisfaction scores, increased attendance at school events, and improved student performance—all indicators of successful home-school partnerships.</p>
+      <p>Schools using comprehensive communication platforms like Trackademiq report higher parent satisfaction scores, increased attendance at school events, and improved student performance—all indicators of successful home-school partnerships.</p>
     `
   },
   {
@@ -141,7 +141,7 @@ export const blogPosts = [
       </ul>
       
       <h2>The Digital Solution</h2>
-      <p>Modern fee management systems automate the entire process, from generating invoices to sending reminders and reconciling payments. Schools using Edufy's fee management module report 30% improvement in collection rates within the first semester.</p>
+      <p>Modern fee management systems automate the entire process, from generating invoices to sending reminders and reconciling payments. Schools using Trackademiq's fee management module report 30% improvement in collection rates within the first semester.</p>
       
       <h2>Key Features to Look For</h2>
       <ul>
@@ -262,7 +262,7 @@ function BlogFooter() {
               <GraduationCap className="w-6 h-6 text-white" />
             </div>
             <span className="text-xl font-bold bg-gradient-to-r from-teal-600 to-cyan-600 bg-clip-text text-transparent">
-              Edufy
+              Trackademiq
             </span>
           </motion.div>
           <motion.p variants={fadeInUp} className="text-muted-foreground mb-6">

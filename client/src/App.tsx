@@ -7,7 +7,6 @@ import NotFound from "@/pages/not-found";
 import LandingPage from "@/pages/landing";
 import BlogPage from "@/pages/blog";
 import BlogPostPage from "@/pages/blog-post";
-import CaseStudiesPage from "@/pages/case-studies";
 import ProductTourPage from "@/pages/product-tour";
 
 function Router() {
@@ -16,7 +15,6 @@ function Router() {
       <Route path="/" component={LandingPage} />
       <Route path="/blog" component={BlogPage} />
       <Route path="/blog/:id" component={BlogPostPage} />
-      <Route path="/case-studies" component={CaseStudiesPage} />
       <Route path="/product-tour" component={ProductTourPage} />
       <Route component={NotFound} />
     </Switch>

@@ -143,13 +143,13 @@ function ProductTourHeader() {
             variants={fadeInUp}
             className="text-4xl md:text-5xl font-bold text-white mb-4"
           >
-            Explore Edufy Features
+            Explore Trackademiq Features
           </motion.h1>
           <motion.p
             variants={fadeInUp}
             className="text-lg text-white/80 max-w-2xl mx-auto"
           >
-            Take an interactive walkthrough of all the powerful features that make Edufy the preferred choice for schools across Chennai
+            Take an interactive walkthrough of all the powerful features that make Trackademiq the preferred choice for schools across Chennai
           </motion.p>
         </motion.div>
       </div>
@@ -310,7 +310,7 @@ function AllFeaturesGrid() {
             Everything You Need in One Platform
           </motion.h2>
           <motion.p variants={fadeInUp} className="text-muted-foreground max-w-2xl mx-auto">
-            Edufy brings together all the tools your school needs for seamless management
+            Trackademiq brings together all the tools your school needs for seamless management
           </motion.p>
         </motion.div>
 
@@ -352,18 +352,13 @@ function CTASection() {
             Ready to Get Started?
           </motion.h2>
           <motion.p variants={fadeInUp} className="text-lg text-white/80 mb-8 max-w-2xl mx-auto">
-            Experience the power of Edufy with a personalized demo. Our team will show you exactly how it can transform your school.
+            Experience the power of Trackademiq with a personalized demo. Our team will show you exactly how it can transform your school.
           </motion.p>
           <motion.div variants={fadeInUp} className="flex flex-col sm:flex-row gap-4 justify-center">
             <Link href="/#contact">
               <Button size="lg" className="bg-white text-teal-600 hover:bg-white/90">
                 Request a Demo
                 <ArrowRight className="w-4 h-4 ml-2" />
-              </Button>
-            </Link>
-            <Link href="/case-studies">
-              <Button size="lg" variant="outline" className="border-white/30 text-white hover:bg-white/10">
-                View Case Studies
               </Button>
             </Link>
           </motion.div>
@@ -381,10 +376,10 @@ function ProductTourFooter() {
           <div className="w-10 h-10 rounded-lg bg-gradient-to-br from-teal-600 to-cyan-600 flex items-center justify-center">
             <GraduationCap className="w-6 h-6 text-white" />
           </div>
-          <span className="text-xl font-bold text-background">Edufy</span>
+          <span className="text-xl font-bold text-background">Trackademiq</span>
         </div>
         <p className="text-sm text-background/60">
-          © {new Date().getFullYear()} Edufy Technologies Pvt. Ltd. All rights reserved.
+          © {new Date().getFullYear()} Trackademiq Technologies Pvt. Ltd. All rights reserved.
         </p>
       </div>
     </section>

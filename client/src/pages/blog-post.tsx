@@ -119,7 +119,7 @@ export default function BlogPostPage() {
               Ready to Transform Your School?
             </h2>
             <p className="text-white/80 mb-6 max-w-xl mx-auto">
-              Join hundreds of schools across Chennai using Edufy to streamline operations and enhance learning outcomes.
+              Join schools across Chennai using Trackademiq to streamline operations and enhance learning outcomes.
             </p>
             <Link href="/#contact">
               <Button size="lg" className="bg-white text-teal-600 hover:bg-white/90">
@@ -163,11 +163,11 @@ export default function BlogPostPage() {
               <GraduationCap className="w-6 h-6 text-white" />
             </div>
             <span className="text-xl font-bold bg-gradient-to-r from-teal-600 to-cyan-600 bg-clip-text text-transparent">
-              Edufy
+              Trackademiq
             </span>
           </div>
           <p className="text-sm text-muted-foreground">
-            © {new Date().getFullYear()} Edufy Technologies Pvt. Ltd. All rights reserved.
+            © {new Date().getFullYear()} Trackademiq Technologies Pvt. Ltd. All rights reserved.
           </p>
         </div>
       </section>

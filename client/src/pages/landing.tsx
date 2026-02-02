@@ -679,8 +679,8 @@ function DemoRequestSection() {
   };
 
   const benefits = [
-    "Custom pricing based on your institution's needs",
-    "Flexible contract terms and SLA options",
+    "Secure cloud hosting with ISO compliance",
+    "Data privacy adherence per country regulations",
     "Dedicated onboarding and training",
     "Multi-tenant architecture for school chains",
     "Priority support and account management",

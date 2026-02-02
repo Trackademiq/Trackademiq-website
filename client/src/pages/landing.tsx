@@ -454,7 +454,7 @@ function FeaturesSection() {
             variants={fadeInUp}
             className="text-base sm:text-lg text-slate-600 dark:text-slate-400 max-w-2xl mx-auto mb-5 sm:mb-6"
           >
-            8 powerful modules to digitize and automate your entire school operations
+            Powerful AI-driven modules to digitize and automate your entire school operations — here's a glimpse
           </motion.p>
 
           {/* View Mode Toggle */}

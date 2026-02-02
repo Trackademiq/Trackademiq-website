@@ -1116,7 +1116,7 @@ function Footer() {
   };
 
   return (
-    <footer className="bg-foreground text-background py-16" data-testid="footer-main">
+    <footer className="bg-gradient-to-br from-indigo-900 via-indigo-800 to-violet-900 text-white py-16" data-testid="footer-main">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-12 mb-12">
           <div className="lg:col-span-2">
@@ -1126,15 +1126,15 @@ function Footer() {
                 alt="Trackademiq Logo" 
                 className="w-10 h-10 rounded-lg object-contain"
               />
-              <span className="text-lg font-bold text-background">Trackademiq</span>
+              <span className="text-lg font-bold text-white">Trackademiq</span>
             </div>
-            <p className="text-background/70 mb-6 max-w-sm">
+            <p className="text-white/70 mb-6 max-w-sm">
               A simple, secure cloud platform that helps schools run better while keeping parents 
               informed about their child's education journey.
             </p>
             <div className="flex items-center gap-4">
-              <div className="text-sm text-background/60">
-                <div className="font-medium text-background mb-1">Chennai, India</div>
+              <div className="text-sm text-white/60">
+                <div className="font-medium text-white mb-1">Chennai, India</div>
                 <a href="tel:+919894836016" className="hover:text-indigo-400 transition-colors">
                   +91 9894836016
                 </a>
@@ -1143,14 +1143,14 @@ function Footer() {
           </div>
 
           <div>
-            <h4 className="font-semibold text-background mb-4">Product</h4>
+            <h4 className="font-semibold text-white mb-4">Product</h4>
             <ul className="space-y-3">
               {footerLinks.product.map((link) => (
                 <li key={link.label}>
                   {link.href.startsWith("#") ? (
                     <button
                       onClick={() => scrollToSection(link.href)}
-                      className="text-background/70 hover:text-indigo-400 transition-colors text-left"
+                      className="text-white/70 hover:text-emerald-400 transition-colors text-left"
                       data-testid={`link-footer-${link.label.toLowerCase().replace(" ", "-")}`}
                     >
                       {link.label}
@@ -1158,7 +1158,7 @@ function Footer() {
                   ) : (
                     <Link
                       href={link.href}
-                      className="text-background/70 hover:text-indigo-400 transition-colors"
+                      className="text-white/70 hover:text-emerald-400 transition-colors"
                       data-testid={`link-footer-${link.label.toLowerCase().replace(" ", "-")}`}
                     >
                       {link.label}
@@ -1170,14 +1170,14 @@ function Footer() {
           </div>
 
           <div>
-            <h4 className="font-semibold text-background mb-4">Company</h4>
+            <h4 className="font-semibold text-white mb-4">Company</h4>
             <ul className="space-y-3">
               {footerLinks.company.map((link) => (
                 <li key={link.label}>
                   {link.href.startsWith("#") ? (
                     <button
                       onClick={() => scrollToSection(link.href)}
-                      className="text-background/70 hover:text-indigo-400 transition-colors text-left"
+                      className="text-white/70 hover:text-emerald-400 transition-colors text-left"
                       data-testid={`link-footer-${link.label.toLowerCase().replace(" ", "-")}`}
                     >
                       {link.label}
@@ -1185,7 +1185,7 @@ function Footer() {
                   ) : (
                     <Link
                       href={link.href}
-                      className="text-background/70 hover:text-indigo-400 transition-colors"
+                      className="text-white/70 hover:text-emerald-400 transition-colors"
                       data-testid={`link-footer-${link.label.toLowerCase().replace(" ", "-")}`}
                     >
                       {link.label}
@@ -1197,13 +1197,13 @@ function Footer() {
           </div>
 
           <div>
-            <h4 className="font-semibold text-background mb-4">Resources</h4>
+            <h4 className="font-semibold text-white mb-4">Resources</h4>
             <ul className="space-y-3">
               {footerLinks.resources.map((link) => (
                 <li key={link.label}>
                   <button
                     onClick={() => scrollToSection(link.href)}
-                    className="text-background/70 hover:text-indigo-400 transition-colors text-left"
+                    className="text-white/70 hover:text-emerald-400 transition-colors text-left"
                     data-testid={`link-footer-${link.label.toLowerCase().replace(" ", "-")}`}
                   >
                     {link.label}
@@ -1214,8 +1214,8 @@ function Footer() {
           </div>
         </div>
 
-        <div className="border-t border-background/10 pt-8 flex flex-col md:flex-row items-center justify-between gap-4">
-          <div className="text-sm text-background/60">
+        <div className="border-t border-white/10 pt-8 flex flex-col md:flex-row items-center justify-between gap-4">
+          <div className="text-sm text-white/60">
             © {new Date().getFullYear()} Trackademiq Technologies Pvt. Ltd. All rights reserved.
           </div>
           <div className="flex items-center gap-4">
@@ -1223,7 +1223,7 @@ function Footer() {
               <a
                 key={social.label}
                 href={social.href}
-                className="w-10 h-10 rounded-lg bg-background/10 flex items-center justify-center hover:bg-indigo-600 transition-colors"
+                className="w-10 h-10 rounded-lg bg-white/10 flex items-center justify-center hover:bg-emerald-500 transition-colors"
                 aria-label={social.label}
                 data-testid={`link-social-${social.label.toLowerCase()}`}
               >

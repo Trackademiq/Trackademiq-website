@@ -1,0 +1,20 @@
+{
+  "name": "Trackademiq - School Management Software",
+  "short_name": "Trackademiq",
+  "description": "AI-powered school management software for attendance, fees, marks, and parent communication",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#ffffff",
+  "theme_color": "#4F46E5",
+  "orientation": "portrait-primary",
+  "icons": [
+    {
+      "src": "/favicon.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "any maskable"
+    }
+  ],
+  "categories": ["education", "productivity", "business"],
+  "lang": "en-IN"
+}

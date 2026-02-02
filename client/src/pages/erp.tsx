@@ -108,9 +108,9 @@ export default function ErpPage() {
                 variants={fadeInUp}
                 className="text-3xl sm:text-4xl md:text-5xl font-bold text-foreground mb-4"
               >
-                Complete School ERP{" "}
+                Complete Education ERP{" "}
                 <span className="bg-gradient-to-r from-indigo-600 to-violet-600 bg-clip-text text-transparent">
-                  Solution
+                  for Schools
                 </span>
               </motion.h1>
               <motion.p

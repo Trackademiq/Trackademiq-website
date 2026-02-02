@@ -76,7 +76,7 @@ function Header() {
   }, []);
 
   const navLinks = [
-    { href: "#features", label: "Product" },
+    { href: "/erp", label: "ERP", isRoute: true },
     { href: "#features", label: "Features" },
     { href: "#get-started", label: "Pricing" },
     { href: "#testimonials", label: "About" },
@@ -115,14 +115,25 @@ function Header() {
 
           <div className="hidden lg:flex items-center gap-1">
             {navLinks.map((link) => (
-              <button
-                key={link.href}
-                onClick={() => scrollToSection(link.href)}
-                className="px-4 py-2 text-sm font-medium transition-colors rounded-md text-slate-600 hover:text-slate-900 dark:text-slate-300 dark:hover:text-white"
-                data-testid={`link-nav-${link.label.toLowerCase().replace(" ", "-")}`}
-              >
-                {link.label}
-              </button>
+              link.isRoute ? (
+                <Link
+                  key={link.href}
+                  href={link.href}
+                  className="px-4 py-2 text-sm font-medium transition-colors rounded-md text-slate-600 hover:text-slate-900 dark:text-slate-300 dark:hover:text-white"
+                  data-testid={`link-nav-${link.label.toLowerCase().replace(" ", "-")}`}
+                >
+                  {link.label}
+                </Link>
+              ) : (
+                <button
+                  key={link.href}
+                  onClick={() => scrollToSection(link.href)}
+                  className="px-4 py-2 text-sm font-medium transition-colors rounded-md text-slate-600 hover:text-slate-900 dark:text-slate-300 dark:hover:text-white"
+                  data-testid={`link-nav-${link.label.toLowerCase().replace(" ", "-")}`}
+                >
+                  {link.label}
+                </button>
+              )
             ))}
           </div>
 
@@ -162,14 +173,25 @@ function Header() {
           >
             <div className="flex flex-col gap-2">
               {navLinks.map((link) => (
-                <button
-                  key={link.href}
-                  onClick={() => scrollToSection(link.href)}
-                  className="px-4 py-3 text-left text-sm font-medium text-muted-foreground hover:text-foreground hover:bg-accent rounded-md transition-colors"
-                  data-testid={`link-mobile-nav-${link.label.toLowerCase().replace(" ", "-")}`}
-                >
-                  {link.label}
-                </button>
+                link.isRoute ? (
+                  <Link
+                    key={link.href}
+                    href={link.href}
+                    className="px-4 py-3 text-left text-sm font-medium text-muted-foreground hover:text-foreground hover:bg-accent rounded-md transition-colors"
+                    data-testid={`link-mobile-nav-${link.label.toLowerCase().replace(" ", "-")}`}
+                  >
+                    {link.label}
+                  </Link>
+                ) : (
+                  <button
+                    key={link.href}
+                    onClick={() => scrollToSection(link.href)}
+                    className="px-4 py-3 text-left text-sm font-medium text-muted-foreground hover:text-foreground hover:bg-accent rounded-md transition-colors"
+                    data-testid={`link-mobile-nav-${link.label.toLowerCase().replace(" ", "-")}`}
+                  >
+                    {link.label}
+                  </button>
+                )
               ))}
               <div className="flex flex-col gap-2 mt-4 px-4">
                 <Button
@@ -260,7 +282,7 @@ function HeroContent({ scrollToContact }: { scrollToContact: () => void }) {
         className="text-base sm:text-lg md:text-xl text-slate-600 dark:text-slate-300 mb-6 sm:mb-8 max-w-lg mx-auto lg:mx-0 leading-relaxed"
         data-testid="text-hero-subtext"
       >
-        Connecting students, teachers, parents, and administrators with powerful AI-driven insights.
+        AI-powered education management for academics, attendance, fees, analytics & administration—all in one platform.
       </motion.p>
 
       <motion.div variants={fadeInUp} className="flex flex-col sm:flex-row gap-3 sm:gap-4 justify-center lg:justify-start">

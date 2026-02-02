@@ -241,7 +241,7 @@ function HeroSection() {
             data-testid="text-hero-headline"
           >
             Next-Generation{" "}
-            <span className="bg-gradient-to-r from-indigo-400 to-violet-400 bg-clip-text text-transparent">
+            <span className="bg-gradient-to-r from-emerald-300 to-cyan-300 bg-clip-text text-transparent">
               Education Systems
             </span>
           </motion.h1>
@@ -1084,12 +1084,17 @@ function Footer() {
     product: [
       { label: "Features", href: "#features" },
       { label: "How It Works", href: "#how-it-works" },
+      { label: "Benefits", href: "#benefits" },
       { label: "Product Tour", href: "/product-tour" },
-      { label: "Request Demo", href: "#contact" },
     ],
     company: [
       { label: "Blog", href: "/blog" },
       { label: "Contact", href: "#contact" },
+      { label: "Request Demo", href: "#contact" },
+    ],
+    resources: [
+      { label: "Testimonials", href: "#testimonials" },
+      { label: "Support", href: "#contact" },
     ],
   };
 
@@ -1191,6 +1196,22 @@ function Footer() {
             </ul>
           </div>
 
+          <div>
+            <h4 className="font-semibold text-background mb-4">Resources</h4>
+            <ul className="space-y-3">
+              {footerLinks.resources.map((link) => (
+                <li key={link.label}>
+                  <button
+                    onClick={() => scrollToSection(link.href)}
+                    className="text-background/70 hover:text-indigo-400 transition-colors text-left"
+                    data-testid={`link-footer-${link.label.toLowerCase().replace(" ", "-")}`}
+                  >
+                    {link.label}
+                  </button>
+                </li>
+              ))}
+            </ul>
+          </div>
         </div>
 
         <div className="border-t border-background/10 pt-8 flex flex-col md:flex-row items-center justify-between gap-4">

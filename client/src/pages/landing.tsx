@@ -142,7 +142,7 @@ function Header() {
               Request Demo
             </Button>
             <Button
-              className="bg-gradient-to-r from-indigo-500 to-indigo-600 text-white border-0"
+              className="bg-white text-indigo-700 border-0 font-semibold"
               data-testid="button-download-app-header"
             >
               <Download className="w-4 h-4 mr-2" />
@@ -259,7 +259,7 @@ function HeroSection() {
             <Button
               size="lg"
               onClick={scrollToContact}
-              className="bg-gradient-to-r from-indigo-500 to-indigo-600 text-white border-0 text-base px-8"
+              className="bg-white text-indigo-700 border-0 text-base px-8 font-semibold shadow-lg"
               data-testid="button-request-demo-hero"
             >
               Request Demo
@@ -268,7 +268,7 @@ function HeroSection() {
             <Button
               size="lg"
               variant="outline"
-              className="bg-white/10 text-white border-white/30 backdrop-blur-sm hover:bg-white/20"
+              className="bg-white/20 text-white border-2 border-white/80 backdrop-blur-sm font-semibold"
               data-testid="button-download-app-hero"
             >
               <Download className="w-5 h-5 mr-2" />
@@ -308,15 +308,15 @@ function HeroSection() {
                 className="w-full max-w-lg mx-auto rounded-2xl shadow-2xl"
               />
               
-              <div className="absolute -bottom-4 left-1/2 -translate-x-1/2 bg-white/10 backdrop-blur-md rounded-full px-6 py-3 border border-white/20 flex items-center gap-4">
+              <div className="absolute -bottom-4 left-1/2 -translate-x-1/2 bg-white rounded-full px-6 py-3 shadow-xl flex items-center gap-4">
                 <div className="flex items-center gap-2">
-                  <Shield className="w-5 h-5 text-emerald-400" />
-                  <span className="text-white/90 text-sm font-medium">Cloud Secured</span>
+                  <Shield className="w-5 h-5 text-emerald-600" />
+                  <span className="text-slate-800 text-sm font-semibold">Cloud Secured</span>
                 </div>
-                <div className="w-px h-4 bg-white/20" />
+                <div className="w-px h-4 bg-slate-300" />
                 <div className="flex items-center gap-2">
-                  <CheckCircle2 className="w-5 h-5 text-emerald-400" />
-                  <span className="text-white/90 text-sm font-medium">ISO Compliant</span>
+                  <CheckCircle2 className="w-5 h-5 text-emerald-600" />
+                  <span className="text-slate-800 text-sm font-semibold">ISO Compliant</span>
                 </div>
               </div>
             </div>

@@ -406,19 +406,22 @@ function FeaturesSection() {
         </motion.div>
 
         <div className="sm:hidden overflow-x-auto pb-4 -mx-4 px-4 scrollbar-hide">
-          <div className="flex gap-4" style={{ width: 'max-content' }}>
+          <div className="flex gap-6" style={{ width: 'max-content' }}>
             {features.map((feature, index) => (
-              <Card
+              <div
                 key={feature.title}
-                className="p-4 w-64 flex-shrink-0 border-t-4 border-t-transparent hover:border-t-indigo-500 transition-all duration-300"
+                className="w-56 flex-shrink-0 text-center group"
                 data-testid={`card-feature-mobile-${index}`}
               >
-                <div className="w-10 h-10 rounded-lg bg-gradient-to-br from-indigo-100 to-violet-100 dark:from-indigo-900/30 dark:to-violet-900/30 flex items-center justify-center mb-3">
-                  <feature.icon className="w-5 h-5 text-indigo-600 dark:text-indigo-400" />
+                <div className="relative mx-auto w-14 h-14 mb-4">
+                  <div className="absolute inset-0 bg-gradient-to-br from-indigo-500 to-violet-600 rounded-2xl opacity-10 group-hover:opacity-20 transition-opacity duration-300" />
+                  <div className="relative w-full h-full rounded-2xl bg-gradient-to-br from-indigo-50 to-violet-50 dark:from-indigo-950/50 dark:to-violet-950/50 flex items-center justify-center border border-indigo-100 dark:border-indigo-800/50 group-hover:border-indigo-300 dark:group-hover:border-indigo-600 transition-all duration-300 group-hover:shadow-lg group-hover:shadow-indigo-500/10">
+                    <feature.icon className="w-6 h-6 text-indigo-600 dark:text-indigo-400" />
+                  </div>
                 </div>
-                <h3 className="text-base font-semibold text-foreground mb-1">{feature.title}</h3>
+                <h3 className="text-base font-semibold text-foreground mb-2">{feature.title}</h3>
                 <p className="text-sm text-muted-foreground leading-relaxed">{feature.description}</p>
-              </Card>
+              </div>
             ))}
           </div>
         </div>
@@ -428,20 +431,23 @@ function FeaturesSection() {
           whileInView="visible"
           viewport={{ once: true, margin: "-50px" }}
           variants={staggerContainer}
-          className="hidden sm:grid sm:grid-cols-2 lg:grid-cols-4 gap-6"
+          className="hidden sm:grid sm:grid-cols-2 lg:grid-cols-4 gap-x-8 gap-y-12"
         >
           {features.map((feature, index) => (
-            <motion.div key={feature.title} variants={fadeInUp}>
-              <Card
-                className="p-4 sm:p-6 h-full border-t-4 border-t-transparent hover:border-t-indigo-500 transition-all duration-300 hover-elevate"
-                data-testid={`card-feature-${index}`}
-              >
-                <div className="w-10 h-10 sm:w-12 sm:h-12 rounded-lg bg-gradient-to-br from-indigo-100 to-violet-100 dark:from-indigo-900/30 dark:to-violet-900/30 flex items-center justify-center mb-3 sm:mb-4">
-                  <feature.icon className="w-5 h-5 sm:w-6 sm:h-6 text-indigo-600 dark:text-indigo-400" />
+            <motion.div 
+              key={feature.title} 
+              variants={fadeInUp}
+              className="text-center group cursor-default"
+              data-testid={`card-feature-${index}`}
+            >
+              <div className="relative mx-auto w-16 h-16 mb-5">
+                <div className="absolute inset-0 bg-gradient-to-br from-indigo-500 to-violet-600 rounded-2xl opacity-0 group-hover:opacity-20 blur-xl transition-all duration-500" />
+                <div className="relative w-full h-full rounded-2xl bg-gradient-to-br from-indigo-50 to-violet-50 dark:from-indigo-950/50 dark:to-violet-950/50 flex items-center justify-center border border-indigo-100 dark:border-indigo-800/50 group-hover:border-indigo-300 dark:group-hover:border-indigo-600 transition-all duration-300 group-hover:shadow-xl group-hover:shadow-indigo-500/20 group-hover:-translate-y-1">
+                  <feature.icon className="w-7 h-7 text-indigo-600 dark:text-indigo-400 group-hover:scale-110 transition-transform duration-300" />
                 </div>
-                <h3 className="text-lg sm:text-xl font-semibold text-foreground mb-2">{feature.title}</h3>
-                <p className="text-sm sm:text-base text-muted-foreground leading-relaxed">{feature.description}</p>
-              </Card>
+              </div>
+              <h3 className="text-lg font-semibold text-foreground mb-2 group-hover:text-indigo-600 dark:group-hover:text-indigo-400 transition-colors duration-300">{feature.title}</h3>
+              <p className="text-sm text-muted-foreground leading-relaxed max-w-[220px] mx-auto">{feature.description}</p>
             </motion.div>
           ))}
         </motion.div>

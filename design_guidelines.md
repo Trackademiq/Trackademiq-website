@@ -1,7 +1,15 @@
-# EDUFY Landing Page Design Guidelines
+# Trackademiq Design Guidelines
+
+## Brand Identity
+**Trackademiq** is an AI-powered education intelligence platform. The visual design communicates enterprise-grade analytics, data-driven insights, and modern SaaS aesthetics.
+
+**Tagline**: "Next-Generation Education Systems"
 
 ## Design Approach
-Modern, clean, and professional aesthetic inspired by successful EdTech platforms. AI-themed graphics emphasize intelligent insights and analytics capabilities. Glass-morphism effects for premium feel with role-based color coding.
+Futuristic, enterprise-grade AI analytics look with:
+- Dark/light hybrid theme with gradients and glassmorphism
+- Dashboard previews, charts, and data visualization elements
+- Strong emphasis on data, insights, performance tracking, and automation
 
 ## Core Visual Language
 
@@ -22,23 +30,10 @@ Modern, clean, and professional aesthetic inspired by successful EdTech platform
 - Dark Mode: #FBBF24 (Amber-400)
 - Usage: Warnings, admin badges, attention highlights
 
-**Accent Colors (Pink)**
-- Light Mode: #EC4899 (Pink-500)
-- Dark Mode: #F472B6 (Pink-400)
-- Usage: Special highlights, promotional elements
-
 **Background Colors**
 - Root Background: #FAFAFA (Light) / #0D0D14 (Dark)
 - Card Background: #FFFFFF (Light) / #1A1A28 (Dark)
-- Secondary Background: #F0F0FF (Light) / #252538 (Dark) - Soft indigo tints
-
-**Text Colors**
-- Primary Text: #1A1A2E (Light) / #F5F5F7 (Dark)
-- Secondary Text: #4A4A68 (Light) / #B8B8C8 (Dark)
-- Muted Text: #8E8EA9 (Light) / #6B6B80 (Dark)
-
-**Border Colors**
-- Default Border: #E2E2EC (Light) / #3A3A50 (Dark)
+- Secondary Background: #F0F0FF (Light) / #252538 (Dark)
 
 ### Role-Based Badge Colors
 - **Student Badge**: Indigo (#6366F1 / #818CF8)
@@ -53,7 +48,6 @@ Modern, clean, and professional aesthetic inspired by successful EdTech platform
   - H2: 36-42px (desktop), 24-30px (mobile)
   - H3: 24-30px (desktop), 18-22px (mobile)
   - Body: 16-18px
-  - Caption: 12-14px
 
 ### Layout System
 - **Container**: max-w-7xl for content sections
@@ -70,56 +64,61 @@ Modern, clean, and professional aesthetic inspired by successful EdTech platform
 ## Section-Specific Designs
 
 ### Hero Section
-- **Layout**: Full-viewport with video background or hero image
+- **Layout**: Full-viewport with video background
 - **Background**: Dark gradient (from-slate-900 via-indigo-950 to-violet-950)
 - **CTAs**: "Request Demo" (primary gradient) + "Download App" (outline)
-- **Tagline options**: "Smart Schools, Smarter Future" or "Connect. Track. Succeed."
+- **Tagline**: "Next-Generation Education Systems"
 
-### Features Grid (6 items)
-- **Layout**: 3-column (desktop), 2-column (tablet), 1-column (mobile)
-- **Cards**: Icon + title + description with indigo accent border on hover
-- **Icons**: Lucide icons in indigo-600 color
+### Features Grid (8 items)
+- **Layout**: 4-column (desktop), 2-column (tablet), 1-column (mobile)
+- **Features**: AI Analytics, Attendance, Marks, Fees, Homework, Messaging, Leave, Multi-Tenant
 
-### How It Works (3 steps)
-- **Layout**: Horizontal stepped progression with connecting lines
-- **Visual**: Numbered circles with indigo gradient background
-
-### Benefits Section (3 stakeholder cards)
-- **Layout**: 3-column grid for Schools, Teachers, Parents
-- **Images**: Indian context imagery with gradient overlays
-- **Role colors**: Match to respective badge colors
-
-### Pricing (3 tiers)
-- **Layout**: 3-column comparison with highlighted featured tier
-- **Popular tier**: Indigo border with "Most Popular" badge
-- **CTA**: Primary gradient for featured, outline for others
-
-### Testimonials
-- **Layout**: 3-column grid with star ratings
-- **Cards**: Quote + author info with initials avatar
+### Demo Request CTA (replaces Pricing)
+- **Layout**: Full-width gradient section
+- **Background**: from-indigo-600 via-indigo-700 to-violet-800
+- **CTAs**: "Request Demo & Contract" + "Contact Sales"
 
 ### Contact Form
 - **Layout**: Form (60%) + Contact info (40%)
-- **Form**: School Name, Email, Phone (+91), Message
-- **Info**: Chennai address, phone, email with indigo icon boxes
+- **Email**: contact@trackademiq.in
+- **Phone**: +91 9894836016
 
-### Footer
-- **Background**: Dark (from-slate-900 to-indigo-950)
-- **Layout**: 4-column structure with social icons
-- **Links**: Hover state in indigo-400
+## Key Modules
 
-## Animations
-- **Scroll reveals**: Fade-up on section entry (300-400ms via Framer Motion)
-- **Hover states**: Card lift, button scale (1.02-1.05)
-- **Spring animations**: Subtle bounce on interactive elements
+### Students / Parents Portal
+- Attendance tracking
+- Marks & report cards with grades
+- Timetable & exam schedules
+- Homework & assignments
+- Fee payments & history
+- Leave requests
+- Announcements & notices
+- Leaderboards & rankings
+- AI-powered performance insights
+- Real-time push notifications
 
-## SEO Implementation
-- Semantic HTML5 structure
-- Schema.org: Organization + SoftwareApplication
-- Meta descriptions with Chennai/India keywords
-- Alt text for all images describing Indian educational context
+### Teachers / Admin Panel
+- Attendance management
+- Marks and report card creation
+- Homework & announcements
+- Leave approval workflows
+- Timetable & exam management
+- Bulk user import
+- AI analytics dashboards
+- At-risk student identification
+- Multi-tenant configuration
+
+### Library Organizer (Future)
+- Book inventory management
+- Issue/return tracking
+- Student usage monitoring
+
+### Phase 2 Features
+- Bus tracking with live location
+- Biometric login integration
+- Smart API integrations
 
 ## Company Details
 - **Location**: Chennai, India (123 Tech Park, OMR, Chennai 600096)
 - **Phone**: +91 9894836016
-- **Email**: contact@edufy.in
+- **Email**: contact@trackademiq.in

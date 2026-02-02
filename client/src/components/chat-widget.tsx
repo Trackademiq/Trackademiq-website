@@ -22,18 +22,18 @@ interface Message {
 const initialMessages: Message[] = [
   {
     id: 1,
-    text: "Hello! Welcome to Edufy. How can I help you today?",
+    text: "Hello! Welcome to Trackademiq. How can I help you today?",
     isBot: true,
     timestamp: new Date()
   }
 ];
 
 const botResponses: { [key: string]: string } = {
-  pricing: "Our pricing starts at ₹4,999/month for the Starter plan. We also offer Professional (₹9,999/month) and Enterprise (custom pricing) tiers. Would you like to schedule a demo to discuss your school's needs?",
+  pricing: "We offer customized pricing based on your institution's specific needs. Our team will work with you to create a contract that fits your requirements. Would you like to request a demo and discuss pricing options?",
   demo: "Great! You can request a demo by filling out the contact form on our homepage, or I can help you get started. Just scroll down to the 'Request a Demo' section.",
-  features: "Edufy offers AI Analytics, Attendance Tracking, Fee Management, Homework Management, Instant Messaging, and Multi-School Support. Would you like to learn more about any specific feature?",
+  features: "Trackademiq offers 8 comprehensive modules: AI Analytics, Smart Attendance, Marks & Report Cards, Fee Management, Homework & Timetables, Messaging, Leave Management, and Multi-Tenant Platform. Would you like to learn more about any specific feature?",
   attendance: "Our attendance system supports both biometric and app-based check-ins. Parents receive instant notifications when their child is marked absent. It's incredibly fast and accurate!",
-  contact: "You can reach us at +91 9894836016 or email contact@edufy.in. Our office is located at 123 Tech Park, OMR, Chennai 600096.",
+  contact: "You can reach us at +91 9894836016 or email contact@trackademiq.in. Our office is located at 123 Tech Park, OMR, Chennai 600096.",
   default: "Thank you for your question! For detailed information, I recommend scheduling a demo with our team. They can provide personalized answers based on your school's specific needs. Would you like me to help you request a demo?"
 };
 
@@ -112,7 +112,7 @@ export function ChatWidget() {
                     <Bot className="w-5 h-5 text-white" />
                   </div>
                   <div>
-                    <h3 className="font-semibold text-white">Edufy Support</h3>
+                    <h3 className="font-semibold text-white">Trackademiq Support</h3>
                     <p className="text-xs text-white/70">Usually replies instantly</p>
                   </div>
                 </div>

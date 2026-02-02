@@ -1,13 +1,14 @@
-# Edufy Landing Page
+# Trackademiq Landing Page
 
 ## Overview
-Modern, SEO-optimized landing page for Edufy, an EdTech company based in Chennai, India. The site promotes Edufy's AI-powered mobile app connecting students, teachers, parents, and administrators.
+Modern, SEO-optimized landing page for Trackademiq, an AI-powered education intelligence platform based in Chennai, India. The platform connects Students, Teachers, Parents, and Administrators through real-time analytics and automation.
 
 ## Project Structure
 ```
 ├── client/                 # Frontend React application
 │   ├── public/            # Static assets (favicon, robots.txt, sitemap.xml)
 │   ├── src/
+│   │   ├── assets/        # Brand assets (logo)
 │   │   ├── components/ui/ # Shadcn UI components
 │   │   ├── hooks/         # Custom React hooks
 │   │   ├── lib/           # Utility functions and query client
@@ -22,19 +23,20 @@ Modern, SEO-optimized landing page for Edufy, an EdTech company based in Chennai
 │   └── index.ts           # Server entry point
 ├── shared/                 # Shared types and schemas
 │   └── schema.ts          # Drizzle schemas and Zod validation
-├── attached_assets/        # Generated images
-│   └── generated_images/   # AI-generated Indian student images
+├── attached_assets/        # Generated assets
+│   ├── generated_images/   # AI-generated Indian imagery
+│   └── generated_videos/   # Promotional videos
 └── design_guidelines.md    # Design system documentation
 ```
 
 ## Key Features
 
 ### Landing Page ("/")
-- Hero section with "Smart Schools, Smarter Future" headline
-- 6 feature cards (AI Analytics, Attendance, Fees, Homework, Messaging, Multi-School)
+- Hero section with "Next-Generation Education Systems" headline
+- 8 feature cards (AI Analytics, Attendance, Marks, Fees, Homework, Messaging, Leave Management, Multi-Tenant)
 - 3-step onboarding process (How It Works)
 - Benefits for Schools, Teachers, and Parents
-- 3-tier pricing (Starter, Professional, Enterprise)
+- Demo Request CTA (replaced pricing section)
 - Testimonials from Chennai schools
 - Contact form with validation
 - Responsive design with smooth Framer Motion animations
@@ -72,25 +74,22 @@ Modern, SEO-optimized landing page for Edufy, an EdTech company based in Chennai
 ## Company Details
 - **Location**: Chennai, India (123 Tech Park, OMR, Chennai 600096)
 - **Phone**: +91 9894836016
-- **Email**: contact@edufy.in
+- **Email**: contact@trackademiq.in
 
 ## Running the Project
 The application runs with `npm run dev` which starts both the Express backend and Vite frontend on port 5000.
 
 ## Recent Changes
+- February 2026: Trackademiq Rebrand
+  - Rebranded from Edufy to Trackademiq
+  - New tagline: "Next-Generation Education Systems"
+  - Added new AI graduation cap logo with circuit patterns
+  - Replaced pricing section with Demo Request CTA
+  - Updated features to 8 comprehensive modules
+  - Generated new AI analytics promo video
+  - Updated all meta tags and structured data
 - January 2026: Major design refresh
   - Migrated from teal/coral to indigo/emerald/amber color palette
-  - Updated hero tagline to "Smart Schools, Smarter Future"
   - Implemented role-based color coding (Students=Indigo, Teachers=Emerald, Admin=Amber)
   - Enhanced glassmorphism effects and premium visual feel
-  - Updated all gradients, cards, and CTAs with new color scheme
-  - Updated Chat Widget with new indigo theme
 - December 2024: Initial landing page implementation
-  - Generated AI images of Indian students, teachers, and parents
-  - Built all 8 landing page sections
-  - Implemented contact form with backend validation
-  - Added SEO meta tags, Schema.org data, robots.txt, sitemap.xml
-  - Added Blog, Case Studies, and Product Tour pages
-  - Implemented Live Chat Widget component
-  - Added Google Analytics integration (placeholder ID)
-  - Updated footer with links to extended pages

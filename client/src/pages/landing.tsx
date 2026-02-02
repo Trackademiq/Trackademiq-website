@@ -42,10 +42,11 @@ import {
 } from "lucide-react";
 import { SiLinkedin, SiFacebook, SiInstagram, SiX, SiYoutube } from "react-icons/si";
 
-import heroVideo from "@assets/generated_videos/edufy_school_management_promo.mp4";
+import heroVideo from "@assets/generated_videos/trackademiq_ai_education_promo.mp4";
 import schoolsImage from "@assets/generated_images/indian_school_principal_administrator.png";
 import teachersImage from "@assets/generated_images/indian_teacher_with_tablet_students.png";
 import parentsImage from "@assets/generated_images/indian_parent_helping_child_homework.png";
+import trackademiqLogo from "@/assets/trackademiq-logo.png";
 
 const fadeInUp = {
   hidden: { opacity: 0, y: 20 },
@@ -76,7 +77,6 @@ function Header() {
     { href: "#features", label: "Features" },
     { href: "#how-it-works", label: "How It Works" },
     { href: "#benefits", label: "Benefits" },
-    { href: "#pricing", label: "Pricing" },
     { href: "#testimonials", label: "Testimonials" },
     { href: "#contact", label: "Contact" },
   ];
@@ -101,15 +101,17 @@ function Header() {
       <nav className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-16 md:h-20">
           <a href="/" className="flex items-center gap-2" data-testid="link-logo">
-            <div className="w-10 h-10 rounded-lg bg-gradient-to-br from-indigo-500 to-indigo-600 flex items-center justify-center">
-              <GraduationCap className="w-6 h-6 text-white" />
-            </div>
-            <span className={`text-xl font-bold transition-colors ${
+            <img 
+              src={trackademiqLogo} 
+              alt="Trackademiq Logo" 
+              className="w-10 h-10 rounded-lg object-contain"
+            />
+            <span className={`text-lg font-bold transition-colors ${
               isScrolled 
                 ? "bg-gradient-to-r from-indigo-500 to-indigo-600 bg-clip-text text-transparent"
                 : "text-white"
             }`}>
-              Edufy
+              Trackademiq
             </span>
           </a>
 
@@ -229,7 +231,7 @@ function HeroSection() {
           <motion.div variants={fadeInUp}>
             <Badge className="mb-6 bg-white/10 text-white border-white/20 backdrop-blur-sm" size="sm">
               <Sparkles className="w-3 h-3 mr-1" />
-              AI-Powered School Management
+              AI-Powered Education Intelligence
             </Badge>
           </motion.div>
 
@@ -238,9 +240,9 @@ function HeroSection() {
             className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-white leading-[1.2] sm:leading-tight mb-4 sm:mb-6"
             data-testid="text-hero-headline"
           >
-            Smart Schools,{" "}
+            Next-Generation{" "}
             <span className="bg-gradient-to-r from-indigo-400 to-violet-400 bg-clip-text text-transparent">
-              Smarter Future
+              Education Systems
             </span>
           </motion.h1>
 
@@ -249,8 +251,8 @@ function HeroSection() {
             className="text-base sm:text-lg md:text-xl text-white/80 mb-6 sm:mb-8 max-w-2xl leading-relaxed"
             data-testid="text-hero-subtext"
           >
-            Edufy connects students, teachers, parents, and administrators through one powerful platform. 
-            Get AI-powered insights, real-time updates, and seamless communication for your school.
+            AI-powered education intelligence platform connecting Students, Teachers, Parents, and Administrators. 
+            Transform your institution with real-time analytics, automation, and data-driven insights.
           </motion.p>
 
           <motion.div variants={fadeInUp} className="flex flex-col sm:flex-row gap-4">
@@ -350,33 +352,43 @@ function FeaturesSection() {
   const features = [
     {
       icon: Brain,
-      title: "AI Analytics",
-      description: "Smart insights on student performance, attendance patterns, and learning gaps with predictive analytics."
+      title: "AI-Powered Analytics",
+      description: "Real-time dashboards with performance insights, at-risk student identification, and predictive trends analysis."
     },
     {
       icon: UserCheck,
-      title: "Attendance Tracking",
-      description: "Biometric and app-based attendance with instant parent notifications and detailed reports."
+      title: "Smart Attendance",
+      description: "Biometric and app-based check-ins with instant parent notifications and automated reporting."
+    },
+    {
+      icon: TrendingUp,
+      title: "Marks & Report Cards",
+      description: "Comprehensive grade management, automated report card generation, and performance leaderboards."
     },
     {
       icon: CreditCard,
       title: "Fee Management",
-      description: "Automated fee collection, payment reminders, and comprehensive financial reports for schools."
+      description: "Automated fee collection, payment history tracking, and detailed financial analytics."
     },
     {
       icon: BookOpen,
-      title: "Homework & Assignments",
-      description: "Digital homework distribution, submission tracking, and grading with deadline reminders."
+      title: "Homework & Timetables",
+      description: "Digital assignments, exam schedules, and timetable management with deadline reminders."
     },
     {
       icon: MessageSquare,
-      title: "Instant Messaging",
-      description: "Secure chat between teachers, parents, and administrators with broadcast announcements."
+      title: "Announcements & Messaging",
+      description: "Secure communication between teachers, parents, and admins with push notifications."
+    },
+    {
+      icon: Clock,
+      title: "Leave Management",
+      description: "Student and staff leave requests with approval workflows and attendance integration."
     },
     {
       icon: Building2,
-      title: "Multi-School Support",
-      description: "Manage multiple campuses from one dashboard with centralized reporting and controls."
+      title: "Multi-Tenant Platform",
+      description: "Manage multiple schools and institutions from one centralized dashboard with role-based access."
     }
   ];
 
@@ -400,13 +412,13 @@ function FeaturesSection() {
             variants={fadeInUp}
             className="text-2xl sm:text-3xl md:text-4xl font-bold text-foreground mb-3 sm:mb-4"
           >
-            Everything Your School Needs
+            Comprehensive Education Intelligence
           </motion.h2>
           <motion.p
             variants={fadeInUp}
             className="text-base sm:text-lg text-muted-foreground max-w-2xl mx-auto px-2"
           >
-            Comprehensive tools designed to streamline school operations and enhance the learning experience
+            AI-powered modules for Students, Teachers, Parents, and Administrators to transform education management
           </motion.p>
         </motion.div>
 
@@ -415,7 +427,7 @@ function FeaturesSection() {
           whileInView="visible"
           viewport={{ once: true, margin: "-50px" }}
           variants={staggerContainer}
-          className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6"
+          className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6"
         >
           {features.map((feature, index) => (
             <motion.div key={feature.title} variants={fadeInUp}>
@@ -636,61 +648,7 @@ function BenefitsSection() {
   );
 }
 
-function PricingSection() {
-  const plans = [
-    {
-      name: "Starter",
-      price: "4,999",
-      period: "/month",
-      description: "Perfect for small schools just getting started",
-      features: [
-        "Up to 500 students",
-        "5 admin accounts",
-        "Attendance tracking",
-        "Fee management",
-        "Parent app access",
-        "Email support"
-      ],
-      cta: "Start Free Trial",
-      popular: false
-    },
-    {
-      name: "Professional",
-      price: "9,999",
-      period: "/month",
-      description: "For growing schools with advanced needs",
-      features: [
-        "Up to 2,000 students",
-        "Unlimited admin accounts",
-        "AI-powered analytics",
-        "Homework management",
-        "SMS notifications",
-        "Priority phone support",
-        "Custom branding"
-      ],
-      cta: "Start Free Trial",
-      popular: true
-    },
-    {
-      name: "Enterprise",
-      price: "Custom",
-      period: "",
-      description: "For large schools and school chains",
-      features: [
-        "Unlimited students",
-        "Multi-campus support",
-        "Advanced API access",
-        "Dedicated account manager",
-        "On-premise deployment",
-        "24/7 premium support",
-        "Custom integrations",
-        "SLA guarantee"
-      ],
-      cta: "Contact Sales",
-      popular: false
-    }
-  ];
-
+function DemoRequestSection() {
   const scrollToContact = () => {
     const element = document.querySelector("#contact");
     if (element) {
@@ -698,96 +656,83 @@ function PricingSection() {
     }
   };
 
+  const benefits = [
+    "Custom pricing based on your institution's needs",
+    "Flexible contract terms and SLA options",
+    "Dedicated onboarding and training",
+    "Multi-tenant architecture for school chains",
+    "Priority support and account management",
+    "Custom integrations and API access"
+  ];
+
   return (
-    <section id="pricing" className="py-16 sm:py-20 md:py-28 bg-card" data-testid="section-pricing">
+    <section id="demo-request" className="py-16 sm:py-20 md:py-28 bg-gradient-to-br from-indigo-600 via-indigo-700 to-violet-800" data-testid="section-demo-request">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <motion.div
           initial="hidden"
           whileInView="visible"
           viewport={{ once: true, margin: "-100px" }}
           variants={staggerContainer}
-          className="text-center mb-10 sm:mb-16"
+          className="text-center"
         >
           <motion.div variants={fadeInUp}>
-            <Badge className="mb-4" variant="secondary" size="sm">
-              <Shield className="w-3 h-3 mr-1" />
-              Transparent Pricing
+            <Badge className="mb-6 bg-white/10 text-white border-white/20 backdrop-blur-sm" size="sm">
+              <Sparkles className="w-3 h-3 mr-1" />
+              Enterprise Solutions
             </Badge>
           </motion.div>
           <motion.h2
             variants={fadeInUp}
-            className="text-2xl sm:text-3xl md:text-4xl font-bold text-foreground mb-3 sm:mb-4"
+            className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-white mb-4 sm:mb-6"
           >
-            Plans That Grow With You
+            Transform Your Institution with AI
           </motion.h2>
           <motion.p
             variants={fadeInUp}
-            className="text-base sm:text-lg text-muted-foreground max-w-2xl mx-auto px-2"
+            className="text-base sm:text-lg md:text-xl text-white/80 max-w-3xl mx-auto mb-8 sm:mb-12 px-2"
           >
-            Choose the perfect plan for your school. All plans include a 14-day free trial.
+            Schedule a personalized demo to discover how Trackademiq can revolutionize your educational institution with AI-powered analytics and automation.
           </motion.p>
-        </motion.div>
 
-        <motion.div
-          initial="hidden"
-          whileInView="visible"
-          viewport={{ once: true, margin: "-50px" }}
-          variants={staggerContainer}
-          className="grid grid-cols-1 md:grid-cols-3 gap-8"
-        >
-          {plans.map((plan, index) => (
-            <motion.div key={plan.name} variants={fadeInUp}>
-              <Card
-                className={`p-4 sm:p-6 h-full flex flex-col relative ${
-                  plan.popular
-                    ? "border-2 border-indigo-500 dark:border-indigo-400"
-                    : ""
-                }`}
-                data-testid={`card-pricing-${index}`}
-              >
-                {plan.popular && (
-                  <div className="absolute -top-3 left-1/2 -translate-x-1/2">
-                    <Badge className="bg-gradient-to-r from-indigo-500 to-indigo-600 text-white border-0">
-                      <Star className="w-3 h-3 mr-1" />
-                      Most Popular
-                    </Badge>
-                  </div>
-                )}
-                <div className="mb-4 sm:mb-6">
-                  <h3 className="text-lg sm:text-xl font-semibold text-foreground mb-2">{plan.name}</h3>
-                  <div className="flex items-baseline gap-1">
-                    {plan.price !== "Custom" && <span className="text-xl sm:text-2xl font-medium text-muted-foreground">₹</span>}
-                    <span className="text-3xl sm:text-4xl font-bold text-foreground">{plan.price}</span>
-                    <span className="text-sm sm:text-base text-muted-foreground">{plan.period}</span>
-                  </div>
-                  <p className="text-xs sm:text-sm text-muted-foreground mt-2">{plan.description}</p>
-                </div>
+          <motion.div
+            variants={fadeInUp}
+            className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 mb-10 sm:mb-12 max-w-4xl mx-auto"
+          >
+            {benefits.map((benefit, index) => (
+              <div key={index} className="flex items-center gap-3 bg-white/10 backdrop-blur-sm rounded-lg p-4 text-left">
+                <CheckCircle2 className="w-5 h-5 text-emerald-400 flex-shrink-0" />
+                <span className="text-white text-sm sm:text-base">{benefit}</span>
+              </div>
+            ))}
+          </motion.div>
 
-                <ul className="space-y-2 sm:space-y-3 mb-6 sm:mb-8 flex-grow">
-                  {plan.features.map((feature, featureIndex) => (
-                    <li key={featureIndex} className="flex items-start gap-2 sm:gap-3">
-                      <CheckCircle2 className="w-4 h-4 sm:w-5 sm:h-5 text-green-500 flex-shrink-0 mt-0.5" />
-                      <span className="text-muted-foreground text-xs sm:text-sm">{feature}</span>
-                    </li>
-                  ))}
-                </ul>
+          <motion.div variants={fadeInUp} className="flex flex-col sm:flex-row gap-4 justify-center">
+            <Button
+              size="lg"
+              onClick={scrollToContact}
+              className="bg-white text-indigo-700 hover:bg-white/90 text-base px-8 font-semibold"
+              data-testid="button-request-demo-cta"
+            >
+              Request Demo & Contract
+              <ArrowRight className="w-5 h-5 ml-2" />
+            </Button>
+            <Button
+              size="lg"
+              variant="outline"
+              className="bg-white/10 text-white border-white/30 backdrop-blur-sm hover:bg-white/20"
+              data-testid="button-contact-sales"
+            >
+              <Phone className="w-5 h-5 mr-2" />
+              Contact Sales
+            </Button>
+          </motion.div>
 
-                <Button
-                  onClick={scrollToContact}
-                  className={
-                    plan.popular
-                      ? "w-full bg-gradient-to-r from-indigo-500 to-indigo-600 text-white border-0"
-                      : "w-full"
-                  }
-                  variant={plan.popular ? "default" : "outline"}
-                  data-testid={`button-pricing-cta-${index}`}
-                >
-                  {plan.cta}
-                  <ChevronRight className="w-4 h-4 ml-1" />
-                </Button>
-              </Card>
-            </motion.div>
-          ))}
+          <motion.p
+            variants={fadeInUp}
+            className="mt-8 text-white/60 text-sm"
+          >
+            Custom pricing and contract terms available for all institution sizes
+          </motion.p>
         </motion.div>
       </div>
     </section>
@@ -797,7 +742,7 @@ function PricingSection() {
 function TestimonialsSection() {
   const testimonials = [
     {
-      quote: "Edufy has transformed how we manage our school. The AI analytics helped us identify at-risk students early and improve our overall results by 25%.",
+      quote: "Trackademiq has transformed how we manage our school. The AI analytics helped us identify at-risk students early and improve our overall results by 25%.",
       author: "Dr. Lakshmi Venkatesh",
       role: "Principal",
       school: "Chennai Public School",
@@ -845,7 +790,7 @@ function TestimonialsSection() {
             variants={fadeInUp}
             className="text-base sm:text-lg text-muted-foreground max-w-2xl mx-auto px-2"
           >
-            Hear from schools across Chennai who have transformed their operations with Edufy
+            Hear from schools across Chennai who have transformed their operations with Trackademiq
           </motion.p>
         </motion.div>
 
@@ -1114,11 +1059,11 @@ function ContactSection() {
                     <div>
                       <div className="font-medium text-foreground">Email</div>
                       <a
-                        href="mailto:contact@edufy.in"
+                        href="mailto:contact@trackademiq.in"
                         className="text-muted-foreground hover:text-indigo-600 transition-colors"
                         data-testid="link-email"
                       >
-                        contact@edufy.in
+                        contact@trackademiq.in
                       </a>
                     </div>
                   </div>
@@ -1126,7 +1071,7 @@ function ContactSection() {
               </div>
 
               <Card className="p-6 bg-gradient-to-br from-indigo-500 to-indigo-600">
-                <h4 className="text-lg font-semibold text-white mb-3">Why Choose Edufy?</h4>
+                <h4 className="text-lg font-semibold text-white mb-3">Why Choose Trackademiq?</h4>
                 <ul className="space-y-2">
                   {[
                     "14-day free trial",
@@ -1194,14 +1139,16 @@ function Footer() {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-12 mb-12">
           <div className="lg:col-span-2">
             <div className="flex items-center gap-2 mb-6">
-              <div className="w-10 h-10 rounded-lg bg-gradient-to-br from-indigo-500 to-indigo-600 flex items-center justify-center">
-                <GraduationCap className="w-6 h-6 text-white" />
-              </div>
-              <span className="text-xl font-bold text-background">Edufy</span>
+              <img 
+                src={trackademiqLogo} 
+                alt="Trackademiq Logo" 
+                className="w-10 h-10 rounded-lg object-contain"
+              />
+              <span className="text-lg font-bold text-background">Trackademiq</span>
             </div>
             <p className="text-background/70 mb-6 max-w-sm">
-              Empowering schools across India with AI-powered management solutions. 
-              Making education administration smarter, simpler, and more connected.
+              Next-generation AI-powered education intelligence platform. 
+              Connecting students, teachers, parents, and administrators with data-driven insights.
             </p>
             <div className="flex items-center gap-4">
               <div className="text-sm text-background/60">
@@ -1287,7 +1234,7 @@ function Footer() {
 
         <div className="border-t border-background/10 pt-8 flex flex-col md:flex-row items-center justify-between gap-4">
           <div className="text-sm text-background/60">
-            © {new Date().getFullYear()} Edufy Technologies Pvt. Ltd. All rights reserved.
+            © {new Date().getFullYear()} Trackademiq Technologies Pvt. Ltd. All rights reserved.
           </div>
           <div className="flex items-center gap-4">
             {socialLinks.map((social) => (
@@ -1317,7 +1264,7 @@ export default function LandingPage() {
         <FeaturesSection />
         <HowItWorksSection />
         <BenefitsSection />
-        <PricingSection />
+        <DemoRequestSection />
         <TestimonialsSection />
         <ContactSection />
       </main>

@@ -417,25 +417,26 @@ function FeaturesSection() {
           </motion.p>
         </motion.div>
 
-        <div className="sm:hidden overflow-x-auto pb-4 -mx-4 px-4 scrollbar-hide">
-          <div className="flex gap-6" style={{ width: 'max-content' }}>
-            {features.map((feature, index) => (
-              <div
-                key={feature.title}
-                className="w-56 flex-shrink-0 text-center group"
-                data-testid={`card-feature-mobile-${index}`}
-              >
-                <div className="relative mx-auto w-14 h-14 mb-4">
-                  <div className="absolute inset-0 bg-gradient-to-br from-indigo-500 to-violet-600 rounded-2xl opacity-10 group-hover:opacity-20 transition-opacity duration-300" />
-                  <div className="relative w-full h-full rounded-2xl bg-gradient-to-br from-indigo-50 to-violet-50 dark:from-indigo-950/50 dark:to-violet-950/50 flex items-center justify-center border border-indigo-100 dark:border-indigo-800/50 group-hover:border-indigo-300 dark:group-hover:border-indigo-600 transition-all duration-300 group-hover:shadow-lg group-hover:shadow-indigo-500/10">
-                    <feature.icon className="w-6 h-6 text-indigo-600 dark:text-indigo-400" />
-                  </div>
-                </div>
-                <h3 className="text-base font-semibold text-foreground mb-2">{feature.title}</h3>
+        <div className="sm:hidden flex flex-col gap-4">
+          {features.map((feature, index) => (
+            <motion.div
+              key={feature.title}
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.4, delay: index * 0.05 }}
+              className="flex items-start gap-4 p-4 rounded-xl bg-gradient-to-br from-white to-indigo-50/50 dark:from-slate-800 dark:to-indigo-950/30 border border-indigo-100/80 dark:border-indigo-800/40 shadow-sm"
+              data-testid={`card-feature-mobile-${index}`}
+            >
+              <div className="flex-shrink-0 w-12 h-12 rounded-xl bg-gradient-to-br from-indigo-500 to-violet-600 flex items-center justify-center shadow-lg shadow-indigo-500/25">
+                <feature.icon className="w-6 h-6 text-white" />
+              </div>
+              <div className="flex-1 min-w-0">
+                <h3 className="text-base font-bold text-foreground mb-1">{feature.title}</h3>
                 <p className="text-sm text-muted-foreground leading-relaxed">{feature.description}</p>
               </div>
-            ))}
-          </div>
+            </motion.div>
+          ))}
         </div>
 
         <motion.div

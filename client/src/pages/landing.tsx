@@ -1523,7 +1523,7 @@ function QuickAnswersSection() {
             </span>
           </motion.h2>
           <motion.p variants={fadeInUp} className="text-slate-600 dark:text-slate-400">
-            Common questions answered • <Link href="/faq" className="text-indigo-600 dark:text-indigo-400 hover:underline">View all FAQs</Link>
+            Common questions answered • <Link href="/faq" className="text-indigo-600 dark:text-indigo-400 hover:underline">View all FAQs</Link> • <Link href="/what-is-trackademiq" className="text-indigo-600 dark:text-indigo-400 hover:underline">Learn more</Link>
           </motion.p>
         </motion.div>
 
@@ -1563,8 +1563,10 @@ function Footer() {
       { label: "Request Demo", href: "#contact" },
     ],
     resources: [
+      { label: "What is Trackademiq?", href: "/what-is-trackademiq" },
+      { label: "Trackademiq vs Traditional ERP", href: "/trackademiq-vs-traditional-erp" },
+      { label: "FAQ", href: "/faq" },
       { label: "Testimonials", href: "#testimonials" },
-      { label: "Support", href: "#contact" },
     ],
     legal: [
       { label: "Privacy Policy", href: "/privacy-policy" },
@@ -1622,12 +1624,14 @@ function Footer() {
             ))}
           </div>
           
-          <div className="flex items-center justify-center gap-3 mb-4 text-xs text-white/60">
+          <div className="flex items-center justify-center gap-3 mb-4 text-xs text-white/60 flex-wrap">
+            <Link href="/what-is-trackademiq" className="hover:text-emerald-400 transition-colors" data-testid="link-mobile-what-is">About</Link>
+            <span className="text-white/30">|</span>
+            <Link href="/faq" className="hover:text-emerald-400 transition-colors" data-testid="link-mobile-faq">FAQ</Link>
+            <span className="text-white/30">|</span>
             <Link href="/privacy-policy" className="hover:text-emerald-400 transition-colors" data-testid="link-mobile-privacy">Privacy</Link>
             <span className="text-white/30">|</span>
             <Link href="/terms" className="hover:text-emerald-400 transition-colors" data-testid="link-mobile-terms">Terms</Link>
-            <span className="text-white/30">|</span>
-            <Link href="/refund-policy" className="hover:text-emerald-400 transition-colors" data-testid="link-mobile-refund">Refund</Link>
           </div>
           
           <div className="text-xs text-white/40">
@@ -1720,13 +1724,23 @@ function Footer() {
               <ul className="space-y-1">
                 {footerLinks.resources.map((link) => (
                   <li key={link.label}>
-                    <button
-                      onClick={() => scrollToSection(link.href)}
-                      className="text-white/70 hover:text-emerald-400 transition-colors text-left text-sm py-2 block w-full"
-                      data-testid={`link-footer-${link.label.toLowerCase().replace(" ", "-")}`}
-                    >
-                      {link.label}
-                    </button>
+                    {link.href.startsWith("#") ? (
+                      <button
+                        onClick={() => scrollToSection(link.href)}
+                        className="text-white/70 hover:text-emerald-400 transition-colors text-left text-sm py-2 block w-full"
+                        data-testid={`link-footer-${link.label.toLowerCase().replace(/\s+/g, "-")}`}
+                      >
+                        {link.label}
+                      </button>
+                    ) : (
+                      <Link
+                        href={link.href}
+                        className="text-white/70 hover:text-emerald-400 transition-colors text-sm py-2 block"
+                        data-testid={`link-footer-${link.label.toLowerCase().replace(/\s+/g, "-")}`}
+                      >
+                        {link.label}
+                      </Link>
+                    )}
                   </li>
                 ))}
               </ul>

@@ -158,6 +158,39 @@ export default function FaqPage() {
     if (ogDescription) {
       ogDescription.setAttribute("content", "Everything you need to know about Trackademiq AI-powered School ERP.");
     }
+
+    const faqSchemaData = {
+      "@context": "https://schema.org",
+      "@type": "FAQPage",
+      "mainEntity": faqCategories.flatMap(category => 
+        category.questions.map(q => ({
+          "@type": "Question",
+          "name": q.q,
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": q.a
+          }
+        }))
+      )
+    };
+
+    const existingSchema = document.querySelector('script[data-schema="faq"]');
+    if (existingSchema) {
+      existingSchema.remove();
+    }
+
+    const script = document.createElement('script');
+    script.type = 'application/ld+json';
+    script.setAttribute('data-schema', 'faq');
+    script.textContent = JSON.stringify(faqSchemaData);
+    document.head.appendChild(script);
+
+    return () => {
+      const schemaScript = document.querySelector('script[data-schema="faq"]');
+      if (schemaScript) {
+        schemaScript.remove();
+      }
+    };
   }, []);
 
   return (

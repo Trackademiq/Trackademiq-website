@@ -1483,6 +1483,73 @@ function ContactSection() {
   );
 }
 
+function QuickAnswersSection() {
+  const quickAnswers = [
+    {
+      question: "What is School ERP Software?",
+      answer: "School ERP (Enterprise Resource Planning) software is a comprehensive platform that automates and integrates all administrative, academic, and operational processes in schools including student management, attendance, fees, exams, and communication."
+    },
+    {
+      question: "How does AI improve school management?",
+      answer: "AI in school management predicts student performance with 85% accuracy, identifies at-risk students 2-3 months early, automates repetitive tasks, generates insights, and recommends interventions — helping schools improve outcomes by 12-18%."
+    },
+    {
+      question: "Why do schools need automation?",
+      answer: "School automation saves 60-70% of administrative time (2,000+ hours annually), reduces errors by 95%, improves fee collection by 15-25%, enhances parent engagement, and enables data-driven decision making."
+    },
+    {
+      question: "How much does Trackademiq cost?",
+      answer: "Trackademiq starts at $5 per student annually with all features, training, and support included. Most schools achieve ROI within 6-12 months through efficiency gains and cost savings."
+    }
+  ];
+
+  return (
+    <section className="py-12 sm:py-16 bg-slate-50 dark:bg-slate-900/50" data-testid="section-quick-answers">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <motion.div
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true }}
+          variants={staggerContainer}
+          className="text-center mb-8"
+        >
+          <motion.h2
+            variants={fadeInUp}
+            className="text-2xl sm:text-3xl font-bold text-slate-900 dark:text-white mb-3"
+          >
+            Quick Answers About{" "}
+            <span className="bg-gradient-to-r from-indigo-600 to-violet-600 bg-clip-text text-transparent">
+              Trackademiq
+            </span>
+          </motion.h2>
+          <motion.p variants={fadeInUp} className="text-slate-600 dark:text-slate-400">
+            Common questions answered • <Link href="/faq" className="text-indigo-600 dark:text-indigo-400 hover:underline">View all FAQs</Link>
+          </motion.p>
+        </motion.div>
+
+        <motion.div
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true }}
+          variants={staggerContainer}
+          className="grid sm:grid-cols-2 gap-6"
+        >
+          {quickAnswers.map((qa, idx) => (
+            <motion.div
+              key={qa.question}
+              variants={fadeInUp}
+              className="bg-white dark:bg-slate-800 rounded-xl p-6 border border-slate-200 dark:border-slate-700"
+            >
+              <h3 className="font-semibold text-slate-900 dark:text-white mb-2">{qa.question}</h3>
+              <p className="text-slate-600 dark:text-slate-400 text-sm leading-relaxed">{qa.answer}</p>
+            </motion.div>
+          ))}
+        </motion.div>
+      </div>
+    </section>
+  );
+}
+
 function Footer() {
   const footerLinks = {
     product: [
@@ -1719,6 +1786,7 @@ export default function LandingPage() {
         <DemoRequestSection />
         <TestimonialsSection />
         <ContactSection />
+        <QuickAnswersSection />
       </main>
       <Footer />
       <ChatWidget />

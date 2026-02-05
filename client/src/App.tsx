@@ -15,6 +15,7 @@ import ContactPage from "@/pages/contact";
 import PrivacyPolicyPage from "@/pages/privacy-policy";
 import TermsPage from "@/pages/terms";
 import RefundPolicyPage from "@/pages/refund-policy";
+import FaqPage from "@/pages/faq";
 
 function Router() {
   return (
@@ -27,6 +28,7 @@ function Router() {
       <Route path="/privacy-policy" component={PrivacyPolicyPage} />
       <Route path="/terms" component={TermsPage} />
       <Route path="/refund-policy" component={RefundPolicyPage} />
+      <Route path="/faq" component={FaqPage} />
       <Route path="/blog" component={BlogPage} />
       <Route path="/blog/:id" component={BlogPostPage} />
       <Route path="/product-tour" component={ProductTourPage} />

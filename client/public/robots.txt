@@ -1,12 +1,9 @@
+# Allow all search engines and AI bots
 User-agent: *
 Allow: /
-
-# Crawl delay for politeness
-Crawl-delay: 1
-
-# Disallow admin or private areas (add as needed)
 Disallow: /api/
 Disallow: /admin/
+Disallow: /private/
 
 # Allow important resources
 Allow: /assets/
@@ -16,4 +13,34 @@ Allow: /*.png
 Allow: /*.jpg
 Allow: /*.svg
 
+# Sitemap location
 Sitemap: https://trackademiq.com/sitemap.xml
+
+# Google Search
+User-agent: Googlebot
+Allow: /
+
+User-agent: Bingbot
+Allow: /
+
+# AI Crawlers for AEO (Answer Engine Optimization)
+User-agent: GPTBot
+Allow: /
+
+User-agent: ChatGPT-User
+Allow: /
+
+User-agent: Claude-Web
+Allow: /
+
+User-agent: Anthropic-AI
+Allow: /
+
+User-agent: PerplexityBot
+Allow: /
+
+User-agent: CCBot
+Allow: /
+
+# Crawl delay for politeness
+Crawl-delay: 1

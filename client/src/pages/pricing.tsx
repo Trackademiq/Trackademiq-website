@@ -45,7 +45,7 @@ export default function PricingPage() {
     document.title = "Pricing | Trackademiq School ERP Software";
     const metaDescription = document.querySelector('meta[name="description"]');
     if (metaDescription) {
-      metaDescription.setAttribute("content", "Get custom pricing for Trackademiq school ERP software. Flexible plans based on school size. Request a free demo and personalized quote. Trusted by 50+ schools in Chennai.");
+      metaDescription.setAttribute("content", "Get custom pricing for Trackademiq school ERP software. Flexible plans based on school size. Request a free demo and personalized quote. Trusted by 2,450+ schools globally.");
     }
     const ogTitle = document.querySelector('meta[property="og:title"]');
     if (ogTitle) {

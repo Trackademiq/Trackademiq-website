@@ -95,7 +95,7 @@ export default function FeaturesPage() {
     document.title = "Features | Trackademiq School ERP Software";
     const metaDescription = document.querySelector('meta[name="description"]');
     if (metaDescription) {
-      metaDescription.setAttribute("content", "Explore Trackademiq's complete school ERP features: AI analytics, attendance tracking, fee management, homework, parent communication, and more. Trusted by 50+ schools in Chennai.");
+      metaDescription.setAttribute("content", "Explore Trackademiq's complete school ERP features: AI analytics with 85% prediction accuracy, attendance tracking, fee management, homework, parent communication. Trusted by 2,450+ schools globally.");
     }
     const ogTitle = document.querySelector('meta[property="og:title"]');
     if (ogTitle) {

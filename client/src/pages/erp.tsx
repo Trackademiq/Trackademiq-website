@@ -56,7 +56,7 @@ export default function ErpPage() {
     document.title = "School ERP Software | Trackademiq - AI-Powered Solution";
     const metaDescription = document.querySelector('meta[name="description"]');
     if (metaDescription) {
-      metaDescription.setAttribute("content", "Trackademiq is a complete school ERP software for Indian schools. AI-powered analytics, attendance, fees, homework & parent communication. Trusted by 50+ schools, 25,000+ students in Chennai.");
+      metaDescription.setAttribute("content", "Trackademiq is a complete school ERP software. AI-powered analytics with 85% prediction accuracy, attendance, fees, homework & parent communication. Trusted by 2,450+ schools, 500,000+ students globally.");
     }
     const ogTitle = document.querySelector('meta[property="og:title"]');
     if (ogTitle) {
@@ -117,7 +117,7 @@ export default function ErpPage() {
                 variants={fadeInUp}
                 className="text-lg text-muted-foreground max-w-2xl mx-auto mb-8"
               >
-                Trackademiq is a next-generation school ERP software trusted by 50+ schools in Chennai. Streamline operations, engage parents, and boost student outcomes.
+                Trackademiq is a next-generation school ERP software trusted by 2,450+ schools globally. 85% AI prediction accuracy, 60-70% time savings. Streamline operations and boost student outcomes.
               </motion.p>
               <motion.div variants={fadeInUp} className="flex flex-wrap justify-center gap-4">
                 <Link href="/contact">
@@ -186,19 +186,19 @@ export default function ErpPage() {
                 <Card className="p-6 bg-gradient-to-br from-indigo-50 to-violet-50 dark:from-indigo-950/50 dark:to-violet-950/50 border-indigo-100 dark:border-indigo-900">
                   <div className="grid grid-cols-2 gap-4">
                     <div className="text-center p-4">
-                      <div className="text-3xl font-bold text-indigo-600 mb-1">50+</div>
+                      <div className="text-3xl font-bold text-indigo-600 mb-1">2,450+</div>
                       <div className="text-sm text-muted-foreground">Schools</div>
                     </div>
                     <div className="text-center p-4">
-                      <div className="text-3xl font-bold text-indigo-600 mb-1">25K+</div>
+                      <div className="text-3xl font-bold text-indigo-600 mb-1">500K+</div>
                       <div className="text-sm text-muted-foreground">Students</div>
                     </div>
                     <div className="text-center p-4">
-                      <div className="text-3xl font-bold text-indigo-600 mb-1">4.8</div>
-                      <div className="text-sm text-muted-foreground">Rating</div>
+                      <div className="text-3xl font-bold text-indigo-600 mb-1">85%</div>
+                      <div className="text-sm text-muted-foreground">AI Accuracy</div>
                     </div>
                     <div className="text-center p-4">
-                      <div className="text-3xl font-bold text-indigo-600 mb-1">99%</div>
+                      <div className="text-3xl font-bold text-indigo-600 mb-1">99.9%</div>
                       <div className="text-sm text-muted-foreground">Uptime</div>
                     </div>
                   </div>

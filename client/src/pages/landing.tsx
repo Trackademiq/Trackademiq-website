@@ -334,11 +334,11 @@ function HeroContent({ scrollToContact }: { scrollToContact: () => void }) {
       >
         <div className="flex items-center gap-1.5">
           <CheckCircle2 className="w-4 h-4 text-emerald-500" />
-          <span>50+ Schools</span>
+          <span>2,450+ Schools</span>
         </div>
         <div className="flex items-center gap-1.5">
           <CheckCircle2 className="w-4 h-4 text-emerald-500" />
-          <span>25K+ Students</span>
+          <span>500K+ Students</span>
         </div>
         <div className="flex items-center gap-1.5">
           <Star className="w-4 h-4 text-amber-500 fill-amber-500" />

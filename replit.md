@@ -84,6 +84,16 @@ The application runs with `npm run dev` which starts both the Express backend an
 - **Email Integration**: To enable automatic email notifications for demo requests, set up Resend or SendGrid integration. The chatbot collects user info and stores it, but email sending requires API key configuration.
 
 ## Recent Changes
+- February 2026: GEO (Generative Engine Optimization) Enhancement
+  - Added /what-is-trackademiq question-focused page with data-rich content
+  - Added /trackademiq-vs-traditional-erp comparison page with 10-feature table
+  - Updated static JSON-LD schemas in index.html with data-rich GEO content:
+    - Organization: 2,450+ schools, 85% AI accuracy, 60-70% time savings
+    - Product/SoftwareApplication: comprehensive feature list, aggregate rating
+    - FAQPage: 6 comprehensive Q&As with specific statistics
+  - Updated meta descriptions with data-rich messaging
+  - Key metrics: 2,450+ schools, 45 countries, 500K+ students, 85% AI accuracy, 60-70% time savings, 99.9% uptime
+  - Pricing strategy: "Custom pricing packages with competitive rates" (no specific amounts)
 - February 2026: SEO/AEO Optimization
   - Added dedicated /faq page with comprehensive FAQs organized by category (General, Pricing, Implementation, Features, Security, Customization)
   - Implemented FAQPage JSON-LD schema markup for rich search results

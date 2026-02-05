@@ -84,6 +84,12 @@ The application runs with `npm run dev` which starts both the Express backend an
 - **Email Integration**: To enable automatic email notifications for demo requests, set up Resend or SendGrid integration. The chatbot collects user info and stores it, but email sending requires API key configuration.
 
 ## Recent Changes
+- February 2026: SEO/AEO Optimization
+  - Added dedicated /faq page with comprehensive FAQs organized by category (General, Pricing, Implementation, Features, Security, Customization)
+  - Implemented FAQPage JSON-LD schema markup for rich search results
+  - Added "Quick Answers" section to homepage before footer with 4 key Q&As
+  - Updated robots.txt with AI crawler rules (GPTBot, ChatGPT-User, Claude-Web, Anthropic-AI, PerplexityBot, CCBot)
+  - Updated sitemap.xml with /faq URL
 - February 2026: Enhanced Features Section with Glassmorphism
   - Merged Personalized Experience and Benefits sections into single powerful tabbed section
   - Each user tab (Students, Teachers, Parents, Administrators) now shows relevant image + feature cards

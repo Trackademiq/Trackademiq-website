@@ -34,11 +34,11 @@ const faqCategories = [
     questions: [
       {
         q: "How much does Trackademiq cost?",
-        a: "Trackademiq pricing starts at $5 per student annually for comprehensive AI-powered school management. This includes all features, unlimited users, 24/7 support, training, and data migration. Custom pricing available for large institutions."
+        a: "Trackademiq offers custom pricing packages tailored to your school's size and requirements, with highly competitive rates in the education technology market. All packages include full features, unlimited users, 24/7 support, training, and data migration. Contact us for a personalized quote."
       },
       {
         q: "What is the ROI of implementing Trackademiq?",
-        a: "Schools typically achieve positive ROI within 6-12 months through 60-70% administrative time savings, 15-25% fee collection improvement, and operational cost reductions averaging $50,000-$100,000 annually. Average ROI is 250-640% over three years."
+        a: "Schools typically achieve positive ROI within 6-12 months through 60-70% administrative time savings, 15-25% fee collection improvement, and significant operational cost reductions. The time saved allows staff to focus on student outcomes rather than paperwork."
       },
       {
         q: "Are there any setup fees?",

@@ -1499,7 +1499,7 @@ function QuickAnswersSection() {
     },
     {
       question: "How much does Trackademiq cost?",
-      answer: "Trackademiq starts at $5 per student annually with all features, training, and support included. Most schools achieve ROI within 6-12 months through efficiency gains and cost savings."
+      answer: "Trackademiq offers custom pricing packages with competitive rates tailored to your school's needs. All packages include full features, training, and support. Most schools achieve ROI within 6-12 months through efficiency gains."
     }
   ];
 

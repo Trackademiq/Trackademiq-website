@@ -78,7 +78,7 @@ function Header() {
   const navLinks = [
     { href: "/erp", label: "ERP", isRoute: true },
     { href: "#features", label: "Features" },
-    { href: "#get-started", label: "Pricing" },
+    { href: "https://trackademiq.com/pricing", label: "Pricing", isExternal: true },
     { href: "#testimonials", label: "About" },
     { href: "#contact", label: "Contact" },
   ];
@@ -124,6 +124,17 @@ function Header() {
                 >
                   {link.label}
                 </Link>
+              ) : link.isExternal ? (
+                <a
+                  key={link.href}
+                  href={link.href}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="px-4 py-2 text-sm font-medium transition-colors rounded-md text-slate-600 hover:text-slate-900 dark:text-slate-300 dark:hover:text-white"
+                  data-testid={`link-nav-${link.label.toLowerCase().replace(" ", "-")}`}
+                >
+                  {link.label}
+                </a>
               ) : (
                 <button
                   key={link.href}
@@ -182,6 +193,17 @@ function Header() {
                   >
                     {link.label}
                   </Link>
+                ) : link.isExternal ? (
+                  <a
+                    key={link.href}
+                    href={link.href}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="px-4 py-3 text-left text-sm font-medium text-muted-foreground hover:text-foreground hover:bg-accent rounded-md transition-colors"
+                    data-testid={`link-mobile-nav-${link.label.toLowerCase().replace(" ", "-")}`}
+                  >
+                    {link.label}
+                  </a>
                 ) : (
                   <button
                     key={link.href}

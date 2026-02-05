@@ -16,6 +16,8 @@ import PrivacyPolicyPage from "@/pages/privacy-policy";
 import TermsPage from "@/pages/terms";
 import RefundPolicyPage from "@/pages/refund-policy";
 import FaqPage from "@/pages/faq";
+import WhatIsTrackademiqPage from "@/pages/what-is-trackademiq";
+import TrackademiqVsTraditionalErpPage from "@/pages/trackademiq-vs-traditional-erp";
 
 function Router() {
   return (
@@ -29,6 +31,8 @@ function Router() {
       <Route path="/terms" component={TermsPage} />
       <Route path="/refund-policy" component={RefundPolicyPage} />
       <Route path="/faq" component={FaqPage} />
+      <Route path="/what-is-trackademiq" component={WhatIsTrackademiqPage} />
+      <Route path="/trackademiq-vs-traditional-erp" component={TrackademiqVsTraditionalErpPage} />
       <Route path="/blog" component={BlogPage} />
       <Route path="/blog/:id" component={BlogPostPage} />
       <Route path="/product-tour" component={ProductTourPage} />

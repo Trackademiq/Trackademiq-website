@@ -132,4 +132,20 @@
     <priority>0.9</priority>
   </url>
   
+  <!-- What is Trackademiq Page -->
+  <url>
+    <loc>https://trackademiq.com/what-is-trackademiq</loc>
+    <lastmod>2026-02-05</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  
+  <!-- Comparison Page -->
+  <url>
+    <loc>https://trackademiq.com/trackademiq-vs-traditional-erp</loc>
+    <lastmod>2026-02-05</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  
 </urlset>

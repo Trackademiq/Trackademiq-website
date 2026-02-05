@@ -1775,6 +1775,102 @@ function Footer() {
 }
 
 export default function LandingPage() {
+  useEffect(() => {
+    const productSchema = {
+      "@context": "https://schema.org",
+      "@type": "Product",
+      "name": "Trackademiq AI-Powered School ERP",
+      "description": "Comprehensive school management platform with AI-powered predictive analytics, automated workflows, and real-time performance tracking. Serves 2,450+ educational institutions globally with 85% prediction accuracy.",
+      "brand": {
+        "@type": "Brand",
+        "name": "Trackademiq"
+      },
+      "category": "Education Management Software",
+      "audience": {
+        "@type": "EducationalAudience",
+        "educationalRole": "School Administrator, Principal, Teacher"
+      },
+      "aggregateRating": {
+        "@type": "AggregateRating",
+        "ratingValue": "4.8",
+        "bestRating": "5",
+        "worstRating": "1",
+        "ratingCount": "2450"
+      },
+      "featureList": [
+        "AI-powered student performance prediction (85% accuracy)",
+        "Automated attendance tracking with real-time parent notifications",
+        "Online fee collection and management",
+        "Predictive analytics and early warning systems",
+        "Parent and teacher communication portals",
+        "Examination and grade management",
+        "Real-time reporting and dashboards",
+        "Multi-campus management support"
+      ],
+      "applicationCategory": "EducationalApplication",
+      "operatingSystem": "Web, iOS, Android"
+    };
+
+    const organizationSchema = {
+      "@context": "https://schema.org",
+      "@type": "Organization",
+      "name": "Trackademiq",
+      "alternateName": "Trackademiq School ERP",
+      "description": "AI-powered School ERP and Education Analytics platform serving 2,450+ educational institutions globally with predictive student performance tracking and comprehensive school automation",
+      "url": "https://www.trackademiq.com",
+      "logo": "https://www.trackademiq.com/logo.png",
+      "foundingDate": "2020",
+      "knowsAbout": [
+        "School ERP Software",
+        "Education Analytics",
+        "AI in Education",
+        "Student Performance Prediction",
+        "School Automation",
+        "Educational Technology"
+      ],
+      "areaServed": "Worldwide",
+      "contactPoint": {
+        "@type": "ContactPoint",
+        "contactType": "Customer Service",
+        "email": "info@trackademiq.com",
+        "telephone": "+91 9894836016",
+        "availableLanguage": ["English", "Hindi", "Tamil"],
+        "areaServed": "Worldwide"
+      },
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "G1 - CC Mithilla, Karnan Nagar, Polichalur",
+        "addressLocality": "Chennai",
+        "postalCode": "600074",
+        "addressCountry": "IN"
+      }
+    };
+
+    const existingProduct = document.querySelector('script[data-schema="product"]');
+    const existingOrg = document.querySelector('script[data-schema="organization"]');
+    if (existingProduct) existingProduct.remove();
+    if (existingOrg) existingOrg.remove();
+
+    const productScript = document.createElement('script');
+    productScript.type = 'application/ld+json';
+    productScript.setAttribute('data-schema', 'product');
+    productScript.textContent = JSON.stringify(productSchema);
+    document.head.appendChild(productScript);
+
+    const orgScript = document.createElement('script');
+    orgScript.type = 'application/ld+json';
+    orgScript.setAttribute('data-schema', 'organization');
+    orgScript.textContent = JSON.stringify(organizationSchema);
+    document.head.appendChild(orgScript);
+
+    return () => {
+      const productEl = document.querySelector('script[data-schema="product"]');
+      const orgEl = document.querySelector('script[data-schema="organization"]');
+      if (productEl) productEl.remove();
+      if (orgEl) orgEl.remove();
+    };
+  }, []);
+
   return (
     <div className="min-h-screen bg-background">
       <Header />

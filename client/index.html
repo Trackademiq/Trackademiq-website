@@ -52,11 +52,12 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link rel="dns-prefetch" href="https://www.googletagmanager.com">
     
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@500;600;700&display=swap" rel="stylesheet">
+    <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@500;600;700&display=swap" onload="this.onload=null;this.rel='stylesheet'">
+    <noscript><link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@500;600;700&display=swap" rel="stylesheet"></noscript>
     
     <title>Trackademiq | Best AI-Powered School ERP Software & Student Management System</title>
     
-    <!-- Google Analytics - Replace GA_MEASUREMENT_ID with your actual ID -->
+    <!-- Google Analytics - Uncomment and replace GA_MEASUREMENT_ID with your actual ID
     <script async src="https://www.googletagmanager.com/gtag/js?id=GA_MEASUREMENT_ID"></script>
     <script>
       window.dataLayer = window.dataLayer || [];
@@ -64,6 +65,7 @@
       gtag('js', new Date());
       gtag('config', 'GA_MEASUREMENT_ID');
     </script>
+    -->
     
     <!-- Schema.org Organization -->
     <script type="application/ld+json">

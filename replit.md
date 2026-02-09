@@ -91,6 +91,22 @@ The application runs with `npm run dev` which starts both the Express backend an
 - **Email Integration**: To enable automatic email notifications for demo requests, set up Resend or SendGrid integration. The chatbot collects user info and stores it, but email sending requires API key configuration.
 
 ## Recent Changes
+- February 2026: Lighthouse Performance & Accessibility Optimization
+  - Code splitting: All 18 pages lazy-loaded with React.lazy + Suspense in App.tsx
+  - Hero image optimized: 646KB PNG → 28KB WebP (96% reduction), added width/height dimensions
+  - Below-fold images: Added loading="lazy", width/height to role tab images and footer logos
+  - Google Fonts: Changed from render-blocking stylesheet to async preload pattern
+  - Google Analytics: Commented out (placeholder GA_MEASUREMENT_ID was causing 404s)
+  - ChatWidget: Lazy-loaded with React.lazy + Suspense
+  - Accessibility: Added aria-label to nav, role="contentinfo" to footer, scope="col" to table headers
+  - Color contrast: Improved low-contrast text (text-white/40 → text-white/70)
+  - Text sizes: All text-[10px] increased to text-[11px] for readability
+  - Image dimensions: Added width/height to all img tags to prevent CLS
+- February 2026: Messaging Pivot - AI-Powered Education ERP
+  - Core message changed from "report card time savings" to "AI automates everything, catches problems early"
+  - Updated all 15+ files: hero, features, analytics preview, trust bar, demo sections, CTAs
+  - Updated all comparison pages, blog posts, FAQ answers, schemas, meta descriptions
+  - Removed all "8 hours to 15 minutes" references as headline messaging
 - February 2026: Global SEO & Design Overhaul
   - Changed all positioning from India/Chennai-only to worldwide audience
   - Updated all areaServed, meta tags, OG tags, testimonials, case studies, blog content for global positioning

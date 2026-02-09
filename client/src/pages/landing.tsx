@@ -1,4 +1,4 @@
-import { useState, useEffect } from "react";
+import { useState, useEffect, lazy, Suspense } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
@@ -13,7 +13,7 @@ import { useMutation } from "@tanstack/react-query";
 import { apiRequest } from "@/lib/queryClient";
 import { useToast } from "@/hooks/use-toast";
 import { Link } from "wouter";
-import { ChatWidget } from "@/components/chat-widget";
+const ChatWidget = lazy(() => import("@/components/chat-widget").then(m => ({ default: m.ChatWidget })));
 import { 
   Menu, 
   X, 
@@ -49,7 +49,7 @@ import schoolsImage from "@assets/generated_images/indian_school_principal_admin
 import teachersImage from "@assets/generated_images/indian_teacher_with_tablet_students.webp";
 import parentsImage from "@assets/generated_images/indian_parent_helping_child_homework.webp";
 import trackademiqLogo from "@/assets/trackademiq-logo.png";
-import heroIllustration from "@/assets/hero-illustration.png";
+import heroIllustration from "@/assets/hero-illustration.webp";
 
 const fadeInUp = {
   hidden: { opacity: 0, y: 20 },
@@ -101,13 +101,15 @@ function Header() {
       }`}
       data-testid="header-main"
     >
-      <nav className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <nav className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8" aria-label="Main navigation">
         <div className="flex items-center justify-between h-16 md:h-20">
           <a href="/" className="flex items-center gap-2" data-testid="link-logo">
             <img 
               src={trackademiqLogo} 
               alt="Trackademiq Logo" 
               className="w-10 h-10 rounded-lg object-contain"
+              width={40}
+              height={40}
             />
             <span className="text-lg font-bold bg-gradient-to-r from-indigo-600 to-violet-600 bg-clip-text text-transparent">
               Trackademiq
@@ -170,9 +172,11 @@ function Header() {
           <button
             className="lg:hidden p-2 rounded-md text-slate-700 dark:text-slate-200"
             onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
+            aria-label={isMobileMenuOpen ? "Close menu" : "Open menu"}
+            aria-expanded={isMobileMenuOpen}
             data-testid="button-mobile-menu-toggle"
           >
-            {isMobileMenuOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
+            {isMobileMenuOpen ? <X className="w-6 h-6" aria-hidden="true" /> : <Menu className="w-6 h-6" aria-hidden="true" />}
           </button>
         </div>
 
@@ -255,16 +259,20 @@ function HeroIllustration() {
           src={heroIllustration} 
           alt="Students, teachers and school staff collaborating with AI analytics" 
           className="w-full max-w-sm sm:max-w-md lg:max-w-lg mx-auto rounded-2xl shadow-2xl"
+          width={800}
+          height={600}
+          loading="eager"
+          decoding="async"
         />
         
         <div className="absolute -bottom-4 left-1/2 -translate-x-1/2 bg-white rounded-full px-4 sm:px-6 py-2 sm:py-3 shadow-xl flex items-center gap-2 sm:gap-4">
           <div className="flex items-center gap-1 sm:gap-2">
-            <Shield className="w-4 h-4 sm:w-5 sm:h-5 text-emerald-600" />
+            <Shield className="w-4 h-4 sm:w-5 sm:h-5 text-emerald-600" aria-hidden="true" />
             <span className="text-slate-800 text-xs sm:text-sm font-semibold">Cloud Secured</span>
           </div>
-          <div className="w-px h-4 bg-slate-300" />
+          <div className="w-px h-4 bg-slate-300" aria-hidden="true" />
           <div className="flex items-center gap-1 sm:gap-2">
-            <CheckCircle2 className="w-4 h-4 sm:w-5 sm:h-5 text-emerald-600" />
+            <CheckCircle2 className="w-4 h-4 sm:w-5 sm:h-5 text-emerald-600" aria-hidden="true" />
             <span className="text-slate-800 text-xs sm:text-sm font-semibold">ISO Compliant</span>
           </div>
         </div>
@@ -334,15 +342,15 @@ function HeroContent({ scrollToContact }: { scrollToContact: () => void }) {
         className="flex flex-wrap items-center justify-center lg:justify-start gap-3 sm:gap-5 mt-6 sm:mt-10 text-slate-500 dark:text-slate-400 text-xs sm:text-sm"
       >
         <div className="flex items-center gap-1.5">
-          <Sparkles className="w-4 h-4 text-indigo-500" />
+          <Sparkles className="w-4 h-4 text-indigo-500" aria-hidden="true" />
           <span>AI Automates Everything</span>
         </div>
         <div className="flex items-center gap-1.5">
-          <Clock className="w-4 h-4 text-emerald-500" />
+          <Clock className="w-4 h-4 text-emerald-500" aria-hidden="true" />
           <span>Catches Problems Early</span>
         </div>
         <div className="flex items-center gap-1.5">
-          <CheckCircle2 className="w-4 h-4 text-emerald-500" />
+          <CheckCircle2 className="w-4 h-4 text-emerald-500" aria-hidden="true" />
           <span>Schools Worldwide</span>
         </div>
       </motion.div>
@@ -407,10 +415,10 @@ function TrustBar() {
               transition={{ delay: idx * 0.1, duration: 0.4 }}
               className="flex items-center gap-2.5 justify-center"
             >
-              <item.icon className="w-5 h-5 text-white/80 flex-shrink-0" />
+              <item.icon className="w-5 h-5 text-white/80 flex-shrink-0" aria-hidden="true" />
               <div>
                 <div className="text-white font-semibold text-xs sm:text-sm leading-tight">{item.label}</div>
-                <div className="text-white/60 text-[10px] sm:text-xs leading-tight">{item.value}</div>
+                <div className="text-white/70 text-[11px] sm:text-xs leading-tight">{item.value}</div>
               </div>
             </motion.div>
           ))}
@@ -668,8 +676,10 @@ function FeaturesSection() {
                       <img
                         src={userType.image}
                         alt={userType.imageAlt}
-                        loading="eager"
+                        loading="lazy"
                         decoding="async"
+                        width={800}
+                        height={600}
                         className={`absolute inset-0 w-full h-full object-cover transition-opacity duration-200 ${imagesLoaded ? 'opacity-100' : 'opacity-0'}`}
                       />
                       <div className="absolute inset-0 bg-gradient-to-r from-black/50 via-black/30 to-transparent lg:bg-gradient-to-t lg:from-black/60 lg:via-black/30 lg:to-transparent" />
@@ -846,40 +856,40 @@ function AnalyticsPreviewSection() {
               <div className="bg-gradient-to-br from-indigo-500/20 to-indigo-600/10 rounded-lg sm:rounded-xl p-2.5 sm:p-4 border border-indigo-500/20" data-testid="kpi-total-students">
                 <div className="flex items-center gap-1.5 sm:gap-2 mb-1 sm:mb-2">
                   <Users className="w-3 h-3 sm:w-4 sm:h-4 text-indigo-400" />
-                  <span className="text-white/60 text-[10px] sm:text-sm"><span className="sm:hidden">Students</span><span className="hidden sm:inline">Total Students</span></span>
+                  <span className="text-white/70 text-[11px] sm:text-sm"><span className="sm:hidden">Students</span><span className="hidden sm:inline">Total Students</span></span>
                 </div>
                 <div className="text-lg sm:text-3xl font-bold text-white">2,847</div>
-                <div className="text-emerald-400 text-[10px] sm:text-xs mt-0.5 sm:mt-1 flex items-center gap-1">
+                <div className="text-emerald-400 text-[11px] sm:text-xs mt-0.5 sm:mt-1 flex items-center gap-1">
                   <TrendingUp className="w-2.5 h-2.5 sm:w-3 sm:h-3" /> <span className="sm:hidden">+12%</span><span className="hidden sm:inline">+12% this month</span>
                 </div>
               </div>
               <div className="bg-gradient-to-br from-emerald-500/20 to-emerald-600/10 rounded-lg sm:rounded-xl p-2.5 sm:p-4 border border-emerald-500/20">
                 <div className="flex items-center gap-1.5 sm:gap-2 mb-1 sm:mb-2">
                   <CheckCircle2 className="w-3 h-3 sm:w-4 sm:h-4 text-emerald-400" />
-                  <span className="text-white/60 text-[10px] sm:text-sm"><span className="sm:hidden">Attendance</span><span className="hidden sm:inline">Attendance Rate</span></span>
+                  <span className="text-white/70 text-[11px] sm:text-sm"><span className="sm:hidden">Attendance</span><span className="hidden sm:inline">Attendance Rate</span></span>
                 </div>
                 <div className="text-lg sm:text-3xl font-bold text-white">94.2%</div>
-                <div className="text-emerald-400 text-[10px] sm:text-xs mt-0.5 sm:mt-1 flex items-center gap-1">
+                <div className="text-emerald-400 text-[11px] sm:text-xs mt-0.5 sm:mt-1 flex items-center gap-1">
                   <TrendingUp className="w-2.5 h-2.5 sm:w-3 sm:h-3" /> <span className="sm:hidden">+2.1%</span><span className="hidden sm:inline">+2.1% vs last week</span>
                 </div>
               </div>
               <div className="bg-gradient-to-br from-red-500/20 to-red-600/10 rounded-lg sm:rounded-xl p-2.5 sm:p-4 border border-red-500/20" data-testid="kpi-at-risk">
                 <div className="flex items-center gap-1.5 sm:gap-2 mb-1 sm:mb-2">
                   <Shield className="w-3 h-3 sm:w-4 sm:h-4 text-red-400" />
-                  <span className="text-white/60 text-[10px] sm:text-sm"><span className="sm:hidden">At-Risk</span><span className="hidden sm:inline">AI Flagged At-Risk</span></span>
+                  <span className="text-white/70 text-[11px] sm:text-sm"><span className="sm:hidden">At-Risk</span><span className="hidden sm:inline">AI Flagged At-Risk</span></span>
                 </div>
                 <div className="text-lg sm:text-3xl font-bold text-red-400">5</div>
-                <div className="text-red-400 text-[10px] sm:text-xs mt-0.5 sm:mt-1 flex items-center gap-1">
+                <div className="text-red-400 text-[11px] sm:text-xs mt-0.5 sm:mt-1 flex items-center gap-1">
                   <Brain className="w-2.5 h-2.5 sm:w-3 sm:h-3" /> <span className="sm:hidden">Auto-detected</span><span className="hidden sm:inline">Auto-detected by AI</span>
                 </div>
               </div>
               <div className="bg-gradient-to-br from-violet-500/20 to-violet-600/10 rounded-lg sm:rounded-xl p-2.5 sm:p-4 border border-violet-500/20" data-testid="kpi-report-cards">
                 <div className="flex items-center gap-1.5 sm:gap-2 mb-1 sm:mb-2">
                   <Download className="w-3 h-3 sm:w-4 sm:h-4 text-violet-400" />
-                  <span className="text-white/60 text-[10px] sm:text-sm"><span className="sm:hidden">Reports</span><span className="hidden sm:inline">Report Cards</span></span>
+                  <span className="text-white/70 text-[11px] sm:text-sm"><span className="sm:hidden">Reports</span><span className="hidden sm:inline">Report Cards</span></span>
                 </div>
                 <div className="text-lg sm:text-3xl font-bold text-white">15min</div>
-                <div className="text-violet-400 text-[10px] sm:text-xs mt-0.5 sm:mt-1 flex items-center gap-1">
+                <div className="text-violet-400 text-[11px] sm:text-xs mt-0.5 sm:mt-1 flex items-center gap-1">
                   <Zap className="w-2.5 h-2.5 sm:w-3 sm:h-3" /> <span className="sm:hidden">AI automated</span><span className="hidden sm:inline">AI-automated generation</span>
                 </div>
               </div>
@@ -895,10 +905,10 @@ function AnalyticsPreviewSection() {
                   <table className="w-full text-sm">
                     <thead>
                       <tr className="border-b border-white/10">
-                        <th className="text-left text-white/50 font-medium px-4 py-3">Student</th>
-                        <th className="text-left text-white/50 font-medium px-4 py-3">Attend.</th>
-                        <th className="text-left text-white/50 font-medium px-4 py-3">Score</th>
-                        <th className="text-left text-white/50 font-medium px-4 py-3">Status</th>
+                        <th className="text-left text-white/70 font-medium px-4 py-3" scope="col">Student</th>
+                        <th className="text-left text-white/70 font-medium px-4 py-3" scope="col">Attend.</th>
+                        <th className="text-left text-white/70 font-medium px-4 py-3" scope="col">Score</th>
+                        <th className="text-left text-white/70 font-medium px-4 py-3" scope="col">Status</th>
                       </tr>
                     </thead>
                     <tbody>
@@ -906,7 +916,7 @@ function AnalyticsPreviewSection() {
                         <tr key={index} className={`border-b border-white/5 hover:bg-white/5 transition-colors ${index >= 3 ? 'hidden sm:table-row' : ''}`}>
                           <td className="px-4 py-2 sm:py-3">
                             <div className="flex items-center gap-2">
-                              <div className="w-6 h-6 rounded-full bg-gradient-to-br from-indigo-500 to-violet-500 flex items-center justify-center text-white text-[10px] font-medium">
+                              <div className="w-6 h-6 rounded-full bg-gradient-to-br from-indigo-500 to-violet-500 flex items-center justify-center text-white text-[11px] font-medium">
                                 {student.name.split(' ').map(n => n[0]).join('')}
                               </div>
                               <span className="text-white font-medium text-xs sm:text-sm">{student.name}</span>
@@ -925,7 +935,7 @@ function AnalyticsPreviewSection() {
                             </div>
                           </td>
                           <td className="px-4 py-2 sm:py-3">
-                            <span className={`px-1.5 py-0.5 rounded-full text-[10px] sm:text-xs font-medium ${
+                            <span className={`px-1.5 py-0.5 rounded-full text-[11px] sm:text-xs font-medium ${
                               student.status === 'Excellent' ? 'bg-emerald-500/20 text-emerald-400' :
                               student.status === 'Good' ? 'bg-blue-500/20 text-blue-400' :
                               'bg-red-500/20 text-red-400'
@@ -974,15 +984,15 @@ function AnalyticsPreviewSection() {
             </div>
 
             <div className="mt-4 sm:mt-6 flex flex-wrap items-center justify-center gap-3 sm:gap-6">
-              <div className="flex items-center gap-1.5 text-[10px] sm:text-xs text-white/40">
+              <div className="flex items-center gap-1.5 text-[11px] sm:text-xs text-white/70">
                 <Shield className="w-3 h-3" />
                 <span>Data anonymized for AI processing</span>
               </div>
-              <div className="flex items-center gap-1.5 text-[10px] sm:text-xs text-white/40">
+              <div className="flex items-center gap-1.5 text-[11px] sm:text-xs text-white/70">
                 <Zap className="w-3 h-3" />
                 <span>Rate-limited API calls</span>
               </div>
-              <div className="flex items-center gap-1.5 text-[10px] sm:text-xs text-white/40">
+              <div className="flex items-center gap-1.5 text-[11px] sm:text-xs text-white/70">
                 <Shield className="w-3 h-3" />
                 <span>GDPR compliant</span>
               </div>
@@ -1193,7 +1203,7 @@ function DemoRequestSection() {
             <p className="text-lg sm:text-xl md:text-2xl lg:text-3xl font-bold text-white mb-2">
               Try our free demo — <span className="bg-gradient-to-r from-emerald-300 to-cyan-300 bg-clip-text text-transparent">you'll never say no!</span>
             </p>
-            <p className="text-white/60 text-sm">
+            <p className="text-white/70 text-sm">
               Custom pricing and contract terms available for all institution sizes
             </p>
           </motion.div>
@@ -1420,6 +1430,7 @@ function ContactSection() {
                           <FormControl>
                             <Input
                               placeholder="Enter your school name"
+                              aria-required="true"
                               {...field}
                               data-testid="input-school-name"
                             />
@@ -1440,6 +1451,7 @@ function ContactSection() {
                               <Input
                                 type="email"
                                 placeholder="you@school.edu"
+                                aria-required="true"
                                 {...field}
                                 data-testid="input-email"
                               />
@@ -1459,6 +1471,7 @@ function ContactSection() {
                               <Input
                                 type="tel"
                                 placeholder="+91 98948 36016"
+                                aria-required="true"
                                 {...field}
                                 data-testid="input-phone"
                               />
@@ -1574,7 +1587,7 @@ function ContactSection() {
               </div>
 
               <Card className="p-6 bg-gradient-to-br from-indigo-500 to-indigo-600">
-                <h4 className="text-lg font-semibold text-white mb-3">Why Choose Trackademiq?</h4>
+                <h3 className="text-lg font-semibold text-white mb-3">Why Choose Trackademiq?</h3>
                 <ul className="space-y-2">
                   {[
                     "14-day free trial",
@@ -1707,7 +1720,7 @@ function Footer() {
   };
 
   return (
-    <footer className="bg-gradient-to-br from-indigo-900 via-indigo-800 to-violet-900 text-white py-8 sm:py-12 md:py-16" data-testid="footer-main">
+    <footer className="bg-gradient-to-br from-indigo-900 via-indigo-800 to-violet-900 text-white py-8 sm:py-12 md:py-16" role="contentinfo" data-testid="footer-main">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Mobile: Simple footer */}
         <div className="sm:hidden text-center">
@@ -1716,11 +1729,14 @@ function Footer() {
               src={trackademiqLogo} 
               alt="Trackademiq Logo" 
               className="w-9 h-9 rounded-lg object-contain"
+              width={36}
+              height={36}
+              loading="lazy"
             />
             <span className="text-lg font-bold text-white">Trackademiq</span>
           </div>
           
-          <p className="text-white/60 text-xs mb-4">
+          <p className="text-white/70 text-xs mb-4">
             Polichalur, Chennai • info@trackademiq.com
           </p>
           
@@ -1738,7 +1754,7 @@ function Footer() {
             ))}
           </div>
           
-          <div className="flex items-center justify-center gap-3 mb-4 text-xs text-white/60 flex-wrap">
+          <div className="flex items-center justify-center gap-3 mb-4 text-xs text-white/70 flex-wrap">
             <Link href="/what-is-trackademiq" className="hover:text-emerald-400 transition-colors" data-testid="link-mobile-what-is">About</Link>
             <span className="text-white/30">|</span>
             <Link href="/faq" className="hover:text-emerald-400 transition-colors" data-testid="link-mobile-faq">FAQ</Link>
@@ -1748,7 +1764,7 @@ function Footer() {
             <Link href="/terms" className="hover:text-emerald-400 transition-colors" data-testid="link-mobile-terms">Terms</Link>
           </div>
           
-          <div className="text-xs text-white/40">
+          <div className="text-xs text-white/70">
             © {new Date().getFullYear()} Trackademiq Technologies Pvt. Ltd.
           </div>
         </div>
@@ -1762,6 +1778,9 @@ function Footer() {
                   src={trackademiqLogo} 
                   alt="Trackademiq Logo" 
                   className="w-10 h-10 rounded-lg object-contain"
+                  width={40}
+                  height={40}
+                  loading="lazy"
                 />
                 <span className="text-lg font-bold text-white">Trackademiq</span>
               </div>
@@ -1769,7 +1788,7 @@ function Footer() {
                 AI-powered Education ERP that automates school operations, catches problems early, and keeps every stakeholder informed and empowered.
               </p>
               <div className="flex items-center gap-4">
-                <div className="text-xs sm:text-sm text-white/60">
+                <div className="text-xs sm:text-sm text-white/70">
                   <div className="font-medium text-white mb-1">Polichalur, Chennai</div>
                   <a href="tel:+919894836016" className="hover:text-indigo-400 transition-colors">
                     +91 9894836016
@@ -1779,7 +1798,7 @@ function Footer() {
             </div>
 
             <div>
-              <h4 className="font-semibold text-white mb-4 text-base">Product</h4>
+              <h3 className="font-semibold text-white mb-4 text-base">Product</h3>
               <ul className="space-y-1">
                 {footerLinks.product.map((link) => (
                   <li key={link.label}>
@@ -1806,7 +1825,7 @@ function Footer() {
             </div>
 
             <div>
-              <h4 className="font-semibold text-white mb-4 text-base">Company</h4>
+              <h3 className="font-semibold text-white mb-4 text-base">Company</h3>
               <ul className="space-y-1">
                 {footerLinks.company.map((link) => (
                   <li key={link.label}>
@@ -1833,7 +1852,7 @@ function Footer() {
             </div>
 
             <div>
-              <h4 className="font-semibold text-white mb-4 text-base">Resources</h4>
+              <h3 className="font-semibold text-white mb-4 text-base">Resources</h3>
               <ul className="space-y-1">
                 {footerLinks.resources.map((link) => (
                   <li key={link.label}>
@@ -1860,7 +1879,7 @@ function Footer() {
             </div>
 
             <div>
-              <h4 className="font-semibold text-white mb-4 text-base">Legal</h4>
+              <h3 className="font-semibold text-white mb-4 text-base">Legal</h3>
               <ul className="space-y-1">
                 {footerLinks.legal.map((link) => (
                   <li key={link.label}>
@@ -1878,7 +1897,7 @@ function Footer() {
           </div>
 
           <div className="border-t border-white/10 pt-8 flex flex-col md:flex-row items-center justify-between gap-4">
-            <div className="text-sm text-white/60 text-center md:text-left">
+            <div className="text-sm text-white/70 text-center md:text-left">
               © {new Date().getFullYear()} Trackademiq Technologies Pvt. Ltd. All rights reserved.
             </div>
             <div className="flex items-center gap-2">
@@ -1993,20 +2012,29 @@ export default function LandingPage() {
 
   return (
     <div className="min-h-screen bg-background">
-      <Header />
-      <main>
-        <HeroSection />
-        <TrustBar />
-        <FeaturesSection />
-        <AnalyticsPreviewSection />
-        <GetStartedSection />
-        <DemoRequestSection />
-        <TestimonialsSection />
-        <ContactSection />
-        <QuickAnswersSection />
-      </main>
-      <Footer />
-      <ChatWidget />
+        <a
+          href="#main-content"
+          className="sr-only focus:not-sr-only focus:absolute focus:top-4 focus:left-4 focus:z-[100] focus:px-4 focus:py-2 focus:bg-indigo-600 focus:text-white focus:rounded-md focus:outline-none focus:ring-2 focus:ring-indigo-400"
+          data-testid="link-skip-to-content"
+        >
+          Skip to main content
+        </a>
+        <Header />
+        <main id="main-content">
+          <HeroSection />
+          <TrustBar />
+          <FeaturesSection />
+          <AnalyticsPreviewSection />
+          <GetStartedSection />
+          <DemoRequestSection />
+          <TestimonialsSection />
+          <ContactSection />
+          <QuickAnswersSection />
+        </main>
+        <Footer />
+      <Suspense fallback={null}>
+        <ChatWidget />
+      </Suspense>
     </div>
   );
 }

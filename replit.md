@@ -98,6 +98,12 @@ The application runs with `npm run dev` which starts both the Express backend an
 - Download App button — replaced with Product Tour and Case Studies links until app is available
 
 ## Recent Changes
+- February 2026: Performance & Audit Overhaul
+  - Replaced all Framer Motion animations with CSS keyframes (fadeInUp, fadeIn, scrollLeft) — eliminated ~40KB JS bundle
+  - 131 motion.* instances replaced with CSS animation utility classes (animate-fade-in-up, animate-fade-in)
+  - Cleaned schema.org sameAs (removed fake social profile URLs)
+  - Fixed "Contact Sales" button — now links to tel:+919894836016
+  - Removed LSP errors (dead isExternal nav code branches)
 - February 2026: Website Audit - Fix broken/non-functional elements
   - Removed non-functional "Download App" buttons (3 places: header, mobile, hero) — no app exists yet
   - Hero button replaced with "Product Tour" link, header buttons replaced with "Case Studies" link

@@ -508,7 +508,7 @@ export default function BestSchoolErpPage() {
               <Link href="/faq" className="hover:text-white transition-colors" data-testid="link-footer-faq">
                 FAQ
               </Link>
-              <Link href="/contact" className="hover:text-white transition-colors" data-testid="link-footer-contact">
+              <Link href="/#contact" className="hover:text-white transition-colors" data-testid="link-footer-contact">
                 Contact
               </Link>
             </div>

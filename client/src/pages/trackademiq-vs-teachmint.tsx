@@ -188,7 +188,7 @@ export default function TrackademiqVsTeachmintPage() {
                   Back to Home
                 </Button>
               </Link>
-              <Link href="/contact">
+              <Link href="/#contact">
                 <Button className="bg-gradient-to-r from-indigo-600 to-violet-600 text-white" data-testid="button-get-demo">
                   Get Demo
                 </Button>
@@ -351,7 +351,7 @@ export default function TrackademiqVsTeachmintPage() {
               <Link href="/trackademiq-vs-traditional-erp" className="hover:text-white transition-colors" data-testid="link-vs-traditional-erp">vs Traditional ERP</Link>
               <Link href="/trackademiq-vs-powerschool" className="hover:text-white transition-colors" data-testid="link-vs-powerschool">vs PowerSchool</Link>
               <Link href="/faq" className="hover:text-white transition-colors" data-testid="link-faq">FAQ</Link>
-              <Link href="/contact" className="hover:text-white transition-colors" data-testid="link-contact">Contact</Link>
+              <Link href="/#contact" className="hover:text-white transition-colors" data-testid="link-contact">Contact</Link>
             </div>
             <p className="text-sm text-white/40">&copy; {new Date().getFullYear()} Trackademiq Technologies</p>
           </div>

@@ -1544,12 +1544,6 @@ function Footer() {
       { label: "Contact", href: "#contact" },
       { label: "FAQ", href: "/faq" },
     ],
-    resources: [
-      { label: "Best School ERP 2025", href: "/best-school-erp" },
-      { label: "vs Traditional ERP", href: "/trackademiq-vs-traditional-erp" },
-      { label: "vs PowerSchool", href: "/trackademiq-vs-powerschool" },
-      { label: "vs Teachmint", href: "/trackademiq-vs-teachmint" },
-    ],
     legal: [
       { label: "Privacy Policy", href: "/privacy-policy" },
       { label: "Terms of Service", href: "/terms" },
@@ -1604,8 +1598,8 @@ function Footer() {
         </div>
 
         <div className="hidden sm:block">
-          <div className="grid sm:grid-cols-2 lg:grid-cols-5 gap-8 lg:gap-12 mb-8 sm:mb-12">
-            <div className="sm:col-span-2 lg:col-span-2">
+          <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-8 lg:gap-12 mb-8 sm:mb-12">
+            <div className="sm:col-span-2 lg:col-span-1">
               <div className="flex items-center gap-2 mb-4 sm:mb-6">
                 <img 
                   src={trackademiqLogo} 
@@ -1685,33 +1679,6 @@ function Footer() {
             </div>
 
             <div>
-              <h3 className="font-semibold text-white mb-4 text-base">Compare</h3>
-              <ul className="space-y-1">
-                {footerLinks.resources.map((link) => (
-                  <li key={link.label}>
-                    {link.href.startsWith("#") ? (
-                      <button
-                        onClick={() => scrollToSection(link.href)}
-                        className="text-white/70 hover:text-emerald-400 transition-colors text-left text-sm py-2 block w-full"
-                        data-testid={`link-footer-${link.label.toLowerCase().replace(/\s+/g, "-")}`}
-                      >
-                        {link.label}
-                      </button>
-                    ) : (
-                      <Link
-                        href={link.href}
-                        className="text-white/70 hover:text-emerald-400 transition-colors text-sm py-2 block"
-                        data-testid={`link-footer-${link.label.toLowerCase().replace(/\s+/g, "-")}`}
-                      >
-                        {link.label}
-                      </Link>
-                    )}
-                  </li>
-                ))}
-              </ul>
-            </div>
-
-            <div>
               <h3 className="font-semibold text-white mb-4 text-base">Legal</h3>
               <ul className="space-y-1">
                 {footerLinks.legal.map((link) => (
@@ -1752,6 +1719,16 @@ function Footer() {
 }
 
 export default function LandingPage() {
+  useEffect(() => {
+    const hash = window.location.hash;
+    if (hash) {
+      setTimeout(() => {
+        const el = document.querySelector(hash);
+        if (el) el.scrollIntoView({ behavior: "smooth" });
+      }, 100);
+    }
+  }, []);
+
   useEffect(() => {
     const productSchema = {
       "@context": "https://schema.org",

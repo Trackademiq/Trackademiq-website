@@ -33,10 +33,10 @@ export default function RefundPolicyPage() {
               </span>
             </Link>
             <div className="flex items-center gap-4">
-              <Link href="/pricing">
+              <Link href="/#contact">
                 <Button variant="ghost" data-testid="button-pricing">Pricing</Button>
               </Link>
-              <Link href="/contact">
+              <Link href="/#contact">
                 <Button className="bg-gradient-to-r from-indigo-600 to-violet-600 text-white" data-testid="button-contact">
                   Contact Us
                 </Button>
@@ -152,7 +152,7 @@ export default function RefundPolicyPage() {
             <Link href="/terms">
               <Button variant="outline" data-testid="link-terms">Terms of Service</Button>
             </Link>
-            <Link href="/pricing">
+            <Link href="/#contact">
               <Button variant="outline" data-testid="link-pricing">Pricing</Button>
             </Link>
           </div>

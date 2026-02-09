@@ -68,7 +68,7 @@ export default function PricingPage() {
               <Link href="/features">
                 <Button variant="ghost" data-testid="button-features">Features</Button>
               </Link>
-              <Link href="/contact">
+              <Link href="/#contact">
                 <Button className="bg-gradient-to-r from-indigo-600 to-violet-600 text-white" data-testid="button-contact">
                   Contact Us
                 </Button>
@@ -134,7 +134,7 @@ export default function PricingPage() {
                 </div>
 
                 <div className="flex flex-col sm:flex-row gap-4 justify-center">
-                  <Link href="/contact">
+                  <Link href="/#contact">
                     <Button size="lg" className="w-full sm:w-auto bg-gradient-to-r from-indigo-600 to-violet-600 text-white" data-testid="button-request-demo">
                       Request Demo & Quote
                       <ArrowRight className="w-5 h-5 ml-2" />

@@ -98,7 +98,7 @@ export default function ContactPage() {
               <Link href="/features">
                 <Button variant="ghost" data-testid="button-features">Features</Button>
               </Link>
-              <Link href="/pricing">
+              <Link href="/#contact">
                 <Button variant="ghost" data-testid="button-pricing">Pricing</Button>
               </Link>
             </div>

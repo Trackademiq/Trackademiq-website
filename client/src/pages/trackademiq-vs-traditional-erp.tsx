@@ -174,7 +174,7 @@ export default function TrackademiqVsTraditionalErpPage() {
                   Back to Home
                 </Button>
               </Link>
-              <Link href="/contact">
+              <Link href="/#contact">
                 <Button className="bg-gradient-to-r from-indigo-600 to-violet-600 text-white" data-testid="button-get-demo">
                   Get Demo
                 </Button>
@@ -311,7 +311,7 @@ export default function TrackademiqVsTraditionalErpPage() {
             </motion.div>
 
             <div className="text-center">
-              <Link href="/contact">
+              <Link href="/#contact">
                 <Button size="lg" className="bg-gradient-to-r from-indigo-600 to-violet-600 text-white" data-testid="button-schedule-demo">
                   See the Difference - Get a Demo
                 </Button>
@@ -334,7 +334,7 @@ export default function TrackademiqVsTraditionalErpPage() {
             <div className="flex items-center gap-6 text-sm text-white/60">
               <Link href="/what-is-trackademiq" className="hover:text-white transition-colors">What is Trackademiq?</Link>
               <Link href="/faq" className="hover:text-white transition-colors">FAQ</Link>
-              <Link href="/contact" className="hover:text-white transition-colors">Contact</Link>
+              <Link href="/#contact" className="hover:text-white transition-colors">Contact</Link>
             </div>
             <p className="text-sm text-white/40">© {new Date().getFullYear()} Trackademiq Technologies</p>
           </div>

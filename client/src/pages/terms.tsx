@@ -36,7 +36,7 @@ export default function TermsPage() {
               <Link href="/privacy-policy">
                 <Button variant="ghost" data-testid="button-privacy">Privacy</Button>
               </Link>
-              <Link href="/contact">
+              <Link href="/#contact">
                 <Button className="bg-gradient-to-r from-indigo-600 to-violet-600 text-white" data-testid="button-contact">
                   Contact Us
                 </Button>
@@ -170,7 +170,7 @@ export default function TermsPage() {
             <Link href="/refund-policy">
               <Button variant="outline" data-testid="link-refund">Refund Policy</Button>
             </Link>
-            <Link href="/pricing">
+            <Link href="/#contact">
               <Button variant="outline" data-testid="link-pricing">Pricing</Button>
             </Link>
           </div>

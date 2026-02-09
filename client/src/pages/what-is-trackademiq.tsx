@@ -150,7 +150,7 @@ export default function WhatIsTrackademiqPage() {
                   Back to Home
                 </Button>
               </Link>
-              <Link href="/contact">
+              <Link href="/#contact">
                 <Button className="bg-gradient-to-r from-indigo-600 to-violet-600 text-white" data-testid="button-get-demo">
                   Get Demo
                 </Button>
@@ -277,7 +277,7 @@ export default function WhatIsTrackademiqPage() {
             </motion.div>
 
             <div className="text-center">
-              <Link href="/contact">
+              <Link href="/#contact">
                 <Button size="lg" className="bg-gradient-to-r from-indigo-600 to-violet-600 text-white" data-testid="button-schedule-demo">
                   Schedule a Demo
                 </Button>
@@ -301,7 +301,7 @@ export default function WhatIsTrackademiqPage() {
               <Link href="/faq" className="hover:text-white transition-colors">FAQ</Link>
               <Link href="/privacy-policy" className="hover:text-white transition-colors">Privacy</Link>
               <Link href="/terms" className="hover:text-white transition-colors">Terms</Link>
-              <Link href="/contact" className="hover:text-white transition-colors">Contact</Link>
+              <Link href="/#contact" className="hover:text-white transition-colors">Contact</Link>
             </div>
             <p className="text-sm text-white/40">© {new Date().getFullYear()} Trackademiq Technologies</p>
           </div>

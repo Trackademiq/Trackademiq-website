@@ -36,7 +36,7 @@ export default function PrivacyPolicyPage() {
               <Link href="/terms">
                 <Button variant="ghost" data-testid="button-terms">Terms</Button>
               </Link>
-              <Link href="/contact">
+              <Link href="/#contact">
                 <Button className="bg-gradient-to-r from-indigo-600 to-violet-600 text-white" data-testid="button-contact">
                   Contact Us
                 </Button>
@@ -148,7 +148,7 @@ export default function PrivacyPolicyPage() {
             <Link href="/refund-policy">
               <Button variant="outline" data-testid="link-refund">Refund Policy</Button>
             </Link>
-            <Link href="/contact">
+            <Link href="/#contact">
               <Button variant="outline" data-testid="link-contact">Contact Us</Button>
             </Link>
           </div>

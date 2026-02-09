@@ -115,10 +115,10 @@ export default function FeaturesPage() {
               </span>
             </Link>
             <div className="flex items-center gap-4">
-              <Link href="/contact">
+              <Link href="/#contact">
                 <Button variant="ghost" data-testid="button-contact">Contact</Button>
               </Link>
-              <Link href="/pricing">
+              <Link href="/#contact">
                 <Button className="bg-gradient-to-r from-indigo-600 to-violet-600 text-white" data-testid="button-get-demo">
                   Get Demo
                 </Button>
@@ -199,7 +199,7 @@ export default function FeaturesPage() {
               transition={{ delay: 0.5 }}
               className="text-center mt-12"
             >
-              <Link href="/contact">
+              <Link href="/#contact">
                 <Button size="lg" className="bg-gradient-to-r from-indigo-600 to-violet-600 text-white" data-testid="button-request-demo">
                   Request a Free Demo
                   <ArrowRight className="w-5 h-5 ml-2" />

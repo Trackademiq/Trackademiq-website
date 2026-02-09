@@ -211,7 +211,7 @@ export default function FaqPage() {
                   Back to Home
                 </Button>
               </Link>
-              <Link href="/contact">
+              <Link href="/#contact">
                 <Button className="bg-gradient-to-r from-indigo-600 to-violet-600 text-white" data-testid="button-get-demo">
                   Get Demo
                 </Button>
@@ -271,7 +271,7 @@ export default function FaqPage() {
             <MessageSquare className="w-12 h-12 text-white/80 mx-auto mb-4" />
             <h2 className="text-2xl sm:text-3xl font-bold text-white mb-4">Still have questions?</h2>
             <p className="text-white/80 mb-6">Our team is here to help. Schedule a free personalized demo.</p>
-            <Link href="/contact">
+            <Link href="/#contact">
               <Button size="lg" variant="secondary" className="bg-white text-indigo-600 hover:bg-white/90" data-testid="button-schedule-demo">
                 Schedule Demo
               </Button>
@@ -291,7 +291,7 @@ export default function FaqPage() {
               <Link href="/privacy-policy" className="hover:text-white transition-colors">Privacy</Link>
               <Link href="/terms" className="hover:text-white transition-colors">Terms</Link>
               <Link href="/refund-policy" className="hover:text-white transition-colors">Refund</Link>
-              <Link href="/contact" className="hover:text-white transition-colors">Contact</Link>
+              <Link href="/#contact" className="hover:text-white transition-colors">Contact</Link>
             </div>
             <p className="text-sm text-white/40">© {new Date().getFullYear()} Trackademiq Technologies</p>
           </div>

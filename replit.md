@@ -98,6 +98,10 @@ The application runs with `npm run dev` which starts both the Express backend an
 - Download App button — replaced with Product Tour and Case Studies links until app is available
 
 ## Recent Changes
+- February 2026: Footer & Navigation Cleanup
+  - Removed "Compare" section from footer UI (vs PowerSchool, vs Teachmint, vs Traditional ERP, Best School ERP) — pages remain live and indexable
+  - Changed all /contact and /pricing links across sub-pages to /#contact — now scroll to landing page contact section instead of loading separate pages
+  - Footer grid changed from 5 columns to 4 (Brand, Product, Company, Legal)
 - February 2026: Performance & Audit Overhaul
   - Replaced all Framer Motion animations with CSS keyframes (fadeInUp, fadeIn, scrollLeft) — eliminated ~40KB JS bundle
   - 131 motion.* instances replaced with CSS animation utility classes (animate-fade-in-up, animate-fade-in)
@@ -110,7 +114,7 @@ The application runs with `npm run dev` which starts both the Express backend an
   - Removed fake social media links (all pointed to "#") — replaced with real email/phone contacts in footer
   - Fixed nav: removed broken external pricing link and misleading "About" (#testimonials anchor)
   - Nav now shows: Features, Product Tour, Blog, FAQ, Contact — all functional
-  - Footer reorganized: Product (Features, ERP Platform, Product Tour, Case Studies), Company (Blog, About, Contact, FAQ), Compare (Best School ERP 2025, vs Traditional ERP, vs PowerSchool, vs Teachmint), Legal
+  - Footer reorganized: Product (Features, ERP Platform, Product Tour, Case Studies), Company (Blog, About, Contact, FAQ), Legal
   - All 18 pages now accessible via navigation links (previously 6+ pages had no visible links)
   - Removed unused dns-prefetch for Google Tag Manager (GA is disabled)
   - Cleaned up unused imports (react-icons/si social icons)

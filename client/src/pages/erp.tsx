@@ -79,7 +79,7 @@ export default function ErpPage() {
               <Link href="/features">
                 <Button variant="ghost" data-testid="button-features">Features</Button>
               </Link>
-              <Link href="/contact">
+              <Link href="/#contact">
                 <Button className="bg-gradient-to-r from-indigo-600 to-violet-600 text-white" data-testid="button-get-demo">
                   Get Demo
                 </Button>
@@ -120,7 +120,7 @@ export default function ErpPage() {
                 AI-powered Education ERP that automates every school operation. AI catches problems early, automates the work, and delivers role-specific insights to every stakeholder. Built for modern schools worldwide.
               </motion.p>
               <motion.div variants={fadeInUp} className="flex flex-wrap justify-center gap-4">
-                <Link href="/contact">
+                <Link href="/#contact">
                   <Button size="lg" className="bg-gradient-to-r from-indigo-600 to-violet-600 text-white" data-testid="button-request-demo">
                     Request Free Demo
                     <ArrowRight className="w-5 h-5 ml-2" />

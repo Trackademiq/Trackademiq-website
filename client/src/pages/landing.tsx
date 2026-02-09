@@ -43,10 +43,10 @@ import {
 } from "lucide-react";
 import { SiLinkedin, SiFacebook, SiInstagram, SiX, SiYoutube } from "react-icons/si";
 
-import studentsImage from "@assets/generated_images/modern_indian_classroom_students.png";
-import schoolsImage from "@assets/generated_images/indian_school_principal_administrator.png";
-import teachersImage from "@assets/generated_images/indian_teacher_with_tablet_students.png";
-import parentsImage from "@assets/generated_images/indian_parent_helping_child_homework.png";
+import studentsImage from "@assets/generated_images/modern_indian_classroom_students.webp";
+import schoolsImage from "@assets/generated_images/indian_school_principal_administrator.webp";
+import teachersImage from "@assets/generated_images/indian_teacher_with_tablet_students.webp";
+import parentsImage from "@assets/generated_images/indian_parent_helping_child_homework.webp";
 import trackademiqLogo from "@/assets/trackademiq-logo.png";
 import heroIllustration from "@/assets/hero-illustration.png";
 

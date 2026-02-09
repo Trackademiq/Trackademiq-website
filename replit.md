@@ -89,8 +89,25 @@ The application runs with `npm run dev` which starts both the Express backend an
 
 ## Future Enhancements
 - **Email Integration**: To enable automatic email notifications for demo requests, set up Resend or SendGrid integration. The chatbot collects user info and stores it, but email sending requires API key configuration.
+- **Google Analytics**: GA script is commented out in index.html. To enable, uncomment and replace GA_MEASUREMENT_ID with your actual tracking ID. Also uncomment the dns-prefetch link.
+- **Social Media Links**: Social media icons were removed (no active accounts). When social profiles are created, add links back to the footer socialLinks array in landing.tsx.
+
+## Disabled Features (for later enabling)
+- Google Analytics tracking (requires GA_MEASUREMENT_ID)
+- Social media footer links (Facebook, X/Twitter, LinkedIn, Instagram, YouTube) — no active accounts yet
+- Download App button — replaced with Product Tour and Case Studies links until app is available
 
 ## Recent Changes
+- February 2026: Website Audit - Fix broken/non-functional elements
+  - Removed non-functional "Download App" buttons (3 places: header, mobile, hero) — no app exists yet
+  - Hero button replaced with "Product Tour" link, header buttons replaced with "Case Studies" link
+  - Removed fake social media links (all pointed to "#") — replaced with real email/phone contacts in footer
+  - Fixed nav: removed broken external pricing link and misleading "About" (#testimonials anchor)
+  - Nav now shows: Features, Product Tour, Blog, FAQ, Contact — all functional
+  - Footer reorganized: Product (Features, ERP Platform, Product Tour, Case Studies), Company (Blog, About, Contact, FAQ), Compare (Best School ERP 2025, vs Traditional ERP, vs PowerSchool, vs Teachmint), Legal
+  - All 18 pages now accessible via navigation links (previously 6+ pages had no visible links)
+  - Removed unused dns-prefetch for Google Tag Manager (GA is disabled)
+  - Cleaned up unused imports (react-icons/si social icons)
 - February 2026: Lighthouse Performance & Accessibility Optimization
   - Code splitting: All 18 pages lazy-loaded with React.lazy + Suspense in App.tsx
   - Hero image optimized: 646KB PNG → 28KB WebP (96% reduction), added width/height dimensions

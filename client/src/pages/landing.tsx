@@ -30,6 +30,7 @@ import {
   Mail,
   MapPin,
   Download,
+  Play,
   ArrowRight,
   Sparkles,
   Users,
@@ -42,7 +43,7 @@ import {
   LayoutGrid,
   Globe
 } from "lucide-react";
-import { SiLinkedin, SiFacebook, SiInstagram, SiX, SiYoutube } from "react-icons/si";
+
 
 import studentsImage from "@assets/generated_images/modern_indian_classroom_students.webp";
 import schoolsImage from "@assets/generated_images/indian_school_principal_administrator.webp";
@@ -77,10 +78,10 @@ function Header() {
   }, []);
 
   const navLinks = [
-    { href: "/erp", label: "ERP", isRoute: true },
     { href: "#features", label: "Features" },
-    { href: "https://trackademiq.com/pricing", label: "Pricing", isExternal: true },
-    { href: "#testimonials", label: "About" },
+    { href: "/product-tour", label: "Product Tour", isRoute: true },
+    { href: "/blog", label: "Blog", isRoute: true },
+    { href: "/faq", label: "FAQ", isRoute: true },
     { href: "#contact", label: "Contact" },
   ];
 
@@ -160,13 +161,15 @@ function Header() {
             >
               Request Demo
             </Button>
-            <Button
-              className="bg-gradient-to-r from-indigo-600 to-violet-600 text-white border-indigo-600 font-semibold shadow-md shadow-indigo-500/20"
-              data-testid="button-download-app-header"
-            >
-              <Download className="w-4 h-4 mr-2" />
-              Download App
-            </Button>
+            <Link href="/case-studies">
+              <Button
+                variant="outline"
+                className="border-indigo-200 dark:border-indigo-700 text-indigo-600 dark:text-indigo-400"
+                data-testid="button-case-studies-header"
+              >
+                Case Studies
+              </Button>
+            </Link>
           </div>
 
           <button
@@ -229,13 +232,15 @@ function Header() {
                 >
                   Request Demo
                 </Button>
-                <Button
-                  className="w-full bg-gradient-to-r from-indigo-500 to-indigo-600 text-white border-0"
-                  data-testid="button-download-app-mobile"
-                >
-                  <Download className="w-4 h-4 mr-2" />
-                  Download App
-                </Button>
+                <Link href="/case-studies" className="w-full">
+                  <Button
+                    variant="outline"
+                    className="w-full border-indigo-200 dark:border-indigo-700 text-indigo-600 dark:text-indigo-400"
+                    data-testid="button-case-studies-mobile"
+                  >
+                    Case Studies
+                  </Button>
+                </Link>
               </div>
             </div>
           </motion.div>
@@ -326,15 +331,17 @@ function HeroContent({ scrollToContact }: { scrollToContact: () => void }) {
           Request Demo
           <ArrowRight className="w-5 h-5 ml-2" />
         </Button>
-        <Button
-          size="lg"
-          variant="outline"
-          className="border-2 border-slate-200 dark:border-slate-600 text-slate-700 dark:text-slate-200 font-semibold"
-          data-testid="button-download-app-hero"
-        >
-          <Download className="w-5 h-5 mr-2" />
-          Download App
-        </Button>
+        <Link href="/product-tour">
+          <Button
+            size="lg"
+            variant="outline"
+            className="border-2 border-slate-200 dark:border-slate-600 text-slate-700 dark:text-slate-200 font-semibold"
+            data-testid="button-product-tour-hero"
+          >
+            <Play className="w-5 h-5 mr-2" />
+            Product Tour
+          </Button>
+        </Link>
       </motion.div>
 
       <motion.div
@@ -1681,19 +1688,21 @@ function Footer() {
   const footerLinks = {
     product: [
       { label: "Features", href: "#features" },
-      { label: "Get Started", href: "#get-started" },
+      { label: "ERP Platform", href: "/erp" },
       { label: "Product Tour", href: "/product-tour" },
+      { label: "Case Studies", href: "/case-studies" },
     ],
     company: [
       { label: "Blog", href: "/blog" },
+      { label: "About", href: "/what-is-trackademiq" },
       { label: "Contact", href: "#contact" },
-      { label: "Request Demo", href: "#contact" },
+      { label: "FAQ", href: "/faq" },
     ],
     resources: [
-      { label: "What is Trackademiq?", href: "/what-is-trackademiq" },
-      { label: "Trackademiq vs Traditional ERP", href: "/trackademiq-vs-traditional-erp" },
-      { label: "FAQ", href: "/faq" },
-      { label: "Testimonials", href: "#testimonials" },
+      { label: "Best School ERP 2025", href: "/best-school-erp" },
+      { label: "vs Traditional ERP", href: "/trackademiq-vs-traditional-erp" },
+      { label: "vs PowerSchool", href: "/trackademiq-vs-powerschool" },
+      { label: "vs Teachmint", href: "/trackademiq-vs-teachmint" },
     ],
     legal: [
       { label: "Privacy Policy", href: "/privacy-policy" },
@@ -1701,14 +1710,6 @@ function Footer() {
       { label: "Refund Policy", href: "/refund-policy" },
     ],
   };
-
-  const socialLinks = [
-    { icon: SiFacebook, href: "#", label: "Facebook" },
-    { icon: SiX, href: "#", label: "X" },
-    { icon: SiLinkedin, href: "#", label: "LinkedIn" },
-    { icon: SiInstagram, href: "#", label: "Instagram" },
-    { icon: SiYoutube, href: "#", label: "YouTube" },
-  ];
 
   const scrollToSection = (href: string) => {
     if (href.startsWith("#")) {
@@ -1737,25 +1738,13 @@ function Footer() {
           </div>
           
           <p className="text-white/70 text-xs mb-4">
-            Polichalur, Chennai • info@trackademiq.com
+            Polichalur, Chennai • <a href="mailto:info@trackademiq.com" className="hover:text-emerald-400 transition-colors">info@trackademiq.com</a>
           </p>
-          
-          <div className="flex items-center justify-center gap-2.5 mb-5">
-            {socialLinks.map((social) => (
-              <a
-                key={social.label}
-                href={social.href}
-                className="w-9 h-9 rounded-lg bg-white/10 flex items-center justify-center hover:bg-white/20 transition-colors"
-                aria-label={social.label}
-                data-testid={`link-social-mobile-${social.label.toLowerCase()}`}
-              >
-                <social.icon className="w-4 h-4" />
-              </a>
-            ))}
-          </div>
           
           <div className="flex items-center justify-center gap-3 mb-4 text-xs text-white/70 flex-wrap">
             <Link href="/what-is-trackademiq" className="hover:text-emerald-400 transition-colors" data-testid="link-mobile-what-is">About</Link>
+            <span className="text-white/30">|</span>
+            <Link href="/blog" className="hover:text-emerald-400 transition-colors" data-testid="link-mobile-blog">Blog</Link>
             <span className="text-white/30">|</span>
             <Link href="/faq" className="hover:text-emerald-400 transition-colors" data-testid="link-mobile-faq">FAQ</Link>
             <span className="text-white/30">|</span>
@@ -1852,7 +1841,7 @@ function Footer() {
             </div>
 
             <div>
-              <h3 className="font-semibold text-white mb-4 text-base">Resources</h3>
+              <h3 className="font-semibold text-white mb-4 text-base">Compare</h3>
               <ul className="space-y-1">
                 {footerLinks.resources.map((link) => (
                   <li key={link.label}>
@@ -1900,18 +1889,16 @@ function Footer() {
             <div className="text-sm text-white/70 text-center md:text-left">
               © {new Date().getFullYear()} Trackademiq Technologies Pvt. Ltd. All rights reserved.
             </div>
-            <div className="flex items-center gap-2">
-              {socialLinks.map((social) => (
-                <a
-                  key={social.label}
-                  href={social.href}
-                  className="w-11 h-11 rounded-lg bg-white/10 flex items-center justify-center hover:bg-emerald-500 transition-colors"
-                  aria-label={social.label}
-                  data-testid={`link-social-${social.label.toLowerCase()}`}
-                >
-                  <social.icon className="w-5 h-5" />
-                </a>
-              ))}
+            <div className="flex items-center gap-3 text-sm text-white/70">
+              <a href="mailto:info@trackademiq.com" className="flex items-center gap-2 hover:text-emerald-400 transition-colors" data-testid="link-footer-email">
+                <Mail className="w-4 h-4" />
+                info@trackademiq.com
+              </a>
+              <span className="text-white/30">|</span>
+              <a href="tel:+919894836016" className="flex items-center gap-2 hover:text-emerald-400 transition-colors" data-testid="link-footer-phone">
+                <Phone className="w-4 h-4" />
+                +91 9894836016
+              </a>
             </div>
           </div>
         </div>

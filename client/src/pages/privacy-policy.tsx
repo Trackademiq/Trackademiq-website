@@ -96,7 +96,7 @@ export default function PrivacyPolicyPage() {
           <section>
             <h2 className="text-xl font-semibold text-foreground mt-8 mb-4">4. Data Security</h2>
             <p className="text-muted-foreground">
-              We implement industry-standard security measures including encryption of data in transit and at rest, secure cloud infrastructure, role-based access controls, and regular security audits. All data is stored in secure data centers with 24/7 monitoring.
+              We implement industry-standard security measures including encryption of data in transit and at rest, secure cloud infrastructure, role-based access controls, and regular security audits.
             </p>
           </section>
 

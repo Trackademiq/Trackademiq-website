@@ -14,7 +14,7 @@ const fadeInUp = {
 const comparisons = [
   {
     feature: "AI-Powered Analytics",
-    trackademiq: "85% prediction accuracy, identifies at-risk students 2-3 months early",
+    trackademiq: "Auto-detects at-risk students, saves 2-3 hrs/week per teacher",
     traditional: "Manual reporting only, no predictive capabilities",
     trackademiqHas: true,
     traditionalHas: false
@@ -28,14 +28,14 @@ const comparisons = [
   },
   {
     feature: "Administrative Time Savings",
-    trackademiq: "60-70% reduction in manual work",
+    trackademiq: "Smart report cards: 8 hours to 15 minutes per class",
     traditional: "20-30% at best",
     trackademiqHas: true,
     traditionalHas: false
   },
   {
     feature: "Student Outcome Improvement",
-    trackademiq: "12-18% improvement through early interventions",
+    trackademiq: "Role-specific insights: principal sees school trends, teachers see class-level data",
     traditional: "No direct impact on outcomes",
     trackademiqHas: true,
     traditionalHas: false
@@ -56,14 +56,14 @@ const comparisons = [
   },
   {
     feature: "Parent Portal",
-    trackademiq: "Real-time updates, 95% parent engagement",
+    trackademiq: "Real-time updates, instant notifications",
     traditional: "Basic portal with delayed updates",
     trackademiqHas: true,
     traditionalHas: true
   },
   {
     feature: "Mobile Apps",
-    trackademiq: "Native iOS & Android with offline support",
+    trackademiq: "iOS & Android mobile apps",
     traditional: "Limited mobile functionality",
     trackademiqHas: true,
     traditionalHas: false
@@ -76,8 +76,8 @@ const comparisons = [
     traditionalHas: false
   },
   {
-    feature: "24/7 Support",
-    trackademiq: "Global support with dedicated account managers",
+    feature: "Support",
+    trackademiq: "Email, phone, and chat support with onboarding help",
     traditional: "Business hours only, ticket-based",
     trackademiqHas: true,
     traditionalHas: false
@@ -89,7 +89,7 @@ export default function TrackademiqVsTraditionalErpPage() {
     document.title = "Trackademiq vs Traditional ERP | Complete Comparison";
     const metaDescription = document.querySelector('meta[name="description"]');
     if (metaDescription) {
-      metaDescription.setAttribute("content", "Compare Trackademiq AI-powered School ERP vs traditional systems. See why 2,450+ schools chose Trackademiq for 85% AI accuracy, 60-70% time savings, and faster implementation.");
+      metaDescription.setAttribute("content", "Compare Trackademiq AI-powered School ERP vs traditional systems. AI attendance analytics, smart report cards (8hrs→15min), role-specific insights, and faster 2-4 week implementation.");
     }
 
     const comparisonSchema = {
@@ -117,7 +117,7 @@ export default function TrackademiqVsTraditionalErpPage() {
           "name": "What is the difference between Trackademiq and traditional school ERP?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "The main difference is AI capability. Trackademiq uses AI to predict student performance with 85% accuracy and identify at-risk students 2-3 months early. Traditional ERPs only store and report data without predictive analytics. Trackademiq also implements in 2-4 weeks vs 3-6 months for traditional systems."
+            "text": "The main difference is AI capability. Trackademiq uses AI to auto-detect at-risk students and provide role-specific insights for principals and teachers. Traditional ERPs only store and report data without predictive analytics. Trackademiq also implements in 2-4 weeks vs 3-6 months for traditional systems."
           }
         },
         {
@@ -125,7 +125,7 @@ export default function TrackademiqVsTraditionalErpPage() {
           "name": "Why should schools switch from traditional ERP to Trackademiq?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "Schools switch to Trackademiq for 60-70% administrative time savings, 12-18% improvement in student outcomes, 85% AI prediction accuracy, faster 2-4 week implementation, and proactive alerts that identify issues before they become problems. Traditional ERPs lack these AI-powered capabilities."
+            "text": "Schools switch to Trackademiq for smart report cards (8 hours to 15 minutes), AI attendance analytics that save 2-3 hours per teacher weekly, role-specific insights, faster 2-4 week implementation, and proactive alerts that identify issues before they become problems. Traditional ERPs lack these AI-powered capabilities."
           }
         }
       ]
@@ -203,7 +203,7 @@ export default function TrackademiqVsTraditionalErpPage() {
                 </span>
               </h1>
               <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
-                See why 2,450+ schools worldwide chose AI-powered school management over traditional systems
+                See why next-generation AI-powered school management outperforms traditional systems
               </p>
             </motion.div>
 
@@ -215,7 +215,7 @@ export default function TrackademiqVsTraditionalErpPage() {
             >
               <h2 className="text-xl font-semibold mb-4">Quick Summary</h2>
               <p className="text-lg leading-relaxed">
-                Traditional school ERPs store data. <strong>Trackademiq thinks with it.</strong> With 85% AI prediction accuracy, 60-70% time savings, and 2-4 week implementation (vs 3-6 months), Trackademiq delivers measurable outcomes—not just reports.
+                Traditional school ERPs store data. <strong>Trackademiq thinks with it.</strong> With AI-driven at-risk detection, smart report cards (8 hours → 15 minutes), role-specific insights, and 2-4 week implementation (vs 3-6 months), Trackademiq delivers measurable outcomes — not just reports.
               </p>
             </motion.div>
 
@@ -279,11 +279,11 @@ export default function TrackademiqVsTraditionalErpPage() {
                   </li>
                   <li className="flex items-start gap-2">
                     <ArrowRight className="w-4 h-4 text-indigo-500 flex-shrink-0 mt-0.5" />
-                    <span><strong>Outcomes:</strong> 12-18% student improvement, not just data</span>
+                    <span><strong>Outcomes:</strong> Role-specific insights for principals & teachers</span>
                   </li>
                   <li className="flex items-start gap-2">
                     <ArrowRight className="w-4 h-4 text-indigo-500 flex-shrink-0 mt-0.5" />
-                    <span><strong>Efficiency:</strong> 60-70% time savings for staff</span>
+                    <span><strong>Efficiency:</strong> 2-3 hrs/week saved per teacher</span>
                   </li>
                 </ul>
               </div>
@@ -292,19 +292,19 @@ export default function TrackademiqVsTraditionalErpPage() {
                 <ul className="space-y-3 text-sm text-muted-foreground">
                   <li className="flex items-start gap-2">
                     <Check className="w-4 h-4 text-emerald-500 flex-shrink-0 mt-0.5" />
-                    <span>2,450+ schools across 45 countries</span>
+                    <span>AI attendance analytics with at-risk detection</span>
                   </li>
                   <li className="flex items-start gap-2">
                     <Check className="w-4 h-4 text-emerald-500 flex-shrink-0 mt-0.5" />
-                    <span>85% AI prediction accuracy</span>
+                    <span>Smart report cards: 8 hrs → 15 min</span>
                   </li>
                   <li className="flex items-start gap-2">
                     <Check className="w-4 h-4 text-emerald-500 flex-shrink-0 mt-0.5" />
-                    <span>95%+ fee collection rates</span>
+                    <span>Role-specific insights for every stakeholder</span>
                   </li>
                   <li className="flex items-start gap-2">
                     <Check className="w-4 h-4 text-emerald-500 flex-shrink-0 mt-0.5" />
-                    <span>99.9% uptime guarantee</span>
+                    <span>Cloud-hosted with high availability</span>
                   </li>
                 </ul>
               </div>

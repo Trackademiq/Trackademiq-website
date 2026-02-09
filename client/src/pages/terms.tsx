@@ -116,7 +116,7 @@ export default function TermsPage() {
           <section>
             <h2 className="text-xl font-semibold text-foreground mt-8 mb-4">7. Service Availability</h2>
             <p className="text-muted-foreground">
-              We strive for 99.9% uptime but do not guarantee uninterrupted access. Scheduled maintenance will be communicated in advance. We are not liable for temporary service interruptions.
+              We strive for high availability but do not guarantee uninterrupted access. Scheduled maintenance will be communicated in advance. We are not liable for temporary service interruptions.
             </p>
           </section>
 

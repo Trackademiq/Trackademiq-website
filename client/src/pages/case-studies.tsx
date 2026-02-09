@@ -42,14 +42,14 @@ const caseStudies = [
     students: "2,500+",
     image: schoolsImage,
     challenge: "Managing attendance for 2,500+ students across multiple buildings was time-consuming and error-prone. Parents had no real-time visibility into their child's attendance.",
-    solution: "Implemented Edufy's biometric and app-based attendance system with instant parent notifications.",
+    solution: "Implemented Trackademiq's biometric and app-based attendance system with instant parent notifications.",
     results: [
       { metric: "95%", label: "Attendance Accuracy" },
       { metric: "40%", label: "Time Saved Daily" },
-      { metric: "85%", label: "Parent Satisfaction" }
+      { metric: "High", label: "Parent Satisfaction" }
     ],
     testimonial: {
-      quote: "Edufy transformed our attendance process. What used to take 30 minutes now takes 2 minutes, and parents love the instant notifications.",
+      quote: "Trackademiq transformed our attendance process. What used to take 30 minutes now takes 2 minutes, and parents love the instant notifications.",
       author: "Dr. Lakshmi Venkatesh",
       role: "Principal"
     }
@@ -62,7 +62,7 @@ const caseStudies = [
     students: "1,800+",
     image: teachersImage,
     challenge: "Fee collection was a major headache with manual tracking, late payments, and parent complaints about lack of transparency.",
-    solution: "Deployed Edufy's automated fee management with multiple payment options and smart reminders.",
+    solution: "Deployed Trackademiq's automated fee management with multiple payment options and smart reminders.",
     results: [
       { metric: "30%", label: "Faster Collections" },
       { metric: "60%", label: "Fewer Late Payments" },
@@ -82,7 +82,7 @@ const caseStudies = [
     students: "3,200+",
     image: parentsImage,
     challenge: "Communication between teachers and parents was fragmented. Important messages were often missed, leading to confusion and complaints.",
-    solution: "Implemented Edufy's unified messaging platform with broadcast announcements and direct teacher-parent chat.",
+    solution: "Implemented Trackademiq's unified messaging platform with broadcast announcements and direct teacher-parent chat.",
     results: [
       { metric: "90%", label: "Message Read Rate" },
       { metric: "75%", label: "Parent Engagement" },
@@ -130,7 +130,7 @@ function CaseStudiesHeader() {
             variants={fadeInUp}
             className="text-lg text-white/80 max-w-2xl mx-auto"
           >
-            See how schools across Chennai are transforming their operations with Edufy
+            See how schools across Chennai are transforming their operations with Trackademiq
           </motion.p>
         </motion.div>
       </div>
@@ -140,10 +140,10 @@ function CaseStudiesHeader() {
 
 function StatsSection() {
   const stats = [
-    { value: "500+", label: "Schools Trust Us", icon: Building2 },
-    { value: "2 Lakh+", label: "Students Managed", icon: Users },
-    { value: "98%", label: "Customer Retention", icon: Target },
-    { value: "4.8/5", label: "Average Rating", icon: Award }
+    { value: "AI-Powered", label: "Analytics Engine", icon: Building2 },
+    { value: "8hrs→15min", label: "Report Cards", icon: Users },
+    { value: "Real-Time", label: "Notifications", icon: Target },
+    { value: "Multi-School", label: "Management", icon: Award }
   ];
 
   return (
@@ -276,7 +276,7 @@ function CTASection() {
             Ready to Write Your Success Story?
           </motion.h2>
           <motion.p variants={fadeInUp} className="text-lg text-white/80 mb-8 max-w-2xl mx-auto">
-            Join 500+ schools across Chennai that have transformed their operations with Edufy. Start your 14-day free trial today.
+            Join schools across Chennai transforming their operations with Trackademiq's AI-powered platform.
           </motion.p>
           <motion.div variants={fadeInUp} className="flex flex-col sm:flex-row gap-4 justify-center">
             <Link href="/#contact">
@@ -305,10 +305,10 @@ function CaseStudiesFooter() {
           <div className="w-10 h-10 rounded-lg bg-gradient-to-br from-teal-600 to-cyan-600 flex items-center justify-center">
             <GraduationCap className="w-6 h-6 text-white" />
           </div>
-          <span className="text-xl font-bold text-background">Edufy</span>
+          <span className="text-xl font-bold text-background">Trackademiq</span>
         </div>
         <p className="text-sm text-background/60">
-          © {new Date().getFullYear()} Edufy Technologies Pvt. Ltd. All rights reserved.
+          © {new Date().getFullYear()} Trackademiq Technologies Pvt. Ltd. All rights reserved.
         </p>
       </div>
     </section>

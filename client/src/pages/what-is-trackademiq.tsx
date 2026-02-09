@@ -13,11 +13,11 @@ const fadeInUp = {
 };
 
 const stats = [
-  { value: "2,450+", label: "Schools Globally" },
-  { value: "45", label: "Countries Served" },
-  { value: "500,000+", label: "Students Managed" },
-  { value: "85%", label: "AI Prediction Accuracy" },
-  { value: "60-70%", label: "Time Savings" },
+  { value: "8hrs→15min", label: "Report Card Generation" },
+  { value: "2-3hrs", label: "Saved Per Teacher Weekly" },
+  { value: "Real-Time", label: "At-Risk Detection" },
+  { value: "4 Roles", label: "Personalized Dashboards" },
+  { value: "Multi-School", label: "Platform Management" },
   { value: "99.9%", label: "Uptime Guarantee" }
 ];
 
@@ -25,7 +25,7 @@ const features = [
   {
     icon: Brain,
     title: "AI-Powered Analytics",
-    description: "Predicts student performance with 85% accuracy, identifies at-risk students 2-3 months early"
+    description: "Auto-detects at-risk students through attendance pattern analysis, saves 2-3 hours per teacher weekly"
   },
   {
     icon: Users,
@@ -45,7 +45,7 @@ const features = [
   {
     icon: Shield,
     title: "Secure Fee Collection",
-    description: "Online payments, automated reminders, 95%+ collection rates"
+    description: "Online payments, automated reminders, payment gateway integration"
   },
   {
     icon: GraduationCap,
@@ -59,7 +59,7 @@ export default function WhatIsTrackademiqPage() {
     document.title = "What is Trackademiq? | AI-Powered School ERP Platform";
     const metaDescription = document.querySelector('meta[name="description"]');
     if (metaDescription) {
-      metaDescription.setAttribute("content", "Trackademiq is an AI-powered School ERP platform serving 2,450+ schools globally. Features 85% prediction accuracy, 60-70% time savings, and comprehensive school automation.");
+      metaDescription.setAttribute("content", "Trackademiq is a next-generation AI-powered School ERP from Chennai. AI attendance analytics, smart report cards (8hrs to 15min), role-specific insights, real-time notifications, and multi-school management.");
     }
 
     const pageSchema = {
@@ -72,7 +72,7 @@ export default function WhatIsTrackademiqPage() {
         "name": "Trackademiq",
         "applicationCategory": "EducationalApplication",
         "operatingSystem": "Web, iOS, Android",
-        "description": "Trackademiq is an AI-powered School ERP (Enterprise Resource Planning) platform that automates and integrates all school operations. It serves 2,450+ schools globally, offering AI-powered student performance prediction with 85% accuracy, automated attendance tracking, online fee collection, examination management, and parent communication portals."
+        "description": "Trackademiq is a next-generation AI-powered School ERP platform from Chennai, India. It features AI-driven attendance analytics that auto-detect at-risk students (saves 2-3 hrs/week per teacher), smart report card generation (8 hours to 15 minutes per class), role-specific AI insights engine, real-time notifications, multi-school management, and automated fee tracking."
       }
     };
 
@@ -85,7 +85,7 @@ export default function WhatIsTrackademiqPage() {
           "name": "What is Trackademiq?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "Trackademiq is an AI-powered School ERP (Enterprise Resource Planning) platform that automates and integrates all school operations including student management, attendance tracking, fee collection, and performance analytics. It serves 2,450+ schools across 45 countries with 85% AI prediction accuracy."
+            "text": "Trackademiq is a next-generation AI-powered School ERP platform from Chennai, India. It features AI attendance analytics that auto-detect at-risk students, smart report card generation (8 hrs to 15 min), role-specific AI insights, real-time notifications, multi-school management, and automated fee tracking."
           }
         },
         {
@@ -93,7 +93,7 @@ export default function WhatIsTrackademiqPage() {
           "name": "How does Trackademiq's AI work?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "Trackademiq's AI analyzes multiple data points including attendance patterns, grade trends, engagement metrics, and historical performance to predict student academic outcomes with 85% accuracy. It identifies at-risk students 2-3 months before critical decline, enabling proactive intervention."
+            "text": "Trackademiq's AI analyzes attendance patterns, grade trends, and engagement metrics to identify at-risk students early. The system flags potential issues and provides role-specific recommendations — principals see school-wide trends while teachers get class-level insights. Each teacher saves 2-3 hours per week through automated analytics."
           }
         },
         {
@@ -101,7 +101,7 @@ export default function WhatIsTrackademiqPage() {
           "name": "Who uses Trackademiq?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "Trackademiq is used by school administrators, principals, teachers, parents, and students. It serves schools of all sizes from 100 to 10,000+ students across 45 countries including K-12, international schools, and school networks."
+            "text": "Trackademiq is designed for school administrators, principals, teachers, parents, and students. It scales from small schools with 100 students to large school networks with multiple campuses."
           }
         }
       ]
@@ -188,7 +188,7 @@ export default function WhatIsTrackademiqPage() {
             >
               <h2 className="text-xl font-semibold mb-4">Quick Answer</h2>
               <p className="text-lg leading-relaxed">
-                <strong>Trackademiq is an AI-powered School ERP platform</strong> that automates all school operations including student management, attendance tracking, fee collection, and performance analytics. It serves <strong>2,450+ schools across 45 countries</strong>, predicts student performance with <strong>85% accuracy</strong>, and delivers <strong>60-70% administrative time savings</strong>.
+                <strong>Trackademiq is a next-generation AI-powered School ERP platform</strong> built in Chennai, India. It features AI-driven attendance analytics that auto-detect at-risk students (<strong>saves 2-3 hrs/week per teacher</strong>), smart report card generation (<strong>8 hours to 15 minutes</strong>), role-specific AI insights, real-time notifications, and <strong>multi-school management</strong>.
               </p>
             </motion.div>
 
@@ -220,7 +220,7 @@ export default function WhatIsTrackademiqPage() {
                 Trackademiq combines traditional Enterprise Resource Planning (ERP) functionality with advanced artificial intelligence to provide comprehensive school management. Unlike conventional school software that merely stores data, Trackademiq's AI actively analyzes patterns, predicts outcomes, and recommends interventions.
               </p>
               <p className="text-muted-foreground leading-relaxed">
-                The platform serves educational institutions of all sizes—from small schools with 100 students to large school networks with 10,000+ students across multiple campuses. Schools using Trackademiq report 60-70% reduction in administrative workload, 12-18% improvement in student outcomes, and 95%+ fee collection rates.
+                The platform serves educational institutions of all sizes — from small schools with 100 students to large school networks with multiple campuses. Trackademiq's AI automates attendance analysis, generates smart report cards, and provides actionable insights tailored to each user's role.
               </p>
 
               <h2 className="text-2xl font-bold text-foreground mt-8">What Makes Trackademiq Different?</h2>
@@ -264,7 +264,7 @@ export default function WhatIsTrackademiqPage() {
                 {[
                   "School Administrators & Principals – Centralized control and real-time insights",
                   "Teachers – Automated attendance, gradebooks, and student analytics",
-                  "Parents – 24/7 access to attendance, grades, fees, and direct messaging",
+                  "Parents – Anytime access to attendance, grades, fees, and direct messaging",
                   "Students – Assignment tracking, exam schedules, and performance dashboards",
                   "School Networks – Multi-campus management with consolidated reporting"
                 ].map((item, idx) => (

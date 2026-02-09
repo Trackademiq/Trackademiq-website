@@ -158,7 +158,7 @@ function Header() {
               Request Demo
             </Button>
             <Button
-              className="bg-gradient-to-r from-indigo-600 to-violet-600 hover:from-indigo-700 hover:to-violet-700 text-white border-0 font-semibold shadow-md shadow-indigo-500/20"
+              className="bg-gradient-to-r from-indigo-600 to-violet-600 text-white border-indigo-600 font-semibold shadow-md shadow-indigo-500/20"
               data-testid="button-download-app-header"
             >
               <Download className="w-4 h-4 mr-2" />
@@ -311,7 +311,7 @@ function HeroContent({ scrollToContact }: { scrollToContact: () => void }) {
         <Button
           size="lg"
           onClick={scrollToContact}
-          className="bg-gradient-to-r from-indigo-600 to-violet-600 hover:from-indigo-700 hover:to-violet-700 text-white border-0 text-base px-6 sm:px-8 font-semibold shadow-lg shadow-indigo-500/25"
+          className="bg-gradient-to-r from-indigo-600 to-violet-600 text-white border-indigo-600 text-base px-6 sm:px-8 font-semibold shadow-lg shadow-indigo-500/25"
           data-testid="button-request-demo-hero"
         >
           Request Demo
@@ -320,7 +320,7 @@ function HeroContent({ scrollToContact }: { scrollToContact: () => void }) {
         <Button
           size="lg"
           variant="outline"
-          className="border-2 border-slate-200 dark:border-slate-600 text-slate-700 dark:text-slate-200 hover:bg-slate-50 dark:hover:bg-slate-800 font-semibold"
+          className="border-2 border-slate-200 dark:border-slate-600 text-slate-700 dark:text-slate-200 font-semibold"
           data-testid="button-download-app-hero"
         >
           <Download className="w-5 h-5 mr-2" />
@@ -333,16 +333,16 @@ function HeroContent({ scrollToContact }: { scrollToContact: () => void }) {
         className="flex flex-wrap items-center justify-center lg:justify-start gap-3 sm:gap-5 mt-6 sm:mt-10 text-slate-500 dark:text-slate-400 text-xs sm:text-sm"
       >
         <div className="flex items-center gap-1.5">
-          <CheckCircle2 className="w-4 h-4 text-emerald-500" />
-          <span>2,450+ Schools</span>
+          <Sparkles className="w-4 h-4 text-indigo-500" />
+          <span>AI-Powered Analytics</span>
+        </div>
+        <div className="flex items-center gap-1.5">
+          <Clock className="w-4 h-4 text-emerald-500" />
+          <span>8hrs → 15min Report Cards</span>
         </div>
         <div className="flex items-center gap-1.5">
           <CheckCircle2 className="w-4 h-4 text-emerald-500" />
-          <span>500K+ Students</span>
-        </div>
-        <div className="flex items-center gap-1.5">
-          <Star className="w-4 h-4 text-amber-500 fill-amber-500" />
-          <span>4.8 Rating</span>
+          <span>Made in Chennai</span>
         </div>
       </motion.div>
     </motion.div>
@@ -387,6 +387,20 @@ function HeroSection() {
 function FeaturesSection() {
   const [viewMode, setViewMode] = useState<'modules' | 'roles'>('roles');
   const [activeTab, setActiveTab] = useState(0);
+  const [imagesLoaded, setImagesLoaded] = useState(false);
+
+  useEffect(() => {
+    const imageUrls = [studentsImage, teachersImage, parentsImage, schoolsImage];
+    let loaded = 0;
+    imageUrls.forEach((src) => {
+      const img = new Image();
+      img.onload = () => {
+        loaded++;
+        if (loaded === imageUrls.length) setImagesLoaded(true);
+      };
+      img.src = src;
+    });
+  }, []);
 
   const allFeatures = [
     { icon: Brain, title: "AI Analytics", desc: "Predictive insights and student risk detection", color: "from-indigo-500 to-violet-500" },
@@ -612,10 +626,15 @@ function FeaturesSection() {
                   <div className="grid grid-cols-1 lg:grid-cols-5 gap-0">
                     {/* Image Section - Left side */}
                     <div className="lg:col-span-2 relative h-36 sm:h-64 lg:h-auto lg:min-h-[280px]">
+                      {!imagesLoaded && (
+                        <div className="absolute inset-0 bg-gradient-to-br from-slate-200 to-slate-300 dark:from-slate-700 dark:to-slate-800 animate-pulse" />
+                      )}
                       <img
                         src={userType.image}
                         alt={userType.imageAlt}
-                        className="absolute inset-0 w-full h-full object-cover"
+                        loading="eager"
+                        decoding="async"
+                        className={`absolute inset-0 w-full h-full object-cover transition-opacity duration-200 ${imagesLoaded ? 'opacity-100' : 'opacity-0'}`}
                       />
                       <div className="absolute inset-0 bg-gradient-to-r from-black/50 via-black/30 to-transparent lg:bg-gradient-to-t lg:from-black/60 lg:via-black/30 lg:to-transparent" />
                       <div className="absolute bottom-3 left-3 sm:bottom-6 sm:left-6">
@@ -730,6 +749,12 @@ function AnalyticsPreviewSection() {
     { name: "Ananya Reddy", class: "10-B", attendance: 72, score: 58, status: "At Risk", trend: "down" },
   ];
 
+  const aiInsights = [
+    { role: "Principal", icon: Building2, color: "text-amber-400", bg: "bg-amber-500/10 border-amber-500/20", insight: "School-wide attendance dropped 3.2% this week. Classes 10-B and 10-C need attention. 5 students flagged for intervention." },
+    { role: "Class Teacher", icon: Users, color: "text-emerald-400", bg: "bg-emerald-500/10 border-emerald-500/20", insight: "Arjun Kumar: attendance below 80% for 3 weeks. Math scores declining. Recommend parent meeting and extra tutoring sessions." },
+    { role: "Parent", icon: Heart, color: "text-rose-400", bg: "bg-rose-500/10 border-rose-500/20", insight: "Your child Ananya scored 58% in the last assessment. Attendance: 72%. The teacher has shared study resources for improvement." },
+  ];
+
   return (
     <section id="analytics-preview" className="py-6 sm:py-10 md:py-12 bg-background" data-testid="section-analytics-preview">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -743,23 +768,23 @@ function AnalyticsPreviewSection() {
           <motion.div variants={fadeInUp}>
             <Badge className="mb-6" variant="secondary" size="sm">
               <Brain className="w-3 h-3 mr-1" />
-              AI Analytics
+              AI Analytics Engine
             </Badge>
           </motion.div>
           <motion.h2
             variants={fadeInUp}
             className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-foreground mb-4 sm:mb-6"
           >
-            Transform Education with{" "}
+            AI That Actually{" "}
             <span className="bg-gradient-to-r from-indigo-600 to-violet-600 bg-clip-text text-transparent">
-              AI
+              Understands Schools
             </span>
           </motion.h2>
           <motion.p
             variants={fadeInUp}
             className="text-base sm:text-lg md:text-xl text-muted-foreground max-w-2xl mx-auto"
           >
-            Analyze performance trends, identify at-risk students, and automate academic insights.
+            Auto-detect at-risk students, generate report cards in 15 minutes, and get role-specific insights — all powered by AI with built-in data anonymization.
           </motion.p>
         </motion.div>
 
@@ -776,11 +801,13 @@ function AnalyticsPreviewSection() {
                 <div className="w-3 h-3 rounded-full bg-yellow-500" />
                 <div className="w-3 h-3 rounded-full bg-green-500" />
               </div>
-              <span className="text-white/50 text-sm font-medium">Trackademiq Dashboard</span>
+              <div className="flex items-center gap-2">
+                <Badge className="bg-indigo-500/20 text-indigo-300 border-indigo-500/30" size="sm" data-testid="badge-sample-data">Sample Dashboard Preview</Badge>
+              </div>
             </div>
 
             <div className="grid grid-cols-2 lg:grid-cols-4 gap-2 sm:gap-4 mb-4 sm:mb-6">
-              <div className="bg-gradient-to-br from-indigo-500/20 to-indigo-600/10 rounded-lg sm:rounded-xl p-2.5 sm:p-4 border border-indigo-500/20">
+              <div className="bg-gradient-to-br from-indigo-500/20 to-indigo-600/10 rounded-lg sm:rounded-xl p-2.5 sm:p-4 border border-indigo-500/20" data-testid="kpi-total-students">
                 <div className="flex items-center gap-1.5 sm:gap-2 mb-1 sm:mb-2">
                   <Users className="w-3 h-3 sm:w-4 sm:h-4 text-indigo-400" />
                   <span className="text-white/60 text-[10px] sm:text-sm"><span className="sm:hidden">Students</span><span className="hidden sm:inline">Total Students</span></span>
@@ -800,100 +827,130 @@ function AnalyticsPreviewSection() {
                   <TrendingUp className="w-2.5 h-2.5 sm:w-3 sm:h-3" /> <span className="sm:hidden">+2.1%</span><span className="hidden sm:inline">+2.1% vs last week</span>
                 </div>
               </div>
-              <div className="bg-gradient-to-br from-amber-500/20 to-amber-600/10 rounded-lg sm:rounded-xl p-2.5 sm:p-4 border border-amber-500/20">
+              <div className="bg-gradient-to-br from-red-500/20 to-red-600/10 rounded-lg sm:rounded-xl p-2.5 sm:p-4 border border-red-500/20" data-testid="kpi-at-risk">
                 <div className="flex items-center gap-1.5 sm:gap-2 mb-1 sm:mb-2">
-                  <Shield className="w-3 h-3 sm:w-4 sm:h-4 text-amber-400" />
-                  <span className="text-white/60 text-[10px] sm:text-sm"><span className="sm:hidden">At-Risk</span><span className="hidden sm:inline">At-Risk Students</span></span>
+                  <Shield className="w-3 h-3 sm:w-4 sm:h-4 text-red-400" />
+                  <span className="text-white/60 text-[10px] sm:text-sm"><span className="sm:hidden">At-Risk</span><span className="hidden sm:inline">AI Flagged At-Risk</span></span>
                 </div>
-                <div className="text-lg sm:text-3xl font-bold text-white">23</div>
-                <div className="text-amber-400 text-[10px] sm:text-xs mt-0.5 sm:mt-1"><span className="sm:hidden">Attention</span><span className="hidden sm:inline">Needs attention</span></div>
+                <div className="text-lg sm:text-3xl font-bold text-red-400">5</div>
+                <div className="text-red-400 text-[10px] sm:text-xs mt-0.5 sm:mt-1 flex items-center gap-1">
+                  <Brain className="w-2.5 h-2.5 sm:w-3 sm:h-3" /> <span className="sm:hidden">Auto-detected</span><span className="hidden sm:inline">Auto-detected by AI</span>
+                </div>
               </div>
-              <div className="bg-gradient-to-br from-violet-500/20 to-violet-600/10 rounded-lg sm:rounded-xl p-2.5 sm:p-4 border border-violet-500/20">
+              <div className="bg-gradient-to-br from-violet-500/20 to-violet-600/10 rounded-lg sm:rounded-xl p-2.5 sm:p-4 border border-violet-500/20" data-testid="kpi-report-cards">
                 <div className="flex items-center gap-1.5 sm:gap-2 mb-1 sm:mb-2">
-                  <Star className="w-3 h-3 sm:w-4 sm:h-4 text-violet-400" />
-                  <span className="text-white/60 text-[10px] sm:text-sm"><span className="sm:hidden">Avg Score</span><span className="hidden sm:inline">Avg. Score</span></span>
+                  <Download className="w-3 h-3 sm:w-4 sm:h-4 text-violet-400" />
+                  <span className="text-white/60 text-[10px] sm:text-sm"><span className="sm:hidden">Reports</span><span className="hidden sm:inline">Report Cards</span></span>
                 </div>
-                <div className="text-lg sm:text-3xl font-bold text-white">78.5%</div>
-                <div className="text-emerald-400 text-[10px] sm:text-xs mt-0.5 sm:mt-1 flex items-center gap-1">
-                  <TrendingUp className="w-2.5 h-2.5 sm:w-3 sm:h-3" /> <span className="sm:hidden">+5.3%</span><span className="hidden sm:inline">+5.3% improvement</span>
+                <div className="text-lg sm:text-3xl font-bold text-white">15min</div>
+                <div className="text-violet-400 text-[10px] sm:text-xs mt-0.5 sm:mt-1 flex items-center gap-1">
+                  <Zap className="w-2.5 h-2.5 sm:w-3 sm:h-3" /> <span className="sm:hidden">vs 8hrs manual</span><span className="hidden sm:inline">vs 8 hours manually</span>
                 </div>
               </div>
             </div>
 
-            <div className="bg-slate-800/50 rounded-xl border border-white/5 overflow-hidden">
-              <div className="px-4 py-3 border-b border-white/10 flex items-center justify-between">
-                <h3 className="text-white font-semibold text-sm sm:text-base">Student Performance Overview</h3>
-                <Badge className="bg-indigo-500/20 text-indigo-300 border-indigo-500/30" size="sm">Live Data</Badge>
-              </div>
-              <div className="overflow-x-auto">
-                <table className="w-full text-sm">
-                  <thead>
-                    <tr className="border-b border-white/10">
-                      <th className="text-left text-white/50 font-medium px-4 py-3">Student Name</th>
-                      <th className="text-left text-white/50 font-medium px-4 py-3 hidden sm:table-cell">Class</th>
-                      <th className="text-left text-white/50 font-medium px-4 py-3">Attendance</th>
-                      <th className="text-left text-white/50 font-medium px-4 py-3">Avg. Score</th>
-                      <th className="text-left text-white/50 font-medium px-4 py-3">Status</th>
-                    </tr>
-                  </thead>
-                  <tbody>
-                    {students.map((student, index) => (
-                      <tr key={index} className={`border-b border-white/5 hover:bg-white/5 transition-colors ${index >= 3 ? 'hidden sm:table-row' : ''}`}>
-                        <td className="px-4 py-2 sm:py-3">
-                          <div className="flex items-center gap-2 sm:gap-3">
-                            <div className="w-6 h-6 sm:w-8 sm:h-8 rounded-full bg-gradient-to-br from-indigo-500 to-violet-500 flex items-center justify-center text-white text-[10px] sm:text-xs font-medium">
-                              {student.name.split(' ').map(n => n[0]).join('')}
-                            </div>
-                            <span className="text-white font-medium text-xs sm:text-sm">{student.name}</span>
-                          </div>
-                        </td>
-                        <td className="px-4 py-2 sm:py-3 text-white/70 hidden sm:table-cell">{student.class}</td>
-                        <td className="px-4 py-2 sm:py-3">
-                          <div className="flex items-center gap-1 sm:gap-2">
-                            <div className="w-12 sm:w-24 h-1.5 sm:h-2 bg-slate-700 rounded-full overflow-hidden">
-                              <div 
-                                className={`h-full rounded-full ${student.attendance >= 90 ? 'bg-emerald-500' : student.attendance >= 80 ? 'bg-amber-500' : 'bg-red-500'}`}
-                                style={{ width: `${student.attendance}%` }}
-                              />
-                            </div>
-                            <span className="text-white/70 text-[10px] sm:text-xs">{student.attendance}%</span>
-                          </div>
-                        </td>
-                        <td className="px-4 py-2 sm:py-3">
-                          <div className="flex items-center gap-1 sm:gap-2">
-                            <span className="text-white font-medium text-xs sm:text-sm">{student.score}%</span>
-                            {student.trend === 'up' && <TrendingUp className="w-2.5 h-2.5 sm:w-3 sm:h-3 text-emerald-400" />}
-                            {student.trend === 'down' && <TrendingUp className="w-2.5 h-2.5 sm:w-3 sm:h-3 text-red-400 rotate-180" />}
-                          </div>
-                        </td>
-                        <td className="px-4 py-2 sm:py-3">
-                          <span className={`px-1.5 sm:px-2 py-0.5 sm:py-1 rounded-full text-[10px] sm:text-xs font-medium ${
-                            student.status === 'Excellent' ? 'bg-emerald-500/20 text-emerald-400' :
-                            student.status === 'Good' ? 'bg-blue-500/20 text-blue-400' :
-                            'bg-red-500/20 text-red-400'
-                          }`}>
-                            {student.status}
-                          </span>
-                        </td>
+            <div className="grid grid-cols-1 lg:grid-cols-2 gap-4 sm:gap-6">
+              <div className="bg-slate-800/50 rounded-xl border border-white/5 overflow-hidden">
+                <div className="px-4 py-3 border-b border-white/10 flex items-center justify-between">
+                  <h3 className="text-white font-semibold text-sm sm:text-base">Student Performance Overview</h3>
+                  <Badge className="bg-indigo-500/20 text-indigo-300 border-indigo-500/30" size="sm">Live Data</Badge>
+                </div>
+                <div className="overflow-x-auto">
+                  <table className="w-full text-sm">
+                    <thead>
+                      <tr className="border-b border-white/10">
+                        <th className="text-left text-white/50 font-medium px-4 py-3">Student</th>
+                        <th className="text-left text-white/50 font-medium px-4 py-3">Attend.</th>
+                        <th className="text-left text-white/50 font-medium px-4 py-3">Score</th>
+                        <th className="text-left text-white/50 font-medium px-4 py-3">Status</th>
                       </tr>
-                    ))}
-                  </tbody>
-                </table>
+                    </thead>
+                    <tbody>
+                      {students.map((student, index) => (
+                        <tr key={index} className={`border-b border-white/5 hover:bg-white/5 transition-colors ${index >= 3 ? 'hidden sm:table-row' : ''}`}>
+                          <td className="px-4 py-2 sm:py-3">
+                            <div className="flex items-center gap-2">
+                              <div className="w-6 h-6 rounded-full bg-gradient-to-br from-indigo-500 to-violet-500 flex items-center justify-center text-white text-[10px] font-medium">
+                                {student.name.split(' ').map(n => n[0]).join('')}
+                              </div>
+                              <span className="text-white font-medium text-xs sm:text-sm">{student.name}</span>
+                            </div>
+                          </td>
+                          <td className="px-4 py-2 sm:py-3">
+                            <span className={`text-xs sm:text-sm font-medium ${student.attendance >= 90 ? 'text-emerald-400' : student.attendance >= 80 ? 'text-amber-400' : 'text-red-400'}`}>
+                              {student.attendance}%
+                            </span>
+                          </td>
+                          <td className="px-4 py-2 sm:py-3">
+                            <div className="flex items-center gap-1">
+                              <span className="text-white font-medium text-xs sm:text-sm">{student.score}%</span>
+                              {student.trend === 'up' && <TrendingUp className="w-2.5 h-2.5 text-emerald-400" />}
+                              {student.trend === 'down' && <TrendingUp className="w-2.5 h-2.5 text-red-400 rotate-180" />}
+                            </div>
+                          </td>
+                          <td className="px-4 py-2 sm:py-3">
+                            <span className={`px-1.5 py-0.5 rounded-full text-[10px] sm:text-xs font-medium ${
+                              student.status === 'Excellent' ? 'bg-emerald-500/20 text-emerald-400' :
+                              student.status === 'Good' ? 'bg-blue-500/20 text-blue-400' :
+                              'bg-red-500/20 text-red-400'
+                            }`}>
+                              {student.status}
+                            </span>
+                          </td>
+                        </tr>
+                      ))}
+                    </tbody>
+                  </table>
+                </div>
+              </div>
+
+              <div className="bg-slate-800/50 rounded-xl border border-white/5 overflow-hidden">
+                <div className="px-4 py-3 border-b border-white/10 flex items-center justify-between">
+                  <h3 className="text-white font-semibold text-sm sm:text-base">Role-Specific AI Insights</h3>
+                  <Badge className="bg-emerald-500/20 text-emerald-300 border-emerald-500/30" size="sm">
+                    <Brain className="w-3 h-3 mr-1" />
+                    AI Generated
+                  </Badge>
+                </div>
+                <div className="p-3 sm:p-4 space-y-3">
+                  {aiInsights.map((item, idx) => {
+                    const Icon = item.icon;
+                    return (
+                      <motion.div
+                        key={item.role}
+                        initial={{ opacity: 0, x: 20 }}
+                        whileInView={{ opacity: 1, x: 0 }}
+                        viewport={{ once: true }}
+                        transition={{ delay: 0.3 + idx * 0.15 }}
+                        className={`p-3 rounded-lg border ${item.bg}`}
+                        data-testid={`ai-insight-${item.role.toLowerCase().replace(/\s+/g, '-')}`}
+                      >
+                        <div className="flex items-center gap-2 mb-1.5">
+                          <Icon className={`w-3.5 h-3.5 ${item.color}`} />
+                          <span className={`text-xs font-semibold ${item.color}`}>{item.role} View</span>
+                        </div>
+                        <p className="text-white/70 text-xs leading-relaxed">{item.insight}</p>
+                      </motion.div>
+                    );
+                  })}
+                </div>
               </div>
             </div>
-          </div>
-        </motion.div>
 
-        <motion.div
-          initial="hidden"
-          whileInView="visible"
-          viewport={{ once: true, margin: "-100px" }}
-          variants={fadeInUp}
-          className="text-center mt-10"
-        >
-          <div className="inline-flex items-center gap-3 px-6 py-3 rounded-full bg-gradient-to-r from-indigo-100 to-violet-100 dark:from-indigo-900/50 dark:to-violet-900/50 border border-indigo-200 dark:border-indigo-700">
-            <Sparkles className="w-5 h-5 text-emerald-500" />
-            <span className="text-lg sm:text-xl font-semibold bg-gradient-to-r from-emerald-600 to-cyan-600 dark:from-emerald-400 dark:to-cyan-400 bg-clip-text text-transparent">Insightful Analytics at a Glance</span>
+            <div className="mt-4 sm:mt-6 flex flex-wrap items-center justify-center gap-3 sm:gap-6">
+              <div className="flex items-center gap-1.5 text-[10px] sm:text-xs text-white/40">
+                <Shield className="w-3 h-3" />
+                <span>Data anonymized for AI processing</span>
+              </div>
+              <div className="flex items-center gap-1.5 text-[10px] sm:text-xs text-white/40">
+                <Zap className="w-3 h-3" />
+                <span>Rate-limited API calls</span>
+              </div>
+              <div className="flex items-center gap-1.5 text-[10px] sm:text-xs text-white/40">
+                <Shield className="w-3 h-3" />
+                <span>GDPR compliant</span>
+              </div>
+            </div>
           </div>
         </motion.div>
       </div>
@@ -1077,7 +1134,7 @@ function DemoRequestSection() {
             <Button
               size="lg"
               onClick={scrollToContact}
-              className="bg-white text-indigo-700 hover:bg-white/90 text-base px-8 font-semibold"
+              className="bg-white text-indigo-700 border-white text-base px-8 font-semibold"
               data-testid="button-request-demo-cta"
             >
               Request Demo & Contract
@@ -1086,7 +1143,7 @@ function DemoRequestSection() {
             <Button
               size="lg"
               variant="outline"
-              className="bg-white text-indigo-700 border-white hover:bg-white/90"
+              className="bg-white text-indigo-700 border-white"
               data-testid="button-contact-sales"
             >
               <Phone className="w-5 h-5 mr-2" />
@@ -1513,11 +1570,11 @@ function QuickAnswersSection() {
     },
     {
       question: "How does AI improve school management?",
-      answer: "AI in school management predicts student performance with 85% accuracy, identifies at-risk students 2-3 months early, automates repetitive tasks, generates insights, and recommends interventions — helping schools improve outcomes by 12-18%."
+      answer: "AI in school management auto-detects at-risk students through attendance and engagement analysis, generates smart report cards (reducing 8 hours to 15 minutes), provides role-specific insights for principals and teachers, and delivers real-time notifications — saving teachers 2-3 hours per week."
     },
     {
       question: "Why do schools need automation?",
-      answer: "School automation saves 60-70% of administrative time (2,000+ hours annually), reduces errors by 95%, improves fee collection by 15-25%, enhances parent engagement, and enables data-driven decision making."
+      answer: "School automation dramatically reduces manual work — smart report cards alone save hours per class. AI attendance analytics auto-detect at-risk students, automated fee tracking reduces collection overhead, real-time notifications keep parents engaged, and role-specific dashboards enable data-driven decisions."
     },
     {
       question: "How much does Trackademiq cost?",
@@ -1816,7 +1873,7 @@ export default function LandingPage() {
       "@context": "https://schema.org",
       "@type": "Product",
       "name": "Trackademiq AI-Powered School ERP",
-      "description": "Comprehensive school management platform with AI-powered predictive analytics, automated workflows, and real-time performance tracking. Serves 2,450+ educational institutions globally with 85% prediction accuracy.",
+      "description": "Next-generation AI-powered school ERP platform from Chennai, India. Features AI-driven attendance analytics with at-risk student detection, smart report card generation (8 hours to 15 minutes), role-specific AI insights engine, real-time notifications, multi-school management, and automated fee tracking.",
       "brand": {
         "@type": "Brand",
         "name": "Trackademiq"
@@ -1826,22 +1883,15 @@ export default function LandingPage() {
         "@type": "EducationalAudience",
         "educationalRole": "School Administrator, Principal, Teacher"
       },
-      "aggregateRating": {
-        "@type": "AggregateRating",
-        "ratingValue": "4.8",
-        "bestRating": "5",
-        "worstRating": "1",
-        "ratingCount": "2450"
-      },
       "featureList": [
-        "AI-powered student performance prediction (85% accuracy)",
-        "Automated attendance tracking with real-time parent notifications",
-        "Online fee collection and management",
-        "Predictive analytics and early warning systems",
-        "Parent and teacher communication portals",
-        "Examination and grade management",
-        "Real-time reporting and dashboards",
-        "Multi-campus management support"
+        "AI-powered attendance analytics with at-risk student detection",
+        "Smart report card generation (8 hours to 15 minutes)",
+        "AI insights engine with role-specific recommendations",
+        "Real-time notifications and parent-teacher messaging",
+        "Multi-school platform management",
+        "Automated fee tracking and payment gateway integration",
+        "Data anonymization for AI processing",
+        "Role-based dashboards for every stakeholder"
       ],
       "applicationCategory": "EducationalApplication",
       "operatingSystem": "Web, iOS, Android"
@@ -1852,7 +1902,7 @@ export default function LandingPage() {
       "@type": "Organization",
       "name": "Trackademiq",
       "alternateName": "Trackademiq School ERP",
-      "description": "AI-powered School ERP and Education Analytics platform serving 2,450+ educational institutions globally with predictive student performance tracking and comprehensive school automation",
+      "description": "Next-generation AI-powered School ERP from Chennai, India. Features AI attendance analytics, smart report cards, role-specific insights, real-time notifications, multi-school management, and automated fee tracking.",
       "url": "https://www.trackademiq.com",
       "logo": "https://www.trackademiq.com/logo.png",
       "foundingDate": "2020",
@@ -1864,14 +1914,14 @@ export default function LandingPage() {
         "School Automation",
         "Educational Technology"
       ],
-      "areaServed": "Worldwide",
+      "areaServed": "India",
       "contactPoint": {
         "@type": "ContactPoint",
         "contactType": "Customer Service",
         "email": "info@trackademiq.com",
         "telephone": "+91 9894836016",
         "availableLanguage": ["English", "Hindi", "Tamil"],
-        "areaServed": "Worldwide"
+        "areaServed": "India"
       },
       "address": {
         "@type": "PostalAddress",

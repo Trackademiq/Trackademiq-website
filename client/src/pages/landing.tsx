@@ -284,7 +284,7 @@ function HeroContent({ scrollToContact }: { scrollToContact: () => void }) {
       <motion.div variants={fadeInUp} className="flex justify-center lg:justify-start">
         <Badge className="mb-4 sm:mb-6 bg-gradient-to-r from-indigo-100 to-violet-100 text-indigo-700 border-0 dark:from-indigo-900/50 dark:to-violet-900/50 dark:text-indigo-300 shadow-sm" size="sm">
           <Sparkles className="w-3 h-3 mr-1.5" />
-          AI-Powered Education Intelligence
+          AI-Powered Education ERP
         </Badge>
       </motion.div>
 
@@ -293,10 +293,10 @@ function HeroContent({ scrollToContact }: { scrollToContact: () => void }) {
         className="text-4xl sm:text-5xl md:text-5xl lg:text-6xl font-bold text-slate-900 dark:text-white leading-[1.15] mb-4 sm:mb-6"
         data-testid="text-hero-headline"
       >
-        Next-Generation
+        AI-Powered
         <br />
         <span className="bg-gradient-to-r from-indigo-600 via-violet-600 to-purple-600 bg-clip-text text-transparent">
-          Education Systems
+          Education ERP
         </span>
       </motion.h1>
 
@@ -305,7 +305,7 @@ function HeroContent({ scrollToContact }: { scrollToContact: () => void }) {
         className="text-base sm:text-lg md:text-xl text-slate-600 dark:text-slate-300 mb-6 sm:mb-8 max-w-lg mx-auto lg:mx-0 leading-relaxed"
         data-testid="text-hero-subtext"
       >
-        AI-powered Education ERP — an all-in-one platform for smarter school management.
+        AI that automates every school operation, catches problems early, and delivers insights that help your school improve — all in one platform.
       </motion.p>
 
       <motion.div variants={fadeInUp} className="flex flex-col sm:flex-row gap-3 sm:gap-4 justify-center lg:justify-start">
@@ -335,15 +335,15 @@ function HeroContent({ scrollToContact }: { scrollToContact: () => void }) {
       >
         <div className="flex items-center gap-1.5">
           <Sparkles className="w-4 h-4 text-indigo-500" />
-          <span>AI-Powered Analytics</span>
+          <span>AI Automates Everything</span>
         </div>
         <div className="flex items-center gap-1.5">
           <Clock className="w-4 h-4 text-emerald-500" />
-          <span>8hrs → 15min Report Cards</span>
+          <span>Catches Problems Early</span>
         </div>
         <div className="flex items-center gap-1.5">
           <CheckCircle2 className="w-4 h-4 text-emerald-500" />
-          <span>Built for Schools Worldwide</span>
+          <span>Schools Worldwide</span>
         </div>
       </motion.div>
     </motion.div>
@@ -388,9 +388,9 @@ function HeroSection() {
 function TrustBar() {
   const highlights = [
     { icon: Shield, label: "Cloud-Hosted & Secure", value: "Enterprise-grade security" },
-    { icon: Clock, label: "Setup in Weeks", value: "2-4 week implementation" },
+    { icon: Clock, label: "Setup in Weeks", value: "Go live in weeks" },
     { icon: Globe, label: "Schools Worldwide", value: "Global platform" },
-    { icon: Sparkles, label: "AI at the Core", value: "Not a bolt-on" },
+    { icon: Sparkles, label: "AI at the Core", value: "Automates everything" },
   ];
 
   return (
@@ -439,14 +439,14 @@ function FeaturesSection() {
   }, []);
 
   const allFeatures = [
-    { icon: Brain, title: "AI Analytics", desc: "Predictive insights and student risk detection", color: "from-indigo-500 to-violet-500" },
-    { icon: UserCheck, title: "Attendance", desc: "Biometric & app-based real-time tracking", color: "from-emerald-500 to-teal-500" },
-    { icon: TrendingUp, title: "Marks & Reports", desc: "Automated grading and report generation", color: "from-blue-500 to-cyan-500" },
-    { icon: CreditCard, title: "Fee Management", desc: "Online payments and collection tracking", color: "from-amber-500 to-orange-500" },
-    { icon: BookOpen, title: "Homework", desc: "Assignment tracking and submissions", color: "from-rose-500 to-pink-500" },
-    { icon: MessageSquare, title: "Messaging", desc: "Parent-teacher communication hub", color: "from-purple-500 to-fuchsia-500" },
-    { icon: Clock, title: "Leave Management", desc: "Staff and student leave workflows", color: "from-cyan-500 to-sky-500" },
-    { icon: Building2, title: "Multi-Tenant", desc: "Manage multiple schools in one place", color: "from-slate-500 to-gray-600" }
+    { icon: Brain, title: "AI Analytics", desc: "Auto-detect at-risk students and predict outcomes", color: "from-indigo-500 to-violet-500" },
+    { icon: UserCheck, title: "Attendance", desc: "AI flags irregular patterns before they escalate", color: "from-emerald-500 to-teal-500" },
+    { icon: TrendingUp, title: "Marks & Reports", desc: "Auto-generated report cards and grade analysis", color: "from-blue-500 to-cyan-500" },
+    { icon: CreditCard, title: "Fee Management", desc: "Automated tracking, reminders, and collection insights", color: "from-amber-500 to-orange-500" },
+    { icon: BookOpen, title: "Homework", desc: "AI tracks submissions and predicts delays", color: "from-rose-500 to-pink-500" },
+    { icon: MessageSquare, title: "Messaging", desc: "Smart notifications that reach the right people", color: "from-purple-500 to-fuchsia-500" },
+    { icon: Clock, title: "Leave Management", desc: "Automated workflows with shortage prediction", color: "from-cyan-500 to-sky-500" },
+    { icon: Building2, title: "Multi-Tenant", desc: "AI compares performance across branches", color: "from-slate-500 to-gray-600" }
   ];
   
   const userTypes = [
@@ -533,23 +533,23 @@ function FeaturesSection() {
           <motion.div variants={fadeInUp}>
             <Badge className="mb-3 sm:mb-4 bg-gradient-to-r from-indigo-100 to-violet-100 text-indigo-700 dark:from-indigo-900/50 dark:to-violet-900/50 dark:text-indigo-300 border-0">
               <Sparkles className="w-3 h-3 mr-1" />
-              Complete Platform
+              AI-Powered Education ERP
             </Badge>
           </motion.div>
           <motion.h2
             variants={fadeInUp}
             className="text-2xl sm:text-3xl md:text-4xl font-bold text-slate-900 dark:text-white mb-3 sm:mb-4"
           >
-            Everything You Need in{" "}
+            AI That Powers{" "}
             <span className="bg-gradient-to-r from-indigo-600 to-violet-600 bg-clip-text text-transparent">
-              One Platform
+              Every Part of Your School
             </span>
           </motion.h2>
           <motion.p
             variants={fadeInUp}
             className="text-sm sm:text-base text-indigo-600 dark:text-indigo-400 font-medium max-w-2xl mx-auto mb-5 sm:mb-6"
           >
-            Unlike traditional ERPs, Trackademiq uses AI analytics to catch learning gaps early — delivering detailed academic metrics before problems become failures.
+            From attendance to fees, homework to report cards — AI automates the work, detects issues early, and gives every stakeholder the insights they need to act.
           </motion.p>
 
           {/* View Mode Toggle */}
@@ -811,16 +811,16 @@ function AnalyticsPreviewSection() {
             variants={fadeInUp}
             className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-foreground mb-4 sm:mb-6"
           >
-            AI That Actually{" "}
+            See How AI{" "}
             <span className="bg-gradient-to-r from-indigo-600 to-violet-600 bg-clip-text text-transparent">
-              Understands Schools
+              Runs Your School
             </span>
           </motion.h2>
           <motion.p
             variants={fadeInUp}
             className="text-base sm:text-lg md:text-xl text-muted-foreground max-w-2xl mx-auto"
           >
-            Auto-detect at-risk students, generate report cards in 15 minutes, and get role-specific insights — all powered by AI with built-in data anonymization.
+            Every operation automated. Every problem caught early. Every stakeholder gets exactly the insights they need — powered by AI with built-in data privacy.
           </motion.p>
         </motion.div>
 
@@ -880,7 +880,7 @@ function AnalyticsPreviewSection() {
                 </div>
                 <div className="text-lg sm:text-3xl font-bold text-white">15min</div>
                 <div className="text-violet-400 text-[10px] sm:text-xs mt-0.5 sm:mt-1 flex items-center gap-1">
-                  <Zap className="w-2.5 h-2.5 sm:w-3 sm:h-3" /> <span className="sm:hidden">vs 8hrs manual</span><span className="hidden sm:inline">vs 8 hours manually</span>
+                  <Zap className="w-2.5 h-2.5 sm:w-3 sm:h-3" /> <span className="sm:hidden">AI automated</span><span className="hidden sm:inline">AI-automated generation</span>
                 </div>
               </div>
             </div>
@@ -1109,12 +1109,12 @@ function DemoRequestSection() {
   };
 
   const benefits = [
-    "Secure cloud hosting with ISO compliance",
-    "Data privacy adherence per country regulations",
-    "Dedicated onboarding and training",
+    "AI automates attendance, fees, reports, and more",
+    "At-risk students detected before problems escalate",
+    "Role-specific dashboards for every stakeholder",
     "Multi-tenant architecture for school chains",
-    "Priority support and account management",
-    "Custom integrations and API access"
+    "Secure cloud hosting with data privacy compliance",
+    "Dedicated onboarding, training, and support"
   ];
 
   return (
@@ -1137,14 +1137,13 @@ function DemoRequestSection() {
             variants={fadeInUp}
             className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-white mb-4 sm:mb-6"
           >
-            Why Switch to Trackademiq?
+            Why Schools Choose Trackademiq
           </motion.h2>
           <motion.p
             variants={fadeInUp}
             className="text-base sm:text-lg md:text-xl text-white/80 max-w-3xl mx-auto mb-4 px-2"
           >
-            Experience a <span className="text-white font-semibold">modern, intuitive interface</span> designed for simplicity. 
-            No more clunky systems - our platform is built for the way schools actually work.
+            One AI-powered platform that automates everything — attendance, fees, reports, communication. Every problem is caught early. Every decision is data-driven.
           </motion.p>
           <motion.p
             variants={fadeInUp}
@@ -1606,11 +1605,11 @@ function QuickAnswersSection() {
     },
     {
       question: "How does AI improve school management?",
-      answer: "AI in school management auto-detects at-risk students through attendance and engagement analysis, generates smart report cards (reducing 8 hours to 15 minutes), provides role-specific insights for principals and teachers, and delivers real-time notifications — saving teachers 2-3 hours per week."
+      answer: "AI automates every repetitive task in school management — from attendance tracking and report generation to fee collection and parent communication. More importantly, it catches problems early: flagging at-risk students, detecting attendance anomalies, predicting fee defaults, and surfacing insights that help schools continuously improve."
     },
     {
       question: "Why do schools need automation?",
-      answer: "School automation dramatically reduces manual work — smart report cards alone save hours per class. AI attendance analytics auto-detect at-risk students, automated fee tracking reduces collection overhead, real-time notifications keep parents engaged, and role-specific dashboards enable data-driven decisions."
+      answer: "Schools that don't automate waste countless hours on manual tasks while missing critical signals. AI-powered automation handles attendance, report cards, fee tracking, and communication automatically — but more importantly, it catches learning gaps, attendance drops, and financial issues early enough to act on them."
     },
     {
       question: "How much does Trackademiq cost?",
@@ -1767,8 +1766,7 @@ function Footer() {
                 <span className="text-lg font-bold text-white">Trackademiq</span>
               </div>
               <p className="text-white/70 mb-4 sm:mb-6 max-w-sm text-sm sm:text-base">
-                A simple, secure cloud platform that helps schools run better while keeping parents 
-                informed about their child's education journey.
+                AI-powered Education ERP that automates school operations, catches problems early, and keeps every stakeholder informed and empowered.
               </p>
               <div className="flex items-center gap-4">
                 <div className="text-xs sm:text-sm text-white/60">
@@ -1909,7 +1907,7 @@ export default function LandingPage() {
       "@context": "https://schema.org",
       "@type": "Product",
       "name": "Trackademiq AI-Powered School ERP",
-      "description": "Next-generation AI-powered school ERP platform. Features AI-driven attendance analytics with at-risk student detection, smart report card generation (8 hours to 15 minutes), role-specific AI insights engine, real-time notifications, multi-school management, and automated fee tracking. Built for schools worldwide.",
+      "description": "AI-powered Education ERP that automates every school operation — attendance, fees, reports, homework, communication — and catches problems early through predictive analytics. Role-specific insights for principals, teachers, and parents. Built for schools worldwide.",
       "brand": {
         "@type": "Brand",
         "name": "Trackademiq"
@@ -1921,7 +1919,7 @@ export default function LandingPage() {
       },
       "featureList": [
         "AI-powered attendance analytics with at-risk student detection",
-        "Smart report card generation (8 hours to 15 minutes)",
+        "AI-automated report generation and grade analysis",
         "AI insights engine with role-specific recommendations",
         "Real-time notifications and parent-teacher messaging",
         "Multi-school platform management",
@@ -1938,7 +1936,7 @@ export default function LandingPage() {
       "@type": "Organization",
       "name": "Trackademiq",
       "alternateName": "Trackademiq School ERP",
-      "description": "Next-generation AI-powered School ERP. Features AI attendance analytics, smart report cards, role-specific insights, real-time notifications, multi-school management, and automated fee tracking. Serving schools worldwide.",
+      "description": "AI-powered Education ERP that automates school operations, catches problems early with predictive analytics, and delivers role-specific insights for every stakeholder. Serving schools worldwide.",
       "url": "https://www.trackademiq.com",
       "logo": "https://www.trackademiq.com/logo.png",
       "foundingDate": "2020",

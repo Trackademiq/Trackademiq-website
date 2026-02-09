@@ -17,11 +17,11 @@ const faqCategories = [
     questions: [
       {
         q: "What is Trackademiq?",
-        a: "Trackademiq is a next-generation AI-powered School ERP platform that automates school operations for institutions worldwide. Key capabilities include AI attendance analytics that auto-detect at-risk students, smart report card generation (8 hours to 15 minutes), role-specific AI insights, real-time notifications, multi-school management, and automated fee tracking."
+        a: "Trackademiq is an AI-powered Education ERP that automates every school operation — attendance, fees, reports, homework, and communication. AI catches problems early by detecting at-risk students, flagging attendance anomalies, and predicting issues before they escalate. Role-specific dashboards give principals, teachers, and parents exactly the insights they need."
       },
       {
         q: "What makes Trackademiq different from other school ERP systems?",
-        a: "Trackademiq is built with AI at its core, unlike traditional ERPs that just store data. Key differentiators: AI attendance analytics that auto-detect at-risk students (saves 2-3 hrs/week per teacher), smart report cards (8 hrs to 15 min), a role-specific insights engine where principals see school-wide trends and teachers see class-level data, real-time notifications, and multi-school management with data anonymization."
+        a: "Trackademiq is built with AI at its core, unlike traditional ERPs that just store data. AI automates every repetitive task and catches problems early — from detecting at-risk students to flagging attendance anomalies to predicting fee defaults. Role-specific dashboards ensure principals see school-wide trends while teachers get class-level insights. Everything is automated, nothing falls through the cracks."
       },
       {
         q: "Is Trackademiq suitable for small schools?",
@@ -38,7 +38,7 @@ const faqCategories = [
       },
       {
         q: "What is the ROI of implementing Trackademiq?",
-        a: "Schools benefit from significant time savings — smart report cards alone save teachers hours per class (8 hours to 15 minutes). AI attendance analytics save 2-3 hours per teacher weekly. The platform reduces administrative overhead and improves parent engagement through real-time notifications."
+        a: "AI automates every repetitive task across attendance, reports, fees, and communication — dramatically reducing manual work. More importantly, it catches problems early: at-risk students are flagged before they fall behind, attendance anomalies are detected instantly, and fee defaults are predicted before they happen."
       },
       {
         q: "Are there any setup fees?",
@@ -68,7 +68,7 @@ const faqCategories = [
     questions: [
       {
         q: "What AI features does Trackademiq offer?",
-        a: "Trackademiq's AI auto-detects at-risk students through attendance and engagement analysis, generates smart report cards (8 hours to 15 minutes), provides role-specific insights (principals see school-wide trends, teachers see class-level data), delivers real-time notifications, and processes data with built-in anonymization for privacy."
+        a: "Trackademiq's AI automates every school operation — attendance tracking, report generation, fee management, and communication. It catches problems early by detecting at-risk students, flagging anomalies, and predicting issues. Role-specific dashboards give principals school-wide trends and teachers class-level data, with built-in data anonymization for privacy."
       },
       {
         q: "Can parents access student information?",

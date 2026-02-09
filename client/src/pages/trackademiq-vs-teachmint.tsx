@@ -28,7 +28,7 @@ const comparisons = [
   },
   {
     feature: "Report Card Generation",
-    trackademiq: "AI-powered smart report cards: 8 hours reduced to 15 minutes per class with auto-generated insights",
+    trackademiq: "AI-automated report generation with insights, grade analysis, and performance tracking",
     competitor: "Template-based report cards with manual customization",
     trackademiqHas: true,
     competitorHas: true
@@ -123,7 +123,7 @@ export default function TrackademiqVsTeachmintPage() {
           "name": "What is the difference between Trackademiq and Teachmint?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "Both are modern school ERP platforms, but Trackademiq focuses on deep AI-driven analytics including at-risk student detection, predictive trends, and smart report cards (8 hours to 15 minutes). Teachmint offers basic digital school management with attendance and fee collection. Trackademiq provides more advanced customization and AI-powered insights."
+            "text": "Both are modern school ERP platforms, but Trackademiq is an AI-powered Education ERP that automates every operation and catches problems early — from at-risk student detection to predictive analytics across attendance, fees, and academics. Teachmint offers basic digital school management. Trackademiq provides deeper AI automation and role-specific insights."
           }
         },
         {
@@ -131,7 +131,7 @@ export default function TrackademiqVsTeachmintPage() {
           "name": "Is Trackademiq a good Teachmint alternative?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "Yes, Trackademiq is an excellent Teachmint alternative for schools that need advanced AI analytics, deeper customization, role-specific dashboards, and predictive insights. While Teachmint covers basic school management, Trackademiq goes further with AI-powered attendance analytics, smart report cards, and cross-school intelligence."
+            "text": "Yes, Trackademiq is an excellent Teachmint alternative for schools that need AI-powered automation across all operations, deeper customization, role-specific dashboards, and early problem detection. While Teachmint covers basic school management, Trackademiq automates everything and catches issues before they escalate."
           }
         },
         {
@@ -229,7 +229,7 @@ export default function TrackademiqVsTeachmintPage() {
             >
               <h2 className="text-xl font-semibold mb-4">Quick Summary</h2>
               <p className="text-lg leading-relaxed">
-                Both Trackademiq and Teachmint are modern school management platforms. The key difference? <strong>Trackademiq goes deeper with AI.</strong> From predictive at-risk detection to smart report cards (8 hours → 15 minutes) and natural language queries, Trackademiq turns school data into actionable intelligence — not just digital records.
+                Both Trackademiq and Teachmint are modern school management platforms. The key difference? <strong>Trackademiq is an AI-powered Education ERP that automates everything.</strong> From predictive at-risk detection to automated operations across attendance, fees, reports, and communication — Trackademiq catches problems early and turns school data into actionable intelligence.
               </p>
             </motion.div>
 
@@ -290,7 +290,7 @@ export default function TrackademiqVsTeachmintPage() {
                   </li>
                   <li className="flex items-start gap-2">
                     <ArrowRight className="w-4 h-4 text-indigo-500 flex-shrink-0 mt-0.5" />
-                    <span><strong>Smart Report Cards:</strong> AI generates insights automatically, 8 hrs → 15 min</span>
+                    <span><strong>Full AI Automation:</strong> Every operation automated — reports, fees, attendance, and more</span>
                   </li>
                   <li className="flex items-start gap-2">
                     <ArrowRight className="w-4 h-4 text-indigo-500 flex-shrink-0 mt-0.5" />

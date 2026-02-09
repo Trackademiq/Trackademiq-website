@@ -141,7 +141,7 @@ function CaseStudiesHeader() {
 function StatsSection() {
   const stats = [
     { value: "AI-Powered", label: "Analytics Engine", icon: Building2 },
-    { value: "8hrs→15min", label: "Report Cards", icon: Users },
+    { value: "Automated", label: "Every Operation", icon: Users },
     { value: "Real-Time", label: "Notifications", icon: Target },
     { value: "Multi-School", label: "Management", icon: Award }
   ];

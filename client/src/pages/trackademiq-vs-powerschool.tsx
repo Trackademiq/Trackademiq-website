@@ -28,7 +28,7 @@ const comparisons = [
   },
   {
     feature: "Report Card Generation",
-    trackademiq: "AI-powered smart report cards: 8 hours reduced to 15 minutes per class",
+    trackademiq: "AI-automated report generation with insights and grade analysis",
     competitor: "Template-based report cards requiring significant manual data entry",
     trackademiqHas: true,
     competitorHas: true
@@ -123,7 +123,7 @@ export default function TrackademiqVsPowerschoolPage() {
           "name": "What is the difference between Trackademiq and PowerSchool?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "Trackademiq is a modern AI-first school ERP that offers predictive analytics, smart report cards (8 hours to 15 minutes), and 2-4 week implementation. PowerSchool is an established legacy system with wide integrations but lacks built-in AI capabilities and has a longer implementation timeline of 3-12 months."
+            "text": "Trackademiq is an AI-powered Education ERP that automates every school operation and catches problems early through predictive analytics, with 2-4 week implementation. PowerSchool is an established legacy system with wide integrations but lacks built-in AI capabilities and has a longer implementation timeline of 3-12 months."
           }
         },
         {
@@ -229,7 +229,7 @@ export default function TrackademiqVsPowerschoolPage() {
             >
               <h2 className="text-xl font-semibold mb-4">Quick Summary</h2>
               <p className="text-lg leading-relaxed">
-                PowerSchool is an established player with wide integrations. <strong>Trackademiq is the AI-first alternative</strong> — built from the ground up with predictive analytics, smart report cards (8 hours → 15 minutes), and modern UX. Get started in 2-4 weeks instead of months, at a fraction of the cost.
+                PowerSchool is an established player with wide integrations. <strong>Trackademiq is the AI-first alternative</strong> — an AI-powered Education ERP that automates every operation and catches problems early through predictive analytics. Get started in 2-4 weeks instead of months, at a fraction of the cost.
               </p>
             </motion.div>
 

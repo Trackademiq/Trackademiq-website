@@ -170,7 +170,7 @@ export const blogPosts = [
       <h2>Key Features to Evaluate</h2>
       <ul>
         <li><strong>AI-Powered Analytics:</strong> Modern school ERPs should go beyond data storage. Look for platforms with AI-driven insights that auto-detect at-risk students and provide actionable recommendations for teachers and administrators.</li>
-        <li><strong>Smart Report Card Generation:</strong> Manual report cards consume hours of teacher time. The best school management systems can reduce this from 8 hours to 15 minutes per class through automation.</li>
+        <li><strong>AI-Automated Reporting:</strong> The best school management systems use AI to generate reports, grade analysis, and progress tracking automatically — eliminating hours of manual work per class.</li>
         <li><strong>Attendance Tracking:</strong> Biometric and app-based attendance with instant parent notifications is now table stakes for any serious student information system.</li>
         <li><strong>Fee Management:</strong> Look for integrated payment gateways, automated reminders, and real-time financial dashboards.</li>
         <li><strong>Parent Communication:</strong> Two-way messaging, push notifications, and a dedicated parent portal are essential for engagement.</li>
@@ -208,7 +208,7 @@ export const blogPosts = [
       <h2>What Can Go Digital?</h2>
       <ul>
         <li><strong>Attendance Records:</strong> Replace paper registers with digital attendance tracking that provides instant analytics and parent notifications.</li>
-        <li><strong>Report Cards:</strong> AI-powered report card generation eliminates manual compilation entirely. What took 8 hours per class now takes 15 minutes.</li>
+        <li><strong>Report Cards:</strong> AI-powered report card generation eliminates manual compilation entirely, delivering comprehensive analytics and insights automatically.</li>
         <li><strong>Fee Receipts:</strong> Digital payment confirmations and receipts sent automatically via email and app notifications.</li>
         <li><strong>Homework Assignments:</strong> Digital homework distribution, submission tracking, and grading through a unified platform.</li>
         <li><strong>Circulars and Notices:</strong> Push notifications replace printed circulars, ensuring 90%+ reach rates compared to 60% for paper.</li>

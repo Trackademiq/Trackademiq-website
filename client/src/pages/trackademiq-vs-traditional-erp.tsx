@@ -28,7 +28,7 @@ const comparisons = [
   },
   {
     feature: "Administrative Time Savings",
-    trackademiq: "Smart report cards: 8 hours to 15 minutes per class",
+    trackademiq: "AI automates every repetitive task — reports, attendance, fees, communication",
     traditional: "20-30% at best",
     trackademiqHas: true,
     traditionalHas: false
@@ -89,7 +89,7 @@ export default function TrackademiqVsTraditionalErpPage() {
     document.title = "Trackademiq vs Traditional ERP | Complete Comparison";
     const metaDescription = document.querySelector('meta[name="description"]');
     if (metaDescription) {
-      metaDescription.setAttribute("content", "Compare Trackademiq AI-powered School ERP vs traditional systems. AI attendance analytics, smart report cards (8hrs→15min), role-specific insights, and faster 2-4 week implementation.");
+      metaDescription.setAttribute("content", "Compare Trackademiq AI-powered Education ERP vs traditional systems. AI automates every operation, catches problems early, and delivers role-specific insights with 2-4 week implementation.");
     }
 
     const comparisonSchema = {
@@ -125,7 +125,7 @@ export default function TrackademiqVsTraditionalErpPage() {
           "name": "Why should schools switch from traditional ERP to Trackademiq?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "Schools switch to Trackademiq for smart report cards (8 hours to 15 minutes), AI attendance analytics that save 2-3 hours per teacher weekly, role-specific insights, faster 2-4 week implementation, and proactive alerts that identify issues before they become problems. Traditional ERPs lack these AI-powered capabilities."
+            "text": "Schools switch to Trackademiq because AI automates every operation and catches problems early — at-risk students are detected before they fall behind, attendance anomalies are flagged instantly, and fee defaults are predicted. Plus faster 2-4 week implementation and role-specific insights for every stakeholder."
           }
         }
       ]
@@ -215,7 +215,7 @@ export default function TrackademiqVsTraditionalErpPage() {
             >
               <h2 className="text-xl font-semibold mb-4">Quick Summary</h2>
               <p className="text-lg leading-relaxed">
-                Traditional school ERPs store data. <strong>Trackademiq thinks with it.</strong> With AI-driven at-risk detection, smart report cards (8 hours → 15 minutes), role-specific insights, and 2-4 week implementation (vs 3-6 months), Trackademiq delivers measurable outcomes — not just reports.
+                Traditional school ERPs store data. <strong>Trackademiq thinks with it.</strong> AI automates every operation, catches problems early through predictive analytics, and delivers role-specific insights — all with 2-4 week implementation (vs 3-6 months). Measurable outcomes, not just reports.
               </p>
             </motion.div>
 
@@ -296,7 +296,7 @@ export default function TrackademiqVsTraditionalErpPage() {
                   </li>
                   <li className="flex items-start gap-2">
                     <Check className="w-4 h-4 text-emerald-500 flex-shrink-0 mt-0.5" />
-                    <span>Smart report cards: 8 hrs → 15 min</span>
+                    <span>Every operation automated by AI</span>
                   </li>
                   <li className="flex items-start gap-2">
                     <Check className="w-4 h-4 text-emerald-500 flex-shrink-0 mt-0.5" />

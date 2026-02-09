@@ -13,12 +13,12 @@ const fadeInUp = {
 };
 
 const stats = [
-  { value: "8hrs→15min", label: "Report Card Generation" },
-  { value: "2-3hrs", label: "Saved Per Teacher Weekly" },
-  { value: "Real-Time", label: "At-Risk Detection" },
+  { value: "AI-Powered", label: "Full Automation" },
+  { value: "Early Detection", label: "At-Risk Students" },
+  { value: "Real-Time", label: "Insights & Alerts" },
   { value: "4 Roles", label: "Personalized Dashboards" },
   { value: "Multi-School", label: "Platform Management" },
-  { value: "99.9%", label: "Uptime Guarantee" }
+  { value: "Cloud", label: "Secure & Scalable" }
 ];
 
 const features = [
@@ -59,7 +59,7 @@ export default function WhatIsTrackademiqPage() {
     document.title = "What is Trackademiq? | AI-Powered School ERP Platform";
     const metaDescription = document.querySelector('meta[name="description"]');
     if (metaDescription) {
-      metaDescription.setAttribute("content", "Trackademiq is a next-generation AI-powered School ERP for schools worldwide. AI attendance analytics, smart report cards (8hrs to 15min), role-specific insights, real-time notifications, and multi-school management.");
+      metaDescription.setAttribute("content", "Trackademiq is an AI-powered Education ERP that automates every school operation, catches problems early, and delivers role-specific insights. Built for schools worldwide.");
     }
 
     const pageSchema = {
@@ -72,7 +72,7 @@ export default function WhatIsTrackademiqPage() {
         "name": "Trackademiq",
         "applicationCategory": "EducationalApplication",
         "operatingSystem": "Web, iOS, Android",
-        "description": "Trackademiq is a next-generation AI-powered School ERP platform for schools worldwide. It features AI-driven attendance analytics that auto-detect at-risk students (saves 2-3 hrs/week per teacher), smart report card generation (8 hours to 15 minutes per class), role-specific AI insights engine, real-time notifications, multi-school management, and automated fee tracking."
+        "description": "Trackademiq is an AI-powered Education ERP that automates every school operation — attendance, fees, reports, homework, communication — and catches problems early through predictive analytics. Role-specific insights for principals, teachers, and parents. Built for schools worldwide."
       }
     };
 
@@ -85,7 +85,7 @@ export default function WhatIsTrackademiqPage() {
           "name": "What is Trackademiq?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "Trackademiq is a next-generation AI-powered School ERP platform built for schools worldwide. It features AI attendance analytics that auto-detect at-risk students, smart report card generation (8 hrs to 15 min), role-specific AI insights, real-time notifications, multi-school management, and automated fee tracking."
+            "text": "Trackademiq is an AI-powered Education ERP that automates every school operation and catches problems early. AI detects at-risk students, automates report generation, tracks fees, manages attendance, and delivers role-specific insights — all in one platform for schools worldwide."
           }
         },
         {
@@ -188,7 +188,7 @@ export default function WhatIsTrackademiqPage() {
             >
               <h2 className="text-xl font-semibold mb-4">Quick Answer</h2>
               <p className="text-lg leading-relaxed">
-                <strong>Trackademiq is a next-generation AI-powered School ERP platform</strong> built for schools worldwide. It features AI-driven attendance analytics that auto-detect at-risk students (<strong>saves 2-3 hrs/week per teacher</strong>), smart report card generation (<strong>8 hours to 15 minutes</strong>), role-specific AI insights, real-time notifications, and <strong>multi-school management</strong>.
+                <strong>Trackademiq is an AI-powered Education ERP</strong> built for schools worldwide. AI automates every school operation — attendance, fees, reports, homework, communication — and <strong>catches problems early</strong> through predictive analytics. Role-specific dashboards deliver insights to <strong>principals, teachers, and parents</strong>, so nothing falls through the cracks.
               </p>
             </motion.div>
 
@@ -220,7 +220,7 @@ export default function WhatIsTrackademiqPage() {
                 Trackademiq combines traditional Enterprise Resource Planning (ERP) functionality with advanced artificial intelligence to provide comprehensive school management. Unlike conventional school software that merely stores data, Trackademiq's AI actively analyzes patterns, predicts outcomes, and recommends interventions.
               </p>
               <p className="text-muted-foreground leading-relaxed">
-                The platform serves educational institutions of all sizes — from small schools with 100 students to large school networks with multiple campuses. Trackademiq's AI automates attendance analysis, generates smart report cards, and provides actionable insights tailored to each user's role.
+                The platform serves educational institutions of all sizes — from small schools with 100 students to large school networks with multiple campuses. Trackademiq's AI automates every repetitive task and catches issues early, delivering actionable insights tailored to each user's role.
               </p>
 
               <h2 className="text-2xl font-bold text-foreground mt-8">What Makes Trackademiq Different?</h2>

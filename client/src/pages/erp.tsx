@@ -43,9 +43,9 @@ const erpModules = [
 ];
 
 const benefits = [
-  "Smart report cards: 8 hours to 15 minutes",
+  "AI automates attendance, fees, reports & more",
+  "Early detection of at-risk students",
   "Instant parent notifications",
-  "Paperless school operations",
   "Real-time data & analytics",
   "Mobile apps for all users",
   "Cloud-based access anytime"
@@ -117,7 +117,7 @@ export default function ErpPage() {
                 variants={fadeInUp}
                 className="text-lg text-muted-foreground max-w-2xl mx-auto mb-8"
               >
-                Trackademiq is a next-generation AI-powered school ERP software. AI attendance analytics, smart report cards (8hrs→15min), role-specific insights, and real-time notifications. Built for modern schools.
+                AI-powered Education ERP that automates every school operation. AI catches problems early, automates the work, and delivers role-specific insights to every stakeholder. Built for modern schools worldwide.
               </motion.p>
               <motion.div variants={fadeInUp} className="flex flex-wrap justify-center gap-4">
                 <Link href="/contact">
@@ -186,12 +186,12 @@ export default function ErpPage() {
                 <Card className="p-6 bg-gradient-to-br from-indigo-50 to-violet-50 dark:from-indigo-950/50 dark:to-violet-950/50 border-indigo-100 dark:border-indigo-900">
                   <div className="grid grid-cols-2 gap-4">
                     <div className="text-center p-4">
-                      <div className="text-3xl font-bold text-indigo-600 mb-1">8hrs→15min</div>
-                      <div className="text-sm text-muted-foreground">Report Cards</div>
+                      <div className="text-3xl font-bold text-indigo-600 mb-1">AI-Powered</div>
+                      <div className="text-sm text-muted-foreground">Full Automation</div>
                     </div>
                     <div className="text-center p-4">
-                      <div className="text-3xl font-bold text-indigo-600 mb-1">2-3hrs</div>
-                      <div className="text-sm text-muted-foreground">Saved Weekly/Teacher</div>
+                      <div className="text-3xl font-bold text-indigo-600 mb-1">Early</div>
+                      <div className="text-sm text-muted-foreground">Problem Detection</div>
                     </div>
                     <div className="text-center p-4">
                       <div className="text-3xl font-bold text-indigo-600 mb-1">Real-Time</div>

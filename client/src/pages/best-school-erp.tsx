@@ -114,7 +114,7 @@ const aiTransformations = [
     icon: BarChart3,
     title: "Automated Reporting",
     description:
-      "Generate comprehensive report cards and analytics in minutes instead of hours. Smart report card generation reduces time from 8 hours to 15 minutes per class.",
+      "AI automates report generation, grade analysis, and progress tracking. Comprehensive analytics delivered instantly — no manual work needed.",
   },
   {
     icon: Clock,
@@ -437,10 +437,10 @@ export default function BestSchoolErpPage() {
               </h3>
               <p className="text-white/90 leading-relaxed mb-4">
                 Traditional school ERPs act as digital filing cabinets — they store data but
-                don't help you act on it. The top school management systems in 2025 use AI to
-                surface patterns, predict outcomes, and recommend actions. Schools using
-                AI-powered ERPs report saving 2-3 hours per teacher weekly and reducing report
-                card generation time from 8 hours to just 15 minutes per class.
+                don't help you act on it. The best school management systems in 2025 use AI to
+                automate every operation, catch problems early, and deliver actionable insights.
+                AI-powered ERPs detect at-risk students before they fall behind, automate
+                report generation, predict fee defaults, and keep every stakeholder informed.
               </p>
               <p className="text-white/80 text-sm">
                 Cloud school management software with AI capabilities isn't just an upgrade — it's

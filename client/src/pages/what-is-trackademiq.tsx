@@ -59,7 +59,7 @@ export default function WhatIsTrackademiqPage() {
     document.title = "What is Trackademiq? | AI-Powered School ERP Platform";
     const metaDescription = document.querySelector('meta[name="description"]');
     if (metaDescription) {
-      metaDescription.setAttribute("content", "Trackademiq is a next-generation AI-powered School ERP from Chennai. AI attendance analytics, smart report cards (8hrs to 15min), role-specific insights, real-time notifications, and multi-school management.");
+      metaDescription.setAttribute("content", "Trackademiq is a next-generation AI-powered School ERP for schools worldwide. AI attendance analytics, smart report cards (8hrs to 15min), role-specific insights, real-time notifications, and multi-school management.");
     }
 
     const pageSchema = {
@@ -72,7 +72,7 @@ export default function WhatIsTrackademiqPage() {
         "name": "Trackademiq",
         "applicationCategory": "EducationalApplication",
         "operatingSystem": "Web, iOS, Android",
-        "description": "Trackademiq is a next-generation AI-powered School ERP platform from Chennai, India. It features AI-driven attendance analytics that auto-detect at-risk students (saves 2-3 hrs/week per teacher), smart report card generation (8 hours to 15 minutes per class), role-specific AI insights engine, real-time notifications, multi-school management, and automated fee tracking."
+        "description": "Trackademiq is a next-generation AI-powered School ERP platform for schools worldwide. It features AI-driven attendance analytics that auto-detect at-risk students (saves 2-3 hrs/week per teacher), smart report card generation (8 hours to 15 minutes per class), role-specific AI insights engine, real-time notifications, multi-school management, and automated fee tracking."
       }
     };
 
@@ -85,7 +85,7 @@ export default function WhatIsTrackademiqPage() {
           "name": "What is Trackademiq?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "Trackademiq is a next-generation AI-powered School ERP platform from Chennai, India. It features AI attendance analytics that auto-detect at-risk students, smart report card generation (8 hrs to 15 min), role-specific AI insights, real-time notifications, multi-school management, and automated fee tracking."
+            "text": "Trackademiq is a next-generation AI-powered School ERP platform built for schools worldwide. It features AI attendance analytics that auto-detect at-risk students, smart report card generation (8 hrs to 15 min), role-specific AI insights, real-time notifications, multi-school management, and automated fee tracking."
           }
         },
         {
@@ -188,7 +188,7 @@ export default function WhatIsTrackademiqPage() {
             >
               <h2 className="text-xl font-semibold mb-4">Quick Answer</h2>
               <p className="text-lg leading-relaxed">
-                <strong>Trackademiq is a next-generation AI-powered School ERP platform</strong> built in Chennai, India. It features AI-driven attendance analytics that auto-detect at-risk students (<strong>saves 2-3 hrs/week per teacher</strong>), smart report card generation (<strong>8 hours to 15 minutes</strong>), role-specific AI insights, real-time notifications, and <strong>multi-school management</strong>.
+                <strong>Trackademiq is a next-generation AI-powered School ERP platform</strong> built for schools worldwide. It features AI-driven attendance analytics that auto-detect at-risk students (<strong>saves 2-3 hrs/week per teacher</strong>), smart report card generation (<strong>8 hours to 15 minutes</strong>), role-specific AI insights, real-time notifications, and <strong>multi-school management</strong>.
               </p>
             </motion.div>
 

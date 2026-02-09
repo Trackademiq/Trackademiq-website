@@ -119,7 +119,7 @@ export default function BlogPostPage() {
               Ready to Transform Your School?
             </h2>
             <p className="text-white/80 mb-6 max-w-xl mx-auto">
-              Join schools across Chennai using Trackademiq to streamline operations and enhance learning outcomes.
+              Join schools worldwide using Trackademiq to streamline operations and enhance learning outcomes.
             </p>
             <Link href="/#contact">
               <Button size="lg" className="bg-white text-teal-600 hover:bg-white/90">

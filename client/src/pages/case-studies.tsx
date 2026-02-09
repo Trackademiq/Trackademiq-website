@@ -36,9 +36,9 @@ const staggerContainer = {
 const caseStudies = [
   {
     id: 1,
-    school: "Chennai Public School",
-    location: "Anna Nagar, Chennai",
-    type: "CBSE School",
+    school: "Greenfield Academy",
+    location: "K-12 Institution",
+    type: "International School",
     students: "2,500+",
     image: schoolsImage,
     challenge: "Managing attendance for 2,500+ students across multiple buildings was time-consuming and error-prone. Parents had no real-time visibility into their child's attendance.",
@@ -56,9 +56,9 @@ const caseStudies = [
   },
   {
     id: 2,
-    school: "St. Mary's Matriculation School",
-    location: "T. Nagar, Chennai",
-    type: "Matriculation School",
+    school: "St. Mary's School",
+    location: "Urban District",
+    type: "Private School",
     students: "1,800+",
     image: teachersImage,
     challenge: "Fee collection was a major headache with manual tracking, late payments, and parent complaints about lack of transparency.",
@@ -76,9 +76,9 @@ const caseStudies = [
   },
   {
     id: 3,
-    school: "DAV School Chennai",
-    location: "Mogappair, Chennai",
-    type: "CBSE School",
+    school: "DAV Public School",
+    location: "Metropolitan Area",
+    type: "Multi-Campus School",
     students: "3,200+",
     image: parentsImage,
     challenge: "Communication between teachers and parents was fragmented. Important messages were often missed, leading to confusion and complaints.",
@@ -124,13 +124,13 @@ function CaseStudiesHeader() {
             variants={fadeInUp}
             className="text-4xl md:text-5xl font-bold text-white mb-4"
           >
-            Chennai School Success Stories
+            School Success Stories
           </motion.h1>
           <motion.p
             variants={fadeInUp}
             className="text-lg text-white/80 max-w-2xl mx-auto"
           >
-            See how schools across Chennai are transforming their operations with Trackademiq
+            See how schools worldwide are transforming their operations with Trackademiq
           </motion.p>
         </motion.div>
       </div>
@@ -276,7 +276,7 @@ function CTASection() {
             Ready to Write Your Success Story?
           </motion.h2>
           <motion.p variants={fadeInUp} className="text-lg text-white/80 mb-8 max-w-2xl mx-auto">
-            Join schools across Chennai transforming their operations with Trackademiq's AI-powered platform.
+            Join schools worldwide transforming their operations with Trackademiq's AI-powered platform.
           </motion.p>
           <motion.div variants={fadeInUp} className="flex flex-col sm:flex-row gap-4 justify-center">
             <Link href="/#contact">

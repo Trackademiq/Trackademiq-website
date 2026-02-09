@@ -149,7 +149,7 @@ function ProductTourHeader() {
             variants={fadeInUp}
             className="text-lg text-white/80 max-w-2xl mx-auto"
           >
-            Take an interactive walkthrough of all the powerful features that make Trackademiq the preferred choice for schools across Chennai
+            Take an interactive walkthrough of all the powerful features that make Trackademiq the preferred choice for modern schools
           </motion.p>
         </motion.div>
       </div>

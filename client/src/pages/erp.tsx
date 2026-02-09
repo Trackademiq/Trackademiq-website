@@ -56,7 +56,7 @@ export default function ErpPage() {
     document.title = "School ERP Software | Trackademiq - AI-Powered Solution";
     const metaDescription = document.querySelector('meta[name="description"]');
     if (metaDescription) {
-      metaDescription.setAttribute("content", "Trackademiq is a next-generation AI-powered school ERP. AI attendance analytics, smart report cards, real-time notifications, multi-school management & automated fee tracking. Built in Chennai.");
+      metaDescription.setAttribute("content", "Trackademiq is a next-generation AI-powered school ERP. AI attendance analytics, smart report cards, real-time notifications, multi-school management & automated fee tracking. Built for schools worldwide.");
     }
     const ogTitle = document.querySelector('meta[property="og:title"]');
     if (ogTitle) {

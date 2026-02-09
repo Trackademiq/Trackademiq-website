@@ -7,55 +7,15 @@
   <!-- Homepage -->
   <url>
     <loc>https://trackademiq.com/</loc>
-    <lastmod>2026-02-02</lastmod>
+    <lastmod>2026-02-09</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
-  </url>
-  
-  <!-- Features Section -->
-  <url>
-    <loc>https://trackademiq.com/#features</loc>
-    <lastmod>2026-02-02</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.9</priority>
-  </url>
-  
-  <!-- Get Started / Pricing -->
-  <url>
-    <loc>https://trackademiq.com/#get-started</loc>
-    <lastmod>2026-02-02</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  
-  <!-- Analytics Preview -->
-  <url>
-    <loc>https://trackademiq.com/#analytics-preview</loc>
-    <lastmod>2026-02-02</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  
-  <!-- Testimonials -->
-  <url>
-    <loc>https://trackademiq.com/#testimonials</loc>
-    <lastmod>2026-02-02</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  
-  <!-- Contact -->
-  <url>
-    <loc>https://trackademiq.com/#contact</loc>
-    <lastmod>2026-02-02</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.9</priority>
   </url>
   
   <!-- Features Page -->
   <url>
     <loc>https://trackademiq.com/features</loc>
-    <lastmod>2026-02-02</lastmod>
+    <lastmod>2026-02-09</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
@@ -63,15 +23,15 @@
   <!-- School ERP Page -->
   <url>
     <loc>https://trackademiq.com/erp</loc>
-    <lastmod>2026-02-02</lastmod>
+    <lastmod>2026-02-09</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
   
-  <!-- Pricing Page -->
+  <!-- Best School ERP Guide -->
   <url>
-    <loc>https://trackademiq.com/pricing</loc>
-    <lastmod>2026-02-02</lastmod>
+    <loc>https://trackademiq.com/best-school-erp</loc>
+    <lastmod>2026-02-09</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
@@ -79,73 +39,141 @@
   <!-- Contact Page -->
   <url>
     <loc>https://trackademiq.com/contact</loc>
-    <lastmod>2026-02-02</lastmod>
+    <lastmod>2026-02-09</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
-  </url>
-  
-  <!-- Privacy Policy -->
-  <url>
-    <loc>https://trackademiq.com/privacy-policy</loc>
-    <lastmod>2026-02-02</lastmod>
-    <changefreq>yearly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  
-  <!-- Terms of Service -->
-  <url>
-    <loc>https://trackademiq.com/terms</loc>
-    <lastmod>2026-02-02</lastmod>
-    <changefreq>yearly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  
-  <!-- Refund Policy -->
-  <url>
-    <loc>https://trackademiq.com/refund-policy</loc>
-    <lastmod>2026-02-02</lastmod>
-    <changefreq>yearly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  
-  <!-- Blog -->
-  <url>
-    <loc>https://trackademiq.com/blog</loc>
-    <lastmod>2026-02-02</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  
-  <!-- Product Tour -->
-  <url>
-    <loc>https://trackademiq.com/product-tour</loc>
-    <lastmod>2026-02-02</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
   </url>
   
   <!-- FAQ Page -->
   <url>
     <loc>https://trackademiq.com/faq</loc>
-    <lastmod>2026-02-05</lastmod>
+    <lastmod>2026-02-09</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
   
-  <!-- What is Trackademiq Page -->
+  <!-- What is Trackademiq -->
   <url>
     <loc>https://trackademiq.com/what-is-trackademiq</loc>
-    <lastmod>2026-02-05</lastmod>
+    <lastmod>2026-02-09</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
   
-  <!-- Comparison Page -->
+  <!-- Comparison Pages -->
   <url>
     <loc>https://trackademiq.com/trackademiq-vs-traditional-erp</loc>
-    <lastmod>2026-02-05</lastmod>
+    <lastmod>2026-02-09</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://trackademiq.com/trackademiq-vs-powerschool</loc>
+    <lastmod>2026-02-09</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://trackademiq.com/trackademiq-vs-teachmint</loc>
+    <lastmod>2026-02-09</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  
+  <!-- Blog -->
+  <url>
+    <loc>https://trackademiq.com/blog</loc>
+    <lastmod>2026-02-09</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  
+  <!-- Blog Posts -->
+  <url>
+    <loc>https://trackademiq.com/blog/ai-transforming-school-education</loc>
+    <lastmod>2026-02-09</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://trackademiq.com/blog/digital-attendance-systems</loc>
+    <lastmod>2026-02-09</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://trackademiq.com/blog/parent-teacher-communication</loc>
+    <lastmod>2026-02-09</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://trackademiq.com/blog/fee-management-best-practices</loc>
+    <lastmod>2026-02-09</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://trackademiq.com/blog/how-to-choose-school-erp</loc>
+    <lastmod>2026-02-09</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://trackademiq.com/blog/paperless-school-management</loc>
+    <lastmod>2026-02-09</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://trackademiq.com/blog/ai-attendance-analytics-guide</loc>
+    <lastmod>2026-02-09</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  
+  <!-- Product Tour -->
+  <url>
+    <loc>https://trackademiq.com/product-tour</loc>
+    <lastmod>2026-02-09</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  
+  <!-- Case Studies -->
+  <url>
+    <loc>https://trackademiq.com/case-studies</loc>
+    <lastmod>2026-02-09</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  
+  <!-- Pricing Page -->
+  <url>
+    <loc>https://trackademiq.com/pricing</loc>
+    <lastmod>2026-02-09</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  
+  <!-- Legal Pages -->
+  <url>
+    <loc>https://trackademiq.com/privacy-policy</loc>
+    <lastmod>2026-02-09</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.4</priority>
+  </url>
+  <url>
+    <loc>https://trackademiq.com/terms</loc>
+    <lastmod>2026-02-09</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.4</priority>
+  </url>
+  <url>
+    <loc>https://trackademiq.com/refund-policy</loc>
+    <lastmod>2026-02-09</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.4</priority>
   </url>
   
 </urlset>

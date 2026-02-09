@@ -29,6 +29,10 @@ import RefundPolicyPage from "@/pages/refund-policy";
 import FaqPage from "@/pages/faq";
 import WhatIsTrackademiqPage from "@/pages/what-is-trackademiq";
 import TrackademiqVsTraditionalErpPage from "@/pages/trackademiq-vs-traditional-erp";
+import TrackademiqVsPowerschoolPage from "@/pages/trackademiq-vs-powerschool";
+import TrackademiqVsTeachmintPage from "@/pages/trackademiq-vs-teachmint";
+import BestSchoolErpPage from "@/pages/best-school-erp";
+import CaseStudiesPage from "@/pages/case-studies";
 
 function Router() {
   return (
@@ -44,6 +48,10 @@ function Router() {
       <Route path="/faq" component={FaqPage} />
       <Route path="/what-is-trackademiq" component={WhatIsTrackademiqPage} />
       <Route path="/trackademiq-vs-traditional-erp" component={TrackademiqVsTraditionalErpPage} />
+      <Route path="/trackademiq-vs-powerschool" component={TrackademiqVsPowerschoolPage} />
+      <Route path="/trackademiq-vs-teachmint" component={TrackademiqVsTeachmintPage} />
+      <Route path="/best-school-erp" component={BestSchoolErpPage} />
+      <Route path="/case-studies" component={CaseStudiesPage} />
       <Route path="/blog" component={BlogPage} />
       <Route path="/blog/:id" component={BlogPostPage} />
       <Route path="/product-tour" component={ProductTourPage} />

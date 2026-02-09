@@ -30,21 +30,21 @@ const staggerContainer = {
 
 export const blogPosts = [
   {
-    id: "ai-transforming-indian-education",
-    title: "How AI is Transforming Indian School Education in 2024",
-    excerpt: "Discover how artificial intelligence is revolutionizing teaching methods, student assessment, and administrative tasks in schools across India.",
+    id: "ai-transforming-school-education",
+    title: "How AI is Transforming School Education in 2025",
+    excerpt: "Discover how artificial intelligence is revolutionizing teaching methods, student assessment, and administrative tasks in schools worldwide.",
     category: "AI in Education",
     author: "Dr. Priya Sharma",
     date: "December 5, 2024",
     readTime: "8 min read",
     icon: Sparkles,
     content: `
-      <p>Artificial Intelligence is no longer a futuristic concept in Indian education—it's a present reality transforming how schools operate across Chennai and beyond. From personalized learning paths to automated administrative tasks, AI is helping educators focus on what matters most: teaching.</p>
+      <p>Artificial Intelligence is no longer a futuristic concept in education — it's a present reality transforming how schools operate worldwide. From personalized learning paths to automated administrative tasks, AI is helping educators focus on what matters most: teaching.</p>
       
       <h2>The Rise of AI-Powered Learning</h2>
-      <p>Indian schools are increasingly adopting AI tools to identify learning gaps, predict student performance, and provide tailored educational experiences. Tools like Trackademiq are at the forefront of this revolution, offering schools powerful analytics that were previously only available to large institutions.</p>
+      <p>Schools are increasingly adopting AI tools to identify learning gaps, predict student performance, and provide tailored educational experiences. Tools like Trackademiq are at the forefront of this revolution, offering schools powerful analytics that were previously only available to large institutions.</p>
       
-      <h2>Key Benefits for Indian Schools</h2>
+      <h2>Key Benefits for Modern Schools</h2>
       <ul>
         <li><strong>Early Intervention:</strong> AI algorithms can identify struggling students before they fall behind, allowing teachers to provide timely support.</li>
         <li><strong>Reduced Administrative Burden:</strong> Automated attendance, fee management, and report generation free up valuable time for educators.</li>
@@ -52,11 +52,11 @@ export const blogPosts = [
         <li><strong>Parent Engagement:</strong> Real-time updates keep parents informed and involved in their child's education journey.</li>
       </ul>
       
-      <h2>The Chennai EdTech Revolution</h2>
-      <p>Chennai has emerged as a hub for educational technology innovation. With companies like Trackademiq leading the charge, local schools are gaining access to world-class tools that enhance learning outcomes while respecting the unique cultural and educational context of India.</p>
+      <h2>The Global EdTech Revolution</h2>
+      <p>Schools around the world are gaining access to world-class AI tools that enhance learning outcomes. Companies like Trackademiq are leading this charge, making powerful education analytics accessible to schools of all sizes.</p>
       
       <h2>Looking Ahead</h2>
-      <p>As AI continues to evolve, we can expect even more sophisticated tools that will further personalize education, make assessments more meaningful, and help every student reach their full potential. The future of Indian education is bright, and it's powered by AI.</p>
+      <p>As AI continues to evolve, we can expect even more sophisticated tools that will further personalize education, make assessments more meaningful, and help every student reach their full potential. The future of education is bright, and it's powered by AI.</p>
     `
   },
   {
@@ -69,7 +69,7 @@ export const blogPosts = [
     readTime: "6 min read",
     icon: Users,
     content: `
-      <p>Traditional paper-based attendance systems are giving way to digital solutions that offer unprecedented accuracy, efficiency, and insights. For Indian schools managing hundreds or thousands of students, digital attendance is no longer a luxury—it's a necessity.</p>
+      <p>Traditional paper-based attendance systems are giving way to digital solutions that offer unprecedented accuracy, efficiency, and insights. For schools managing hundreds or thousands of students, digital attendance is no longer a luxury — it's a necessity.</p>
       
       <h2>The Problem with Paper-Based Systems</h2>
       <p>Manual attendance tracking is prone to errors, time-consuming, and provides limited visibility to parents and administrators. A single teacher calling out names for 50 students every period adds up to hours of lost teaching time each week.</p>
@@ -83,7 +83,7 @@ export const blogPosts = [
       </ul>
       
       <h2>Implementation Success Stories</h2>
-      <p>Schools in Chennai that have adopted Trackademiq's digital attendance system report 40% reduction in time spent on attendance-related tasks and near-perfect accuracy in their records. Parents particularly appreciate the instant notifications feature.</p>
+      <p>Schools that have adopted Trackademiq's digital attendance system report significant reduction in time spent on attendance-related tasks and near-perfect accuracy in their records. Parents particularly appreciate the instant notifications feature.</p>
       
       <h2>Getting Started</h2>
       <p>Transitioning to digital attendance doesn't have to be complex. With the right partner, schools can be up and running within days, with full training and support provided throughout the process.</p>
@@ -154,6 +154,103 @@ export const blogPosts = [
       <h2>Implementation Tips</h2>
       <p>Start the transition at the beginning of an academic year, provide training to staff and parents, and maintain a support channel for questions during the initial months. The investment pays off quickly in time saved and improved collections.</p>
     `
+  },
+  {
+    id: "how-to-choose-school-erp",
+    title: "How to Choose the Right School ERP Software in 2025",
+    excerpt: "A comprehensive buyer's guide for school administrators evaluating ERP solutions. Learn what features matter most and how to avoid common pitfalls.",
+    category: "Buyer's Guide",
+    author: "Dr. Priya Sharma",
+    date: "January 15, 2025",
+    readTime: "10 min read",
+    icon: Sparkles,
+    content: `
+      <p>Choosing the right school ERP software is one of the most important technology decisions a school can make. The right platform streamlines operations, improves communication, and ultimately enhances student outcomes. The wrong choice can mean wasted budget, frustrated staff, and minimal adoption.</p>
+
+      <h2>Key Features to Evaluate</h2>
+      <ul>
+        <li><strong>AI-Powered Analytics:</strong> Modern school ERPs should go beyond data storage. Look for platforms with AI-driven insights that auto-detect at-risk students and provide actionable recommendations for teachers and administrators.</li>
+        <li><strong>Smart Report Card Generation:</strong> Manual report cards consume hours of teacher time. The best school management systems can reduce this from 8 hours to 15 minutes per class through automation.</li>
+        <li><strong>Attendance Tracking:</strong> Biometric and app-based attendance with instant parent notifications is now table stakes for any serious student information system.</li>
+        <li><strong>Fee Management:</strong> Look for integrated payment gateways, automated reminders, and real-time financial dashboards.</li>
+        <li><strong>Parent Communication:</strong> Two-way messaging, push notifications, and a dedicated parent portal are essential for engagement.</li>
+        <li><strong>Multi-School Support:</strong> If you manage multiple campuses, ensure the platform supports centralized management with campus-level customization.</li>
+      </ul>
+
+      <h2>Red Flags to Watch For</h2>
+      <ul>
+        <li>Long implementation timelines (6+ months) suggest a complex, rigid system</li>
+        <li>No mobile app or poor mobile experience</li>
+        <li>Lack of role-based dashboards for different stakeholders</li>
+        <li>No data export capabilities or vendor lock-in</li>
+        <li>Hidden costs for basic features like SMS notifications or report generation</li>
+      </ul>
+
+      <h2>Questions to Ask During a Demo</h2>
+      <p>Ask vendors about implementation timeline, data migration support, training provided, ongoing support, and total cost of ownership including all modules you need. A transparent vendor will welcome these questions.</p>
+
+      <h2>Making the Final Decision</h2>
+      <p>The best school ERP for your institution is one that fits your specific workflows, budget, and growth plans. Pilot the software with a small group before full deployment, and ensure the vendor provides dedicated implementation support.</p>
+    `
+  },
+  {
+    id: "paperless-school-management",
+    title: "The Complete Guide to Paperless School Management",
+    excerpt: "How schools are eliminating paper-based processes with cloud-based ERP systems, saving costs, improving efficiency, and going green.",
+    category: "School Management",
+    author: "Rajesh Kumar",
+    date: "January 8, 2025",
+    readTime: "7 min read",
+    icon: BookOpen,
+    content: `
+      <p>The shift from paper-based to digital school management is accelerating. Schools that embrace cloud-based ERP systems are seeing dramatic improvements in efficiency, cost savings, and environmental impact. Here's your roadmap to going paperless.</p>
+
+      <h2>What Can Go Digital?</h2>
+      <ul>
+        <li><strong>Attendance Records:</strong> Replace paper registers with digital attendance tracking that provides instant analytics and parent notifications.</li>
+        <li><strong>Report Cards:</strong> AI-powered report card generation eliminates manual compilation entirely. What took 8 hours per class now takes 15 minutes.</li>
+        <li><strong>Fee Receipts:</strong> Digital payment confirmations and receipts sent automatically via email and app notifications.</li>
+        <li><strong>Homework Assignments:</strong> Digital homework distribution, submission tracking, and grading through a unified platform.</li>
+        <li><strong>Circulars and Notices:</strong> Push notifications replace printed circulars, ensuring 90%+ reach rates compared to 60% for paper.</li>
+        <li><strong>Leave Applications:</strong> Online leave management with approval workflows replaces paper forms and manual tracking.</li>
+      </ul>
+
+      <h2>Cost Savings</h2>
+      <p>A typical school with 1,000 students spends thousands on printing, paper, and distribution each year. Cloud-based school management software eliminates most of this cost while providing better record-keeping and accessibility.</p>
+
+      <h2>Getting Started</h2>
+      <p>Begin with the highest-impact areas: attendance and fee management. These generate immediate efficiency gains and high visibility with parents. Then progressively digitize communication, homework, and report cards. Most schools complete the full transition within one academic year.</p>
+    `
+  },
+  {
+    id: "ai-attendance-analytics-guide",
+    title: "AI Attendance Analytics: How Smart Schools Predict and Prevent Student Dropouts",
+    excerpt: "Learn how AI-powered attendance tracking goes beyond marking present or absent to predict at-risk students and enable early intervention.",
+    category: "AI in Education",
+    author: "Lakshmi Venkatesh",
+    date: "December 20, 2024",
+    readTime: "8 min read",
+    icon: TrendingUp,
+    content: `
+      <p>Traditional attendance tracking tells you who was absent today. AI-powered attendance analytics tells you who is likely to drop out next month. This fundamental shift from reactive to proactive school management is transforming student outcomes worldwide.</p>
+
+      <h2>How AI Attendance Analytics Works</h2>
+      <p>AI systems analyze patterns across attendance data, grade trends, and engagement metrics to identify students showing early warning signs. Unlike manual monitoring, AI can process data from hundreds of students simultaneously and flag concerns that human observation might miss.</p>
+
+      <h2>Key Capabilities</h2>
+      <ul>
+        <li><strong>Pattern Detection:</strong> AI identifies irregular attendance patterns — not just absences, but late arrivals, partial-day absences, and declining engagement trends.</li>
+        <li><strong>At-Risk Flagging:</strong> Students showing multiple risk indicators are automatically flagged for teacher attention, enabling intervention before problems escalate.</li>
+        <li><strong>Teacher Time Savings:</strong> Teachers save 2-3 hours per week through automated attendance tracking and analytics, time that can be redirected to teaching and mentoring.</li>
+        <li><strong>Parent Notification:</strong> Real-time alerts ensure parents know immediately when their child is marked absent, enabling quick follow-up.</li>
+      </ul>
+
+      <h2>Implementation Best Practices</h2>
+      <p>Start by ensuring consistent digital attendance recording. After 2-3 months of data collection, AI patterns become meaningful. Train teachers on reading and acting on AI-generated insights, and establish clear intervention protocols for flagged students.</p>
+
+      <h2>The Impact</h2>
+      <p>Schools using AI attendance analytics report earlier identification of at-risk students, improved attendance rates, and better parent engagement. The key is combining AI insights with human judgment and compassionate intervention.</p>
+    `
   }
 ];
 
@@ -185,7 +282,7 @@ function BlogHeader() {
             variants={fadeInUp}
             className="text-lg text-white/80 max-w-2xl mx-auto"
           >
-            Expert articles on school management, educational technology, and best practices for Indian schools
+            Expert articles on school management, educational technology, and best practices for modern schools
           </motion.p>
         </motion.div>
       </div>
@@ -268,7 +365,7 @@ function BlogFooter() {
             </span>
           </motion.div>
           <motion.p variants={fadeInUp} className="text-muted-foreground mb-6">
-            Empowering Indian schools with smart technology
+            Empowering schools worldwide with smart technology
           </motion.p>
           <motion.div variants={fadeInUp}>
             <Link href="/#contact">

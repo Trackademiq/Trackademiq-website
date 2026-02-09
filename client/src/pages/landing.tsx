@@ -39,7 +39,8 @@ import {
   Clock,
   TrendingUp,
   Zap,
-  LayoutGrid
+  LayoutGrid,
+  Globe
 } from "lucide-react";
 import { SiLinkedin, SiFacebook, SiInstagram, SiX, SiYoutube } from "react-icons/si";
 
@@ -342,7 +343,7 @@ function HeroContent({ scrollToContact }: { scrollToContact: () => void }) {
         </div>
         <div className="flex items-center gap-1.5">
           <CheckCircle2 className="w-4 h-4 text-emerald-500" />
-          <span>Made in Chennai</span>
+          <span>Built for Schools Worldwide</span>
         </div>
       </motion.div>
     </motion.div>
@@ -384,6 +385,41 @@ function HeroSection() {
   );
 }
 
+function TrustBar() {
+  const highlights = [
+    { icon: Shield, label: "Cloud-Hosted & Secure", value: "Enterprise-grade security" },
+    { icon: Clock, label: "Setup in Weeks", value: "2-4 week implementation" },
+    { icon: Globe, label: "Schools Worldwide", value: "Global platform" },
+    { icon: Sparkles, label: "AI at the Core", value: "Not a bolt-on" },
+  ];
+
+  return (
+    <section className="py-4 sm:py-6 bg-gradient-to-r from-indigo-600 via-violet-600 to-purple-600 relative overflow-hidden" data-testid="section-trust-bar">
+      <div className="absolute inset-0 bg-[radial-gradient(circle_at_50%_0%,rgba(255,255,255,0.1),transparent_70%)]" />
+      <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="grid grid-cols-2 sm:grid-cols-4 gap-4 sm:gap-8">
+          {highlights.map((item, idx) => (
+            <motion.div
+              key={idx}
+              initial={{ opacity: 0, y: 10 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ delay: idx * 0.1, duration: 0.4 }}
+              className="flex items-center gap-2.5 justify-center"
+            >
+              <item.icon className="w-5 h-5 text-white/80 flex-shrink-0" />
+              <div>
+                <div className="text-white font-semibold text-xs sm:text-sm leading-tight">{item.label}</div>
+                <div className="text-white/60 text-[10px] sm:text-xs leading-tight">{item.value}</div>
+              </div>
+            </motion.div>
+          ))}
+        </div>
+      </div>
+    </section>
+  );
+}
+
 function FeaturesSection() {
   const [viewMode, setViewMode] = useState<'modules' | 'roles'>('roles');
   const [activeTab, setActiveTab] = useState(0);
@@ -418,7 +454,7 @@ function FeaturesSection() {
       icon: GraduationCap,
       title: "Students",
       image: studentsImage,
-      imageAlt: "Indian students in modern classroom",
+      imageAlt: "Students learning in modern classroom with technology",
       color: "from-indigo-500 to-indigo-600",
       glowColor: "group-hover:shadow-indigo-500/40",
       bgColor: "bg-gradient-to-br from-indigo-50/80 to-white/60 dark:from-indigo-950/40 dark:to-slate-900/60",
@@ -435,7 +471,7 @@ function FeaturesSection() {
       icon: Users,
       title: "Teachers",
       image: teachersImage,
-      imageAlt: "Indian teacher using tablet with students",
+      imageAlt: "Teacher using tablet for smart classroom management",
       color: "from-emerald-500 to-emerald-600",
       glowColor: "group-hover:shadow-emerald-500/40",
       bgColor: "bg-gradient-to-br from-emerald-50/80 to-white/60 dark:from-emerald-950/40 dark:to-slate-900/60",
@@ -452,7 +488,7 @@ function FeaturesSection() {
       icon: Heart,
       title: "Parents",
       image: parentsImage,
-      imageAlt: "Indian mother helping child with homework",
+      imageAlt: "Parent engaged in child's education journey",
       color: "from-rose-500 to-rose-600",
       glowColor: "group-hover:shadow-rose-500/40",
       bgColor: "bg-gradient-to-br from-rose-50/80 to-white/60 dark:from-rose-950/40 dark:to-slate-900/60",
@@ -469,7 +505,7 @@ function FeaturesSection() {
       icon: Shield,
       title: "Administrators",
       image: schoolsImage,
-      imageAlt: "Indian school principal in modern office",
+      imageAlt: "School administrator using analytics dashboard",
       color: "from-amber-500 to-amber-600",
       glowColor: "group-hover:shadow-amber-500/40",
       bgColor: "bg-gradient-to-br from-amber-50/80 to-white/60 dark:from-amber-950/40 dark:to-slate-900/60",
@@ -1174,35 +1210,35 @@ function TestimonialsSection() {
       quote: "Since we started using Trackademiq, our administrative work reduced significantly. The real-time analytics help us track student progress and take action before issues escalate.",
       author: "Dr. Meena Krishnan",
       role: "Principal",
-      school: "CBSE School, Chennai",
+      school: "K-12 Academy",
       rating: 5
     },
     {
       quote: "Getting instant notifications about attendance and homework really helps me stay connected with my child's education. The fee payment through the app saves so much time.",
       author: "Anitha Rajan",
       role: "Parent",
-      school: "Matriculation School",
+      school: "International School",
       rating: 5
     },
     {
       quote: "Managing homework assignments and communicating with parents used to take hours. Now I can focus on what I do best - teaching my students.",
       author: "Karthik Sundaram",
       role: "Mathematics Teacher",
-      school: "ICSE School, Chennai",
+      school: "STEM Academy",
       rating: 5
     },
     {
       quote: "The parent engagement features have transformed how we communicate. We've seen a 40% increase in parent involvement since adopting Trackademiq.",
       author: "Lakshmi Venkatesh",
       role: "Vice Principal",
-      school: "State Board School, Chennai",
+      school: "Secondary School",
       rating: 5
     },
     {
       quote: "Fee collection used to be our biggest headache. Now with automated reminders and online payments, we've reduced pending fees by 60%.",
       author: "Rajesh Kumar",
       role: "Administrator",
-      school: "CBSE School, Tambaram",
+      school: "Group of Schools",
       rating: 5
     },
     {
@@ -1873,7 +1909,7 @@ export default function LandingPage() {
       "@context": "https://schema.org",
       "@type": "Product",
       "name": "Trackademiq AI-Powered School ERP",
-      "description": "Next-generation AI-powered school ERP platform from Chennai, India. Features AI-driven attendance analytics with at-risk student detection, smart report card generation (8 hours to 15 minutes), role-specific AI insights engine, real-time notifications, multi-school management, and automated fee tracking.",
+      "description": "Next-generation AI-powered school ERP platform. Features AI-driven attendance analytics with at-risk student detection, smart report card generation (8 hours to 15 minutes), role-specific AI insights engine, real-time notifications, multi-school management, and automated fee tracking. Built for schools worldwide.",
       "brand": {
         "@type": "Brand",
         "name": "Trackademiq"
@@ -1902,7 +1938,7 @@ export default function LandingPage() {
       "@type": "Organization",
       "name": "Trackademiq",
       "alternateName": "Trackademiq School ERP",
-      "description": "Next-generation AI-powered School ERP from Chennai, India. Features AI attendance analytics, smart report cards, role-specific insights, real-time notifications, multi-school management, and automated fee tracking.",
+      "description": "Next-generation AI-powered School ERP. Features AI attendance analytics, smart report cards, role-specific insights, real-time notifications, multi-school management, and automated fee tracking. Serving schools worldwide.",
       "url": "https://www.trackademiq.com",
       "logo": "https://www.trackademiq.com/logo.png",
       "foundingDate": "2020",
@@ -1914,14 +1950,14 @@ export default function LandingPage() {
         "School Automation",
         "Educational Technology"
       ],
-      "areaServed": "India",
+      "areaServed": "Worldwide",
       "contactPoint": {
         "@type": "ContactPoint",
         "contactType": "Customer Service",
         "email": "info@trackademiq.com",
         "telephone": "+91 9894836016",
-        "availableLanguage": ["English", "Hindi", "Tamil"],
-        "areaServed": "India"
+        "availableLanguage": ["English"],
+        "areaServed": "Worldwide"
       },
       "address": {
         "@type": "PostalAddress",
@@ -1962,6 +1998,7 @@ export default function LandingPage() {
       <Header />
       <main>
         <HeroSection />
+        <TrustBar />
         <FeaturesSection />
         <AnalyticsPreviewSection />
         <GetStartedSection />

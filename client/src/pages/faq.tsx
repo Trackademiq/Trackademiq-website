@@ -17,7 +17,7 @@ const faqCategories = [
     questions: [
       {
         q: "What is Trackademiq?",
-        a: "Trackademiq is a next-generation AI-powered School ERP platform from Chennai that automates school operations. Key capabilities include AI attendance analytics that auto-detect at-risk students, smart report card generation (8 hours to 15 minutes), role-specific AI insights, real-time notifications, multi-school management, and automated fee tracking."
+        a: "Trackademiq is a next-generation AI-powered School ERP platform that automates school operations for institutions worldwide. Key capabilities include AI attendance analytics that auto-detect at-risk students, smart report card generation (8 hours to 15 minutes), role-specific AI insights, real-time notifications, multi-school management, and automated fee tracking."
       },
       {
         q: "What makes Trackademiq different from other school ERP systems?",

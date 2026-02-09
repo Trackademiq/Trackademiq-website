@@ -39,7 +39,7 @@ export default function ContactPage() {
     document.title = "Contact Us | Trackademiq - Request a Free Demo";
     const metaDescription = document.querySelector('meta[name="description"]');
     if (metaDescription) {
-      metaDescription.setAttribute("content", "Contact Trackademiq for a free demo of our school ERP software. Call +91 98948 36016 or email info@trackademiq.com. Located in Chennai, serving schools across India.");
+      metaDescription.setAttribute("content", "Contact Trackademiq for a free demo of our school ERP software. Call +91 98948 36016 or email info@trackademiq.com. Serving schools worldwide.");
     }
     const ogTitle = document.querySelector('meta[property="og:title"]');
     if (ogTitle) {

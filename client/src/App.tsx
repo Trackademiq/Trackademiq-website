@@ -34,6 +34,7 @@ const TrackademiqVsPowerschoolPage = lazy(() => import("@/pages/trackademiq-vs-p
 const TrackademiqVsTeachmintPage = lazy(() => import("@/pages/trackademiq-vs-teachmint"));
 const BestSchoolErpPage = lazy(() => import("@/pages/best-school-erp"));
 const CaseStudiesPage = lazy(() => import("@/pages/case-studies"));
+const LandingPageV2 = lazy(() => import("@/pages/landing-v2"));
 
 function PageLoader() {
   return (
@@ -65,6 +66,7 @@ function Router() {
         <Route path="/blog" component={BlogPage} />
         <Route path="/blog/:id" component={BlogPostPage} />
         <Route path="/product-tour" component={ProductTourPage} />
+        <Route path="/v2" component={LandingPageV2} />
         <Route component={NotFound} />
       </Switch>
     </Suspense>

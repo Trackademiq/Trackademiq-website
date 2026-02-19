@@ -593,8 +593,7 @@ function FeaturesSection() {
             
             return (
               <div
-                key={activeTab}
-                className="relative animate-fade-in"
+                className="relative transition-opacity duration-150"
                 data-testid={`panel-${userType.title.toLowerCase()}`}
               >
                 <div className={`rounded-2xl sm:rounded-3xl overflow-hidden border ${userType.borderColor} ${userType.bgColor} backdrop-blur-xl shadow-xl shadow-slate-200/50 dark:shadow-slate-900/50`}>
@@ -606,11 +605,11 @@ function FeaturesSection() {
                       <img
                         src={userType.image}
                         alt={userType.imageAlt}
-                        loading="lazy"
+                        loading="eager"
                         decoding="async"
                         width={800}
                         height={600}
-                        className={`absolute inset-0 w-full h-full object-cover transition-opacity duration-200 ${imagesLoaded ? 'opacity-100' : 'opacity-0'}`}
+                        className={`absolute inset-0 w-full h-full object-cover transition-opacity duration-150 ${imagesLoaded ? 'opacity-100' : 'opacity-0'}`}
                       />
                       <div className="absolute inset-0 bg-gradient-to-r from-black/50 via-black/30 to-transparent lg:bg-gradient-to-t lg:from-black/60 lg:via-black/30 lg:to-transparent" />
                       <div className="absolute bottom-3 left-3 sm:bottom-6 sm:left-6">
@@ -637,7 +636,7 @@ function FeaturesSection() {
                             const FeatureIcon = feature.icon;
                             return (
                               <div
-                                key={`${activeTab}-${feature.title}-mobile`}
+                                key={feature.title}
                                 className="group relative flex flex-col gap-2 p-3 rounded-xl bg-white/80 dark:bg-slate-800/80 backdrop-blur-sm border border-slate-200/50 dark:border-slate-700/50 w-[160px] flex-shrink-0"
                                 data-testid={`feature-${userType.title.toLowerCase()}-${idx}-mobile`}
                               >
@@ -659,9 +658,8 @@ function FeaturesSection() {
                           const FeatureIcon = feature.icon;
                           return (
                             <div
-                              key={`${activeTab}-${feature.title}`}
-                              className="group relative flex flex-col gap-3 p-4 sm:p-5 rounded-xl bg-white/70 dark:bg-slate-800/70 backdrop-blur-sm border border-slate-200/50 dark:border-slate-700/50 hover:shadow-lg hover:border-slate-300/80 dark:hover:border-slate-600/80 hover:-translate-y-1 transition-all duration-300 cursor-default animate-fade-in-up"
-                              style={{ animationDelay: `${idx * 0.05}s` }}
+                              key={feature.title}
+                              className="group relative flex flex-col gap-3 p-4 sm:p-5 rounded-xl bg-white/70 dark:bg-slate-800/70 backdrop-blur-sm border border-slate-200/50 dark:border-slate-700/50 hover:shadow-lg hover:border-slate-300/80 dark:hover:border-slate-600/80 hover:-translate-y-1 transition-all duration-300 cursor-default"
                               data-testid={`feature-${userType.title.toLowerCase()}-${idx}`}
                             >
                               <div className={`w-11 h-11 rounded-xl bg-gradient-to-br ${userType.color} flex items-center justify-center flex-shrink-0 shadow-md group-hover:shadow-lg ${userType.glowColor} transition-shadow duration-300`}>

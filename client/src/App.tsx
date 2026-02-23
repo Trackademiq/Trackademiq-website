@@ -4,19 +4,19 @@ import { queryClient } from "./lib/queryClient";
 import { QueryClientProvider } from "@tanstack/react-query";
 import { Toaster } from "@/components/ui/toaster";
 import { TooltipProvider } from "@/components/ui/tooltip";
+import { usePageSeo } from "@/hooks/usePageSeo";
 import NotFound from "@/pages/not-found";
+import LandingPage from "@/pages/landing";
 
 function ScrollToTop() {
   const [location] = useLocation();
-  
+  usePageSeo();
   useEffect(() => {
     window.scrollTo(0, 0);
   }, [location]);
-  
   return null;
 }
 
-const LandingPage = lazy(() => import("@/pages/landing"));
 const BlogPage = lazy(() => import("@/pages/blog"));
 const BlogPostPage = lazy(() => import("@/pages/blog-post"));
 const ProductTourPage = lazy(() => import("@/pages/product-tour"));
@@ -37,8 +37,8 @@ const CaseStudiesPage = lazy(() => import("@/pages/case-studies"));
 
 function PageLoader() {
   return (
-    <div className="min-h-screen flex items-center justify-center">
-      <div className="w-8 h-8 border-[3px] border-indigo-200 border-t-indigo-600 rounded-full animate-spin" />
+    <div className="fixed top-4 right-4 z-50 flex items-center justify-center" aria-hidden>
+      <div className="w-6 h-6 border-2 border-indigo-200 border-t-indigo-600 rounded-full animate-spin" />
     </div>
   );
 }

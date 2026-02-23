@@ -1,3 +1,4 @@
+import { useEffect } from "react";
 import { motion } from "framer-motion";
 import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
@@ -12,6 +13,8 @@ import {
 } from "lucide-react";
 import trackademiqLogo from "@/assets/trackademiq-logo.png";
 import { blogPosts } from "./blog";
+
+const DEFAULT_DESC = "Trackademiq blog - articles on school management, AI in education, and EdTech.";
 
 const fadeInUp = {
   hidden: { opacity: 0, y: 20 },
@@ -49,8 +52,17 @@ export default function BlogPostPage() {
 
   const relatedPosts = blogPosts.filter(p => p.id !== id).slice(0, 2);
 
+  useEffect(() => {
+    if (post) {
+      document.title = `${post.title} | Trackademiq Blog`;
+      const meta = document.querySelector('meta[name="description"]');
+      if (meta) meta.setAttribute("content", post.excerpt || DEFAULT_DESC);
+    }
+  }, [post]);
+
   return (
     <div className="min-h-screen bg-background">
+      <main id="main" aria-label="Main content">
       <section className="pt-32 pb-16 bg-gradient-to-br from-teal-600 to-cyan-600">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
           <motion.div
@@ -156,6 +168,7 @@ export default function BlogPostPage() {
         </section>
       )}
 
+      </main>
       <section className="py-12 bg-card border-t">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <div className="flex items-center justify-center gap-2 mb-4">
@@ -163,6 +176,8 @@ export default function BlogPostPage() {
               src={trackademiqLogo} 
               alt="Trackademiq Logo" 
               className="w-10 h-10 rounded-lg object-contain"
+              width={40}
+              height={40}
             />
             <span className="text-xl font-bold bg-gradient-to-r from-indigo-600 to-violet-600 bg-clip-text text-transparent">
               Trackademiq

@@ -46,7 +46,7 @@ export default function PrivacyPolicyPage() {
         </nav>
       </header>
 
-      <main className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+      <main id="main" aria-label="Main content" className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
         <Link href="/">
           <Button variant="ghost" className="mb-6" data-testid="button-back-home">
             <ArrowLeft className="w-4 h-4 mr-2" />

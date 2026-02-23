@@ -148,7 +148,7 @@ function Header() {
           </div>
 
           <button
-            className="lg:hidden p-2 rounded-md text-slate-700 dark:text-slate-200"
+            className="lg:hidden p-3 min-h-[44px] min-w-[44px] rounded-md text-slate-700 dark:text-slate-200"
             onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
             aria-label={isMobileMenuOpen ? "Close menu" : "Open menu"}
             aria-expanded={isMobileMenuOpen}
@@ -226,6 +226,7 @@ function HeroIllustration() {
           height={600}
           loading="eager"
           decoding="async"
+          fetchPriority="high"
         />
         
         <div className="absolute -bottom-4 left-1/2 -translate-x-1/2 bg-white rounded-full px-4 sm:px-6 py-2 sm:py-3 shadow-xl flex items-center gap-2 sm:gap-4">
@@ -597,31 +598,34 @@ function FeaturesSection() {
                 data-testid={`panel-${userType.title.toLowerCase()}`}
               >
                 <div className={`rounded-2xl sm:rounded-3xl overflow-hidden border ${userType.borderColor} ${userType.bgColor} backdrop-blur-xl shadow-xl shadow-slate-200/50 dark:shadow-slate-900/50`}>
-                  <div className="grid grid-cols-1 lg:grid-cols-5 gap-0">
-                    <div className="lg:col-span-2 relative h-36 sm:h-64 lg:h-auto lg:min-h-[280px]">
-                      {!imagesLoaded && (
-                        <div className="absolute inset-0 bg-gradient-to-br from-slate-200 to-slate-300 dark:from-slate-700 dark:to-slate-800 animate-pulse" />
-                      )}
-                      <img
-                        src={userType.image}
-                        alt={userType.imageAlt}
-                        loading="eager"
-                        decoding="async"
-                        width={800}
-                        height={600}
-                        className={`absolute inset-0 w-full h-full object-cover transition-opacity duration-150 ${imagesLoaded ? 'opacity-100' : 'opacity-0'}`}
-                      />
-                      <div className="absolute inset-0 bg-gradient-to-r from-black/50 via-black/30 to-transparent lg:bg-gradient-to-t lg:from-black/60 lg:via-black/30 lg:to-transparent" />
-                      <div className="absolute bottom-3 left-3 sm:bottom-6 sm:left-6">
-                        <div className={`inline-flex items-center gap-2 sm:gap-3 px-3 py-2 sm:px-4 sm:py-3 rounded-lg sm:rounded-xl bg-white/10 backdrop-blur-md border border-white/20`}>
-                          <div className={`w-9 h-9 sm:w-12 sm:h-12 rounded-lg sm:rounded-xl bg-gradient-to-br ${userType.color} flex items-center justify-center shadow-lg`}>
+                  <div className="grid grid-cols-1 lg:grid-cols-5 gap-0 lg:items-stretch">
+                    <div className="lg:col-span-2 flex flex-col bg-white dark:bg-slate-50 min-h-[200px] lg:min-h-0">
+                      <div className="flex-1 flex items-center justify-center p-4 sm:p-6 lg:p-8 min-h-[140px] sm:min-h-[220px] relative">
+                        {!imagesLoaded && (
+                          <div className="absolute inset-0 flex items-center justify-center m-4 sm:m-6 lg:m-8">
+                            <div className="w-full max-w-md h-48 sm:h-64 bg-slate-200 dark:bg-slate-700 animate-pulse rounded-lg" />
+                          </div>
+                        )}
+                        <img
+                          src={userType.image}
+                          alt={userType.imageAlt}
+                          loading="eager"
+                          decoding="async"
+                          width={800}
+                          height={600}
+                          className={`max-h-[240px] sm:max-h-[280px] w-full object-contain object-center transition-opacity duration-150 ${imagesLoaded ? 'opacity-100' : 'opacity-0'}`}
+                        />
+                      </div>
+                      <div className="px-4 sm:px-6 lg:px-6 pb-4 sm:pb-6 lg:pb-6">
+                        <div className={`inline-flex items-center gap-2 sm:gap-3 px-3 py-2 sm:px-4 sm:py-3 rounded-lg sm:rounded-xl bg-slate-100 dark:bg-slate-200/80 border border-slate-200 dark:border-slate-300 shadow-sm`}>
+                          <div className={`w-9 h-9 sm:w-12 sm:h-12 rounded-lg sm:rounded-xl bg-gradient-to-br ${userType.color} flex items-center justify-center shadow-md flex-shrink-0`}>
                             <ActiveIcon className="w-4 h-4 sm:w-6 sm:h-6 text-white" />
                           </div>
                           <div>
-                            <h3 className="text-sm sm:text-lg font-bold text-white">
+                            <h3 className="text-sm sm:text-lg font-bold text-slate-800 dark:text-slate-900">
                               For {userType.title}
                             </h3>
-                            <p className="hidden sm:block text-sm text-white/80">
+                            <p className="hidden sm:block text-sm text-slate-600 dark:text-slate-700">
                               AI-powered tools
                             </p>
                           </div>
@@ -1818,15 +1822,8 @@ export default function LandingPage() {
 
   return (
     <div className="min-h-screen bg-background">
-        <a
-          href="#main-content"
-          className="sr-only focus:not-sr-only focus:absolute focus:top-4 focus:left-4 focus:z-[100] focus:px-4 focus:py-2 focus:bg-indigo-600 focus:text-white focus:rounded-md focus:outline-none focus:ring-2 focus:ring-indigo-400"
-          data-testid="link-skip-to-content"
-        >
-          Skip to main content
-        </a>
         <Header />
-        <main id="main-content">
+        <main id="main" aria-label="Main content">
           <HeroSection />
           <TrustBar />
           <FeaturesSection />

@@ -89,7 +89,7 @@ export default function ErpPage() {
         </nav>
       </header>
 
-      <main>
+      <main id="main" aria-label="Main content">
         <section className="py-16 sm:py-20 bg-gradient-to-b from-indigo-50/50 to-white dark:from-indigo-950/20 dark:to-background">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <motion.div

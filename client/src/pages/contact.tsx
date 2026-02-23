@@ -35,17 +35,6 @@ const staggerContainer = {
 };
 
 export default function ContactPage() {
-  useEffect(() => {
-    document.title = "Contact Us | Trackademiq - Request a Free Demo";
-    const metaDescription = document.querySelector('meta[name="description"]');
-    if (metaDescription) {
-      metaDescription.setAttribute("content", "Contact Trackademiq for a free demo of our school ERP software. Call +91 98948 36016 or email info@trackademiq.com. Serving schools worldwide.");
-    }
-    const ogTitle = document.querySelector('meta[property="og:title"]');
-    if (ogTitle) {
-      ogTitle.setAttribute("content", "Contact Us | Trackademiq School ERP");
-    }
-  }, []);
 
   const { toast } = useToast();
   const form = useForm<InsertDemoRequest>({
@@ -89,7 +78,7 @@ export default function ContactPage() {
         <nav className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex items-center justify-between h-16">
             <Link href="/" className="flex items-center gap-2" data-testid="link-logo">
-              <img src={trackademiqLogo} alt="Trackademiq Logo" className="w-10 h-10 rounded-lg object-contain" />
+              <img src={trackademiqLogo} alt="Trackademiq Logo" className="w-10 h-10 rounded-lg object-contain" width={40} height={40} />
               <span className="text-lg font-bold bg-gradient-to-r from-indigo-600 to-violet-600 bg-clip-text text-transparent">
                 Trackademiq
               </span>
@@ -106,7 +95,7 @@ export default function ContactPage() {
         </nav>
       </header>
 
-      <main>
+      <main id="main" aria-label="Main content">
         <section className="py-16 sm:py-20 bg-gradient-to-b from-indigo-50/50 to-white dark:from-indigo-950/20 dark:to-background">
           <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
             <motion.div

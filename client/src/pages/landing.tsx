@@ -97,6 +97,9 @@ function Header() {
               className="w-10 h-10 rounded-lg object-contain"
               width={40}
               height={40}
+              loading="eager"
+              decoding="async"
+              fetchPriority="high"
             />
             <span className="text-lg font-bold bg-gradient-to-r from-indigo-600 to-violet-600 bg-clip-text text-transparent">
               Trackademiq
@@ -109,16 +112,17 @@ function Header() {
                 <Link
                   key={link.href}
                   href={link.href}
-                  className="px-4 py-2 text-sm font-medium transition-colors rounded-md text-slate-600 hover:text-slate-900 dark:text-slate-300 dark:hover:text-white"
+                  className="min-h-[44px] min-w-[44px] inline-flex items-center justify-center px-4 py-2 text-sm font-medium transition-colors rounded-md text-slate-600 hover:text-slate-900 dark:text-slate-300 dark:hover:text-white"
                   data-testid={`link-nav-${link.label.toLowerCase().replace(" ", "-")}`}
                 >
                   {link.label}
                 </Link>
               ) : (
                 <button
+                  type="button"
                   key={link.href}
                   onClick={() => scrollToSection(link.href)}
-                  className="px-4 py-2 text-sm font-medium transition-colors rounded-md text-slate-600 hover:text-slate-900 dark:text-slate-300 dark:hover:text-white"
+                  className="min-h-[44px] min-w-[44px] inline-flex items-center justify-center px-4 py-2 text-sm font-medium transition-colors rounded-md text-slate-600 hover:text-slate-900 dark:text-slate-300 dark:hover:text-white"
                   data-testid={`link-nav-${link.label.toLowerCase().replace(" ", "-")}`}
                 >
                   {link.label}
@@ -168,16 +172,17 @@ function Header() {
                   <Link
                     key={link.href}
                     href={link.href}
-                    className="px-4 py-3 text-left text-sm font-medium text-muted-foreground hover:text-foreground hover:bg-accent rounded-md transition-colors"
+                    className="min-h-[44px] flex items-center px-4 py-3 text-left text-sm font-medium text-muted-foreground hover:text-foreground hover:bg-accent rounded-md transition-colors"
                     data-testid={`link-mobile-nav-${link.label.toLowerCase().replace(" ", "-")}`}
                   >
                     {link.label}
                   </Link>
                 ) : (
                   <button
+                    type="button"
                     key={link.href}
                     onClick={() => scrollToSection(link.href)}
-                    className="px-4 py-3 text-left text-sm font-medium text-muted-foreground hover:text-foreground hover:bg-accent rounded-md transition-colors"
+                    className="min-h-[44px] w-full flex items-center px-4 py-3 text-left text-sm font-medium text-muted-foreground hover:text-foreground hover:bg-accent rounded-md transition-colors"
                     data-testid={`link-mobile-nav-${link.label.toLowerCase().replace(" ", "-")}`}
                   >
                     {link.label}
@@ -609,7 +614,7 @@ function FeaturesSection() {
                         <img
                           src={userType.image}
                           alt={userType.imageAlt}
-                          loading="eager"
+                          loading="lazy"
                           decoding="async"
                           width={800}
                           height={600}
@@ -1583,15 +1588,15 @@ function Footer() {
           </p>
           
           <div className="flex items-center justify-center gap-3 mb-4 text-xs text-white/70 flex-wrap">
-            <Link href="/what-is-trackademiq" className="hover:text-emerald-400 transition-colors" data-testid="link-mobile-what-is">About</Link>
-            <span className="text-white/30">|</span>
-            <Link href="/blog" className="hover:text-emerald-400 transition-colors" data-testid="link-mobile-blog">Blog</Link>
-            <span className="text-white/30">|</span>
-            <Link href="/faq" className="hover:text-emerald-400 transition-colors" data-testid="link-mobile-faq">FAQ</Link>
-            <span className="text-white/30">|</span>
-            <Link href="/privacy-policy" className="hover:text-emerald-400 transition-colors" data-testid="link-mobile-privacy">Privacy</Link>
-            <span className="text-white/30">|</span>
-            <Link href="/terms" className="hover:text-emerald-400 transition-colors" data-testid="link-mobile-terms">Terms</Link>
+            <Link href="/what-is-trackademiq" className="inline-flex items-center min-h-[44px] hover:text-emerald-400 transition-colors" data-testid="link-mobile-what-is">About</Link>
+            <span className="text-white/30" aria-hidden="true">|</span>
+            <Link href="/blog" className="inline-flex items-center min-h-[44px] hover:text-emerald-400 transition-colors" data-testid="link-mobile-blog">Blog</Link>
+            <span className="text-white/30" aria-hidden="true">|</span>
+            <Link href="/faq" className="inline-flex items-center min-h-[44px] hover:text-emerald-400 transition-colors" data-testid="link-mobile-faq">FAQ</Link>
+            <span className="text-white/30" aria-hidden="true">|</span>
+            <Link href="/privacy-policy" className="inline-flex items-center min-h-[44px] hover:text-emerald-400 transition-colors" data-testid="link-mobile-privacy">Privacy</Link>
+            <span className="text-white/30" aria-hidden="true">|</span>
+            <Link href="/terms" className="inline-flex items-center min-h-[44px] hover:text-emerald-400 transition-colors" data-testid="link-mobile-terms">Terms</Link>
           </div>
           
           <div className="text-xs text-white/70">

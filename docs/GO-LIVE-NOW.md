@@ -261,6 +261,30 @@ pm2 save
 
 ---
 
+## Deploy only the blog (no full app deploy)
+
+Blog content is loaded at runtime from `blog-posts.json`. To update only the blog:
+
+**1. On your PC:** edit posts in `client/src/pages/blog.tsx` (the `blogPosts` array), then export JSON and build once so the file is in `dist/public/`:
+
+```bash
+cd /f/Trackademiq-Webpage/Trackademiq-Webpage
+npm run export:blog
+npm run build
+```
+
+**2. Copy only the blog file to EC2** (no `git pull`, no `pm2 restart`):
+
+```bash
+scp -i /f/Trackademiq-Webpage/Trackademiq-Webpage/trackademiq-website.pem /f/Trackademiq-Webpage/Trackademiq-Webpage/dist/public/blog-posts.json ec2-user@13.53.35.133:~/Trackademiq-website/dist/public/blog-posts.json
+```
+
+If your built app lives elsewhere on EC2, adjust the path after `13.53.35.133:` to match (e.g. the same path where `index.html` is served from).
+
+After this, the live site will show the new blog content on next page load. To add or edit posts in the future, edit `blog.tsx`, run `npm run export:blog` and `npm run build`, then `scp` only `dist/public/blog-posts.json` to the server as above.
+
+---
+
 ## If port 5000 is in use on your PC (before step 3)
 
 In **PowerShell** (not Git Bash):

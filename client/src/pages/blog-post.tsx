@@ -12,7 +12,7 @@ import {
   User
 } from "lucide-react";
 import trackademiqLogo from "@/assets/trackademiq-logo.png";
-import { useBlogPosts } from "@/hooks/useBlogPosts";
+import { blogPosts } from "./blog";
 
 const DEFAULT_DESC = "Trackademiq blog - articles on school management, AI in education, and EdTech.";
 
@@ -31,16 +31,7 @@ const staggerContainer = {
 
 export default function BlogPostPage() {
   const { id } = useParams<{ id: string }>();
-  const { posts, loading } = useBlogPosts();
-  const post = posts.find((p) => p.id === id);
-
-  if (loading) {
-    return (
-      <div className="min-h-screen bg-background flex items-center justify-center">
-        <p className="text-muted-foreground">Loading…</p>
-      </div>
-    );
-  }
+  const post = blogPosts.find(p => p.id === id);
 
   if (!post) {
     return (
@@ -59,7 +50,7 @@ export default function BlogPostPage() {
     );
   }
 
-  const relatedPosts = posts.filter((p) => p.id !== id).slice(0, 2);
+  const relatedPosts = blogPosts.filter(p => p.id !== id).slice(0, 2);
 
   useEffect(() => {
     if (post) {

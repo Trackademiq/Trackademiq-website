@@ -22,9 +22,8 @@ Open http://localhost:5000.
 
 ## Docs
 
-- **[Architecture & folder structure](docs/ARCHITECTURE.md)** — project layout and how client/server/build align.
-- **[Deploy to AWS](docs/DEPLOY-AWS.md)** — EC2, Docker, Elastic Beanstalk, Supabase (configure last).
-- **[Connect DB + EC2 + your domain](docs/CONNECT-DB-EC2-DOMAIN.md)** — Supabase setup, host on EC2, point Hostinger domain to EC2, Nginx, HTTPS.
+- **[Deploy & run](docs/DEPLOY.md)** — go live on EC2, domain, HTTPS, troubleshooting.
+- **[Architecture](docs/ARCHITECTURE.md)** — project layout and client/server/build.
 
 ## Environment
 

@@ -8,7 +8,7 @@ REPO_URL="https://github.com/Trackademiq/Trackademiq-website.git"
 APP_DIR="$HOME/Trackademiq-website"
 NGINX_CONF="/etc/nginx/conf.d/trackademiq.conf"
 # Set your EC2 public IP (check AWS console if 404)
-EC2_IP="${EC2_IP:-13.53.35.133}"
+EC2_IP="${EC2_IP:-51.20.34.226}"
 
 echo "=== Step 1: Install Node.js, git, nginx ==="
 if command -v dnf &>/dev/null; then

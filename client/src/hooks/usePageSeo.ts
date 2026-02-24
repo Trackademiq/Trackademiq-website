@@ -2,7 +2,7 @@ import { useEffect } from "react";
 import { useLocation } from "wouter";
 
 const BASE = "https://trackademiq.com";
-const DEFAULT_TITLE = "Trackademiq | Best AI-Powered School ERP Software & Student Management System";
+const DEFAULT_TITLE = "Trackademiq – Official Site | AI-Powered School ERP & Student Management";
 const DEFAULT_DESC = "Trackademiq - AI-powered Education ERP that automates every school operation, catches problems early, and delivers role-specific insights. Built for schools worldwide.";
 
 function matchPath(path: string): string {

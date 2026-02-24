@@ -25,19 +25,58 @@ const staggerContainer = {
   }
 };
 
-const includedFeatures = [
-  "AI Analytics Dashboard",
-  "Automated Attendance Tracking",
-  "Fee Management & Online Payments",
-  "Marks & Report Card Generation",
-  "Parent-Teacher Communication",
-  "Homework & Assignment Management",
-  "Leave Management System",
-  "Multi-Branch Support",
-  "Mobile Apps (Android & iOS)",
-  "Email & SMS Notifications",
-  "Data Export & Reports",
-  "Dedicated Support"
+const PRICING_PLANS = [
+  {
+    name: "Starter",
+    tagline: "Core digitization for small schools",
+    price: 120,
+    period: "per student / year",
+    features: [
+      "Student info & basic SIS",
+      "Digital attendance & history",
+      "Fee tracking & reminders",
+      "Timetable & academic calendar",
+      "Basic dashboards (principal, teachers, parents)",
+      "Mobile access (web & app)",
+      "Single school only",
+      "Email support",
+    ],
+    highlighted: false,
+  },
+  {
+    name: "Growth",
+    tagline: "Full AI & automation for one school",
+    price: 180,
+    period: "per student / year",
+    features: [
+      "Everything in Starter",
+      "AI at-risk student detection",
+      "AI-automated report cards & grade analysis",
+      "Homework & assignment management with AI",
+      "Parent-teacher messaging & real-time notifications",
+      "Online fee payments (payment gateway)",
+      "Leave management & approvals",
+      "AI analytics dashboard",
+      "Staff & leave management",
+      "Priority support",
+    ],
+    highlighted: true,
+  },
+  {
+    name: "Enterprise",
+    tagline: "Multi-school & scale",
+    price: 240,
+    period: "per student / year",
+    features: [
+      "Everything in Growth",
+      "Multi-school / multi-tenant (multiple branches)",
+      "AI comparison across branches",
+      "Central + branch-level dashboards",
+      "Dedicated success manager (optional)",
+      "Priority onboarding & training",
+    ],
+    highlighted: false,
+  },
 ];
 
 export default function PricingPage() {
@@ -105,7 +144,7 @@ export default function PricingPage() {
                 variants={fadeInUp}
                 className="text-lg text-muted-foreground max-w-2xl mx-auto"
               >
-                Custom pricing based on your school's size and requirements. Request a demo to get a personalized quote.
+                Per student per year. Total = (Rate × Number of students). All plans include cloud hosting, security, and updates.
               </motion.p>
             </motion.div>
 
@@ -113,41 +152,81 @@ export default function PricingPage() {
               initial="hidden"
               animate="visible"
               variants={fadeInUp}
+              className="grid grid-cols-1 md:grid-cols-3 gap-6 lg:gap-8 max-w-6xl mx-auto"
             >
-              <Card className="p-8 sm:p-10 border-2 border-indigo-200 dark:border-indigo-800">
-                <div className="text-center mb-8">
-                  <h2 className="text-2xl font-bold text-foreground mb-2">Complete School ERP Package</h2>
-                  <p className="text-muted-foreground">Everything you need to digitize your school</p>
-                  <div className="mt-4">
-                    <span className="text-4xl font-bold text-indigo-600">Custom Quote</span>
-                    <p className="text-sm text-muted-foreground mt-1">Based on student count & features</p>
-                  </div>
-                </div>
-
-                <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 mb-8">
-                  {includedFeatures.map((feature) => (
-                    <div key={feature} className="flex items-center gap-2">
-                      <CheckCircle2 className="w-5 h-5 text-emerald-500 flex-shrink-0" />
-                      <span className="text-foreground">{feature}</span>
+              {PRICING_PLANS.map((plan) => (
+                <Card
+                  key={plan.name}
+                  className={`relative flex flex-col p-6 sm:p-8 ${
+                    plan.highlighted
+                      ? "border-2 border-indigo-500 shadow-lg shadow-indigo-500/20 dark:shadow-indigo-900/20 scale-[1.02] md:scale-105"
+                      : "border border-border"
+                  }`}
+                  data-testid={`card-plan-${plan.name.toLowerCase()}`}
+                >
+                  {plan.highlighted && (
+                    <div className="absolute -top-3 left-1/2 -translate-x-1/2">
+                      <Badge className="bg-indigo-600 text-white border-0">Most popular</Badge>
                     </div>
-                  ))}
-                </div>
-
-                <div className="flex flex-col sm:flex-row gap-4 justify-center">
-                  <Link href="/#contact">
-                    <Button size="lg" className="w-full sm:w-auto bg-gradient-to-r from-indigo-600 to-violet-600 text-white" data-testid="button-request-demo">
-                      Request Demo & Quote
-                      <ArrowRight className="w-5 h-5 ml-2" />
+                  )}
+                  <div className="mb-6">
+                    <h2 className="text-xl font-bold text-foreground">{plan.name}</h2>
+                    <p className="text-sm text-muted-foreground mt-1">{plan.tagline}</p>
+                    <div className="mt-4 flex items-baseline gap-1">
+                      <span className="text-3xl font-bold text-foreground">₹{plan.price}</span>
+                      <span className="text-sm text-muted-foreground">{plan.period}</span>
+                    </div>
+                  </div>
+                  <ul className="space-y-3 flex-1 mb-6">
+                    {plan.features.map((feature) => (
+                      <li key={feature} className="flex items-start gap-2 text-sm text-foreground">
+                        <CheckCircle2 className="w-4 h-4 text-emerald-500 flex-shrink-0 mt-0.5" />
+                        <span>{feature}</span>
+                      </li>
+                    ))}
+                  </ul>
+                  <Link href="/#contact" className="block">
+                    <Button
+                      className={plan.highlighted ? "bg-indigo-600 hover:bg-indigo-700 w-full" : "w-full"}
+                      variant={plan.highlighted ? "default" : "outline"}
+                      data-testid={`button-plan-${plan.name.toLowerCase()}`}
+                    >
+                      Request quote
                     </Button>
                   </Link>
-                  <a href="tel:+919894836016">
-                    <Button size="lg" variant="outline" className="w-full sm:w-auto" data-testid="button-call-now">
-                      <Phone className="w-4 h-4 mr-2" />
-                      Call +91 98948 36016
-                    </Button>
-                  </a>
-                </div>
-              </Card>
+                </Card>
+              ))}
+            </motion.div>
+
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ delay: 0.2 }}
+              className="mt-8 max-w-3xl mx-auto p-4 sm:p-6 rounded-xl bg-muted/50 dark:bg-muted/20 border border-border text-center"
+            >
+              <p className="text-sm sm:text-base text-muted-foreground">
+                <strong className="text-foreground">Example:</strong> 500 students × ₹180/year = ₹90,000/year (ex. GST). Final pricing depends on student count and contract term.
+              </p>
+            </motion.div>
+
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ delay: 0.3 }}
+              className="mt-10 flex flex-col sm:flex-row gap-4 justify-center"
+            >
+              <Link href="/#contact">
+                <Button size="lg" className="w-full sm:w-auto bg-gradient-to-r from-indigo-600 to-violet-600 text-white" data-testid="button-request-demo">
+                  Request Demo & Quote
+                  <ArrowRight className="w-5 h-5 ml-2" />
+                </Button>
+              </Link>
+              <a href="tel:+919894836016">
+                <Button size="lg" variant="outline" className="w-full sm:w-auto" data-testid="button-call-now">
+                  <Phone className="w-4 h-4 mr-2" />
+                  Call +91 98948 36016
+                </Button>
+              </a>
             </motion.div>
 
             <motion.div

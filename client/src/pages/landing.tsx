@@ -1,4 +1,4 @@
-import { useState, useEffect, lazy, Suspense } from "react";
+import { useState, useEffect, useRef, lazy, Suspense } from "react";
 import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
 import { Input } from "@/components/ui/input";
@@ -43,6 +43,33 @@ import {
   Globe
 } from "lucide-react";
 
+
+/** Hook: on mobile, section has height (numSlides * 100vh); returns 0..numSlides-1 from scroll progress. */
+function useScrollProgress(sectionRef: React.RefObject<HTMLElement | null>, numSlides: number): number {
+  const [activeIndex, setActiveIndex] = useState(0);
+  useEffect(() => {
+    const el = sectionRef.current;
+    if (!el || numSlides <= 0) return;
+    const onScroll = () => {
+      const top = el.offsetTop;
+      const height = el.offsetHeight;
+      const vh = window.innerHeight;
+      const scrollY = window.scrollY;
+      const maxScroll = height - vh;
+      if (maxScroll <= 0) {
+        setActiveIndex(0);
+        return;
+      }
+      const progress = Math.max(0, Math.min(1, (scrollY - top) / maxScroll));
+      const index = Math.min(Math.floor(progress * numSlides), numSlides - 1);
+      setActiveIndex(index);
+    };
+    onScroll();
+    window.addEventListener("scroll", onScroll, { passive: true });
+    return () => window.removeEventListener("scroll", onScroll);
+  }, [numSlides, sectionRef]);
+  return activeIndex;
+}
 
 import studentsImage from "@assets/generated_images/modern_indian_classroom_students.webp";
 import schoolsImage from "@assets/generated_images/indian_school_principal_administrator.webp";
@@ -717,6 +744,111 @@ function FeaturesSection() {
   );
 }
 
+type AIInsightItem = { role: string; icon: LucideIcon; color: string; bg: string; insight: string };
+type LucideIcon = React.ComponentType<{ className?: string }>;
+
+function RoleSpecificInsightsCarousel({ aiInsights }: { aiInsights: AIInsightItem[] }) {
+  const [insightIndex, setInsightIndex] = useState(0);
+  const insightRef = useRef<HTMLDivElement>(null);
+
+  const onInsightScroll = () => {
+    const el = insightRef.current;
+    if (!el) return;
+    const cardWidth = el.offsetWidth * 0.88 + 16;
+    const index = Math.round(el.scrollLeft / cardWidth);
+    setInsightIndex(Math.min(Math.max(index, 0), aiInsights.length - 1));
+  };
+
+  const goToInsightSlide = (index: number) => {
+    const el = insightRef.current;
+    if (!el) return;
+    const cardWidth = el.offsetWidth * 0.88 + 16;
+    el.scrollTo({ left: index * cardWidth, behavior: "smooth" });
+  };
+
+  return (
+    <>
+      {/* Mobile: horizontal swipe carousel for AI insights */}
+      <div className="lg:hidden">
+        <div className="px-4 py-3 border-b border-white/10 flex items-center justify-between bg-slate-800/50 rounded-t-xl border border-white/5 border-b-0">
+          <h3 className="text-white font-semibold text-sm">Role-Specific AI Insights</h3>
+          <Badge className="bg-emerald-500/20 text-emerald-300 border-emerald-500/30" size="sm">
+            <Brain className="w-3 h-3 mr-1" />
+            AI Generated
+          </Badge>
+        </div>
+        <div
+          ref={insightRef}
+          onScroll={onInsightScroll}
+          className="flex overflow-x-auto snap-x snap-mandatory gap-4 pb-4 pt-3 px-4 bg-slate-800/50 rounded-b-xl border border-white/5 border-t-0 scroll-smooth [scrollbar-width:none] [-ms-overflow-style:none] [&::-webkit-scrollbar]:hidden"
+          style={{ scrollSnapType: "x mandatory" }}
+        >
+          {aiInsights.map((item, idx) => {
+            const Icon = item.icon;
+            return (
+              <div
+                key={item.role}
+                className={`flex-shrink-0 w-[88vw] min-w-[88vw] snap-start p-3 rounded-lg border ${item.bg}`}
+                style={{ scrollSnapAlign: "start" }}
+                data-testid={`ai-insight-${item.role.toLowerCase().replace(/\s+/g, "-")}`}
+              >
+                <div className="flex items-center gap-2 mb-1.5">
+                  <Icon className={`w-3.5 h-3.5 ${item.color}`} />
+                  <span className={`text-xs font-semibold ${item.color}`}>{item.role} View</span>
+                </div>
+                <p className="text-white/70 text-xs leading-relaxed">{item.insight}</p>
+              </div>
+            );
+          })}
+        </div>
+        <div className="flex justify-center gap-2 mt-3">
+          {aiInsights.map((_, i) => (
+            <button
+              key={i}
+              type="button"
+              aria-label={`Go to insight ${i + 1}`}
+              onClick={() => goToInsightSlide(i)}
+              className={`w-2 h-2 rounded-full transition-colors ${
+                i === insightIndex ? "bg-emerald-400 w-6" : "bg-white/30"
+              }`}
+            />
+          ))}
+        </div>
+      </div>
+
+      {/* Desktop: original vertical stack */}
+      <div className="hidden lg:block bg-slate-800/50 rounded-xl border border-white/5 overflow-hidden">
+        <div className="px-4 py-3 border-b border-white/10 flex items-center justify-between">
+          <h3 className="text-white font-semibold text-sm sm:text-base">Role-Specific AI Insights</h3>
+          <Badge className="bg-emerald-500/20 text-emerald-300 border-emerald-500/30" size="sm">
+            <Brain className="w-3 h-3 mr-1" />
+            AI Generated
+          </Badge>
+        </div>
+        <div className="p-3 sm:p-4 space-y-3">
+          {aiInsights.map((item, idx) => {
+            const Icon = item.icon;
+            return (
+              <div
+                key={item.role}
+                className={`p-3 rounded-lg border ${item.bg} animate-fade-in-up`}
+                style={{ animationDelay: `${0.3 + idx * 0.15}s` }}
+                data-testid={`ai-insight-${item.role.toLowerCase().replace(/\s+/g, "-")}`}
+              >
+                <div className="flex items-center gap-2 mb-1.5">
+                  <Icon className={`w-3.5 h-3.5 ${item.color}`} />
+                  <span className={`text-xs font-semibold ${item.color}`}>{item.role} View</span>
+                </div>
+                <p className="text-white/70 text-xs leading-relaxed">{item.insight}</p>
+              </div>
+            );
+          })}
+        </div>
+      </div>
+    </>
+  );
+}
+
 function AnalyticsPreviewSection() {
   const students = [
     { name: "Priya Sharma", class: "10-A", attendance: 96, score: 92, status: "Excellent", trend: "up" },
@@ -875,34 +1007,7 @@ function AnalyticsPreviewSection() {
                 </div>
               </div>
 
-              <div className="bg-slate-800/50 rounded-xl border border-white/5 overflow-hidden">
-                <div className="px-4 py-3 border-b border-white/10 flex items-center justify-between">
-                  <h3 className="text-white font-semibold text-sm sm:text-base">Role-Specific AI Insights</h3>
-                  <Badge className="bg-emerald-500/20 text-emerald-300 border-emerald-500/30" size="sm">
-                    <Brain className="w-3 h-3 mr-1" />
-                    AI Generated
-                  </Badge>
-                </div>
-                <div className="p-3 sm:p-4 space-y-3">
-                  {aiInsights.map((item, idx) => {
-                    const Icon = item.icon;
-                    return (
-                      <div
-                        key={item.role}
-                        className={`p-3 rounded-lg border ${item.bg} animate-fade-in-up`}
-                        style={{ animationDelay: `${0.3 + idx * 0.15}s` }}
-                        data-testid={`ai-insight-${item.role.toLowerCase().replace(/\s+/g, '-')}`}
-                      >
-                        <div className="flex items-center gap-2 mb-1.5">
-                          <Icon className={`w-3.5 h-3.5 ${item.color}`} />
-                          <span className={`text-xs font-semibold ${item.color}`}>{item.role} View</span>
-                        </div>
-                        <p className="text-white/70 text-xs leading-relaxed">{item.insight}</p>
-                      </div>
-                    );
-                  })}
-                </div>
-              </div>
+              <RoleSpecificInsightsCarousel aiInsights={aiInsights} />
             </div>
 
             <div className="mt-4 sm:mt-6 flex flex-wrap items-center justify-center gap-3 sm:gap-6">
@@ -1016,6 +1121,213 @@ function GetStartedSection() {
   );
 }
 
+const PRICING_PLANS = [
+  {
+    name: "Starter",
+    tagline: "Core digitization for small schools",
+    price: 120,
+    period: "per student / year",
+    features: [
+      "Student info & basic SIS",
+      "Digital attendance & history",
+      "Fee tracking & reminders",
+      "Timetable & academic calendar",
+      "Basic dashboards (principal, teachers, parents)",
+      "Mobile access (web & app)",
+      "Single school only",
+      "Email support",
+    ],
+    highlighted: false,
+  },
+  {
+    name: "Growth",
+    tagline: "Full AI & automation for one school",
+    price: 180,
+    period: "per student / year",
+    features: [
+      "Everything in Starter",
+      "AI at-risk student detection",
+      "AI-automated report cards & grade analysis",
+      "Homework & assignment management with AI",
+      "Parent-teacher messaging & real-time notifications",
+      "Online fee payments (payment gateway)",
+      "Leave management & approvals",
+      "AI analytics dashboard",
+      "Staff & leave management",
+      "Priority support",
+    ],
+    highlighted: true,
+  },
+  {
+    name: "Enterprise",
+    tagline: "Multi-school & scale",
+    price: 240,
+    period: "per student / year",
+    features: [
+      "Everything in Growth",
+      "Multi-school / multi-tenant (multiple branches)",
+      "AI comparison across branches",
+      "Central + branch-level dashboards",
+      "Dedicated success manager (optional)",
+      "Priority onboarding & training",
+    ],
+    highlighted: false,
+  },
+];
+
+function PricingPlansSection() {
+  const [pricingIndex, setPricingIndex] = useState(0);
+  const pricingRef = useRef<HTMLDivElement>(null);
+
+  const scrollToContact = () => {
+    const element = document.querySelector("#contact");
+    if (element) element.scrollIntoView({ behavior: "smooth" });
+  };
+
+  const onPricingScroll = () => {
+    const el = pricingRef.current;
+    if (!el) return;
+    const cardWidth = el.offsetWidth * 0.85 + 24;
+    const index = Math.round(el.scrollLeft / cardWidth);
+    setPricingIndex(Math.min(index, PRICING_PLANS.length - 1));
+  };
+
+  const goToPricingSlide = (index: number) => {
+    const el = pricingRef.current;
+    if (!el) return;
+    const cardWidth = el.offsetWidth * 0.85 + 24;
+    el.scrollTo({ left: index * cardWidth, behavior: "smooth" });
+  };
+
+  return (
+    <section id="pricing" className="py-12 sm:py-16 md:py-20 bg-gradient-to-b from-slate-50 to-white dark:from-slate-900 dark:to-slate-950" data-testid="section-pricing">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="text-center mb-10 sm:mb-12 md:mb-14">
+          <Badge className="mb-4" variant="secondary" size="sm">
+            Simple, transparent pricing
+          </Badge>
+          <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-foreground mb-3">
+            Choose your plan
+          </h2>
+          <p className="text-muted-foreground max-w-2xl mx-auto">
+            Per student calculation: Total = (Rate × Number of students) per year. All plans include cloud hosting, security, and updates.
+          </p>
+        </div>
+
+        {/* Mobile: horizontal swipe carousel with snap */}
+        <div
+          ref={pricingRef}
+          onScroll={onPricingScroll}
+          className="flex md:hidden overflow-x-auto snap-x snap-mandatory gap-6 pb-4 -mx-4 px-4 scroll-smooth [scrollbar-width:none] [-ms-overflow-style:none] [&::-webkit-scrollbar]:hidden"
+          style={{ scrollSnapType: "x mandatory" }}
+        >
+          {PRICING_PLANS.map((plan) => (
+            <Card
+              key={plan.name}
+              className={`relative flex flex-col p-6 flex-shrink-0 w-[85vw] min-w-[85vw] snap-start ${
+                plan.highlighted
+                  ? "border-2 border-indigo-500 shadow-lg shadow-indigo-500/20 dark:shadow-indigo-900/20"
+                  : "border border-border"
+              }`}
+              data-testid={`card-plan-${plan.name.toLowerCase()}`}
+              style={{ scrollSnapAlign: "start" }}
+            >
+              {plan.highlighted && (
+                <div className="absolute -top-3 left-1/2 -translate-x-1/2">
+                  <Badge className="bg-indigo-600 text-white border-0">Most popular</Badge>
+                </div>
+              )}
+              <div className="mb-6">
+                <h3 className="text-xl font-bold text-foreground">{plan.name}</h3>
+                <p className="text-sm text-muted-foreground mt-1">{plan.tagline}</p>
+                <div className="mt-4 flex items-baseline gap-1">
+                  <span className="text-3xl font-bold text-foreground">₹{plan.price}</span>
+                  <span className="text-sm text-muted-foreground">{plan.period}</span>
+                </div>
+              </div>
+              <ul className="space-y-3 flex-1 mb-6">
+                {plan.features.map((feature) => (
+                  <li key={feature} className="flex items-start gap-2 text-sm text-foreground">
+                    <CheckCircle2 className="w-4 h-4 text-emerald-500 flex-shrink-0 mt-0.5" />
+                    <span>{feature}</span>
+                  </li>
+                ))}
+              </ul>
+              <Button
+                onClick={scrollToContact}
+                className={plan.highlighted ? "bg-indigo-600 hover:bg-indigo-700" : ""}
+                variant={plan.highlighted ? "default" : "outline"}
+                data-testid={`button-plan-${plan.name.toLowerCase()}`}
+              >
+                Request quote
+              </Button>
+            </Card>
+          ))}
+        </div>
+        <div className="flex md:hidden justify-center gap-2 mt-6 mb-0">
+          {PRICING_PLANS.map((_, i) => (
+            <button
+              key={i}
+              type="button"
+              aria-label={`Go to plan ${i + 1}`}
+              onClick={() => goToPricingSlide(i)}
+              className={`w-2 h-2 rounded-full transition-colors ${
+                i === pricingIndex ? "bg-indigo-600 w-6" : "bg-slate-300 dark:bg-slate-600"
+              }`}
+            />
+          ))}
+        </div>
+
+        {/* Desktop: 3-column grid */}
+        <div className="hidden md:grid md:grid-cols-3 gap-6 lg:gap-8 mb-0">
+          {PRICING_PLANS.map((plan) => (
+            <Card
+              key={plan.name}
+              className={`relative flex flex-col p-6 sm:p-8 ${
+                plan.highlighted
+                  ? "border-2 border-indigo-500 shadow-lg shadow-indigo-500/20 dark:shadow-indigo-900/20 scale-[1.02] lg:scale-105"
+                  : "border border-border"
+              }`}
+              data-testid={`card-plan-${plan.name.toLowerCase()}`}
+            >
+              {plan.highlighted && (
+                <div className="absolute -top-3 left-1/2 -translate-x-1/2">
+                  <Badge className="bg-indigo-600 text-white border-0">Most popular</Badge>
+                </div>
+              )}
+              <div className="mb-6">
+                <h3 className="text-xl font-bold text-foreground">{plan.name}</h3>
+                <p className="text-sm text-muted-foreground mt-1">{plan.tagline}</p>
+                <div className="mt-4 flex items-baseline gap-1">
+                  <span className="text-3xl font-bold text-foreground">₹{plan.price}</span>
+                  <span className="text-sm text-muted-foreground">{plan.period}</span>
+                </div>
+              </div>
+              <ul className="space-y-3 flex-1 mb-6">
+                {plan.features.map((feature) => (
+                  <li key={feature} className="flex items-start gap-2 text-sm text-foreground">
+                    <CheckCircle2 className="w-4 h-4 text-emerald-500 flex-shrink-0 mt-0.5" />
+                    <span>{feature}</span>
+                  </li>
+                ))}
+              </ul>
+              <Button
+                onClick={scrollToContact}
+                className={plan.highlighted ? "bg-indigo-600 hover:bg-indigo-700" : ""}
+                variant={plan.highlighted ? "default" : "outline"}
+                data-testid={`button-plan-${plan.name.toLowerCase()}`}
+              >
+                Request quote
+              </Button>
+            </Card>
+          ))}
+        </div>
+
+      </div>
+    </section>
+  );
+}
+
 function DemoRequestSection() {
   const scrollToContact = () => {
     const element = document.querySelector("#contact");
@@ -1034,7 +1346,7 @@ function DemoRequestSection() {
   ];
 
   return (
-    <section id="pricing" className="py-6 sm:py-10 md:py-12 bg-gradient-to-br from-indigo-600 via-indigo-700 to-violet-800" data-testid="section-demo-request">
+    <section className="py-6 sm:py-10 md:py-12 bg-gradient-to-br from-indigo-600 via-indigo-700 to-violet-800" data-testid="section-demo-request">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div
           className="text-center animate-fade-in-up"
@@ -1480,25 +1792,43 @@ function ContactSection() {
   );
 }
 
+const QUICK_ANSWERS = [
+  {
+    question: "What is School ERP Software?",
+    answer: "School ERP (Enterprise Resource Planning) software is a comprehensive platform that automates and integrates all administrative, academic, and operational processes in schools including student management, attendance, fees, exams, and communication."
+  },
+  {
+    question: "How does AI improve school management?",
+    answer: "AI automates every repetitive task in school management — from attendance tracking and report generation to fee collection and parent communication. More importantly, it catches problems early: flagging at-risk students, detecting attendance anomalies, predicting fee defaults, and surfacing insights that help schools continuously improve."
+  },
+  {
+    question: "Why do schools need automation?",
+    answer: "Schools that don't automate waste countless hours on manual tasks while missing critical signals. AI-powered automation handles attendance, report cards, fee tracking, and communication automatically — but more importantly, it catches learning gaps, attendance drops, and financial issues early enough to act on them."
+  },
+  {
+    question: "How much does Trackademiq cost?",
+    answer: "Trackademiq offers custom pricing packages with competitive rates tailored to your school's needs. All packages include full features, training, and support. Most schools achieve ROI within 6-12 months through efficiency gains."
+  }
+];
+
 function QuickAnswersSection() {
-  const quickAnswers = [
-    {
-      question: "What is School ERP Software?",
-      answer: "School ERP (Enterprise Resource Planning) software is a comprehensive platform that automates and integrates all administrative, academic, and operational processes in schools including student management, attendance, fees, exams, and communication."
-    },
-    {
-      question: "How does AI improve school management?",
-      answer: "AI automates every repetitive task in school management — from attendance tracking and report generation to fee collection and parent communication. More importantly, it catches problems early: flagging at-risk students, detecting attendance anomalies, predicting fee defaults, and surfacing insights that help schools continuously improve."
-    },
-    {
-      question: "Why do schools need automation?",
-      answer: "Schools that don't automate waste countless hours on manual tasks while missing critical signals. AI-powered automation handles attendance, report cards, fee tracking, and communication automatically — but more importantly, it catches learning gaps, attendance drops, and financial issues early enough to act on them."
-    },
-    {
-      question: "How much does Trackademiq cost?",
-      answer: "Trackademiq offers custom pricing packages with competitive rates tailored to your school's needs. All packages include full features, training, and support. Most schools achieve ROI within 6-12 months through efficiency gains."
-    }
-  ];
+  const [qaIndex, setQaIndex] = useState(0);
+  const qaRef = useRef<HTMLDivElement>(null);
+
+  const onQaScroll = () => {
+    const el = qaRef.current;
+    if (!el) return;
+    const cardWidth = el.offsetWidth * 0.88 + 24;
+    const index = Math.round(el.scrollLeft / cardWidth);
+    setQaIndex(Math.min(Math.max(index, 0), QUICK_ANSWERS.length - 1));
+  };
+
+  const goToQaSlide = (index: number) => {
+    const el = qaRef.current;
+    if (!el) return;
+    const cardWidth = el.offsetWidth * 0.88 + 24;
+    el.scrollTo({ left: index * cardWidth, behavior: "smooth" });
+  };
 
   return (
     <section className="py-12 sm:py-16 bg-slate-50 dark:bg-slate-900/50" data-testid="section-quick-answers">
@@ -1519,10 +1849,41 @@ function QuickAnswersSection() {
           </p>
         </div>
 
+        {/* Mobile: horizontal swipe carousel */}
         <div
-          className="grid sm:grid-cols-2 gap-6"
+          ref={qaRef}
+          onScroll={onQaScroll}
+          className="flex sm:hidden overflow-x-auto snap-x snap-mandatory gap-6 pb-4 -mx-4 px-4 scroll-smooth [scrollbar-width:none] [-ms-overflow-style:none] [&::-webkit-scrollbar]:hidden"
+          style={{ scrollSnapType: "x mandatory" }}
         >
-          {quickAnswers.map((qa, idx) => (
+          {QUICK_ANSWERS.map((qa) => (
+            <div
+              key={qa.question}
+              className="flex-shrink-0 w-[88vw] min-w-[88vw] snap-start bg-white dark:bg-slate-800 rounded-xl p-6 border border-slate-200 dark:border-slate-700"
+              style={{ scrollSnapAlign: "start" }}
+            >
+              <h3 className="font-semibold text-slate-900 dark:text-white mb-2">{qa.question}</h3>
+              <p className="text-slate-600 dark:text-slate-400 text-sm leading-relaxed">{qa.answer}</p>
+            </div>
+          ))}
+        </div>
+        <div className="flex sm:hidden justify-center gap-2 mt-4">
+          {QUICK_ANSWERS.map((_, i) => (
+            <button
+              key={i}
+              type="button"
+              aria-label={`Go to question ${i + 1}`}
+              onClick={() => goToQaSlide(i)}
+              className={`w-2 h-2 rounded-full transition-colors ${
+                i === qaIndex ? "bg-indigo-600 w-6" : "bg-slate-300 dark:bg-slate-600"
+              }`}
+            />
+          ))}
+        </div>
+
+        {/* Desktop: 2-column grid */}
+        <div className="hidden sm:grid sm:grid-cols-2 gap-6">
+          {QUICK_ANSWERS.map((qa, idx) => (
             <div
               key={qa.question}
               className="bg-white dark:bg-slate-800 rounded-xl p-6 border border-slate-200 dark:border-slate-700 animate-fade-in-up"
@@ -1835,6 +2196,7 @@ export default function LandingPage() {
           <FeaturesSection />
           <AnalyticsPreviewSection />
           <GetStartedSection />
+          <PricingPlansSection />
           <DemoRequestSection />
           <TestimonialsSection />
           <ContactSection />

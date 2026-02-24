@@ -65,6 +65,7 @@ function Header() {
 
   const navLinks = [
     { href: "#features", label: "Features" },
+    { href: "#pricing", label: "Pricing" },
     { href: "/product-tour", label: "Product Tour", isRoute: true },
     { href: "/blog", label: "Blog", isRoute: true },
     { href: "/faq", label: "FAQ", isRoute: true },
@@ -1033,7 +1034,7 @@ function DemoRequestSection() {
   ];
 
   return (
-    <section id="demo-request" className="py-6 sm:py-10 md:py-12 bg-gradient-to-br from-indigo-600 via-indigo-700 to-violet-800" data-testid="section-demo-request">
+    <section id="pricing" className="py-6 sm:py-10 md:py-12 bg-gradient-to-br from-indigo-600 via-indigo-700 to-violet-800" data-testid="section-demo-request">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div
           className="text-center animate-fade-in-up"
